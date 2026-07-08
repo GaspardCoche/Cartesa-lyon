@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Témoignages clients | CARTESA Cabinet RH Isère</title>
+  <meta name="description" content="Des centaines de missions réalisées en RH, RSE et formation depuis 2003. Retours clients PME industrielles, ETI, groupes multi-sites en Auvergne-Rhône-Alpes.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cartesa-lyon.com/temoignages.html">
+  <meta property="og:title" content="Témoignages clients | CARTESA Cabinet RH Isère">
+  <meta property="og:description" content="Des centaines de missions réalisées depuis 2003. Retours d'expérience PME, ETI, groupes multi-sites en RH, RSE et formation. Auvergne-Rhône-Alpes.">
+  <meta property="og:url" content="https://cartesa-lyon.com/temoignages.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
+  <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
+  <meta property="og:image:alt" content="Témoignages clients CARTESA — Des centaines de missions depuis 2003">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle X officiel CARTESA (placeholder @CartesaRH) -->
+  <meta name="twitter:site" content="@CartesaRH">
+  <!-- Self-hosted fonts (RGPD-friendly) -->
+  <link rel="icon" type="image/png" href="assets/img/favicon-cartesa.png">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ============================================================
+       TÉMOIGNAGES — Immersive scroll experience
+       ============================================================ */
+
+    /* Hero with kinetic typography */
+    .temoignages-hero {
+      position: relative;
+      padding: 56px 0 32px;
+      overflow: hidden;
+      background: var(--teal-600);
+      color: #fff;
+    }
+    .temoignages-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: none;
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold-500);
+      margin-bottom: 12px;
+    }
+    .hero-eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 1.5px;
+      background: var(--gold-500);
+    }
+    .hero-title {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    .hero-title .accent {
+      color: var(--gold-500);
+      font-style: italic;
+      font-weight: 700;
+    }
+    .hero-title .word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: wordRise 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    @keyframes wordRise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-subtitle {
+      font-size: 0.96rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.9);
+      max-width: 620px;
+      margin-bottom: 0;
+    }
+
+    /* Animated stats with counter */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 28px;
+      padding: 18px 0;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .stats-row > div {
+      text-align: center;
+      padding: 0 16px;
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+    .stats-row > div:last-child { border-right: none; }
+    .stats-row strong {
+      display: block;
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      font-weight: 800;
+      color: var(--gold-500);
+      line-height: 1;
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+    .stats-row span {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+    }
+
+    /* ============================================================
+       LOGO MARQUEE — Infinite horizontal scroll
+       ============================================================ */
+    .marquee-section {
+      padding: 60px 0;
+      background: var(--neutral-50);
+      overflow: hidden;
+      border-top: 1px solid var(--neutral-200);
+      border-bottom: 1px solid var(--neutral-200);
+    }
+    .marquee-label {
+      text-align: center;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--neutral-500);
+      margin-bottom: 32px;
+    }
+    .marquee {
+      display: flex;
+      overflow: hidden;
+      /* flat : pas de fondu de masque */
+    }
+    .marquee-track {
+      display: flex;
+      gap: 64px;
+      animation: marqueeScroll 45s linear infinite;
+      padding-right: 64px;
+      white-space: nowrap;
+    }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    @keyframes marqueeScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .marquee-item {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--neutral-700);
+      letter-spacing: -0.01em;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+    .marquee-item::after {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal-500);
+      opacity: 0.6;
+    }
+    .marquee-item:last-child::after { display: none; }
+
+    /* ============================================================
+       TESTIMONIAL CAROUSEL — Horizontal scroll-snap
+       ============================================================ */
+    .carousel-section {
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel-header {
+      max-width: 720px;
+      margin: 0 auto 48px;
+      text-align: center;
+      padding: 0 24px;
+    }
+    .carousel-header h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--teal-900);
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+    .carousel-header p {
+      font-size: 1.05rem;
+      color: var(--neutral-600);
+      line-height: 1.6;
+    }
+    .carousel-viewport {
+      display: flex;
+      gap: 28px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 16px max(24px, calc((100vw - 1100px) / 2)) 56px;
+      scroll-padding-left: 16px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .carousel-viewport::-webkit-scrollbar { display: none; }
+    .carousel-card {
+      flex: 0 0 min(420px, 92vw);
+      scroll-snap-align: center;
+      background: #fff;
+      border-radius: 24px;
+      padding: 44px 38px 36px;
+      box-shadow: 0 4px 24px rgba(9,41,51,0.06);
+      border: 1px solid var(--neutral-200);
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s, border-color 0.3s;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 380px;
+    }
+    .carousel-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 2px 8px rgba(9,41,51,0.08);
+      border-color: var(--teal-400);
+    }
+    .carousel-card .quote-mark {
+      font-family: 'Sora', serif;
+      font-size: 5rem;
+      line-height: 0.7;
+      color: var(--teal-500);
+      opacity: 0.18;
+      margin-bottom: 4px;
+    }
+    .carousel-card blockquote {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.18rem;
+      line-height: 1.5;
+      color: var(--teal-900);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin: 0 0 28px;
+      flex: 1;
+    }
+    .carousel-card .meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-top: 20px;
+      border-top: 1px solid var(--neutral-200);
+    }
+    .carousel-card .meta strong {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--teal-900);
+    }
+    .carousel-card .meta span {
+      font-size: 0.85rem;
+      color: var(--neutral-500);
+    }
+    .carousel-card .tag {
+      position: absolute;
+      top: 28px;
+      right: 28px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--teal-600);
+      background: var(--teal-50);
+      padding: 6px 12px;
+      border-radius: 100px;
+    }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .carousel-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1.5px solid var(--neutral-300);
+      background: #fff;
+      color: var(--teal-900);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s ease;
+    }
+    .carousel-btn:hover {
+      border-color: var(--teal-600);
+      background: var(--teal-600);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .carousel-progress {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 28px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 24px;
+    }
+    .carousel-progress-bar {
+      flex: 1;
+      height: 2px;
+      background: var(--neutral-200);
+      border-radius: 100px;
+      overflow: hidden;
+      position: relative;
+    }
+    .carousel-progress-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: var(--teal-600);
+      width: 25%;
+      transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1), left 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .carousel-progress-count {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--neutral-500);
+      font-variant-numeric: tabular-nums;
+      min-width: 56px;
+    }
+
+    /* ============================================================
+       PINNED HORIZONTAL SCROLL — Reportages (Apple-style)
+       ============================================================ */
+    .h-scroll-section {
+      position: relative;
+      background: var(--teal-900);
+      color: #fff;
+    }
+    .h-scroll-section .h-scroll-spacer {
+      height: 400vh;
+      position: relative;
+    }
+    .h-scroll-pin {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .h-scroll-header {
+      padding: 56px 5vw 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+    }
+    .h-scroll-header .eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--teal-400);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .h-scroll-header h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: #fff;
+      margin: 0;
+      max-width: 600px;
+    }
+    .h-scroll-progress {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.08em;
+    }
+    .h-scroll-track {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 0 5vw;
+      will-change: transform;
+    }
+    .h-scroll-inner {
+      display: flex;
+      gap: 5vw;
+      align-items: center;
+    }
+    .reportage {
+      flex: 0 0 min(820px, 78vw);
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .reportage-visual {
+      aspect-ratio: 4 / 3;
+      border-radius: 20px;
+      background: var(--teal-600);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(9,41,51,0.08);
+    }
+    .reportage-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: none;
+    }
+    .reportage-visual .visual-label {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.95);
+      background: rgba(0,0,0,0.35);
+            padding: 8px 14px;
+      border-radius: 100px;
+    }
+    .reportage-visual .visual-num {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      font-family: 'Sora', sans-serif;
+      font-size: 5rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.18);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .reportage-content .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold-400);
+      margin-bottom: 16px;
+    }
+    .reportage-content h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 18px;
+    }
+    .reportage-content .summary {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 20px;
+    }
+    .reportage-content .result {
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.06);
+      border-left: 3px solid var(--gold-400);
+      border-radius: 8px;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.92);
+    }
+    .reportage-content .result strong {
+      color: var(--gold-400);
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 6px;
+    }
+
+    /* Mobile: linéarisation */
+    @media (max-width: 900px) {
+      .h-scroll-section .h-scroll-spacer { height: auto; }
+      .h-scroll-pin {
+        position: static;
+        height: auto;
+        padding: 56px 0 72px;
+      }
+      .h-scroll-header { padding: 0 24px 32px; flex-direction: column; align-items: center; text-align: center; }
+      .h-scroll-progress { display: none; }
+      .h-scroll-track { padding: 0; flex-direction: column; }
+      .h-scroll-inner { flex-direction: column; gap: 32px; padding: 0 24px; }
+      .reportage { grid-template-columns: 1fr; gap: 24px; flex: 1 1 auto; width: 100%; }
+    }
+
+    /* ============================================================
+       APPROACH SECTION — number-driven storytelling
+       ============================================================ */
+    .approach-section {
+      padding: 100px 0;
+      background: var(--neutral-50);
+    }
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .approach-card {
+      padding: 40px 32px;
+      background: #fff;
+      border-radius: 20px;
+      border: 1px solid var(--neutral-200);
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .approach-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 2px 8px rgba(9,41,51,0.08);
+      border-color: var(--teal-400);
+    }
+    .approach-card .num {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--teal-600);
+      letter-spacing: 0.14em;
+      margin-bottom: 16px;
+    }
+    .approach-card h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--teal-900);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .approach-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--neutral-700);
+    }
+    @media (max-width: 768px) {
+      .approach-grid { grid-template-columns: 1fr; gap: 16px; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); gap: 24px 0; }
+      .stats-row > div:nth-child(2n) { border-right: none; }
+      .stats-row > div { padding: 12px 8px; }
+    }
+
+    /* CTA improvements */
+    .final-cta {
+      padding: 100px 0;
+      background: var(--teal-900);
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .final-cta p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.82);
+      max-width: 560px;
+      margin: 0 auto 36px;
+    }
+    .final-cta .btn-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Reveal animation utility */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+    .reveal.revealed { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track { animation: none; }
+      .hero-title .word { animation: none; opacity: 1; transform: none; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    /* ============================================================
+       TÉMOIGNAGE VIDÉO — Galerie 7 épisodes (Stéphane Fournier)
+       ============================================================ */
+    .vtestim { padding: 72px 0 64px; background: var(--teal-50); }
+    .vtestim__head { max-width: 760px; margin: 0 auto 8px; text-align: center; }
+    .vtestim__eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.74rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.14em; color: var(--teal-600); margin-bottom: 14px;
+    }
+    .vtestim__eyebrow::before { content: ""; width: 30px; height: 2px; background: var(--gold-500); }
+    .vtestim__head h2 { margin: 0 0 14px; }
+    .vtestim__head p { color: var(--neutral-700); font-size: 1.05rem; margin: 0; }
+
+    /* Bandeau intervenant */
+    .vt-speaker {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      margin: 26px auto 38px; padding: 16px 22px;
+      background: #fff; border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); width: fit-content;
+    }
+    .vt-speaker img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; flex: none; }
+    .vt-speaker__name { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--neutral-900); font-size: 1.05rem; }
+    .vt-speaker__role { color: var(--neutral-500); font-size: 0.9rem; }
+    .vt-speaker__sector { color: var(--teal-700); font-size: 0.82rem; font-weight: 600; margin-top: 2px; }
+
+    /* Grille des épisodes */
+    .vtestim-grid {
+      display: grid; gap: 22px;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    }
+    .vt-card {
+      display: flex; flex-direction: column; text-align: left;
+      background: #fff; border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-md); overflow: hidden; cursor: pointer;
+      padding: 0; font: inherit; color: inherit; width: 100%;
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .vt-card:hover, .vt-card:focus-visible {
+      transform: translateY(-4px); box-shadow: var(--shadow-lg);
+      border-color: var(--teal-400); outline: none;
+    }
+    .vt-card__media { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--teal-900); }
+    .vt-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .vt-card:hover .vt-card__media img { transform: scale(1.05); }
+    .vt-card__media::after {
+      content: ""; position: absolute; inset: 0;
+      background: rgba(9,41,51,0.35);
+    }
+    .vt-play {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(255,255,255,0.92); display: grid; place-items: center;
+      z-index: 2; transition: transform 0.3s ease, background 0.3s ease; box-shadow: var(--shadow-md);
+    }
+    .vt-card:hover .vt-play { transform: translate(-50%,-50%) scale(1.08); background: var(--gold-500); }
+    .vt-play svg { width: 22px; height: 22px; margin-left: 3px; fill: var(--teal-900); }
+    .vt-badge {
+      position: absolute; bottom: 10px; right: 10px; z-index: 2;
+      background: rgba(9,41,51,0.78); color: #fff; font-size: 0.72rem; font-weight: 600;
+      padding: 3px 9px; border-radius: 999px; letter-spacing: 0.02em;
+    }
+    .vt-chapter {
+      position: absolute; top: 10px; left: 10px; z-index: 2;
+      width: 26px; height: 26px; border-radius: 50%; background: var(--gold-500);
+      color: var(--teal-900); font-family: 'Sora', sans-serif; font-weight: 800; font-size: 0.82rem;
+      display: grid; place-items: center;
+    }
+    .vt-card__body { padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+    .vt-card__q {
+      font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--teal-600);
+    }
+    .vt-card__title { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.08rem; color: var(--neutral-900); line-height: 1.25; }
+    .vt-card__excerpt { color: var(--neutral-700); font-size: 0.92rem; line-height: 1.6; }
+
+    /* Lightbox */
+    .vt-modal {
+      position: fixed; inset: 0; z-index: 1000; display: none;
+      align-items: center; justify-content: center; padding: 24px;
+      background: rgba(9,41,51,0.92);
+    }
+    .vt-modal.open { display: flex; }
+    .vt-modal__inner { width: min(900px, 100%); }
+    .vt-modal__frame { position: relative; background: #000; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-xl); }
+    .vt-modal__frame video { width: 100%; display: block; aspect-ratio: 16 / 9; background: #000; }
+    .vt-modal__cap { color: #fff; margin-top: 14px; }
+    .vt-modal__cap strong { font-family: 'Sora', sans-serif; display: block; font-size: 1.05rem; }
+    .vt-modal__cap span { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+    .vt-modal__close {
+      position: absolute; top: -46px; right: 0; width: 38px; height: 38px;
+      border-radius: 50%; background: rgba(255,255,255,0.15); border: none; cursor: pointer;
+      color: #fff; font-size: 1.4rem; line-height: 1; display: grid; place-items: center;
+      transition: background 0.2s ease;
+    }
+    .vt-modal__close:hover { background: rgba(255,255,255,0.3); }
+    .vt-note { margin-top: 30px; font-size: 0.82rem; color: var(--neutral-500); }
+
+    @media (max-width: 560px) {
+      .vtestim-grid { grid-template-columns: 1fr; }
+      .vt-modal__close { top: 8px; right: 8px; background: rgba(9,41,51,0.5); }
+    }
+  
+    /* Séries de capsules : une boîte par témoignage */
+    .vtestim-grid { align-items: stretch; }
+    .vt-card { height: 100%; }
+    .vt-series {
+      background: var(--white);
+      border: 1px solid var(--neutral-200);
+      border-radius: 16px;
+      padding: 26px 26px 22px;
+      margin: 0 auto 28px;
+      max-width: 1080px;
+    }
+    .vt-series__head {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      padding-bottom: 18px; margin-bottom: 20px;
+      border-bottom: 1px solid var(--neutral-200);
+    }
+    .vt-series__head img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex: none; }
+    .vt-series__count {
+      margin-left: auto; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.78rem;
+      text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-900);
+      background: var(--gold-500); padding: 6px 12px; border-radius: 6px; white-space: nowrap;
+    }
+    .vt-series .vtestim-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+    .vtestim-grid--data { display: none !important; }
+    .vt-series .vt-card__excerpt { display: none; }
+    .vt-series .vt-card__body { padding: 12px 14px 14px; }
+    /* Témoignage écrit */
+    .vt-ecrit-avatar {
+      width: 56px; height: 56px; border-radius: 50%; flex: none;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--teal-500); color: var(--white);
+      font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.15rem;
+    }
+    .vt-ecrit-quote {
+      font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700;
+      color: var(--teal-900); margin: 4px 0 16px; line-height: 1.4;
+    }
+    .att-hl-gold { background: var(--gold-500); color: var(--teal-900); padding: 0 6px; border-radius: 4px; }
+    .vt-ecrit-qa details {
+      border-top: 1px solid var(--neutral-200); padding: 2px 0;
+    }
+    .vt-ecrit-qa summary {
+      cursor: pointer; font-weight: 600; color: var(--teal-900);
+      padding: 12px 0; font-size: 0.95rem; list-style: none; position: relative; padding-right: 28px;
+    }
+    .vt-ecrit-qa summary::after { content: "+"; position: absolute; right: 4px; top: 10px; color: var(--teal-500); font-size: 1.2rem; font-weight: 700; }
+    .vt-ecrit-qa details[open] summary::after { content: "\2212"; }
+    .vt-ecrit-qa p { color: var(--neutral-600); font-size: 0.93rem; padding: 0 0 14px; margin: 0; }
+  
+    /* Pochette de série + playlist */
+    .vt-cover {
+      display: flex; align-items: center; gap: 22px; width: 100%;
+      background: var(--teal-50); border: 1px solid var(--neutral-200); border-radius: 12px;
+      padding: 14px; cursor: pointer; font: inherit; text-align: left; color: inherit;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .vt-cover:hover { border-color: var(--teal-500); transform: translateY(-2px); }
+    .vt-cover__media { position: relative; flex: none; width: 250px; border-radius: 8px; overflow: hidden; }
+    .vt-cover__media img { width: 100%; height: 140px; object-fit: cover; display: block; }
+    .vt-play--lg { width: 54px; height: 54px; }
+    .vt-cover__label strong { display: block; font-family: 'Sora', sans-serif; font-size: 1.1rem; color: var(--teal-900); margin-bottom: 4px; }
+    .vt-cover__label span { color: var(--neutral-600); font-size: 0.9rem; }
+    @media (max-width: 640px) { .vt-cover { flex-direction: column; } .vt-cover__media { width: 100%; } }
+    .vt-playlist { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .vt-chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.12); border: 0; color: rgba(255,255,255,0.85);
+      font: inherit; font-size: 0.8rem; padding: 6px 12px; border-radius: 20px; cursor: pointer;
+    }
+    .vt-chip span {
+      width: 18px; height: 18px; border-radius: 50%; background: rgba(255,255,255,0.25);
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 700;
+    }
+    .vt-chip.is-current { background: var(--gold-500); color: var(--teal-900); font-weight: 600; }
+    .vt-chip.is-current span { background: rgba(9,41,51,0.2); }
+    /* Carousel témoignage écrit */
+    .vt-carousel { overflow: hidden; }
+    .vt-carousel__track { display: flex; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1); }
+    .vt-slide { flex: 0 0 100%; padding: 4px 6px 0; }
+    .vt-slide__q { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--teal-900); font-size: 1rem; margin-bottom: 8px; }
+    .vt-slide__a { color: var(--neutral-600); font-size: 0.95rem; }
+    .vt-carousel__nav { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 16px; }
+    .vt-carousel__btn {
+      width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--neutral-300);
+      background: var(--white); color: var(--teal-900); font-size: 1rem; cursor: pointer;
+    }
+    .vt-carousel__btn:hover { border-color: var(--teal-500); color: var(--teal-500); }
+    .vt-carousel__dots { display: flex; gap: 7px; }
+    .vt-dot { width: 9px; height: 9px; border-radius: 50%; border: 0; background: var(--neutral-300); cursor: pointer; padding: 0; }
+    .vt-dot.is-on { background: var(--teal-500); }
+    /* CTA final : typo contenue */
+    .final-cta h2 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); }
+    .final-cta p { font-size: 0.95rem; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Témoignages clients CARTESA",
+        "url": "https://cartesa-lyon.com/temoignages.html",
+        "description": "Retours d'expérience des entreprises accompagnées par CARTESA en RH, RSE et formation.",
+        "publisher": { "@id": "https://cartesa-lyon.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Témoignages", "item": "https://cartesa-lyon.com/temoignages.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/img/logo-cartesa.png" alt="CARTESA — Compétences, Entreprises &amp; Territoires" width="250" height="86"></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="nav-dropdown"><a href="vos-attentes.html" aria-haspopup="true" aria-expanded="false">Vos attentes</a>
+          <ul class="nav-sub">
+            <li><a href="vos-attentes.html#fideliser">Structurer &amp; fid&eacute;liser vos &eacute;quipes</a></li>
+            <li><a href="vos-attentes.html#dirigeants">D&eacute;velopper vos dirigeants &amp; managers</a></li>
+            <li><a href="vos-attentes.html#former">Former vos &eacute;quipes</a></li>
+            <li><a href="vos-attentes.html#decarboner">D&eacute;carboner votre activit&eacute;</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown"><a href="expertises.html" aria-haspopup="true" aria-expanded="false">Nos expertises</a>
+          <ul class="nav-sub">
+            <li><a href="expertises.html">Diagnostic &amp; accompagnements RH</a></li>
+            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="ingenierie.html">Ing&eacute;nierie p&eacute;dagogique</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; D&eacute;carbonation</a></li>
+          </ul>
+        </li>
+        <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+  <!-- HERO -->
+  <section class="temoignages-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current">Témoignages</span>
+      </nav>
+      <span class="hero-eyebrow">Paroles de dirigeants</span>
+      <h1 class="hero-title" id="heroTitle">
+        <span class="word" style="animation-delay:0.05s">Des</span>
+        <span class="word" style="animation-delay:0.12s">histoires</span>
+        <span class="word" style="animation-delay:0.19s">d'entreprises,</span><br>
+        <span class="word accent" style="animation-delay:0.28s">racontées</span>
+        <span class="word accent" style="animation-delay:0.35s">par</span>
+        <span class="word accent" style="animation-delay:0.42s">leurs</span>
+        <span class="word accent" style="animation-delay:0.49s">dirigeants.</span>
+      </h1>
+      <p class="hero-subtitle">
+        Depuis 2003, des centaines de PME, ETI et groupes en Auvergne-Rhône-Alpes nous ont confié leurs enjeux RH, RSE et formation. Voici leurs retours, sans filtre.
+      </p>
+
+      <div class="stats-row">
+        <!-- ⚠️ STAT À VÉRIFIER : "Des centaines de missions réalisées" — confirmer un ordre de grandeur sourçable (ex : "+300 missions depuis 2003") avant publication -->
+        <div>
+          <strong>Des centaines</strong>
+          <span>de missions réalisées</span>
+        </div>
+        <!-- Stat vérifiable : CARTESA fondé en 2003 → 23 ans d'expérience en 2026 (le "20+ ans" reste vrai mais peut être actualisé). -->
+        <div>
+          <strong data-count="20" data-suffix="+ ans">0</strong>
+          <span>D'expertise terrain</span>
+        </div>
+        <!-- ⚠️ STAT À VÉRIFIER : "6 experts mobilisables" — confirmer le nombre exact d'experts du cabinet aujourd'hui (cohérence avec la page équipe.html) -->
+        <div>
+          <strong data-count="5">0</strong>
+          <span>Experts mobilisables</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════
+       TÉMOIGNAGE VIDÉO — Galerie 7 épisodes
+       Série "CARTESA vu par ceux qui l'ont vécu" — Stéphane Fournier (Président, Groupe Syrah).
+       Vidéos : actuellement servies en local depuis assets/temoignages/video/ (interim).
+       ⚠️ À LA MIGRATION WORDPRESS : uploader les 7 .mp4 dans la médiathèque WP
+          et remplacer les chemins data-video="assets/temoignages/video/epN.mp4"
+          par les URL WP correspondantes (ou un embed). Posters et textes restent valables.
+       ═════════════════════════════════════════════════════════════ -->
+  <section class="vtestim" aria-labelledby="vtestimTitle">
+    <div class="container">
+      <div class="vtestim__head reveal">
+        <span class="vtestim__eyebrow">Témoignage vidéo</span>
+        <h2 id="vtestimTitle">Ils l'ont vécu, ils le racontent</h2>
+        <p>Trois séries de capsules et un témoignage écrit&nbsp;: des dirigeants et des managers racontent leur parcours avec CARTESA, sans filtre.</p>
+      </div>
+
+      <div class="vt-series reveal">
+      <header class="vt-series__head">
+        <img src="assets/temoignages/posters/stephane-fournier-avatar.jpg" alt="Portrait de Stéphane Fournier" width="60" height="60" loading="lazy">
+        <div>
+          <div class="vt-speaker__name">Stéphane Fournier</div>
+          <div class="vt-speaker__role">Président · Groupe Syrah</div>
+          <div class="vt-speaker__sector">Mécanique de haute précision · Plusieurs sociétés</div>
+        </div>
+        <span class="vt-series__count">7 capsules</span>
+      </header>
+      <button class="vt-cover" type="button" aria-label="Lancer la série de capsules — Stéphane Fournier">
+        <span class="vt-cover__media">
+          <img src="assets/temoignages/posters/ep1.jpg" alt="" loading="lazy">
+          <span class="vt-play vt-play--lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </span>
+        <span class="vt-cover__label">
+          <strong>Regarder la série</strong>
+          <span>7 capsules · ≈ 5 min · lecture enchaînée</span>
+        </span>
+      </button>
+
+      <div class="vtestim-grid vtestim-grid--data" id="vtestimGrid" hidden>
+        <!-- ép. 1 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep1.mp4"
+          data-title="Un besoin devenu évident"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep1.jpg" alt="Stéphane Fournier — Un besoin devenu évident" loading="lazy">
+            <span class="vt-chapter">1</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:27</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Quelle était la problématique&nbsp;?</span>
+            <span class="vt-card__title">Un besoin devenu évident</span>
+            <span class="vt-card__excerpt">« Garder des compétences très précises — on travaille la mécanique de précision — et faire en sorte qu'elles se transmettent : c'est l'enjeu majeur de nos entreprises. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 2 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep2.mp4"
+          data-title="Un management à réinventer"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep2.jpg" alt="Stéphane Fournier — Un management à réinventer" loading="lazy">
+            <span class="vt-chapter">2</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:23</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Le constat de départ</span>
+            <span class="vt-card__title">Un management à réinventer</span>
+            <span class="vt-card__excerpt">« Le management se faisait de façon empirique, comme dans beaucoup d'industries : chacun au feeling — mais plutôt maladroitement. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 3 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep3.mp4"
+          data-title="La décision s'impose"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep3.jpg" alt="Stéphane Fournier — La décision s'impose" loading="lazy">
+            <span class="vt-chapter">3</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:43</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Pourquoi avoir choisi Cartesa&nbsp;?</span>
+            <span class="vt-card__title">La décision s'impose</span>
+            <span class="vt-card__excerpt">« On s'est choisi ensemble, avec Cartesa et Catherine. Une approche sur mesure : mieux encadrer, et transmettre le savoir. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 4 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep4.mp4"
+          data-title="Une relation de confiance"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep4.jpg" alt="Stéphane Fournier — Une relation de confiance" loading="lazy">
+            <span class="vt-chapter">4</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:55</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Ce qui a fait la différence</span>
+            <span class="vt-card__title">Une relation de confiance</span>
+            <span class="vt-card__excerpt">« Il fallait que l'alchimie prenne. J'ai pu lâcher le sujet en totale confiance : ce que je voulais transmettre a été mis en œuvre. La différence, c'est le suivi. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 5 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep5.mp4"
+          data-title="Faire dialoguer les équipes"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep5.jpg" alt="Stéphane Fournier — Faire dialoguer les équipes" loading="lazy">
+            <span class="vt-chapter">5</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:52</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Le déroulement</span>
+            <span class="vt-card__title">Faire dialoguer les équipes</span>
+            <span class="vt-card__excerpt">« Asseoir des chefs d'atelier de plusieurs sociétés autour d'une table et les faire réfléchir ensemble : Catherine a eu la méthode. Un vrai apport de mise en confiance. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 6 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep6.mp4"
+          data-title="Des résultats concrets"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep6.jpg" alt="Stéphane Fournier — Des résultats concrets" loading="lazy">
+            <span class="vt-chapter">6</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:58</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Ce qui a changé</span>
+            <span class="vt-card__title">Des résultats concrets</span>
+            <span class="vt-card__excerpt">« Aujourd'hui c'est structuré : points d'équipe réguliers, entretiens annuels à date. Sceptiques au départ, les managers en ont compris l'intérêt. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 7 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep7.mp4"
+          data-title="Un message aux futurs participants"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep7.jpg" alt="Stéphane Fournier — Un message aux futurs participants" loading="lazy">
+            <span class="vt-chapter">7</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">1:01</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">À qui le recommander&nbsp;?</span>
+            <span class="vt-card__title">Un message aux futurs participants</span>
+            <span class="vt-card__excerpt">« À toutes les TPE-PME où le management est empirique. Derrière, la productivité s'améliore — et surtout, on ne perd pas notre savoir-faire. »</span>
+          </span>
+        </button>
+      </div>
+      </div>
+
+      <div class="vt-series reveal">
+      <header class="vt-series__head">
+        <img src="assets/temoignages/posters/jeantet-ep1.jpg" alt="Alexandre Ruiz — JEANTET Groupe" width="60" height="60" loading="lazy">
+        <div>
+          <div class="vt-speaker__name">Alexandre Ruiz &amp; Vincent Decrette</div>
+          <div class="vt-speaker__role">Manager &amp; Direction · JEANTET Groupe</div>
+          <div class="vt-speaker__sector">Parcours CQP Management · Accompagnement Catherine Lenoir</div>
+        </div>
+        <span class="vt-series__count">7 capsules</span>
+      </header>
+      <button class="vt-cover" type="button" aria-label="Lancer la série de capsules — Alexandre Ruiz & Vincent Decrette">
+        <span class="vt-cover__media">
+          <img src="assets/temoignages/posters/jeantet-ep1.jpg" alt="" loading="lazy">
+          <span class="vt-play vt-play--lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </span>
+        <span class="vt-cover__label">
+          <strong>Regarder la série</strong>
+          <span>7 capsules · ≈ 5 min · lecture enchaînée</span>
+        </span>
+      </button>
+
+      <div class="vtestim-grid vtestim-grid--data" hidden>
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/jeantet-ep1.mp4"
+          data-title="Les enjeux de départ"
+          data-sub="Alexandre Ruiz &amp; Vincent Decrette · JEANTET Groupe">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/jeantet-ep1.jpg" alt="JEANTET Groupe — Les enjeux de départ" loading="lazy">
+            <span class="vt-chapter">1</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:23</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Quels étaient les enjeux ?</span>
+            <span class="vt-card__title">Les enjeux de départ</span>
+            <span class="vt-card__excerpt">Développer les compétences, gagner en confiance et se préparer à de nouvelles responsabilités.</span>
+          </span>
+        </button>
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/jeantet-ep2.mp4"
+          data-title="Le choix du parcours CQP"
+          data-sub="Alexandre Ruiz &amp; Vincent Decrette · JEANTET Groupe">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/jeantet-ep2.jpg" alt="JEANTET Groupe — Le choix du parcours CQP" loading="lazy">
+            <span class="vt-chapter">2</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:32</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Pourquoi CARTESA ?</span>
+            <span class="vt-card__title">Le choix du parcours CQP</span>
+            <span class="vt-card__excerpt">Quand l'ambition d'Alexandre rencontre la volonté de JEANTET Groupe de faire grandir ses managers.</span>
+          </span>
+        </button>
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/jeantet-ep3.mp4"
+          data-title="Un accompagnement sur mesure"
+          data-sub="Alexandre Ruiz &amp; Vincent Decrette · JEANTET Groupe">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/jeantet-ep3.jpg" alt="JEANTET Groupe — Un accompagnement sur mesure" loading="lazy">
+            <span class="vt-chapter">3</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:31</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Comment ça s'est passé ?</span>
+            <span class="vt-card__title">Un accompagnement sur mesure</span>
+            <span class="vt-card__excerpt">Écoute, disponibilité et suivi adapté au rythme du participant.</span>
+          </span>
+        </button>
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/jeantet-ep4.mp4"
+          data-title="Rigueur, exigence et suivi"
+          data-sub="Alexandre Ruiz &amp; Vincent Decrette · JEANTET Groupe">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/jeantet-ep4.jpg" alt="JEANTET Groupe — Rigueur, exigence et suivi" loading="lazy">
+            <span class="vt-chapter">4</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:57</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Ce qui les a marqués</span>
+            <span class="vt-card__title">Rigueur, exigence et suivi</span>
+            <span class="vt-card__excerpt">Chaque session s'inscrit dans une continuité, avec un vrai travail d'application sur le terrain.</span>
+          </span>
+        </button>
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/jeantet-ep5.mp4"
+          data-title="Des outils appliqués en atelier"
+          data-sub="Alexandre Ruiz &amp; Vincent Decrette · JEANTET Groupe">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/jeantet-ep5.jpg" alt="JEANTET Groupe — Des outils appliqués en atelier" loading="lazy">
+            <span class="vt-chapter">5</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">1:37</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Quels bénéfices ?</span>
+            <span class="vt-card__title">Des outils appliqués en atelier</span>
+            <span class="vt-card__excerpt">Démarches 5S, management visuel, rituels hebdomadaires — au-delà de la validation du CQP.</span>
+          </span>
+        </button>
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/jeantet-ep6.mp4"
+          data-title="Une progression personnelle"
+          data-sub="Alexandre Ruiz &amp; Vincent Decrette · JEANTET Groupe">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/jeantet-ep6.jpg" alt="JEANTET Groupe — Une progression personnelle" loading="lazy">
+            <span class="vt-chapter">6</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:51</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Avec le recul</span>
+            <span class="vt-card__title">Une progression personnelle</span>
+            <span class="vt-card__excerpt">« Cette formation a été hyper enrichissante. » La reformulation a changé la communication au quotidien.</span>
+          </span>
+        </button>
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/jeantet-ep7.mp4"
+          data-title="Intention, exigence, rigueur"
+          data-sub="Alexandre Ruiz &amp; Vincent Decrette · JEANTET Groupe">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/jeantet-ep7.jpg" alt="JEANTET Groupe — Intention, exigence, rigueur" loading="lazy">
+            <span class="vt-chapter">7</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:27</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Le bilan</span>
+            <span class="vt-card__title">Intention, exigence, rigueur</span>
+            <span class="vt-card__excerpt">« Elle a été là pour nous. Elle nous a fait évoluer. » Les bénéfices se ressentent dans toute l'entreprise.</span>
+          </span>
+        </button>
+      </div>
+      </div>
+
+      <div class="vt-series reveal">
+      <header class="vt-series__head">
+        <img src="assets/temoignages/posters/isactys-ep1.jpg" alt="Laurent Pinet — Groupe Isactys" width="60" height="60" loading="lazy">
+        <div>
+          <div class="vt-speaker__name">Laurent Pinet</div>
+          <div class="vt-speaker__role">Dirigeant · Groupe Isactys</div>
+          <div class="vt-speaker__sector">Dispositif PCRH via Uniformation · Accompagnement Catherine Lenoir</div>
+        </div>
+        <span class="vt-series__count">3 capsules</span>
+      </header>
+      <button class="vt-cover" type="button" aria-label="Lancer la série de capsules — Laurent Pinet">
+        <span class="vt-cover__media">
+          <img src="assets/temoignages/posters/isactys-ep1.jpg" alt="" loading="lazy">
+          <span class="vt-play vt-play--lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </span>
+        <span class="vt-cover__label">
+          <strong>Regarder la série</strong>
+          <span>3 capsules · ≈ 3,5 min · lecture enchaînée</span>
+        </span>
+      </button>
+
+      <div class="vtestim-grid vtestim-grid--data" hidden>
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/isactys-ep1.mp4"
+          data-title="Structurer les RH en grandissant"
+          data-sub="Laurent Pinet · Groupe Isactys">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/isactys-ep1.jpg" alt="Groupe Isactys — Structurer les RH en grandissant" loading="lazy">
+            <span class="vt-chapter">1</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">1:05</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__title">Structurer les RH en grandissant</span>
+            <span class="vt-card__excerpt">Deux dirigeants, un enjeu : construire une vision commune du management. CARTESA retenu à l'unanimité via le dispositif PCRH (Uniformation).</span>
+          </span>
+        </button>
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/isactys-ep2.mp4"
+          data-title="Écoute, proximité, adaptation"
+          data-sub="Laurent Pinet · Groupe Isactys">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/isactys-ep2.jpg" alt="Groupe Isactys — Écoute, proximité, adaptation" loading="lazy">
+            <span class="vt-chapter">2</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">1:15</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__title">Écoute, proximité, adaptation</span>
+            <span class="vt-card__excerpt">Un acteur local, proche du terrain. Catherine a fait évoluer l'accompagnement au fil des besoins.</span>
+          </span>
+        </button>
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/isactys-ep3.mp4"
+          data-title="Pourquoi continuer ensemble"
+          data-sub="Laurent Pinet · Groupe Isactys">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/isactys-ep3.jpg" alt="Groupe Isactys — Pourquoi continuer ensemble" loading="lazy">
+            <span class="vt-chapter">3</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">1:13</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__title">Pourquoi continuer ensemble</span>
+            <span class="vt-card__excerpt">« Nous nous sommes sentis écoutés et accompagnés tout au long du projet. » Le Groupe Isactys refait appel à CARTESA.</span>
+          </span>
+        </button>
+      </div>
+      </div>
+
+      <!-- TÉMOIGNAGE ÉCRIT — Lucie Deshayes, ManiKheir -->
+      <div class="vt-series vt-series--ecrit reveal" id="temoignage-manikheir">
+        <header class="vt-series__head">
+          <span class="vt-ecrit-avatar" aria-hidden="true">LD</span>
+          <div>
+            <div class="vt-speaker__name">Lucie Deshayes</div>
+            <div class="vt-speaker__role">Manager · ManiKheir</div>
+            <div class="vt-speaker__sector">Gants nitrile médicaux &amp; EPI · Parcours CléA Management</div>
+          </div>
+          <span class="vt-series__count">Témoignage écrit</span>
+        </header>
+        <blockquote class="vt-ecrit-quote">« À une personne qui hésite, je dirais simplement&nbsp;: <mark class="att-hl-gold">Fonce&nbsp;!</mark> »</blockquote>
+        <div class="vt-carousel" id="ecritCarousel">
+          <div class="vt-carousel__track">
+          <div class="vt-slide" role="group" aria-label="1 sur 5">
+            <p class="vt-slide__q">Quels étaient vos enjeux avant le parcours CléA Management ?</p>
+            <p class="vt-slide__a">« Mon principal objectif était d'apprendre à manager une équipe. Je venais d'évoluer vers un poste d'encadrement et je voulais construire de bonnes bases dès le départ, et gagner en confiance dans ma posture de manager. »</p>
+          </div>
+          <div class="vt-slide" role="group" aria-label="2 sur 5">
+            <p class="vt-slide__q">Comment avez-vous vécu la formation ?</p>
+            <p class="vt-slide__a">« Très enrichissante. Un bon équilibre entre les apports théoriques et les exercices pratiques, un rythme agréable. J'ai appris de nombreuses choses que j'ai réutilisées directement dans mon quotidien. »</p>
+          </div>
+          <div class="vt-slide" role="group" aria-label="3 sur 5">
+            <p class="vt-slide__q">Qu'est-ce qui vous a particulièrement marquée ?</p>
+            <p class="vt-slide__a">« L'approche de Catherine Lenoir. Elle a su nous mettre à l'aise et créer un climat de confiance. Son dynamisme et sa pédagogie ont fait la qualité de cette expérience. »</p>
+          </div>
+          <div class="vt-slide" role="group" aria-label="4 sur 5">
+            <p class="vt-slide__q">Quels bénéfices depuis ?</p>
+            <p class="vt-slide__a">« Ma manière de communiquer a changé : communication positive, questions ouvertes plutôt que fermées. Les échanges sont plus riches et mon équipe plus impliquée. »</p>
+          </div>
+          <div class="vt-slide" role="group" aria-label="5 sur 5">
+            <p class="vt-slide__q">Un dernier mot sur CARTESA ?</p>
+            <p class="vt-slide__a">« Même après la fin du parcours, Catherine reste disponible. C'est un véritable accompagnement dans la durée — appréciable quand on débute dans des fonctions managériales. »</p>
+          </div>
+          </div>
+          <div class="vt-carousel__nav">
+            <button class="vt-carousel__btn" type="button" data-dir="-1" aria-label="Question précédente">&larr;</button>
+            <div class="vt-carousel__dots" role="tablist"></div>
+            <button class="vt-carousel__btn" type="button" data-dir="1" aria-label="Question suivante">&rarr;</button>
+          </div>
+        </div>
+      </div>
+      <!-- TODO client : témoignage FROMAGES BACH à intégrer dès réception des capsules -->
+
+
+      <p class="vt-note">Témoignages filmés et partagés avec l'accord de leurs auteurs (Groupe Syrah, JEANTET Groupe, Groupe Isactys, ManiKheir).</p>
+    </div>
+
+    <!-- Lightbox vidéo -->
+    <div class="vt-modal" id="vtModal" role="dialog" aria-modal="true" aria-label="Lecture du témoignage vidéo">
+      <div class="vt-modal__inner">
+        <div class="vt-modal__frame">
+          <button class="vt-modal__close" id="vtClose" type="button" aria-label="Fermer la vidéo">&times;</button>
+          <video id="vtVideo" controls playsinline preload="none"></video>
+        </div>
+        <div class="vt-modal__cap">
+          <strong id="vtCapTitle"></strong>
+          <span id="vtCapSub"></span>
+          <div class="vt-playlist" id="vtPlaylist" role="list" aria-label="Chapitres de la série"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO MARQUEE -->
+  <section class="marquee-section">
+    <div class="marquee-label">Grands enjeux traités</div>
+    <div class="marquee">
+      <div class="marquee-track">
+        <span class="marquee-item">Management & leadership</span>
+        <span class="marquee-item">Droit social</span>
+        <span class="marquee-item">Recrutement & fidélisation</span>
+        <span class="marquee-item">RSE & décarbonation</span>
+        <span class="marquee-item">Transmission des compétences</span>
+        <span class="marquee-item">Conduite du changement</span>
+        <span class="marquee-item">Qualité de vie au travail</span>
+        <span class="marquee-item">Transparence salariale</span>
+        <span class="marquee-item">Formation & montée en compétences</span>
+        <span class="marquee-item">Marque employeur</span>
+        <!-- duplicate for infinite loop -->
+        <span class="marquee-item">Management & leadership</span>
+        <span class="marquee-item">Droit social</span>
+        <span class="marquee-item">Recrutement & fidélisation</span>
+        <span class="marquee-item">RSE & décarbonation</span>
+        <span class="marquee-item">Transmission des compétences</span>
+        <span class="marquee-item">Conduite du changement</span>
+        <span class="marquee-item">Qualité de vie au travail</span>
+        <span class="marquee-item">Transparence salariale</span>
+        <span class="marquee-item">Formation & montée en compétences</span>
+        <span class="marquee-item">Marque employeur</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL CAROUSEL — Horizontal scroll-snap -->
+
+  <!-- APPROACH -->
+  <section class="approach-section">
+    <div class="container">
+      <div class="carousel-header reveal" style="margin-bottom: 16px;">
+        <h2>Pourquoi nos clients reviennent</h2>
+        <p>Trois marqueurs récurrents dans les retours d'expérience.</p>
+      </div>
+      <div class="approach-grid">
+        <div class="approach-card reveal">
+          <div class="num">01 — RAPIDITÉ</div>
+          <h3>Mise en route en moins de 15 jours</h3>
+          <p>Premier livrable opérationnel dès le premier mois. Diagnostic express en 3 jours, RH à temps partagé en 48 h, démarrage formation sous 30 jours.</p>
+        </div>
+        <div class="approach-card reveal">
+          <div class="num">02 — FINANCEMENT</div>
+          <h3>Financement maîtrisé</h3>
+          <p>Maîtrise des dispositifs (OPCO, Région, FNE). Nous vous orientons vers le bon financement et vous accompagnons dans le montage du dossier. Le reste à charge éventuel est connu d'avance.</p>
+        </div>
+        <div class="approach-card reveal">
+          <div class="num">03 — TERRAIN</div>
+          <h3>Experts qui ont occupé le poste</h3>
+          <p>Nos consultants ont été DRH, dirigeants ou responsables RSE en entreprise. Pas de cabinet hors-sol : du conseil par des praticiens, pour des praticiens.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS-LINKS -->
+  <section class="section section--alt" style="padding:48px 0;">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px;">
+        <a href="accompagnements.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">À vos côtés</h3>
+            <p>Les approches choisies par les dirigeants témoignant sur cette page.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+        <a href="formations.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Formations certifiées</h3>
+            <p>Management, droit social, recrutement — le catalogue 2026.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+        <a href="expertises.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Diagnostic & expertise RH</h3>
+            <p>Commencer par un état des lieux de vos pratiques RH.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Et si on parlait de votre entreprise ?</h2>
+      <p>30 minutes pour comprendre vos enjeux RH, RSE ou formation. Sans engagement, sans pitch commercial, juste un échange utile.</p>
+      <div class="btn-row">
+        <a href="contact.html" class="btn btn--accent btn--lg">Prendre rendez-vous</a>
+        <a href="contact.html" class="btn btn--ghost btn--lg" style="border-color: rgba(255,255,255,0.3); color: #fff;">Proposer mon témoignage</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo-chip"><img src="assets/img/logo-cartesa.png" alt="CARTESA" width="250" height="86" loading="lazy" decoding="async"></span>
+          <p class="footer-tag">Compétences, Entreprises &amp; Territoires</p>
+          <div class="footer-qualiopi">
+            <img src="assets/img/qualiopi.jpg" alt="Certifié Qualiopi" width="120" height="60" loading="lazy" decoding="async">
+            <span>Certifié Qualiopi au titre des actions de formation</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Vos attentes</h4>
+          <ul>
+            <li><a href="vos-attentes.html#fideliser">Structurer &amp; fidéliser</a></li>
+            <li><a href="vos-attentes.html#dirigeants">Développer vos managers</a></li>
+            <li><a href="vos-attentes.html#former">Former vos équipes</a></li>
+            <li><a href="vos-attentes.html#decarboner">Décarboner</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Nos expertises</h4>
+          <ul>
+            <li><a href="expertises.html">Diagnostic &amp; accompagnements</a></li>
+            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CARTESA</h4>
+          <ul>
+            <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
+            <li><a href="ressources.html">Ressources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+            <li><a href="politique-cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
+            <span>Près de Lyon<br>entre Lyon, Grenoble et Chambéry<br><small>Déplacements France &amp; Europe</small></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="contact.html">Nous contacter</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
+            <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
+        <div class="footer-bottom__social">
+          <a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener" aria-label="LinkedIn CARTESA">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll shadow
+    window.addEventListener('scroll', function() {
+      document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    // Mobile nav
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      // === Header hide on scroll-down, show on scroll-up ===
+      (function() {
+        var lastY = window.scrollY || 0, ticking = false, hidden = false;
+        var hdr = document.querySelector('.site-header');
+        if (!hdr) return;
+        window.addEventListener('scroll', function() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function() {
+            var y = window.scrollY;
+            if (y > 140 && y > lastY + 4 && !hidden) {
+              hdr.classList.add('hidden'); hidden = true;
+            } else if ((y < lastY - 4 || y <= 140) && hidden) {
+              hdr.classList.remove('hidden'); hidden = false;
+            }
+            lastY = y;
+            ticking = false;
+          });
+        }, { passive: true });
+      })();
+
+      var links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          var open = links.classList.toggle('is-open');
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+
+      // Mobile-only dropdown toggle ("Vos attentes", "On vous aide")
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function(dd) {
+        var trigger = dd.querySelector(':scope > a');
+        if (!trigger) return;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', function(e) {
+          var isMobileNav = window.matchMedia('(max-width: 880px)').matches;
+          if (!isMobileNav) return;
+          e.preventDefault();
+          var open = dd.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+    })();
+
+    // Reveal observer
+    var revealObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el) { revealObs.observe(el); });
+
+    // Counter animation
+    function animateCounters(container) {
+      container.querySelectorAll('[data-count]').forEach(function(el) {
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+        var duration = 2000;
+        var startTime = null;
+        function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
+        function step(ts) {
+          if (!startTime) startTime = ts;
+          var p = Math.min((ts - startTime) / duration, 1);
+          el.textContent = Math.round(easeOutExpo(p) * target) + suffix;
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }
+    var statsRow = document.querySelector('.stats-row');
+    if (statsRow) {
+      new IntersectionObserver(function(entries, obs) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { animateCounters(statsRow); obs.disconnect(); }
+        });
+      }, { threshold: 0.4 }).observe(statsRow);
+    }
+
+    // ============================================================
+    // CAROUSEL — scroll-snap with controls + progress
+    // ============================================================
+    (function() {
+      var viewport = document.getElementById('carouselViewport');
+      var prev = document.getElementById('carouselPrev');
+      var next = document.getElementById('carouselNext');
+      var fill = document.getElementById('carouselFill');
+      var count = document.getElementById('carouselCount');
+      if (!viewport) return;
+
+      var cards = viewport.querySelectorAll('.carousel-card');
+      var total = cards.length;
+
+      function getCardWidth() {
+        if (cards.length < 2) return cards[0].offsetWidth;
+        return cards[1].getBoundingClientRect().left - cards[0].getBoundingClientRect().left;
+      }
+
+      function updateProgress() {
+        var max = viewport.scrollWidth - viewport.clientWidth;
+        var pct = max > 0 ? viewport.scrollLeft / max : 0;
+        var trackWidth = 100 / total;
+        var idx = Math.round(pct * (total - 1));
+        fill.style.width = trackWidth + '%';
+        fill.style.left = (idx * trackWidth) + '%';
+        count.textContent = String(idx + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+      }
+
+      prev.addEventListener('click', function() {
+        viewport.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
+      });
+      next.addEventListener('click', function() {
+        viewport.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+      });
+
+      var rafId;
+      viewport.addEventListener('scroll', function() {
+        cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(updateProgress);
+      }, { passive: true });
+
+      // Keyboard
+      viewport.setAttribute('tabindex', '0');
+      viewport.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); prev.click(); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); next.click(); }
+      });
+
+      updateProgress();
+      window.addEventListener('resize', updateProgress);
+    })();
+
+    // ============================================================
+    // PINNED HORIZONTAL SCROLL — Reportages
+    // ============================================================
+    (function() {
+      var section = document.getElementById('hScrollSection');
+      var track = document.getElementById('hScrollTrack');
+      var progress = document.getElementById('hScrollProgress');
+      if (!section || !track) return;
+      if (window.matchMedia('(max-width: 900px)').matches) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      var inner = track.querySelector('.h-scroll-inner');
+      var spacer = section.querySelector('.h-scroll-spacer');
+      var items = inner.querySelectorAll('.reportage');
+      var total = items.length;
+
+      function update() {
+        var rect = spacer.getBoundingClientRect();
+        var sectionTop = rect.top;
+        var sectionHeight = rect.height;
+        var viewportHeight = window.innerHeight;
+        var scrollDistance = sectionHeight - viewportHeight;
+        if (scrollDistance <= 0) return;
+        var raw = Math.max(0, Math.min(1, -sectionTop / scrollDistance));
+        // Eased
+        var translatable = inner.scrollWidth - track.clientWidth;
+        if (translatable < 0) translatable = 0;
+        track.style.transform = 'translate3d(' + (-raw * translatable) + 'px, 0, 0)';
+        var idx = Math.min(total - 1, Math.floor(raw * total + 0.001));
+        progress.textContent = String(idx + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+      }
+
+      var ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(function() { update(); ticking = false; });
+          ticking = true;
+        }
+      }, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+
+    /* ----- Témoignage vidéo : lecteur playlist (capsules enchaînées) ----- */
+    (function() {
+      var section = document.querySelector('.vtestim');
+      var modal = document.getElementById('vtModal');
+      if (!section || !modal) return;
+      var video = document.getElementById('vtVideo');
+      var capTitle = document.getElementById('vtCapTitle');
+      var capSub = document.getElementById('vtCapSub');
+      var playlistEl = document.getElementById('vtPlaylist');
+      var closeBtn = document.getElementById('vtClose');
+      var lastFocus = null;
+      var chapters = [];
+      var current = 0;
+
+      function playChapter(i, autoplay) {
+        if (i < 0 || i >= chapters.length) return;
+        current = i;
+        var c = chapters[i];
+        video.src = c.video;
+        capTitle.textContent = (i + 1) + '/' + chapters.length + ' — ' + c.title;
+        capSub.textContent = c.sub;
+        playlistEl.querySelectorAll('.vt-chip').forEach(function(chip, j) {
+          chip.classList.toggle('is-current', j === i);
+          chip.setAttribute('aria-current', j === i ? 'true' : 'false');
+        });
+        if (autoplay !== false) {
+          var p = video.play();
+          if (p && p.catch) p.catch(function() {});
+        }
+      }
+
+      function openSeries(seriesEl, coverBtn) {
+        chapters = [].map.call(seriesEl.querySelectorAll('.vt-card'), function(card, i) {
+          return {
+            video: card.getAttribute('data-video'),
+            title: card.getAttribute('data-title') || 'Chapitre ' + (i + 1),
+            sub: card.getAttribute('data-sub') || ''
+          };
+        });
+        if (!chapters.length) return;
+        lastFocus = coverBtn;
+        playlistEl.innerHTML = chapters.map(function(c, i) {
+          return '<button class="vt-chip" type="button" role="listitem"><span>' + (i + 1) + '</span>' + c.title + '</button>';
+        }).join('');
+        playlistEl.querySelectorAll('.vt-chip').forEach(function(chip, i) {
+          chip.addEventListener('click', function() { playChapter(i); });
+        });
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+        playChapter(0);
+      }
+
+      function closeModal() {
+        modal.classList.remove('open');
+        video.pause();
+        video.removeAttribute('src');
+        video.load();
+        document.body.style.overflow = '';
+        if (lastFocus) lastFocus.focus();
+      }
+
+      video.addEventListener('ended', function() {
+        if (current + 1 < chapters.length) playChapter(current + 1);
+      });
+      section.addEventListener('click', function(e) {
+        var cover = e.target.closest('.vt-cover');
+        if (cover) openSeries(cover.closest('.vt-series'), cover);
+      });
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+      });
+    })();
+
+    /* ----- Témoignage écrit : carousel ----- */
+    (function() {
+      var car = document.getElementById('ecritCarousel');
+      if (!car) return;
+      var track = car.querySelector('.vt-carousel__track');
+      var slides = track.querySelectorAll('.vt-slide');
+      var dots = car.querySelector('.vt-carousel__dots');
+      var i = 0;
+      slides.forEach(function(_, j) {
+        var d = document.createElement('button');
+        d.type = 'button';
+        d.className = 'vt-dot';
+        d.setAttribute('aria-label', 'Question ' + (j + 1));
+        d.addEventListener('click', function() { go(j); });
+        dots.appendChild(d);
+      });
+      function go(j) {
+        i = (j + slides.length) % slides.length;
+        track.style.transform = 'translateX(-' + (i * 100) + '%)';
+        dots.querySelectorAll('.vt-dot').forEach(function(d, k) { d.classList.toggle('is-on', k === i); });
+      }
+      car.querySelectorAll('.vt-carousel__btn').forEach(function(b) {
+        b.addEventListener('click', function() { go(i + parseInt(b.dataset.dir, 10)); });
+      });
+      go(0);
+    })();
+  </script>
+
+  <script src="assets/motion.js" defer></script>
+  <script src="assets/cookie-banner.js" defer></script>
+</body>
+</html>

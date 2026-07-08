@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formations RH Qualiopi — Co-finançables | CARTESA Isère</title>
+  <meta name="description" content="Formations RH Qualiopi : management, droit social, recrutement, RSE. Co-finançables (OPCO ou Région Auvergne-Rhône-Alpes), inter et intra-entreprise. Isère et Auvergne-Rhône-Alpes.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cartesa-lyon.com/formations.html">
+  <meta property="og:title" content="Formations RH Qualiopi — co-finançables | CARTESA Isère">
+  <meta property="og:description" content="Formations RH Qualiopi : management, droit social, recrutement, RSE. Co-finançables (OPCO ou Région Auvergne-Rhône-Alpes), inter et intra-entreprise. Isère et Auvergne-Rhône-Alpes.">
+  <meta property="og:url" content="https://cartesa-lyon.com/formations.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
+  <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
+  <meta property="og:image:alt" content="Formations RH Qualiopi par CARTESA — financement OPCO">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle X officiel CARTESA (placeholder @CartesaRH) -->
+  <meta name="twitter:site" content="@CartesaRH">
+  <meta name="geo.region" content="FR-38">
+  <meta name="geo.placename" content="La Tour-du-Pin">
+  <meta name="geo.position" content="45.5628;5.4437">
+  <meta name="ICBM" content="45.5628, 5.4437">
+  <!-- Self-hosted fonts (RGPD-friendly) -->
+  <link rel="icon" type="image/png" href="assets/img/favicon-cartesa.png">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Lien CTA inline (allègement éditorial) */
+    .cta-inline { font-family: 'Sora', sans-serif; font-weight: 600; color: var(--teal-700, #006aa3); text-decoration: none; }
+    .cta-inline:hover { text-decoration: underline; }
+    /* Bloc "Continuer la visite" — fin de page, design flat */
+    .continue-band { background: var(--teal-50, #f0f8fb); padding: 44px 0; }
+    .continue-band h2 { font-size: 1.15rem; margin: 0 0 16px; }
+    .continue-band__links { display: flex; flex-wrap: wrap; gap: 10px 36px; }
+    .continue-band__links a { font-family: 'Sora', sans-serif; font-weight: 600; color: var(--teal-700, #006aa3); text-decoration: none; }
+    .continue-band__links a:hover { text-decoration: underline; }
+  
+    /* ===== Carte interactive de la région ===== */
+    .region-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: center; }
+    @media (max-width: 860px) { .region-grid { grid-template-columns: 1fr; gap: 24px; } }
+    .region-svg { width: 100%; height: auto; display: block; }
+    .region-svg .dept { cursor: pointer; transition: opacity 0.2s ease, filter 0.2s ease; stroke: #fff; stroke-width: 3; }
+    .region-svg .dept-label { font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 700; fill: var(--teal-900); pointer-events: none; }
+    .region-svg .dept.is-active { filter: brightness(0.72) saturate(1.2); }
+    .region-svg .dept.is-active + .dept-label { fill: #fff; }
+    .region-svg .dept-label--light { fill: #fff; }
+    .region-svg .city-label--light { fill: #fff; }
+    .region-svg .dept:hover:not(.is-active) { opacity: 0.82; }
+    .region-svg .city-dot { fill: var(--teal-900); pointer-events: none; }
+    .region-svg .city-dot--hq { fill: var(--gold-500); stroke: var(--teal-900); stroke-width: 2; }
+    .region-svg .city-label { font-family: 'DM Sans', sans-serif; font-size: 11.5px; font-weight: 600; fill: var(--teal-900); pointer-events: none; }
+    .region-panel h3 { font-family: 'Sora', sans-serif; font-size: 1.35rem; color: var(--teal-900); margin-bottom: 6px; }
+    .region-panel .region-dept-tag { display: inline-block; background: var(--gold-500); color: var(--teal-900); font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 12px; border-radius: 6px; margin-bottom: 14px; }
+    .region-panel p { color: var(--neutral-600); margin-bottom: 14px; }
+    .region-panel ul { list-style: none; padding: 0; margin: 0 0 18px; }
+    .region-panel li { padding: 7px 0 7px 22px; position: relative; color: var(--neutral-700); font-size: 0.92rem; border-bottom: 1px solid var(--neutral-100); }
+    .region-panel li::before { content: ""; position: absolute; left: 2px; top: 14px; width: 9px; height: 9px; border-radius: 50%; background: var(--gold-500); }
+    .region-note { font-size: 0.85rem; color: var(--neutral-500); font-style: italic; }
+  
+    /* ===== CARTE TOURNÉE INTERACTIVE (portée depuis cartesa-gtm-2026@cb87dcd, recolorée) ===== */
+/* ===== CARTE TOURNÉE INTERACTIVE ===== */
+.map-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.map-container {
+  position: relative;
+  background: #f5f9fb;
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  border: 1px solid var(--neutral-200);
+  overflow: hidden;
+}
+
+.map-svg-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.map-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.dept {
+  stroke: #fff;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  cursor: pointer;
+  transition: fill 0.3s ease, opacity 0.3s ease;
+}
+.dept:hover { filter: brightness(0.92); }
+.dept.dimmed { opacity: 0.35; }
+.dept.highlight { filter: brightness(0.85); stroke-width: 2.5; stroke: var(--teal-600); }
+
+.dept-label {
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  fill: rgba(9,41,51,0.45);
+  text-anchor: middle;
+  pointer-events: none;
+  letter-spacing: 0.04em;
+}
+
+.city-marker { cursor: pointer; }
+.city-marker .marker-ring {
+  fill: none;
+  stroke: var(--teal-600);
+  stroke-width: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.city-marker:hover .marker-ring,
+.city-marker.active .marker-ring { opacity: 1; }
+
+.city-marker .marker-dot {
+  fill: var(--teal-600);
+  stroke: #fff;
+  stroke-width: 2.5;
+  transition: r 0.25s cubic-bezier(0.34,1.56,0.64,1), fill 0.2s ease;
+}
+.city-marker:hover .marker-dot { r: 9; }
+.city-marker.active .marker-dot { fill: var(--gold-500); r: 10; }
+
+.city-marker .marker-pulse {
+  fill: var(--teal-500);
+  opacity: 0;
+  animation: markerPulse 3s ease-out infinite;
+}
+.city-marker.active .marker-pulse { animation: none; opacity: 0; }
+
+.city-marker .marker-label {
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  fill: var(--neutral-900);
+  text-anchor: middle;
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: #fff;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.city-marker .marker-count {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  fill: #fff;
+  text-anchor: middle;
+  pointer-events: none;
+}
+.city-marker .marker-count-bg {
+  fill: var(--teal-700);
+  transition: opacity 0.3s ease;
+}
+.city-marker.dimmed { opacity: 0.25; pointer-events: none; }
+
+@keyframes markerPulse {
+  0% { r: 7; opacity: 0.45; }
+  100% { r: 24; opacity: 0; }
+}
+
+/* Zoom controls */
+.map-zoom-back {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 10;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--neutral-200);
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--teal-700);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.map-zoom-back:hover { background: var(--teal-50); border-color: var(--teal-300); }
+.map-zoom-back.visible { display: flex; }
+
+/* City panel */
+.city-panel {
+  background: var(--white);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg);
+  max-height: 650px;
+  overflow-y: auto;
+  position: sticky;
+  top: 90px;
+  transition: box-shadow 0.3s ease;
+}
+.city-panel.has-city { box-shadow: var(--shadow-md); }
+
+.city-panel-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  color: var(--neutral-500);
+  padding: 28px;
+}
+.city-panel-empty svg { margin-bottom: 16px; opacity: 0.25; }
+.city-panel-empty p { font-size: 0.92rem; line-height: 1.6; }
+
+.city-panel-content { padding: 24px; }
+
+.city-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--neutral-100);
+}
+.city-panel-header h3 { font-size: 1.2rem; margin: 0; }
+.city-panel-header .city-count {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--teal-600);
+  background: var(--teal-100);
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.city-session-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--neutral-100);
+  animation: slideInSession 0.3s ease both;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+.city-session-item:hover {
+  background: var(--teal-50, #eaf6fb);
+  box-shadow: 0 1px 4px rgba(0,124,186,0.08);
+}
+.city-session-item:hover .session-action { opacity: 1; transform: translateX(0); }
+.city-session-item:last-of-type { border-bottom: none; }
+.city-session-item.filtered-out { display: none; }
+
+.session-action {
+  flex-shrink: 0;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--teal-600);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+@keyframes slideInSession {
+  from { opacity: 0; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.session-date-block {
+  flex: 0 0 52px;
+  text-align: center;
+  padding: 8px 4px;
+  background: var(--neutral-50);
+  border-radius: var(--radius-sm);
+  line-height: 1.2;
+}
+.session-date-block .s-day {
+  display: block;
+  font-family: 'Sora', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--neutral-900);
+}
+.session-date-block .s-month {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--neutral-500);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.session-info { flex: 1; min-width: 0; }
+.session-info .session-cat-badge {
+  display: inline-block;
+  font-size: 0.66rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.session-info h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--neutral-900);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.cat-badge--droit { background: #fef3e0; color: #b87d20; }
+.cat-badge--paie { background: #eef4ff; color: #3b6fc2; }
+.cat-badge--social { background: #f3e5f5; color: #7b1fa2; }
+.cat-badge--entretien { background: #e8f5e9; color: #2e7d32; }
+.cat-badge--rh { background: #fbe9e7; color: #e65100; }
+
+/* Map filters */
+.map-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.map-filter {
+  padding: 8px 16px;
+  border-radius: 100px;
+  border: 1.5px solid var(--neutral-300);
+  background: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--neutral-700);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.map-filter:hover { border-color: var(--teal-600); color: var(--teal-600); }
+.map-filter.active {
+  background: var(--teal-600);
+  border-color: var(--teal-600);
+  color: var(--white);
+}
+
+/* Month filter row */
+.map-filters--months {
+  margin-bottom: 12px;
+}
+.month-filter {
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1.5px solid var(--neutral-200);
+  background: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--neutral-600);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.month-filter:hover { border-color: var(--gold-500); color: var(--gold-700, #b8a200); }
+.month-filter.active {
+  background: var(--gold-500, #ecd034);
+  border-color: var(--gold-500, #ecd034);
+  color: var(--neutral-900);
+}
+
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 28px;
+  padding: 10px 16px;
+  background: var(--neutral-50);
+  border-radius: 10px;
+}
+.map-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--neutral-700);
+}
+.map-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.map-legend-dot.l-droit { background: #b87d20; }
+.map-legend-dot.l-paie { background: #3b6fc2; }
+.map-legend-dot.l-social { background: #7b1fa2; }
+.map-legend-dot.l-entretien { background: #2e7d32; }
+.map-legend-dot.l-rh { background: #e65100; }
+
+/* City list mobile fallback */
+.city-list-mobile {
+  display: none;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.city-list-btn {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--neutral-200);
+  background: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--neutral-700);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.city-list-btn:hover { border-color: var(--teal-600); color: var(--teal-600); }
+.city-list-btn.active {
+  background: var(--teal-600);
+  border-color: var(--teal-600);
+  color: var(--white);
+}
+
+.session-city-name {
+  font-size: 0.72rem;
+  color: var(--neutral-500);
+  font-weight: 500;
+}
+
+.preview-hint {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--neutral-400);
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--neutral-100);
+}
+
+.panel-cta {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--neutral-100);
+}
+
+@media (max-width: 960px) {
+  .map-layout { grid-template-columns: 1fr; }
+  .city-panel { position: static; max-height: none; }
+  .map-container { order: 1; }
+  .city-list-mobile { display: flex; order: 2; }
+  .city-panel { order: 3; }
+}
+
+@media (max-width: 480px) {
+  .map-filters { gap: 6px; }
+  .map-filter { padding: 6px 12px; font-size: 0.75rem; }
+  .month-filter { padding: 5px 10px; font-size: 0.7rem; }
+  .city-panel-content { padding: 16px; }
+  .city-session-item { gap: 10px; padding: 10px 6px; }
+  .session-date-block { flex: 0 0 44px; }
+  .session-action { opacity: 1; transform: none; font-size: 0.68rem; }
+  .dept-label { font-size: 9px; }
+}
+
+
+  
+    .sur-mesure-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 760px; margin: 0 auto 34px; }
+    .sur-mesure-chips .partner-badge { font-size: 0.85rem; padding: 9px 16px; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "CARTESA",
+        "description": "Cabinet de conseil et organisme de formation RH certifié Qualiopi",
+        "url": "https://cartesa-lyon.com/formations.html",
+        "logo": "https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png",
+        "parentOrganization": { "@id": "https://cartesa-lyon.com/#organization" },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Isère, Auvergne-Rhône-Alpes" },
+        "hasCredential": { "@type": "EducationalOccupationalCredential", "credentialCategory": "Qualiopi" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Formations", "item": "https://cartesa-lyon.com/formations.html" }
+        ]
+      },
+      {
+        "@type": "Course",
+        "name": "Management d'équipe",
+        "description": "Développer sa posture managériale, animer son équipe, conduire les entretiens. Méthodologie CléA Management intégrée.",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" },
+        "courseMode": "blended",
+        "offers": { "@type": "Offer", "category": "OPCO", "availability": "https://schema.org/InStock" }
+      },
+      {
+        "@type": "Course",
+        "name": "Droit social pour managers",
+        "description": "Fondamentaux du droit du travail pour managers : contrat, temps de travail, pouvoir disciplinaire, dialogue social. Actualités 2026.",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" },
+        "courseMode": "blended",
+        "offers": { "@type": "Offer", "category": "OPCO", "availability": "https://schema.org/InStock" }
+      },
+      {
+        "@type": "Course",
+        "name": "Entretien professionnel",
+        "description": "Mener des entretiens professionnels structurants et conformes à l'obligation légale. Grilles d'entretien fournies.",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" },
+        "courseMode": "blended",
+        "offers": { "@type": "Offer", "category": "OPCO", "availability": "https://schema.org/InStock" }
+      },
+      {
+        "@type": "Course",
+        "name": "Recrutement & intégration",
+        "description": "Recruter efficacement dans un marché tendu : offres attractives, entretiens structurés, onboarding sécurisé.",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" },
+        "courseMode": "blended",
+        "offers": { "@type": "Offer", "category": "OPCO", "availability": "https://schema.org/InStock" }
+      },
+      {
+        "@type": "Course",
+        "name": "Les fondamentaux RH pour non-RH",
+        "description": "L'essentiel du droit social, gestion administrative, entretiens obligatoires et développement des compétences pour dirigeants et managers.",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" },
+        "courseMode": "blended",
+        "offers": { "@type": "Offer", "category": "OPCO", "availability": "https://schema.org/InStock" }
+      },
+      {
+        "@type": "Course",
+        "name": "RSE & Qualité de vie au travail",
+        "description": "Initier et structurer une démarche RSE accessible aux PME : prévention RPS, diagnostic QVCT, plan d'action concret.",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" },
+        "courseMode": "blended",
+        "offers": { "@type": "Offer", "category": "OPCO", "availability": "https://schema.org/InStock" }
+      },
+      {
+        "@type": "Course",
+        "name": "Management à distance",
+        "description": "Animer et fédérer une équipe en télétravail ou en mode hybride : outils, postures et rituels pour maintenir lien et performance.",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" },
+        "courseMode": "blended",
+        "offers": { "@type": "Offer", "category": "OPCO", "availability": "https://schema.org/InStock" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/img/logo-cartesa.png" alt="CARTESA — Compétences, Entreprises &amp; Territoires" width="250" height="86"></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="nav-dropdown"><a href="vos-attentes.html" aria-haspopup="true" aria-expanded="false">Vos attentes</a>
+          <ul class="nav-sub">
+            <li><a href="vos-attentes.html#fideliser">Structurer &amp; fid&eacute;liser vos &eacute;quipes</a></li>
+            <li><a href="vos-attentes.html#dirigeants">D&eacute;velopper vos dirigeants &amp; managers</a></li>
+            <li><a href="vos-attentes.html#former">Former vos &eacute;quipes</a></li>
+            <li><a href="vos-attentes.html#decarboner">D&eacute;carboner votre activit&eacute;</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown"><a href="expertises.html" aria-haspopup="true" aria-expanded="false">Nos expertises</a>
+          <ul class="nav-sub">
+            <li><a href="expertises.html">Diagnostic &amp; accompagnements RH</a></li>
+            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="ingenierie.html">Ing&eacute;nierie p&eacute;dagogique</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; D&eacute;carbonation</a></li>
+          </ul>
+        </li>
+        <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+  <!-- Styles locaux à la page formations -->
+  <style>
+    /* Bandeau CléA Management — seule formation certifiante (version condensée) */
+    .cardlike-clea {
+      margin-top: 40px;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 28px 32px;
+      border-radius: 16px;
+      background: var(--teal-700, #006aa3);
+      color: #fff;
+    }
+    .cardlike-clea__body { flex: 1; min-width: 280px; }
+    .cardlike-clea__body h3 { color: #fff; margin: 12px 0 8px; }
+    .cardlike-clea__body p { color: rgba(255,255,255,0.92); margin-bottom: 0; }
+    .cardlike-clea__badge {
+      background: var(--gold-500, #ecd034);
+      color: #1a1a1a;
+      font-weight: 700;
+      display: inline-block;
+    }
+    /* Bandeau Qualiopi + contact (condensé) */
+    .qualiopi-band {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .qualiopi-band__text { flex: 1; min-width: 280px; }
+    .qualiopi-band .section-label { margin-bottom: 12px; }
+  </style>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero page-hero--enhanced">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current">Formations</span>
+      </nav>
+      <span class="section-label" style="color:rgba(255,255,255,0.9);">Formations RH</span>
+      <h1>On vient chez vous, on forme vos équipes, <span style="color: var(--gold-500);">vous voyez la transformation.</span></h1>
+      <p>Management, droit social, recrutement, RSE — des formations ancrées dans vos situations réelles, certifiées Qualiopi et co-finançables (OPCO ou Région Auvergne-Rhône-Alpes). CARTESA se déplace partout en France.</p>
+      <div class="page-hero-stats">
+        <div class="page-hero-stat"><strong>Qualiopi</strong><span>certifié</span></div>
+        <div class="page-hero-stat"><strong>7</strong><span>thématiques</span></div>
+        <div class="page-hero-stat"><strong>Co-finançable</strong><span>OPCO / Région</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOUS-NAV PÔLE EXPERTISES -->
+  <nav class="pole-nav" aria-label="Pages du pôle expertises">
+    <div class="container">
+      <a href="expertises.html">Diagnostic &amp; accompagnements</a>
+      <a href="coachings.html">Coachings</a>
+      <a href="formations.html" aria-current="page">Formations</a>
+      <a href="ingenierie.html">Ingénierie pédagogique</a>
+      <a href="rse-decarbonation.html">RSE &amp; Décarbonation</a>
+    </div>
+  </nav>
+
+  <!-- CATALOGUE FORMATIONS (cartes visuelles, directement visible) -->
+  <section class="section section--white" id="sessions-map">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">En tournée 2026</span>
+        <h2 class="section-title">Nos formations dans vos villes</h2>
+        <p class="section-subtitle">Cliquez sur une ville pour découvrir les prochaines sessions. CARTESA se déplace partout en France et en Europe. Toutes nos formations sont co-finançables (OPCO ou Région Auvergne-Rhône-Alpes).</p>
+      </div>
+
+      <!-- Filtres par thématique -->
+      <div class="map-filters reveal" id="mapFilters">
+        <button class="map-filter active" data-filter="all">Toutes</button>
+        <button class="map-filter" data-filter="droit">Droit social</button>
+        <button class="map-filter" data-filter="paie">Paie</button>
+        <button class="map-filter" data-filter="social">Actualités sociales</button>
+        <button class="map-filter" data-filter="entretien">Entretiens</button>
+        <button class="map-filter" data-filter="rh">RH pour non-RH</button>
+      </div>
+
+      <!-- Filtres par mois -->
+      <div class="map-filters map-filters--months reveal" id="monthFilters">
+        <button class="month-filter active" data-month="all">Tous les mois</button>
+        <button class="month-filter" data-month="4">Avr</button>
+        <button class="month-filter" data-month="5">Mai</button>
+        <button class="month-filter" data-month="6">Juin</button>
+        <button class="month-filter" data-month="7">Juil</button>
+        <button class="month-filter" data-month="9">Sep</button>
+        <button class="month-filter" data-month="10">Oct</button>
+        <button class="month-filter" data-month="11">Nov</button>
+        <button class="month-filter" data-month="12">Déc</button>
+      </div>
+
+      <!-- Légende -->
+      <div class="map-legend reveal">
+        <div class="map-legend-item"><span class="map-legend-dot l-droit"></span> Droit social</div>
+        <div class="map-legend-item"><span class="map-legend-dot l-paie"></span> Paie</div>
+        <div class="map-legend-item"><span class="map-legend-dot l-social"></span> Actualités sociales</div>
+        <div class="map-legend-item"><span class="map-legend-dot l-entretien"></span> Entretiens</div>
+        <div class="map-legend-item"><span class="map-legend-dot l-rh"></span> RH pour non-RH</div>
+      </div>
+
+      <!-- Liste villes mobile -->
+      <div class="city-list-mobile reveal" id="cityListMobile"></div>
+
+      <!-- Carte + Panel -->
+      <div class="map-layout reveal">
+        <div class="map-container">
+          <div class="map-svg-wrap">
+            <button class="map-zoom-back" id="mapZoomBack" aria-label="Retour vue complète">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10 1L3 7l7 6"/></svg>
+              Vue complète
+            </button>
+            <svg id="mapSvg" viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carte des formations Cartesa en Auvergne-Rhône-Alpes">
+              <!-- Départements AURA (vrais contours GeoJSON) -->
+              <g id="departments">
+                <path class="dept" data-dept="03" data-name="Allier" d="M182.7,30.4L188.5,42.3L199.1,46.6L210.1,57.8L222.6,49.1L235.5,56.9L240.9,50.2L248.1,49.9L253.4,55.5L251.5,62.2L254.1,64.7L271.5,55.9L269.2,48.0L277.7,47.4L274.0,41.3L276.1,38.5L282.0,40.3L284.4,51.4L298.8,70.8L297.0,74.6L301.1,76.7L301.8,91.6L312.5,96.4L318.2,93.5L322.5,103.5L337.7,103.0L337.2,106.2L345.0,109.4L346.1,114.8L341.4,125.1L342.6,141.8L345.9,142.3L336.1,143.8L336.0,148.8L327.9,150.7L328.1,154.9L306.3,163.5L313.1,181.3L309.9,184.5L310.5,193.8L315.2,199.2L312.5,208.2L315.6,223.7L296.4,226.9L293.8,237.3L290.9,230.7L283.4,230.0L276.7,214.9L255.2,218.7L254.4,206.1L247.6,203.1L233.1,210.1L228.1,204.9L199.3,204.1L193.8,200.7L192.5,193.3L179.7,196.1L171.0,189.5L169.3,179.7L162.8,178.4L163.0,169.5L168.1,163.1L164.1,160.8L150.1,160.6L147.0,162.8L145.2,174.1L132.5,167.2L130.8,177.2L122.7,179.5L119.4,190.9L108.7,190.3L104.4,186.5L103.2,178.8L97.7,175.8L95.8,163.3L91.6,161.4L90.1,153.4L80.2,152.6L80.1,146.5L74.3,141.2L70.7,146.3L60.0,138.8L66.2,133.5L57.6,129.1L55.9,118.9L65.6,100.8L90.5,93.2L99.5,96.3L112.7,88.3L110.2,78.2L104.9,74.8L109.6,68.2L105.2,62.9L111.1,60.0L114.2,63.5L114.1,55.6L127.3,48.8L129.4,42.5L136.8,48.9L142.9,44.9L151.6,46.7L151.4,42.9L162.8,31.4L182.7,30.4Z" fill="#7fc8c9"/>
+                <path class="dept" data-dept="63" data-name="Puy-de-Dôme" d="M104.4,186.5L117.0,192.3L122.7,179.5L130.8,177.2L132.5,167.2L145.2,174.1L147.0,162.8L150.1,160.6L164.1,160.8L168.1,163.1L163.0,169.5L162.8,178.4L169.3,179.7L171.0,189.5L179.7,196.1L192.5,193.3L193.8,200.7L199.3,204.1L228.1,204.9L233.1,210.1L247.6,203.1L254.4,206.1L255.2,218.7L276.7,214.9L283.4,230.0L290.9,230.7L302.9,245.0L303.9,248.0L297.4,251.9L299.6,253.6L298.0,266.6L292.9,270.7L308.4,286.7L307.7,294.7L315.5,308.7L329.5,316.9L337.5,327.0L338.2,337.5L342.6,341.5L339.6,347.0L340.8,352.8L328.1,361.9L327.1,375.3L312.4,366.2L307.5,376.6L294.8,374.0L296.1,370.5L289.8,368.2L281.6,379.2L275.8,373.6L273.1,363.8L266.3,364.7L261.2,357.7L247.8,364.9L240.8,364.1L237.1,358.9L232.3,365.0L227.4,359.4L226.0,364.1L217.3,365.8L207.6,375.9L193.5,375.8L180.4,391.3L168.7,386.0L164.3,371.9L157.7,368.1L146.1,363.9L129.4,368.6L123.7,362.6L125.0,355.3L114.3,353.8L113.9,347.9L110.8,352.3L99.5,350.8L100.8,345.4L94.6,344.7L96.2,327.7L86.9,317.3L91.3,306.3L96.8,306.7L97.2,289.7L90.8,280.9L84.1,278.6L74.6,262.0L81.8,260.5L84.9,257.0L83.9,252.6L92.1,253.2L93.7,247.4L102.6,241.6L100.3,239.5L104.0,231.3L111.7,228.7L109.0,222.4L110.6,212.7L105.2,209.4L101.8,200.1L104.4,186.5Z" fill="#58a7c7"/>
+                <path class="dept" data-dept="15" data-name="Cantal" d="M94.8,345.5L100.8,345.4L99.5,350.8L104.1,348.6L108.2,352.4L113.1,347.5L114.3,353.8L125.0,355.3L123.7,362.6L129.4,368.6L146.1,363.9L158.2,368.4L164.3,371.9L168.7,386.0L177.1,390.5L186.1,387.6L188.9,379.5L196.3,375.9L196.4,381.7L192.5,382.4L196.4,386.0L191.3,390.8L204.3,389.3L205.0,395.7L214.8,393.8L216.8,407.3L223.2,410.1L221.1,419.1L225.7,431.2L238.0,435.1L224.7,435.3L230.2,439.7L227.7,452.5L239.4,458.8L235.3,463.4L236.8,470.8L225.1,477.7L219.0,474.5L219.2,480.1L215.3,481.6L217.0,486.8L209.0,493.2L201.0,483.2L194.8,487.2L194.0,500.0L189.5,498.9L185.4,506.9L185.5,516.8L181.7,524.9L183.9,528.2L180.1,528.4L174.2,545.1L166.9,536.5L166.2,519.9L162.4,517.0L166.9,513.9L163.9,509.2L158.5,510.5L153.0,495.8L153.8,490.1L144.4,490.1L139.3,494.8L139.7,481.8L133.4,474.1L110.6,497.6L110.2,509.6L101.9,518.4L100.9,525.8L103.5,526.8L93.4,534.2L90.6,543.7L69.0,546.1L64.3,539.1L45.7,543.6L44.3,552.0L38.7,547.5L36.6,540.6L39.5,537.9L35.5,531.8L31.3,532.1L35.6,521.7L34.4,515.9L37.9,513.3L37.6,505.3L23.6,487.4L27.4,481.5L20.0,465.6L32.3,462.4L33.1,458.5L25.4,446.6L33.0,439.3L38.7,440.3L41.4,432.2L39.5,427.4L48.4,420.8L43.2,417.0L41.2,406.9L62.4,383.0L69.8,379.5L71.4,367.5L68.3,361.2L89.4,371.4L97.3,368.4L96.9,363.7L91.3,359.9L94.8,345.5Z" fill="#4fae9d"/>
+                <path class="dept" data-dept="43" data-name="Haute-Loire" d="M328.0,374.6L329.8,380.2L334.6,370.9L341.3,370.0L348.5,381.6L348.8,376.1L357.1,379.6L358.7,374.4L371.0,372.7L369.6,368.0L375.1,366.1L384.6,367.0L390.7,370.4L390.8,374.2L401.2,371.8L406.6,379.0L400.9,383.8L407.5,387.9L403.8,394.4L410.2,399.0L418.1,394.2L427.5,406.5L420.2,421.5L421.8,431.5L418.4,434.0L416.2,427.2L408.0,425.6L407.2,429.3L412.3,434.9L405.5,436.3L403.3,443.5L409.3,450.1L395.8,453.8L393.8,460.7L397.5,466.8L383.3,468.2L371.5,490.3L350.9,490.8L349.6,500.4L346.1,498.8L345.2,503.3L342.2,500.1L343.3,505.1L335.9,502.0L330.2,513.0L332.7,515.0L322.1,521.3L316.6,518.7L318.7,514.7L313.2,516.2L305.3,507.7L302.0,498.6L288.6,500.7L290.2,494.3L283.1,488.5L277.0,489.6L276.2,501.6L273.1,499.3L257.6,505.6L247.9,485.1L245.2,470.3L235.7,466.3L239.4,458.8L231.9,457.7L233.9,454.0L227.2,451.4L230.2,439.7L224.7,435.3L238.0,435.1L225.7,431.2L221.1,419.1L223.2,410.1L216.8,407.3L214.8,393.8L205.0,395.7L204.3,389.3L191.3,390.8L196.4,386.0L192.5,382.8L196.4,381.7L194.8,375.1L207.6,375.9L217.3,365.8L226.0,364.1L227.4,359.4L232.3,365.0L237.1,358.9L240.8,364.1L247.8,364.9L261.5,357.8L266.3,364.7L273.1,363.8L281.2,379.2L288.7,373.5L289.8,368.2L296.1,370.5L294.8,374.0L307.5,376.6L312.4,366.2L317.6,368.4L317.9,372.5L328.0,374.6Z" fill="#6cc5c0"/>
+                <path class="dept" data-dept="42" data-name="Loire" d="M328.3,154.7L330.0,161.4L326.7,169.4L340.6,172.2L343.5,180.2L362.6,173.2L367.6,178.2L376.6,178.9L380.1,174.1L382.9,178.1L388.0,175.7L387.1,182.8L392.4,183.4L400.1,176.5L407.4,176.6L406.1,172.8L410.3,168.1L416.0,170.8L411.5,174.7L418.8,180.5L415.2,188.2L409.0,184.8L400.0,188.9L395.6,205.1L387.2,208.7L391.6,215.2L396.5,215.5L395.6,223.3L386.1,221.7L403.3,237.5L399.4,243.7L402.6,250.1L411.7,254.2L408.9,272.4L403.6,275.8L412.8,282.0L406.5,292.8L406.6,299.4L423.9,320.0L448.4,322.3L453.4,330.7L455.9,330.0L454.3,324.8L459.9,324.7L454.4,333.0L454.5,342.3L457.8,346.7L469.3,343.5L472.8,355.4L469.8,360.1L472.1,372.5L448.6,385.4L449.7,390.3L444.3,394.6L446.2,399.9L435.9,403.8L430.7,401.4L430.5,404.7L417.5,394.0L406.4,397.2L403.8,393.4L407.5,387.9L400.9,383.8L406.5,379.2L405.5,376.2L399.7,371.4L390.8,374.2L390.7,370.4L384.2,366.9L369.6,368.0L371.0,372.7L358.7,374.4L357.1,379.6L348.8,376.1L348.5,381.6L342.2,370.4L336.5,369.9L329.2,380.1L326.6,365.6L330.7,359.0L338.9,355.9L342.6,341.5L338.7,338.9L334.3,321.6L315.5,308.7L307.7,294.7L308.4,286.7L292.9,270.7L299.6,261.0L297.6,251.5L303.9,248.0L293.8,237.3L295.2,227.8L309.4,227.2L316.6,220.9L312.5,208.2L315.2,199.2L310.5,193.8L309.9,183.6L313.1,181.3L306.3,163.5L328.3,154.7Z" fill="#8fd0b8"/>
+                <path class="dept" data-dept="07" data-name="Ardèche" d="M426.3,403.4L443.4,401.6L447.0,399.1L445.7,390.7L449.7,390.3L448.3,385.7L453.1,381.2L468.1,372.9L474.9,375.1L472.9,381.6L481.1,390.6L480.3,413.6L484.4,422.5L480.0,430.1L484.5,442.8L489.7,446.8L485.6,458.1L494.0,475.2L483.3,503.8L472.9,514.7L476.0,542.7L469.7,558.3L461.5,565.7L463.9,571.6L460.7,578.4L462.8,589.3L457.2,596.3L454.1,610.2L454.2,634.6L439.0,627.0L437.3,621.4L429.7,617.0L421.4,618.1L419.1,631.5L411.6,629.7L410.9,616.3L399.9,618.4L388.5,636.0L375.1,623.3L369.2,624.4L366.5,618.5L353.0,622.9L351.2,620.3L354.8,612.4L352.0,605.7L356.7,602.4L343.1,586.2L337.0,562.8L329.3,557.5L327.5,543.5L323.3,537.0L325.8,532.4L321.9,528.9L324.6,522.9L322.1,521.3L332.7,515.0L330.2,513.0L335.9,502.0L343.3,505.1L342.2,500.1L345.2,503.3L346.1,498.8L349.6,500.4L350.9,490.8L371.5,490.3L383.3,468.2L397.9,466.4L393.8,460.7L395.8,453.8L409.3,450.1L403.3,443.5L405.5,436.3L412.3,434.9L407.2,429.3L408.0,425.6L416.2,427.2L418.4,434.0L421.8,431.5L419.6,425.2L425.9,413.2L426.3,403.4Z" fill="#5bb99e"/>
+                <path class="dept" data-dept="69" data-name="Rhône" d="M410.3,168.1L411.9,152.9L416.9,148.2L427.2,151.8L429.8,156.8L436.9,155.1L439.2,150.0L449.0,157.3L452.1,148.7L461.6,148.5L464.0,156.2L459.2,158.5L468.7,164.6L466.0,166.1L468.7,170.0L467.3,177.8L476.2,178.4L480.0,183.6L470.5,199.7L473.0,204.2L469.3,209.4L471.8,227.3L467.5,234.0L480.9,239.8L480.3,245.5L487.5,241.5L491.6,243.8L497.8,250.8L500.3,267.6L530.0,265.4L528.0,272.3L523.0,270.5L524.1,276.1L529.1,275.9L528.9,283.0L536.4,285.1L538.9,292.6L530.7,292.4L519.5,305.7L519.2,313.3L496.4,314.9L489.1,322.0L475.6,319.4L491.7,332.9L475.4,351.3L466.4,341.7L457.8,346.7L455.2,343.7L454.4,333.0L459.8,328.2L459.4,324.1L454.3,324.8L455.9,330.0L453.4,330.7L448.4,322.3L423.9,320.0L406.6,299.4L406.5,292.8L412.8,282.0L403.6,275.8L408.9,272.4L411.7,254.2L402.6,250.1L399.4,243.7L403.3,237.5L386.1,221.7L395.6,223.3L397.6,219.3L387.2,208.7L395.6,205.1L399.4,189.4L408.5,184.8L415.2,188.2L418.1,182.6L411.6,175.3L416.0,170.8L410.3,168.1Z" fill="#f2d24b"/>
+                <path class="dept" data-dept="01" data-name="Ain" d="M476.2,178.4L503.2,96.3L504.7,100.8L510.3,97.3L522.5,104.9L541.0,100.3L541.1,96.5L546.9,99.0L549.2,108.6L565.9,114.2L567.5,118.1L563.2,121.9L576.5,129.2L574.0,132.2L580.4,139.4L581.0,146.4L584.2,137.5L586.6,145.1L591.4,143.3L589.7,155.0L592.6,157.4L612.7,150.2L621.0,138.2L621.2,143.0L633.0,146.8L634.8,158.3L659.0,157.3L691.1,120.8L709.5,133.0L698.1,152.5L700.5,162.1L676.7,169.2L674.8,173.5L680.1,176.9L675.2,188.0L663.1,192.1L662.0,200.1L650.6,196.0L648.3,217.3L653.2,232.4L644.7,264.6L644.6,281.9L639.8,290.7L630.7,290.1L632.2,295.7L628.0,300.6L628.4,306.1L618.6,313.8L611.5,300.4L605.8,299.1L604.7,293.1L609.4,293.7L583.9,266.7L586.3,261.8L582.4,256.1L572.5,248.6L563.8,257.1L558.4,270.5L550.6,276.1L534.1,265.9L531.5,269.1L530.5,265.3L499.3,266.9L497.8,250.8L491.6,243.8L487.5,241.5L480.3,245.5L480.9,239.8L467.5,234.0L471.8,227.3L469.3,209.4L473.0,204.2L470.5,199.7L479.9,184.3L476.2,178.4Z" fill="#74c9d4"/>
+                <path class="dept" data-dept="38" data-name="Isère" d="M617.8,313.2L636.7,347.1L637.3,355.5L647.0,355.1L665.8,366.6L668.9,360.3L664.5,361.0L667.7,353.8L666.7,346.0L676.7,342.4L682.8,346.8L682.4,351.4L701.5,355.0L710.7,365.9L712.3,383.5L702.9,391.8L702.3,404.4L708.1,414.9L705.1,423.0L712.8,420.7L725.5,426.6L719.3,434.1L722.0,442.9L717.9,444.4L715.2,457.0L735.2,460.2L735.1,471.3L741.2,474.1L740.6,494.8L735.3,495.4L730.4,490.1L722.4,495.5L703.2,492.5L690.4,504.1L686.0,498.8L674.2,505.0L672.8,507.7L677.6,512.4L672.7,517.6L661.1,520.7L651.9,517.5L649.2,528.8L644.7,531.8L640.0,532.8L631.2,524.8L621.7,526.1L605.3,509.2L606.1,515.7L590.0,507.9L594.4,502.4L590.9,501.7L595.9,460.9L591.1,449.0L596.0,442.9L594.1,440.0L590.4,439.3L582.3,449.3L577.4,446.6L577.8,451.7L570.2,445.2L558.0,446.9L548.0,439.9L539.4,444.2L535.9,440.9L538.9,441.0L545.1,426.6L541.2,409.7L546.9,408.0L539.6,398.9L533.3,400.8L536.0,388.7L525.7,392.6L522.2,383.7L516.9,384.0L512.2,377.7L492.9,389.0L479.6,388.6L472.9,381.6L475.1,375.6L469.8,360.8L471.9,351.5L476.0,351.1L491.7,332.9L475.6,319.4L489.1,322.0L496.4,314.9L519.2,313.3L523.3,300.5L530.7,292.4L539.8,290.5L534.2,283.4L528.9,283.0L529.1,275.9L524.1,276.1L523.0,270.5L528.0,272.3L530.0,265.4L551.1,275.9L558.4,270.5L563.8,257.1L572.5,248.6L582.4,256.1L586.3,261.8L583.9,266.7L609.4,293.7L604.7,293.1L605.8,299.1L611.5,300.4L617.8,313.2Z" fill="#6aaec4"/>
+                <path class="dept" data-dept="26" data-name="Drôme" d="M479.6,388.6L492.9,389.0L512.2,377.7L516.9,384.0L522.2,383.7L525.7,392.6L536.0,388.7L533.3,400.8L539.6,398.9L546.9,408.0L541.2,409.7L544.9,419.5L544.5,431.1L535.7,442.3L540.3,444.3L548.0,439.9L558.0,446.9L570.2,445.2L577.8,451.7L577.4,446.6L582.3,449.3L590.4,439.3L594.1,440.0L596.0,442.9L591.1,449.0L595.9,460.9L590.9,501.7L594.4,502.4L590.6,509.1L606.1,515.7L605.3,509.2L622.5,526.4L631.2,524.8L640.0,532.8L651.9,531.8L645.8,543.0L639.6,540.7L635.3,546.4L620.8,543.5L621.7,553.0L613.3,569.3L624.6,579.2L618.8,579.4L614.3,588.0L590.0,579.8L591.0,592.2L595.9,596.9L583.3,597.7L587.4,605.7L585.6,610.6L595.5,618.5L600.6,615.3L604.9,620.4L618.9,619.7L615.1,626.0L620.2,627.8L621.6,635.4L628.3,635.5L626.0,640.4L628.3,652.8L622.4,654.0L621.0,658.5L627.6,660.2L626.9,664.3L619.0,663.3L620.4,659.2L614.1,653.5L609.5,654.6L607.8,658.5L610.9,661.6L603.9,667.6L589.4,670.8L586.2,662.9L577.4,662.2L577.6,651.2L572.7,648.0L564.0,650.2L555.4,644.0L551.8,648.6L539.1,644.1L537.7,633.4L541.2,624.0L531.2,633.0L523.2,625.6L501.8,636.6L492.7,636.8L484.0,644.7L480.2,626.6L476.1,622.9L454.4,620.4L457.2,596.3L462.8,589.3L460.7,578.4L463.9,571.6L461.5,565.7L469.7,558.3L476.0,542.7L472.9,514.7L483.3,503.8L494.0,475.2L485.6,458.1L489.7,446.8L484.5,442.8L480.0,430.1L484.4,422.5L481.0,419.6L479.6,388.6Z" fill="#86cfc0"/>
+                <path class="dept" data-dept="73" data-name="Savoie" d="M815.6,273.7L816.6,286.5L823.0,294.8L832.4,297.0L837.2,305.5L848.9,306.9L845.1,319.5L848.3,323.9L848.8,339.3L858.0,341.6L856.9,346.7L866.1,347.9L868.0,356.3L879.7,362.5L876.4,373.7L867.5,381.8L871.9,398.8L860.9,409.8L856.7,406.0L843.0,410.3L839.9,419.2L830.6,420.0L830.7,427.3L823.3,429.6L809.8,421.8L805.2,427.3L795.1,426.5L786.7,433.9L777.7,430.6L771.4,436.3L766.6,433.9L761.6,437.5L762.5,446.6L742.2,443.2L741.8,434.9L737.1,430.6L729.0,433.7L722.9,423.9L705.1,423.0L708.1,414.9L702.3,404.4L702.9,391.8L712.3,383.5L713.6,375.7L709.6,374.5L713.1,371.6L702.5,355.6L689.2,355.2L675.2,342.2L666.7,346.0L667.7,353.8L664.5,361.0L668.9,360.3L665.8,366.6L647.0,355.1L637.3,355.5L632.8,338.8L617.6,315.4L622.4,307.8L628.4,306.1L628.0,300.6L632.2,295.7L630.7,290.1L638.7,291.2L643.4,286.2L644.7,264.6L652.6,235.4L657.8,236.9L659.6,260.4L664.9,262.3L666.4,267.6L674.7,265.5L679.9,281.1L690.2,280.3L697.9,284.8L698.3,277.7L708.8,279.2L713.8,284.7L712.9,293.3L719.8,291.8L719.1,296.9L736.1,294.2L743.3,279.5L741.8,276.1L752.3,267.7L756.6,253.9L766.7,242.5L777.1,250.0L776.3,253.6L770.8,253.7L774.8,263.7L781.5,270.4L791.5,268.5L796.8,275.5L796.6,285.8L800.4,287.0L807.8,276.6L815.6,273.7Z" fill="#62b6bd"/>
+                <path class="dept" data-dept="74" data-name="Haute-Savoie" d="M815.6,273.7L807.8,276.6L800.4,287.0L796.6,285.8L796.8,275.5L791.5,268.5L781.5,270.4L774.8,263.7L770.8,253.7L776.3,253.6L777.1,250.0L766.7,242.5L756.6,253.9L752.3,267.7L741.8,276.1L743.3,279.5L736.1,294.2L719.1,296.9L719.9,292.0L716.9,290.3L713.9,294.2L713.8,284.7L704.9,277.8L698.3,277.7L697.9,284.8L690.2,280.3L679.9,281.1L674.7,265.5L666.4,267.6L664.9,262.3L659.6,260.4L657.8,236.9L651.6,235.3L653.1,227.4L649.0,223.1L649.3,201.9L652.3,195.3L662.4,199.9L662.3,193.4L667.5,189.3L687.1,188.0L689.7,184.5L703.8,186.8L718.2,172.7L730.4,166.9L732.9,159.4L725.7,161.5L720.8,154.2L724.2,142.8L732.2,132.9L738.8,132.1L746.2,139.3L767.1,123.8L816.1,126.4L810.5,136.8L826.0,153.8L815.8,171.8L814.6,187.5L832.0,191.0L827.9,209.3L838.4,205.5L850.6,221.3L852.7,225.8L850.3,228.1L855.1,231.6L856.4,239.2L851.9,241.2L847.4,252.3L839.0,257.3L828.5,256.8L826.5,262.8L818.4,259.9L815.6,273.7Z" fill="#58a7c7"/>
+              </g>
+
+              <!-- Noms des départements -->
+              <g id="deptLabels">
+                <text class="dept-label" x="580" y="199">Ain</text>
+                <text class="dept-label" x="206" y="125">Allier</text>
+                <text class="dept-label" x="409" y="520">Ardèche</text>
+                <text class="dept-label" x="120" y="460">Cantal</text>
+                <text class="dept-label" x="555" y="555">Drôme</text>
+                <text class="dept-label" x="620" y="410">Isère</text>
+                <text class="dept-label" x="375" y="285">Loire</text>
+                <text class="dept-label" x="300" y="435">Haute-Loire</text>
+                <text class="dept-label" x="195" y="290">Puy-de-Dôme</text>
+                <text class="dept-label" x="456" y="248">Rhône</text>
+                <text class="dept-label" x="770" y="370">Savoie</text>
+                <text class="dept-label" x="740" y="210">Hte-Savoie</text>
+              </g>
+
+              <!-- Marqueurs villes -->
+              <g id="cityMarkers">
+                <g class="city-marker" data-city="annecy">
+                  <circle class="marker-pulse" cx="703" cy="245" r="7"/>
+                  <circle class="marker-ring" cx="703" cy="245" r="16"/>
+                  <circle class="marker-dot" cx="703" cy="245" r="7"/>
+                  <text class="marker-label" x="703" y="228">Annecy</text>
+                  <rect class="marker-count-bg" x="690" y="254" width="26" height="15" rx="7.5"/>
+                  <text class="marker-count" x="703" y="265">13</text>
+                </g>
+                <g class="city-marker" data-city="chambery">
+                  <circle class="marker-pulse" cx="668" cy="324" r="7"/>
+                  <circle class="marker-ring" cx="668" cy="324" r="16"/>
+                  <circle class="marker-dot" cx="668" cy="324" r="7"/>
+                  <text class="marker-label" x="668" y="307">Chambéry</text>
+                  <rect class="marker-count-bg" x="659" y="333" width="18" height="15" rx="7.5"/>
+                  <text class="marker-count" x="668" y="344">5</text>
+                </g>
+                <g class="city-marker" data-city="grenoble">
+                  <circle class="marker-pulse" cx="634" cy="415" r="7"/>
+                  <circle class="marker-ring" cx="634" cy="415" r="16"/>
+                  <circle class="marker-dot" cx="634" cy="415" r="7"/>
+                  <text class="marker-label" x="634" y="398">Grenoble</text>
+                  <rect class="marker-count-bg" x="625" y="424" width="18" height="15" rx="7.5"/>
+                  <text class="marker-count" x="634" y="435">8</text>
+                </g>
+                <g class="city-marker" data-city="lyon">
+                  <circle class="marker-pulse" cx="485" cy="278" r="7"/>
+                  <circle class="marker-ring" cx="485" cy="278" r="16"/>
+                  <circle class="marker-dot" cx="485" cy="278" r="7"/>
+                  <text class="marker-label" x="485" y="261">Lyon</text>
+                  <rect class="marker-count-bg" x="472" y="287" width="26" height="15" rx="7.5"/>
+                  <text class="marker-count" x="485" y="298">11</text>
+                </g>
+                <g class="city-marker" data-city="saintetienne">
+                  <circle class="marker-pulse" cx="411" cy="355" r="7"/>
+                  <circle class="marker-ring" cx="411" cy="355" r="16"/>
+                  <circle class="marker-dot" cx="411" cy="355" r="7"/>
+                  <text class="marker-label" x="411" y="338">St-Étienne</text>
+                  <rect class="marker-count-bg" x="402" y="364" width="18" height="15" rx="7.5"/>
+                  <text class="marker-count" x="411" y="375">1</text>
+                </g>
+                <g class="city-marker" data-city="valence">
+                  <circle class="marker-pulse" cx="495" cy="477" r="7"/>
+                  <circle class="marker-ring" cx="495" cy="477" r="16"/>
+                  <circle class="marker-dot" cx="495" cy="477" r="7"/>
+                  <text class="marker-label" x="495" y="460">Valence</text>
+                  <rect class="marker-count-bg" x="482" y="486" width="26" height="15" rx="7.5"/>
+                  <text class="marker-count" x="495" y="497">11</text>
+                </g>
+                <g class="city-marker" data-city="lepuy">
+                  <circle class="marker-pulse" cx="325" cy="450" r="7"/>
+                  <circle class="marker-ring" cx="325" cy="450" r="16"/>
+                  <circle class="marker-dot" cx="325" cy="450" r="7"/>
+                  <text class="marker-label" x="325" y="433">Le Puy</text>
+                  <rect class="marker-count-bg" x="316" y="459" width="18" height="15" rx="7.5"/>
+                  <text class="marker-count" x="325" y="470">7</text>
+                </g>
+                <g class="city-marker" data-city="clermont">
+                  <circle class="marker-pulse" cx="191" cy="273" r="7"/>
+                  <circle class="marker-ring" cx="191" cy="273" r="16"/>
+                  <circle class="marker-dot" cx="191" cy="273" r="7"/>
+                  <text class="marker-label" x="191" y="256">Clermont-Fd</text>
+                  <rect class="marker-count-bg" x="182" y="282" width="18" height="15" rx="7.5"/>
+                  <text class="marker-count" x="191" y="293">1</text>
+                </g>
+                <g class="city-marker" data-city="aurillac">
+                  <circle class="marker-pulse" cx="83" cy="477" r="7"/>
+                  <circle class="marker-ring" cx="83" cy="477" r="16"/>
+                  <circle class="marker-dot" cx="83" cy="477" r="7"/>
+                  <text class="marker-label" x="83" y="460">Aurillac</text>
+                  <rect class="marker-count-bg" x="74" y="486" width="18" height="15" rx="7.5"/>
+                  <text class="marker-count" x="83" y="497">7</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="city-panel" id="cityPanel">
+          <div class="city-panel-empty" id="cityPanelEmpty">
+            <div class="city-panel-content" id="previewPanel"></div>
+          </div>
+          <div id="cityPanelContent" style="display:none;"></div>
+        </div>
+      </div>
+
+      <div class="reveal" style="text-align:center; margin-top:48px;">
+        <p style="font-size:0.95rem; color:var(--neutral-500); margin-bottom:16px;">Vous ne trouvez pas la date qui vous convient ? Nous organisons aussi des sessions intra-entreprise sur mesure.</p>
+        <a href="contact.html" class="btn btn--primary btn--lg">Demander une session sur mesure</a>
+      </div>
+
+      <div class="reveal" style="background:#faf9f7;border-radius:16px;padding:40px;margin-top:48px;display:flex;gap:32px;align-items:center;flex-wrap:wrap;">
+        <div style="flex:1;min-width:280px;">
+          <h3 style="margin-bottom:8px;">Vous préférez une formation dans vos locaux ?</h3>
+          <p style="font-size:0.95rem;color:var(--neutral-500);margin-bottom:16px;">Toutes nos formations sont disponibles en intra-entreprise : contenu adapté à votre contexte, dates flexibles. Co-finançable (OPCO ou Région Auvergne-Rhône-Alpes).</p>
+          <a href="contact.html" class="btn btn--primary">Demander un devis intra</a>
+        </div>
+        <div style="flex:0 0 auto;text-align:center;">
+          <div style="font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:800;color:var(--teal-600);">Co-finançable</div>
+          <div style="font-size:0.8rem;color:var(--neutral-500);font-weight:600;">OPCO ou Région</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white" id="catalogue">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Nos formations</span>
+        <h2 class="section-title">Les formations que nous proposons</h2>
+        <p class="section-subtitle">Les cinq formations de notre tournée régionale — celles de la carte ci-dessus. Certifiées Qualiopi, co-finançables. Et au-delà : tout se construit sur mesure.</p>
+      </div>
+
+      <div class="grid-3 reveal-stagger">
+
+        <div class="card formation-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>Droit social pour managers</h3>
+          <p>Les fondamentaux du droit du travail pour managers : contrat, temps de travail, pouvoir disciplinaire, dialogue social. Cas pratiques et actualités législatives 2026 incluses.</p>
+          <div class="card-meta">
+            <span class="badge">1 à 3 jours</span>
+            <span class="badge">Présentiel / Distanciel</span>
+            <span class="badge">Financement OPCO</span>
+          </div>
+          <a href="contact.html" class="btn btn--primary btn--sm">Découvrir cette formation</a>
+        </div>
+        <div class="card formation-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg>
+          </div>
+          <h3>Actualité de la paie</h3>
+          <p>Fiabiliser vos bulletins et intégrer les évolutions légales de l'année : cotisations, absences, cas particuliers. Exercices sur vos propres bulletins.</p>
+          <div class="card-meta">
+            <span class="badge">1 à 2 jours</span>
+            <span class="badge">Présentiel / Distanciel</span>
+            <span class="badge">Financement OPCO</span>
+          </div>
+          <a href="contact.html" class="btn btn--primary btn--sm">Découvrir cette formation</a>
+        </div>
+        <div class="card formation-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Actualités sociales</h3>
+          <p>Le point annuel sur ce qui change en droit social : lois, jurisprudences, obligations. L'essentiel pour décider, sans jargon juridique.</p>
+          <div class="card-meta">
+            <span class="badge">1 jour</span>
+            <span class="badge">Présentiel / Distanciel</span>
+            <span class="badge">Financement OPCO</span>
+          </div>
+          <a href="contact.html" class="btn btn--primary btn--sm">Découvrir cette formation</a>
+        </div>
+        <div class="card formation-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>Entretien professionnel</h3>
+          <p>Mener des entretiens professionnels conformes à l'obligation légale et utiles au développement des compétences. Grilles fournies, entraînement sur cas réels.</p>
+          <div class="card-meta">
+            <span class="badge">1 à 2 jours</span>
+            <span class="badge">Présentiel / Distanciel</span>
+            <span class="badge">Financement OPCO</span>
+          </div>
+          <a href="contact.html" class="btn btn--primary btn--sm">Découvrir cette formation</a>
+        </div>
+        <div class="card formation-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Les fondamentaux RH pour non-RH</h3>
+          <p>Pour les dirigeants et managers qui gèrent les RH sans y être formés : droit social, gestion du personnel, entretiens obligatoires. Format condensé, sans jargon.</p>
+          <div class="card-meta">
+            <span class="badge">2 jours</span>
+            <span class="badge">Présentiel / Distanciel</span>
+            <span class="badge">Financement OPCO</span>
+          </div>
+          <a href="contact.html" class="btn btn--primary btn--sm">Découvrir cette formation</a>
+        </div>
+
+      </div>
+
+      <!-- CléA Management : seule formation certifiante (mention condensée) -->
+      <div class="reveal cardlike-clea">
+        <div class="cardlike-clea__body">
+          <span class="badge cardlike-clea__badge">Seule formation certifiante</span>
+          <h3>CléA Management</h3>
+          <p>La certification CléA Management atteste des compétences clés du manager opérationnel. C'est notre seule formation certifiante, co-finançable.</p>
+        </div>
+        <a href="contact.html?formation=CleA%20Management" class="btn btn--accent">Découvrir CléA Management</a>
+      </div>
+      <p class="reveal" style="text-align:center; margin:28px 0 0;">
+        <a href="contact.html" class="cta-inline">Parlons de votre besoin &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- SUR MESURE -->
+
+
+
+
+  <script>
+    // ===== CARTE INTERACTIVE =====
+    (function() {
+      var MONTHS = ['Jan','Fév','Mar','Avr','Mai','Juin','Juil','Août','Sep','Oct','Nov','Déc'];
+      var CAT_LABELS = {
+        droit: 'Droit social',
+        paie: 'Paie',
+        social: 'Actualités sociales',
+        entretien: 'Entretiens',
+        rh: 'RH pour non-RH'
+      };
+
+      var cities = {
+        annecy: {
+          name: 'Annecy',
+          sessions: [
+            { date: '27/04', label: 'RH pour les non RH – Droit du travail', cat: 'rh' },
+            { date: '19 & 20/05', label: 'RH pour les non RH – Les essentiels', cat: 'rh' },
+            { date: '02/06', label: 'Actualités sociales', cat: 'social' },
+            { date: '08 & 09/06', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
+            { date: '10 & 11/06', label: 'Pratique de la paie', cat: 'paie' },
+            { date: '25/06', label: 'Actualité de la paie', cat: 'paie' },
+            { date: '15 & 16/09', label: 'Pratique de la paie', cat: 'paie' },
+            { date: '14/10', label: 'Droit social pour managers', cat: 'droit' },
+            { date: '05/10', label: 'RH pour les non RH – Droit du travail', cat: 'rh' },
+            { date: '12 & 13/11', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
+            { date: '16/11', label: 'Actualités paie', cat: 'paie' },
+            { date: '25/11', label: 'Actualités sociales', cat: 'social' },
+            { date: '23 & 24/11', label: 'RH pour les non RH – Les essentiels', cat: 'rh' }
+          ]
+        },
+        chambery: {
+          name: 'Chambéry',
+          sessions: [
+            { date: '18/05', label: 'RH pour les non RH – Droit du travail', cat: 'rh' },
+            { date: '21 & 22/05', label: 'Pratique de la paie', cat: 'paie' },
+            { date: '28 & 29/05', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
+            { date: '03/06', label: 'Droit social pour managers', cat: 'droit' },
+            { date: '21 & 22/10', label: 'RH pour les non RH – Les essentiels', cat: 'rh' }
+          ]
+        },
+        grenoble: {
+          name: 'Grenoble',
+          sessions: [
+            { date: '07/05', label: 'Droit social pour managers', cat: 'droit' },
+            { date: '03/09', label: 'Actualités paie', cat: 'paie' },
+            { date: '04/09', label: 'Actualités sociales', cat: 'social' },
+            { date: '09/09', label: 'RH pour les non RH – Droit du travail', cat: 'rh' },
+            { date: '17 & 18/09', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
+            { date: '15 & 16/10', label: 'Pratique de la paie', cat: 'paie' },
+            { date: '26 & 27/11', label: 'RH pour les non RH – Les essentiels', cat: 'rh' },
+            { date: '03/12', label: 'Droit social pour managers', cat: 'droit' }
+          ]
+        },
+        lyon: {
+          name: 'Lyon – CEPEC de Craponne',
+          sessions: [
+            { date: '28/04', label: 'Droit social pour managers', cat: 'droit' },
+            { date: '04/06', label: 'RH pour les non RH – Droit du travail', cat: 'rh' },
+            { date: '15 & 16/06', label: 'RH pour les non RH – Les essentiels', cat: 'rh' },
+            { date: '02 & 03/07', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
+            { date: '02/09', label: 'Actualités sociales', cat: 'social' },
+            { date: '08/09', label: 'Droit social pour managers', cat: 'droit' },
+            { date: '06/10', label: 'Actualité de la paie', cat: 'paie' },
+            { date: '08/12', label: 'RH pour les non RH – Droit du travail', cat: 'rh' },
+            { date: '11/12', label: 'Droit social pour managers', cat: 'droit' },
+            { date: '14 & 15/12', label: 'Pratique de la paie', cat: 'paie' },
+            { date: '16 & 17/12', label: 'Entretiens dans l\'entreprise', cat: 'entretien' }
+          ]
+        },
+        saintetienne: {
+          name: 'Saint-Étienne',
+          sessions: [
+            { date: '09/11', label: 'RH pour les non RH – Droit du travail', cat: 'rh' }
+          ]
+        },
+        valence: {
+          name: 'Valence',
+          sessions: [
+            { date: '04/05', label: 'Droit social pour managers', cat: 'droit' },
+            { date: '01/06', label: 'Actualité de la paie', cat: 'paie' },
+            { date: '29 & 30/06', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
+            { date: '01/07', label: 'Actualités sociales', cat: 'social' },
+            { date: '21 & 22/09', label: 'RH pour les non RH – Les essentiels', cat: 'rh' },
+            { date: '23/09', label: 'RH pour les non RH – Droit du travail', cat: 'rh' },
+            { date: '08 & 09/10', label: 'Pratique de la paie', cat: 'paie' },
+            { date: '19 & 20/10', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
+            { date: '19/11', label: 'Droit social pour managers', cat: 'droit' },
+            { date: '07/12', label: 'Actualités sociales', cat: 'social' },
+            { date: '10/12', label: 'Actualité de la paie', cat: 'paie' }
+          ]
+        },
+        lepuy: {
+          name: 'Le Puy-en-Velay / Monistrol',
+          sessions: [
+            { date: '18 & 19/06', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
+            { date: '23/06', label: 'Droit social pour managers', cat: 'droit' },
+            { date: '24 & 25/09', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
+            { date: '01 & 02/10', label: 'Pratique de la paie', cat: 'paie' },
+            { date: '07/10', label: 'Actualités sociales', cat: 'social' },
+            { date: '15 & 16/10', label: 'RH pour les non RH – Les essentiels', cat: 'rh' },
+            { date: '10/11', label: 'Actualité de la paie', cat: 'paie' }
+          ]
+        },
+        clermont: {
+          name: 'Clermont-Ferrand',
+          sessions: [
+            { date: '07/09', label: 'RH pour les non RH – Droit du travail', cat: 'rh' }
+          ]
+        },
+        aurillac: {
+          name: 'Aurillac / Saint-Flour',
+          sessions: [
+            { date: '05 & 06/05', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
+            { date: '01 & 02/06', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
+            { date: '10 & 11/09', label: 'Entretiens dans l\'entreprise', cat: 'entretien' },
+            { date: '22/09', label: 'Actualité de la paie', cat: 'paie' },
+            { date: '12/10', label: 'Droit social pour managers', cat: 'droit' },
+            { date: '13/10', label: 'Actualités sociales', cat: 'social' },
+            { date: '17 & 18/11', label: 'Pratique de la paie', cat: 'paie' }
+          ]
+        }
+      };
+
+      var CITY_COORDS = {
+        annecy: [703, 245], chambery: [668, 324], grenoble: [634, 415],
+        lyon: [485, 278], saintetienne: [411, 355], valence: [495, 477],
+        lepuy: [325, 450], clermont: [191, 273], aurillac: [83, 477]
+      };
+      var CITY_DEPT = {
+        annecy: '74', chambery: '73', grenoble: '38', lyon: '69',
+        saintetienne: '42', valence: '26', lepuy: '43', clermont: '63', aurillac: '15'
+      };
+
+      var activeCity = null;
+      var activeFilter = 'all';
+      var activeMonth = 'all';
+      var isZoomed = false;
+      var svg = document.getElementById('mapSvg');
+      var markers = document.querySelectorAll('.city-marker');
+      var depts = document.querySelectorAll('.dept');
+      var panel = document.getElementById('cityPanel');
+      var panelEmpty = document.getElementById('cityPanelEmpty');
+      var panelContent = document.getElementById('cityPanelContent');
+      var filters = document.querySelectorAll('.map-filter');
+      var zoomBackBtn = document.getElementById('mapZoomBack');
+      var FULL_VB = { x: 0, y: 0, w: 900, h: 700 };
+      var currentVB = Object.assign({}, FULL_VB);
+
+      function parseDate(str) {
+        var parts = str.split('/');
+        var day = parseInt(parts[0].split('&')[0].trim(), 10);
+        var month = parseInt(parts[1], 10);
+        return month * 100 + day;
+      }
+
+      function getMonth(str) {
+        return String(parseInt(str.split('/')[1], 10));
+      }
+
+      function isSessionVisible(s) {
+        var catOk = activeFilter === 'all' || s.cat === activeFilter;
+        var monthOk = activeMonth === 'all' || getMonth(s.date) === activeMonth;
+        return catOk && monthOk;
+      }
+
+      function formatDateBlock(dateStr) {
+        var parts = dateStr.split('/');
+        var dayPart = parts[0].trim();
+        var monthIdx = parseInt(parts[1], 10) - 1;
+        return '<span class="s-day">' + dayPart + '</span><span class="s-month">' + MONTHS[monthIdx] + '</span>';
+      }
+
+      // Smooth viewBox animation
+      function animateViewBox(target, duration, cb) {
+        var start = performance.now();
+        var from = Object.assign({}, currentVB);
+        function tick(now) {
+          var t = Math.min((now - start) / duration, 1);
+          var ease = t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3) / 2;
+          var vb = {
+            x: from.x + (target.x - from.x) * ease,
+            y: from.y + (target.y - from.y) * ease,
+            w: from.w + (target.w - from.w) * ease,
+            h: from.h + (target.h - from.h) * ease
+          };
+          svg.setAttribute('viewBox', vb.x + ' ' + vb.y + ' ' + vb.w + ' ' + vb.h);
+          if (t < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            currentVB = target;
+            if (cb) cb();
+          }
+        }
+        requestAnimationFrame(tick);
+      }
+
+      function zoomToCity(cx, cy) {
+        var zw = 280, zh = 220;
+        var target = { x: cx - zw/2, y: cy - zh/2, w: zw, h: zh };
+        target.x = Math.max(0, Math.min(900 - zw, target.x));
+        target.y = Math.max(0, Math.min(700 - zh, target.y));
+        animateViewBox(target, 650);
+        isZoomed = true;
+        zoomBackBtn.classList.add('visible');
+      }
+
+      function zoomOut() {
+        animateViewBox(FULL_VB, 500);
+        isZoomed = false;
+        zoomBackBtn.classList.remove('visible');
+        depts.forEach(function(d) { d.classList.remove('dimmed', 'highlight'); });
+      }
+
+      function renderCity(cityKey) {
+        var city = cities[cityKey];
+        if (!city) return;
+
+        var sorted = city.sessions.slice().sort(function(a, b) {
+          return parseDate(a.date) - parseDate(b.date);
+        });
+
+        var visibleCount = sorted.filter(isSessionVisible).length;
+
+        var html = '<div class="city-panel-content">';
+        html += '<div class="city-panel-header">';
+        html += '<h3>' + city.name + '</h3>';
+        html += '<span class="city-count" id="sessionCount">' + visibleCount + ' session' + (visibleCount > 1 ? 's' : '') + '</span>';
+        html += '</div>';
+
+        var cityShort = city.name.split(' –')[0].split(' /')[0];
+        sorted.forEach(function(s, i) {
+          var hidden = !isSessionVisible(s) ? ' filtered-out' : '';
+          var subject = encodeURIComponent(s.label + ' – ' + cityShort + ' (' + s.date + ')');
+          html += '<a href="contact.html?formation=' + subject + '" class="city-session-item' + hidden + '" data-cat="' + s.cat + '" data-month="' + getMonth(s.date) + '" style="animation-delay:' + (i * 0.04) + 's">';
+          html += '<div class="session-date-block">' + formatDateBlock(s.date) + '</div>';
+          html += '<div class="session-info">';
+          html += '<span class="session-cat-badge cat-badge--' + s.cat + '">' + CAT_LABELS[s.cat] + '</span>';
+          html += '<h4>' + s.label + '</h4>';
+          html += '</div>';
+          html += '<span class="session-action">S\'inscrire &rarr;</span>';
+          html += '</a>';
+        });
+
+        html += '<div class="panel-cta">';
+        html += '<a href="contact.html" class="btn btn--primary btn--sm">Toutes les inscriptions à ' + cityShort + '</a>';
+        html += '</div></div>';
+
+        panelContent.innerHTML = html;
+        panelContent.style.display = 'block';
+        panelEmpty.style.display = 'none';
+        panel.classList.add('has-city');
+
+        // Highlight city marker
+        markers.forEach(function(m) { m.classList.remove('active'); });
+        var marker = document.querySelector('.city-marker[data-city="' + cityKey + '"]');
+        if (marker) marker.classList.add('active');
+
+        // Highlight department
+        var deptCode = CITY_DEPT[cityKey];
+        depts.forEach(function(d) {
+          if (d.getAttribute('data-dept') === deptCode) {
+            d.classList.add('highlight');
+            d.classList.remove('dimmed');
+          } else {
+            d.classList.add('dimmed');
+            d.classList.remove('highlight');
+          }
+        });
+
+        // Zoom to city
+        var coords = CITY_COORDS[cityKey];
+        if (coords) zoomToCity(coords[0], coords[1]);
+
+        activeCity = cityKey;
+
+        if (window.innerWidth <= 960) {
+          panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+
+      // City marker click
+      markers.forEach(function(m) {
+        m.addEventListener('click', function(e) {
+          e.stopPropagation();
+          renderCity(m.getAttribute('data-city'));
+        });
+      });
+
+      // Department click → find nearest city
+      depts.forEach(function(d) {
+        d.addEventListener('click', function() {
+          var code = d.getAttribute('data-dept');
+          for (var key in CITY_DEPT) {
+            if (CITY_DEPT[key] === code) {
+              renderCity(key);
+              return;
+            }
+          }
+        });
+      });
+
+      // Zoom back
+      zoomBackBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        zoomOut();
+        markers.forEach(function(m) { m.classList.remove('active'); });
+        activeCity = null;
+        panelContent.style.display = 'none';
+        panelEmpty.style.display = '';
+        panel.classList.remove('has-city');
+      });
+
+      function applyFilters() {
+        if (activeCity) {
+          var items = panelContent.querySelectorAll('.city-session-item');
+          var visible = 0;
+          items.forEach(function(item) {
+            var catOk = activeFilter === 'all' || item.getAttribute('data-cat') === activeFilter;
+            var monthOk = activeMonth === 'all' || item.getAttribute('data-month') === activeMonth;
+            if (catOk && monthOk) {
+              item.classList.remove('filtered-out');
+              visible++;
+            } else {
+              item.classList.add('filtered-out');
+            }
+          });
+          var counter = document.getElementById('sessionCount');
+          if (counter) counter.textContent = visible + ' session' + (visible > 1 ? 's' : '');
+        }
+
+        markers.forEach(function(m) {
+          var key = m.getAttribute('data-city');
+          var city = cities[key];
+          if (!city) return;
+          var count = city.sessions.filter(isSessionVisible).length;
+          var badge = m.querySelector('.marker-count');
+          if (badge) badge.textContent = count;
+          if (count === 0) {
+            m.classList.add('dimmed');
+          } else {
+            m.classList.remove('dimmed');
+          }
+        });
+      }
+
+      // Category filter click
+      filters.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          filters.forEach(function(f) { f.classList.remove('active'); });
+          btn.classList.add('active');
+          activeFilter = btn.getAttribute('data-filter');
+          applyFilters();
+        });
+      });
+
+      // Month filter click
+      var monthBtns = document.querySelectorAll('.month-filter');
+      monthBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          monthBtns.forEach(function(f) { f.classList.remove('active'); });
+          btn.classList.add('active');
+          activeMonth = btn.getAttribute('data-month');
+          applyFilters();
+        });
+      });
+
+      // Mobile city list
+      var mobileList = document.getElementById('cityListMobile');
+      if (mobileList) {
+        Object.keys(cities).forEach(function(key) {
+          var btn = document.createElement('button');
+          btn.className = 'city-list-btn';
+          btn.textContent = cities[key].name.split(' –')[0].split(' /')[0];
+          btn.setAttribute('data-city', key);
+          btn.addEventListener('click', function() {
+            mobileList.querySelectorAll('.city-list-btn').forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            renderCity(key);
+          });
+          mobileList.appendChild(btn);
+        });
+      }
+
+      // Preview panel — show upcoming sessions across all cities
+      (function buildPreview() {
+        var previewEl = document.getElementById('previewPanel');
+        if (!previewEl) return;
+        var all = [];
+        Object.keys(cities).forEach(function(key) {
+          var city = cities[key];
+          city.sessions.forEach(function(s) {
+            all.push({ date: s.date, label: s.label, cat: s.cat, cityKey: key, cityName: city.name.split(' –')[0].split(' /')[0] });
+          });
+        });
+        all.sort(function(a, b) { return parseDate(a.date) - parseDate(b.date); });
+        var upcoming = all.slice(0, 8);
+        var html = '<div class="city-panel-header">';
+        html += '<h3>Prochaines sessions</h3>';
+        html += '<span class="city-count">' + all.length + ' au total</span>';
+        html += '</div>';
+        upcoming.forEach(function(s, i) {
+          var subject = encodeURIComponent(s.label + ' – ' + s.cityName + ' (' + s.date + ')');
+          html += '<a href="contact.html?formation=' + subject + '" class="city-session-item" data-cat="' + s.cat + '" data-month="' + getMonth(s.date) + '" style="animation-delay:' + (i * 0.05) + 's">';
+          html += '<div class="session-date-block">' + formatDateBlock(s.date) + '</div>';
+          html += '<div class="session-info">';
+          html += '<span class="session-cat-badge cat-badge--' + s.cat + '">' + CAT_LABELS[s.cat] + '</span>';
+          html += '<h4>' + s.label + '</h4>';
+          html += '<span class="session-city-name">' + s.cityName + '</span>';
+          html += '</div>';
+          html += '<span class="session-action">S\'inscrire &rarr;</span>';
+          html += '</a>';
+        });
+        html += '<p class="preview-hint">Cliquez sur une ville pour voir toutes ses sessions</p>';
+        previewEl.innerHTML = html;
+      })();
+    })();
+  </script>
+
+  <section class="section section--white" id="sur-mesure">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Sur mesure</span>
+        <h2 class="section-title">Chaque formation s'adapte à votre réalité</h2>
+        <p class="section-subtitle">Pas de contenu générique : chaque module est co-conçu avec vous, ancré dans votre secteur et vos enjeux terrain.</p>
+      </div>
+      <div class="sur-mesure-chips reveal" aria-label="Exemples de formations sur mesure">
+        <span class="partner-badge">Management d'équipe</span>
+        <span class="partner-badge">Recrutement &amp; intégration</span>
+        <span class="partner-badge">RSE &amp; Qualité de vie au travail</span>
+        <span class="partner-badge">Management à distance</span>
+        <span class="partner-badge">Cohésion d'équipe</span>
+        <span class="partner-badge">… et ce que votre situation demande</span>
+      </div>
+      <div class="grid-3 reveal-stagger" style="gap:20px; max-width:900px; margin:0 auto;">
+        <div class="card" style="padding:24px; text-align:center;">
+          <h3 style="font-size:1rem; margin-bottom:8px;">Diagnostic amont</h3>
+          <p style="font-size:0.9rem;">On identifie vos besoins réels, pas ceux d'un catalogue standard.</p>
+        </div>
+        <div class="card" style="padding:24px; text-align:center;">
+          <h3 style="font-size:1rem; margin-bottom:8px;">Co-construction</h3>
+          <p style="font-size:0.9rem;">Le programme est bâti avec vous, à partir de cas concrets de votre entreprise.</p>
+        </div>
+        <div class="card" style="padding:24px; text-align:center;">
+          <h3 style="font-size:1rem; margin-bottom:8px;">Suivi post-formation</h3>
+          <p style="font-size:0.9rem;">Accompagnement terrain pour ancrer les apprentissages dans la durée.</p>
+        </div>
+      </div>
+      <div class="reveal" style="text-align:center; margin-top:36px;">
+        <a href="contact.html" class="btn btn--primary btn--lg">Demander une formation sur mesure</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALITE + CONTACT (condensé) -->
+  <section class="section section--teal" id="qualite">
+    <div class="container">
+      <div class="qualiopi-band reveal">
+        <div class="qualiopi-band__text">
+          <span class="section-label" style="color:var(--gold-500);">Certifié Qualiopi</span>
+          <h2 class="section-title" style="color:#fff;">Une qualité certifiée, un financement facilité</h2>
+          <p style="color:rgba(255,255,255,0.9); margin-bottom:0;">CARTESA est certifié Qualiopi : toutes nos formations sont éligibles au financement (OPCO ou Région Auvergne-Rhône-Alpes). Nous montons le dossier avec vous.</p>
+        </div>
+        <a href="contact.html" class="btn btn--accent btn--lg">Vérifier mon éligibilité</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS-LINKS -->
+
+  <!-- CONTINUER LA VISITE -->
+  <section class="continue-band">
+    <div class="container">
+      <h2>Continuer la visite</h2>
+      <div class="continue-band__links">
+        <a href="ingenierie.html">Ingénierie pédagogique &amp; financière &rarr;</a>
+        <a href="expertises.html">Toutes nos expertises &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo-chip"><img src="assets/img/logo-cartesa.png" alt="CARTESA" width="250" height="86" loading="lazy" decoding="async"></span>
+          <p class="footer-tag">Compétences, Entreprises &amp; Territoires</p>
+          <div class="footer-qualiopi">
+            <img src="assets/img/qualiopi.jpg" alt="Certifié Qualiopi" width="120" height="60" loading="lazy" decoding="async">
+            <span>Certifié Qualiopi au titre des actions de formation</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Vos attentes</h4>
+          <ul>
+            <li><a href="vos-attentes.html#fideliser">Structurer &amp; fidéliser</a></li>
+            <li><a href="vos-attentes.html#dirigeants">Développer vos managers</a></li>
+            <li><a href="vos-attentes.html#former">Former vos équipes</a></li>
+            <li><a href="vos-attentes.html#decarboner">Décarboner</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Nos expertises</h4>
+          <ul>
+            <li><a href="expertises.html">Diagnostic &amp; accompagnements</a></li>
+            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CARTESA</h4>
+          <ul>
+            <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
+            <li><a href="ressources.html">Ressources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+            <li><a href="politique-cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
+            <span>Près de Lyon<br>entre Lyon, Grenoble et Chambéry<br><small>Déplacements France &amp; Europe</small></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="contact.html">Nous contacter</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
+            <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
+        <div class="footer-bottom__social">
+          <a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener" aria-label="LinkedIn CARTESA">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll
+    window.addEventListener('scroll', function() {
+      document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Mobile nav toggle
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      // === Header hide on scroll-down, show on scroll-up ===
+      (function() {
+        var lastY = window.scrollY || 0, ticking = false, hidden = false;
+        var hdr = document.querySelector('.site-header');
+        if (!hdr) return;
+        window.addEventListener('scroll', function() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function() {
+            var y = window.scrollY;
+            if (y > 140 && y > lastY + 4 && !hidden) {
+              hdr.classList.add('hidden'); hidden = true;
+            } else if ((y < lastY - 4 || y <= 140) && hidden) {
+              hdr.classList.remove('hidden'); hidden = false;
+            }
+            lastY = y;
+            ticking = false;
+          });
+        }, { passive: true });
+      })();
+
+      var links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          var open = links.classList.toggle('is-open');
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+
+      // Mobile-only dropdown toggle ("Vos attentes", "On vous aide")
+      // On viewports <= 880px (where .nav-links collapses), tap on the dropdown trigger
+      // opens the submenu inline instead of navigating.
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function(dd) {
+        var trigger = dd.querySelector(':scope > a');
+        if (!trigger) return;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', function(e) {
+          // Only intercept when the mobile menu is in compact mode (toggle visible)
+          var isMobileNav = window.matchMedia('(max-width: 880px)').matches;
+          if (!isMobileNav) return;
+          e.preventDefault();
+          var open = dd.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+    })();
+    // Scroll reveal
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+    document.querySelectorAll('.reveal-stagger').forEach(function(el) { obs.observe(el); });
+  </script>
+
+  <script src="assets/motion.js" defer></script>
+  <script src="assets/cookie-banner.js" defer></script>
+</body>
+</html>

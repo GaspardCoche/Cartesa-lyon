@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pourquoi CARTESA — Équipe, garanties & témoignages | Cabinet RH</title>
+  <meta name="description" content="Pourquoi choisir CARTESA : une équipe de consultants seniors, des garanties concrètes (Qualiopi, CléA Management) et le témoignage filmé d'un dirigeant accompagné. Près de Lyon, partout en France et en Europe.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cartesa-lyon.com/pourquoi-cartesa.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pourquoi CARTESA — Équipe, garanties & témoignages | Cabinet RH">
+  <meta property="og:description" content="Une équipe de consultants seniors, des garanties concrètes (Qualiopi, CléA Management) et le témoignage filmé d'un dirigeant accompagné. Près de Lyon, France & Europe.">
+  <meta property="og:url" content="https://cartesa-lyon.com/pourquoi-cartesa.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
+  <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
+  <meta property="og:image:alt" content="Pourquoi CARTESA — Équipe, garanties & témoignages">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="geo.region" content="FR-38">
+  <meta name="geo.placename" content="La Tour-du-Pin">
+  <!-- Self-hosted fonts (RGPD-friendly) -->
+  <link rel="icon" type="image/png" href="assets/img/favicon-cartesa.png">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ============================================================
+       ÉQUIPE — cartes membres (repris de equipe.html)
+       ============================================================ */
+    .team-card-v2 { background:#fff; border-radius:14px; padding:28px; box-shadow:0 2px 16px rgba(0,80,80,0.07); text-align:center; transition:transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease; position:relative; overflow:hidden; }
+    .team-card-v2::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; border-radius:14px 14px 0 0; background:var(--teal-500,#21b6c8); transition:opacity 0.3s ease; opacity:0; }
+    .team-card-v2:hover { transform:translateY(-6px); box-shadow: 0 2px 8px rgba(9,41,51,0.08); }
+    .team-card-v2:hover::before { opacity:1; }
+    .team-card-v2 .avatar-circle { width:110px; height:110px; border-radius:50%; margin:0 auto 16px; display:flex; align-items:center; justify-content:center; font-family:'Sora',sans-serif; font-weight:700; font-size:1.5rem; border:3px solid transparent; transition:border-color 0.3s ease; }
+    .team-card-v2:hover .avatar-circle { border-color:var(--teal-400,#2cb5b5); }
+    .team-card-v2 .avatar-circle--teal { background:var(--teal-100,#d1ecec); color:var(--teal-700,#0f5e5e); }
+    .team-card-v2 .avatar-circle--gold { background:rgba(236,208,52,0.15); color:var(--gold-600,#d4940a); }
+    .team-card-v2 .avatar-circle--neutral { background:var(--neutral-100,#f3f4f6); color:var(--neutral-500,#6b7280); }
+    .team-card-v2 h3 { font-family:'Sora',sans-serif; font-size:1.05rem; font-weight:700; color:var(--teal-900,#0d3b3b); margin-bottom:4px; }
+    .team-card-v2 .role { font-size:0.82rem; font-weight:600; color:var(--teal-600,#0e7490); margin-bottom:8px; }
+    .team-card-v2 .expertise-tags { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin-bottom:14px; }
+    .team-card-v2 .expertise-tag { display:inline-block; font-size:0.68rem; font-weight:600; padding:3px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:0.04em; }
+    .expertise-tag--teal { background:var(--teal-100,#d1ecec); color:var(--teal-700,#0f5e5e); }
+    .expertise-tag--gold { background:rgba(236,208,52,0.12); color:var(--gold-600,#d4940a); }
+    .expertise-tag--green { background:#e8f5e9; color:#2e7d32; }
+    .expertise-tag--purple { background:#f3e5f5; color:#7b1fa2; }
+    .expertise-tag--blue { background:#eef4ff; color:#3b6fc2; }
+    .team-card-v2 p { font-size:0.88rem; color:var(--neutral-600,#4b5563); line-height:1.55; }
+
+    /* ============================================================
+       MÉTHODE — cartes "marqueurs" (repris de temoignages.html)
+       ============================================================ */
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .approach-card {
+      padding: 40px 32px;
+      background: #fff;
+      border-radius: 20px;
+      border: 1px solid var(--neutral-200);
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .approach-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 2px 8px rgba(9,41,51,0.08);
+      border-color: var(--teal-400);
+    }
+    .approach-card .num {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--teal-600);
+      letter-spacing: 0.14em;
+      margin-bottom: 16px;
+    }
+    .approach-card h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--teal-900);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .approach-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--neutral-700);
+    }
+    @media (max-width: 768px) {
+      .approach-grid { grid-template-columns: 1fr; gap: 16px; }
+    }
+
+    /* ============================================================
+       TÉMOIGNAGE VIDÉO — Galerie 7 épisodes (repris de temoignages.html)
+       ============================================================ */
+    .vtestim { padding: 72px 0 64px; background: var(--teal-50); }
+    .vtestim__head { max-width: 760px; margin: 0 auto 8px; text-align: center; }
+    .vtestim__eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.74rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.14em; color: var(--teal-600); margin-bottom: 14px;
+    }
+    .vtestim__eyebrow::before { content: ""; width: 30px; height: 2px; background: var(--gold-500); }
+    .vtestim__head h2 { margin: 0 0 14px; }
+    .vtestim__head p { color: var(--neutral-700); font-size: 1.05rem; margin: 0; }
+
+    /* Bandeau intervenant */
+    .vt-speaker {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      margin: 26px auto 38px; padding: 16px 22px;
+      background: #fff; border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); width: fit-content;
+    }
+    .vt-speaker img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; flex: none; }
+    .vt-speaker__name { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--neutral-900); font-size: 1.05rem; }
+    .vt-speaker__role { color: var(--neutral-500); font-size: 0.9rem; }
+    .vt-speaker__sector { color: var(--teal-700); font-size: 0.82rem; font-weight: 600; margin-top: 2px; }
+
+    /* Grille des épisodes */
+    .vtestim-grid {
+      display: grid; gap: 22px;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    }
+    .vt-card {
+      display: flex; flex-direction: column; text-align: left;
+      background: #fff; border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-md); overflow: hidden; cursor: pointer;
+      padding: 0; font: inherit; color: inherit; width: 100%;
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .vt-card:hover, .vt-card:focus-visible {
+      transform: translateY(-4px); box-shadow: var(--shadow-lg);
+      border-color: var(--teal-400); outline: none;
+    }
+    .vt-card__media { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--teal-900); }
+    .vt-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .vt-card:hover .vt-card__media img { transform: scale(1.05); }
+    .vt-card__media::after {
+      content: ""; position: absolute; inset: 0;
+      background: rgba(9,41,51,0.35);
+    }
+    .vt-play {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(255,255,255,0.92); display: grid; place-items: center;
+      z-index: 2; transition: transform 0.3s ease, background 0.3s ease; box-shadow: var(--shadow-md);
+    }
+    .vt-card:hover .vt-play { transform: translate(-50%,-50%) scale(1.08); background: var(--gold-500); }
+    .vt-play svg { width: 22px; height: 22px; margin-left: 3px; fill: var(--teal-900); }
+    .vt-badge {
+      position: absolute; bottom: 10px; right: 10px; z-index: 2;
+      background: rgba(9,41,51,0.78); color: #fff; font-size: 0.72rem; font-weight: 600;
+      padding: 3px 9px; border-radius: 999px; letter-spacing: 0.02em;
+    }
+    .vt-chapter {
+      position: absolute; top: 10px; left: 10px; z-index: 2;
+      width: 26px; height: 26px; border-radius: 50%; background: var(--gold-500);
+      color: var(--teal-900); font-family: 'Sora', sans-serif; font-weight: 800; font-size: 0.82rem;
+      display: grid; place-items: center;
+    }
+    .vt-card__body { padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+    .vt-card__q {
+      font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--teal-600);
+    }
+    .vt-card__title { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.08rem; color: var(--neutral-900); line-height: 1.25; }
+    .vt-card__excerpt { color: var(--neutral-700); font-size: 0.92rem; line-height: 1.6; }
+
+    /* Lightbox */
+    .vt-modal {
+      position: fixed; inset: 0; z-index: 1000; display: none;
+      align-items: center; justify-content: center; padding: 24px;
+      background: rgba(9,41,51,0.92);
+    }
+    .vt-modal.open { display: flex; }
+    .vt-modal__inner { width: min(900px, 100%); }
+    .vt-modal__frame { position: relative; background: #000; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-xl); }
+    .vt-modal__frame video { width: 100%; display: block; aspect-ratio: 16 / 9; background: #000; }
+    .vt-modal__cap { color: #fff; margin-top: 14px; }
+    .vt-modal__cap strong { font-family: 'Sora', sans-serif; display: block; font-size: 1.05rem; }
+    .vt-modal__cap span { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+    .vt-modal__close {
+      position: absolute; top: -46px; right: 0; width: 38px; height: 38px;
+      border-radius: 50%; background: rgba(255,255,255,0.15); border: none; cursor: pointer;
+      color: #fff; font-size: 1.4rem; line-height: 1; display: grid; place-items: center;
+      transition: background 0.2s ease;
+    }
+    .vt-modal__close:hover { background: rgba(255,255,255,0.3); }
+    .vt-note { margin-top: 30px; font-size: 0.82rem; color: var(--neutral-500); text-align: center; }
+
+    @media (max-width: 560px) {
+      .vtestim-grid { grid-template-columns: 1fr; }
+      .vt-modal__close { top: 8px; right: 8px; background: rgba(9,41,51,0.5); }
+    }
+  
+    .cert-picto { display: block; margin-bottom: 12px; }
+  
+    .vt-speaker--link { text-decoration: none; color: inherit; transition: border-color 0.2s ease, transform 0.2s ease; }
+    .vt-speaker--link:hover { border-color: var(--teal-500); transform: translateY(-2px); }
+    .vt-speaker__cta { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.85rem; color: var(--teal-600); margin-left: 10px; white-space: nowrap; }
+  
+    #equipe .team-card-v2 { flex: 0 1 340px; }
+  </style>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Pourquoi CARTESA — Équipe, garanties & témoignages",
+        "url": "https://cartesa-lyon.com/pourquoi-cartesa.html",
+        "description": "Équipe de consultants seniors, garanties concrètes (Qualiopi, CléA Management) et témoignage filmé d'un dirigeant accompagné.",
+        "publisher": { "@id": "https://cartesa-lyon.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Pourquoi CARTESA", "item": "https://cartesa-lyon.com/pourquoi-cartesa.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/img/logo-cartesa.png" alt="CARTESA — Compétences, Entreprises &amp; Territoires" width="250" height="86"></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="nav-dropdown"><a href="vos-attentes.html" aria-haspopup="true" aria-expanded="false">Vos attentes</a>
+          <ul class="nav-sub">
+            <li><a href="vos-attentes.html#fideliser">Structurer &amp; fid&eacute;liser vos &eacute;quipes</a></li>
+            <li><a href="vos-attentes.html#dirigeants">D&eacute;velopper vos dirigeants &amp; managers</a></li>
+            <li><a href="vos-attentes.html#former">Former vos &eacute;quipes</a></li>
+            <li><a href="vos-attentes.html#decarboner">D&eacute;carboner votre activit&eacute;</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown"><a href="expertises.html" aria-haspopup="true" aria-expanded="false">Nos expertises</a>
+          <ul class="nav-sub">
+            <li><a href="expertises.html">Diagnostic &amp; accompagnements RH</a></li>
+            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="ingenierie.html">Ing&eacute;nierie p&eacute;dagogique</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; D&eacute;carbonation</a></li>
+          </ul>
+        </li>
+        <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <main>
+
+  <!-- PAGE HERO — Pourquoi CARTESA -->
+  <section class="page-hero page-hero--split page-hero--enhanced" style="padding-top:48px; padding-bottom:44px;">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current">Pourquoi CARTESA</span>
+      </nav>
+      <div class="hero-split" style="gap:32px; align-items:center;">
+        <div class="hero-text hero-text-reveal">
+          <span class="section-label" style="color:var(--gold-400,#f0cc3a); margin-bottom:8px;">Preuves &amp; confiance</span>
+          <h1 style="font-size:clamp(1.7rem,3.6vw,2.4rem); font-weight:800; line-height:1.16; margin-bottom:12px; color:#fff;">
+            Pourquoi CARTESA&nbsp;?
+          </h1>
+          <p style="font-size:0.98rem; color:rgba(255,255,255,0.92); max-width:540px; margin-bottom:18px;">
+            Une équipe de consultants seniors qui ont occupé le poste, des garanties concrètes reconnues par l'État, et la parole d'un dirigeant qui a vécu l'accompagnement. Près de Lyon, partout en France et en Europe.
+          </p>
+          <div class="hero-actions">
+            <a href="#equipe" class="btn btn--accent">Découvrir l'équipe</a>
+            <a href="contact.html" class="btn btn--outline">Échanger avec un expert</a>
+          </div>
+        </div>
+        <div class="hero-visual" style="max-width:360px;">
+          <img src="assets/img/cartesa-team.jpg" alt="L'équipe CARTESA en situation de conseil" class="hero-img" width="800" height="702" fetchpriority="high" decoding="async" style="border-radius:14px; max-height:240px; object-fit:cover; width:100%; display:block;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTHODE — Du conseil de terrain, pas du PowerPoint -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center;">
+        <span class="section-label" style="justify-content:center;">Notre méthode</span>
+        <h2 class="section-title" style="margin-left:auto; margin-right:auto;">Du conseil de terrain, pas du PowerPoint</h2>
+        <p class="section-subtitle" style="margin-left:auto; margin-right:auto;">Nos interventions sont concrètes : diagnostic sur site, coaching en situation, formations sur le poste de travail. Trois marqueurs reviennent dans les retours de nos clients.</p>
+      </div>
+      <div class="approach-grid">
+        <div class="approach-card reveal">
+          <div class="num">01 — RAPIDITÉ</div>
+          <h3>Mise en route rapide</h3>
+          <p>Premier livrable opérationnel dès les premières semaines. Diagnostic express, RH à temps partagé mobilisable vite, démarrage des formations sous 30 jours.</p>
+        </div>
+        <div class="approach-card reveal">
+          <div class="num">02 — FINANCEMENT</div>
+          <h3>Prestations co-finançables</h3>
+          <p>Maîtrise des dispositifs (OPCO, Région, FNE, CO2I). Nous vous orientons vers le bon financement et vous accompagnons dans le montage du dossier. Le reste à charge éventuel est connu d'avance.</p>
+        </div>
+        <div class="approach-card reveal">
+          <div class="num">03 — TERRAIN</div>
+          <h3>Des experts qui ont occupé le poste</h3>
+          <p>Nos consultants ont été DRH, dirigeants ou responsables RSE en entreprise. Pas de cabinet hors-sol : du conseil par des praticiens, pour des praticiens.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÉQUIPE — Les femmes et les hommes de CARTESA -->
+  <section class="section section--alt" id="equipe">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">L'équipe</span>
+        <h2 class="section-title">Les femmes et les hommes de CARTESA</h2>
+        <p class="section-subtitle">5 consultants seniors, complémentaires et dédiés à vos enjeux. Plus de 20 ans de terrain en diagnostic RH, accompagnement, RSE &amp; décarbonation et RH à temps partagé.</p>
+      </div>
+
+      <!-- CTA RDV direct avec un consultant -->
+      <div class="info-box reveal" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; padding:18px 22px; margin:0 0 32px; background:var(--teal-50,#eaf6fb); border:1px solid var(--teal-200,#bfe5e8);">
+        <div>
+          <strong style="display:block; color:var(--teal-900); font-size:0.95rem;">Échanger directement avec un consultant associé</strong>
+          <span style="font-size:0.85rem; color:var(--neutral-600);">30 min de découverte, sans engagement.</span>
+        </div>
+        <a href="contact.html" class="btn btn--accent btn--sm">Réserver 30 min</a>
+      </div>
+
+      <div class="reveal-stagger" style="display:flex; flex-wrap:wrap; justify-content:center; gap:24px;">
+        <!-- Photos non disponibles (à fournir par le client) : placeholder initiales -->
+        <div class="team-card-v2">
+          <div class="avatar-circle avatar-circle--teal">CL</div>
+          <h3>Catherine Lenoir</h3>
+          <div class="role">Consultante Associée</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--teal">AFEST</span>
+            <span class="expertise-tag expertise-tag--green">Coaching</span>
+            <span class="expertise-tag expertise-tag--blue">Ingénierie</span>
+          </div>
+          <p>Développement des pratiques managériales et RH, formation de formateurs, coaching d'équipe dirigeante. Pilote le volet compétences du diagnostic CO2I et intervient en RH à temps partagé sur les transformations complexes : réorganisations, fusions, création de fonction RH ex nihilo. Experte en ingénierie pédagogique et conception de parcours AFEST. Plus de 20 ans d'expérience.</p>
+        </div>
+        <div class="team-card-v2">
+          <div class="avatar-circle avatar-circle--teal">PL</div>
+          <h3>Philippe Lenoir</h3>
+          <div class="role">Consultant Associé</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--teal">Leadership</span>
+            <span class="expertise-tag expertise-tag--purple">Coaching</span>
+            <span class="expertise-tag expertise-tag--green">Changement</span>
+          </div>
+          <p>Coaching de dirigeant, management comportemental, développement commercial. Intervient également comme RH à temps partagé sur les phases de croissance et de transformation, avec une approche orientée leadership et culture managériale.</p>
+        </div>
+        <div class="team-card-v2">
+          <div class="avatar-circle avatar-circle--teal">EC</div>
+          <h3>Élodie Chapelle</h3>
+          <div class="role">Consultante Associée</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--blue">Droit social</span>
+            <span class="expertise-tag expertise-tag--teal">CSE</span>
+            <span class="expertise-tag expertise-tag--purple">Conformité</span>
+          </div>
+          <p>Spécialiste du droit social appliqué aux PME. Accompagnement des relations sociales, mise en conformité, négociation d'accords d'entreprise. Intervient en RH à temps partagé sur les crises sociales, contentieux, PSE et restructurations.</p>
+        </div>
+        <div class="team-card-v2">
+          <div class="avatar-circle avatar-circle--teal">CI</div>
+          <h3>Claire Iffenecker</h3>
+          <div class="role">Consultante Associée</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--green">Recrutement</span>
+            <span class="expertise-tag expertise-tag--teal">GPEC</span>
+            <span class="expertise-tag expertise-tag--blue">Marque employeur</span>
+          </div>
+          <p>Experte en recrutement, GPEC et gestion des parcours professionnels. Structuration des entretiens professionnels, référentiels de compétences, plans de développement. Intervient en RH à temps partagé pour structurer la fonction RH des PME en croissance. Approche terrain pour PME multi-sites.</p>
+        </div>
+        <div class="team-card-v2">
+          <div class="avatar-circle avatar-circle--teal">CJ</div>
+          <h3>Christine Jalbert</h3>
+          <div class="role">Consultante — Volet RH &amp; Organisation</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--purple">QVT</span>
+            <span class="expertise-tag expertise-tag--teal">Changement</span>
+          </div>
+          <p>Accompagnement organisationnel lié à la transition écologique. Impact RH de la décarbonation : évolution des postes, nouvelles compétences, dialogue social sur les changements de pratiques.</p>
+        </div>
+      </div>
+      <!-- TODO client : fournir les photos réelles des 6 membres (placeholders initiales en attendant) -->
+    </div>
+  </section>
+
+  <!-- GARANTIES — Des garanties concrètes -->
+  <section class="section section--teal">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Des garanties concrètes de qualité</h2>
+        <p class="section-subtitle">Ces certifications ne sont pas des logos décoratifs. Elles conditionnent l'accès au financement et attestent du sérieux de nos interventions.</p>
+      </div>
+      <div class="cert-grid reveal-stagger">
+        <div class="cert-card reveal" style="--delay: 0s;">
+          <img src="assets/img/qualiopi.jpg" alt="Certification Qualiopi" width="120" height="60" loading="lazy" decoding="async">
+          <p>La certification qualité nationale qui rend nos formations co-finançables.</p>
+        </div>
+        <div class="cert-card reveal" style="--delay: 0.1s;">
+          <span class="cert-picto"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="var(--gold-400)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></span>
+          <h4>CléA Management</h4>
+          <p>Certification des compétences managériales, inscrite au RNCP.</p>
+        </div>
+        <div class="cert-card reveal" style="--delay: 0.2s;">
+          <span class="cert-picto"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="var(--gold-400)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M9 14l2 2 4-4"/></svg></span>
+          <h4>AFEST</h4>
+          <p>La formation en situation de travail : on forme sur le poste, pas en salle.</p>
+        </div>
+        <div class="cert-card reveal" style="--delay: 0.3s;">
+          <span class="cert-picto"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="var(--gold-400)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 4 13c0-4 3-8 8-10 5 2 8 6 8 10a7 7 0 0 1-7 7z"/><path d="M12 22V10"/></svg></span>
+          <h4>ACTEE</h4>
+          <p>Conseil et formation dédiés à la décarbonation et aux transitions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════
+       TÉMOIGNAGE VIDÉO — Galerie 7 épisodes
+       Série "CARTESA vu par ceux qui l'ont vécu" — Stéphane Fournier (Président, Groupe Syrah).
+       Vidéos : actuellement servies en local depuis assets/temoignages/video/ (interim).
+       ⚠️ À LA MIGRATION WORDPRESS : uploader les 7 .mp4 dans la médiathèque WP
+          et remplacer les chemins data-video="assets/temoignages/video/epN.mp4"
+          par les URL WP correspondantes (ou un embed). Posters et textes restent valables.
+       ═════════════════════════════════════════════════════════════ -->
+  <section class="vtestim" aria-labelledby="vtestimTitle">
+    <div class="container">
+      <div class="vtestim__head reveal">
+        <span class="vtestim__eyebrow">Témoignage vidéo</span>
+        <h2 id="vtestimTitle">Un dirigeant raconte, en 7 chapitres</h2>
+        <p>De la problématique initiale au message qu'il adresse aux autres dirigeants&nbsp;: le parcours d'accompagnement d'un groupe industriel, sans filtre, par celui qui l'a vécu.</p>
+      </div>
+
+      <a class="vt-speaker vt-speaker--link reveal" href="ressources.html#temoignages" aria-label="Voir toutes les capsules vidéo dans les ressources">
+        <img src="assets/temoignages/posters/stephane-fournier-avatar.jpg" alt="Portrait de Stéphane Fournier" width="60" height="60" loading="lazy">
+        <div>
+          <div class="vt-speaker__name">Stéphane Fournier</div>
+          <div class="vt-speaker__role">Président · Groupe Syrah</div>
+          <div class="vt-speaker__sector">Mécanique de haute précision · Plusieurs sociétés</div>
+        </div>
+        <span class="vt-speaker__cta">Toutes les capsules &rarr;</span>
+      </a>
+
+      <div class="vtestim-grid reveal" id="vtestimGrid">
+        <!-- ép. 1 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep1.mp4"
+          data-title="Un besoin devenu évident"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep1.jpg" alt="Stéphane Fournier — Un besoin devenu évident" loading="lazy">
+            <span class="vt-chapter">1</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:27</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Quelle était la problématique&nbsp;?</span>
+            <span class="vt-card__title">Un besoin devenu évident</span>
+            <span class="vt-card__excerpt">« Garder des compétences très précises — on travaille la mécanique de précision — et faire en sorte qu'elles se transmettent : c'est l'enjeu majeur de nos entreprises. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 2 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep2.mp4"
+          data-title="Un management à réinventer"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep2.jpg" alt="Stéphane Fournier — Un management à réinventer" loading="lazy">
+            <span class="vt-chapter">2</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:23</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Le constat de départ</span>
+            <span class="vt-card__title">Un management à réinventer</span>
+            <span class="vt-card__excerpt">« Le management se faisait de façon empirique, comme dans beaucoup d'industries : chacun au feeling — mais plutôt maladroitement. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 3 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep3.mp4"
+          data-title="La décision s'impose"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep3.jpg" alt="Stéphane Fournier — La décision s'impose" loading="lazy">
+            <span class="vt-chapter">3</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:43</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Pourquoi avoir choisi Cartesa&nbsp;?</span>
+            <span class="vt-card__title">La décision s'impose</span>
+            <span class="vt-card__excerpt">« On s'est choisi ensemble, avec Cartesa et Catherine. Une approche sur mesure : mieux encadrer, et transmettre le savoir. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 4 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep4.mp4"
+          data-title="Une relation de confiance"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep4.jpg" alt="Stéphane Fournier — Une relation de confiance" loading="lazy">
+            <span class="vt-chapter">4</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:55</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Ce qui a fait la différence</span>
+            <span class="vt-card__title">Une relation de confiance</span>
+            <span class="vt-card__excerpt">« Il fallait que l'alchimie prenne. J'ai pu lâcher le sujet en totale confiance : ce que je voulais transmettre a été mis en œuvre. La différence, c'est le suivi. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 5 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep5.mp4"
+          data-title="Faire dialoguer les équipes"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep5.jpg" alt="Stéphane Fournier — Faire dialoguer les équipes" loading="lazy">
+            <span class="vt-chapter">5</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:52</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Le déroulement</span>
+            <span class="vt-card__title">Faire dialoguer les équipes</span>
+            <span class="vt-card__excerpt">« Asseoir des chefs d'atelier de plusieurs sociétés autour d'une table et les faire réfléchir ensemble : Catherine a eu la méthode. Un vrai apport de mise en confiance. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 6 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep6.mp4"
+          data-title="Des résultats concrets"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep6.jpg" alt="Stéphane Fournier — Des résultats concrets" loading="lazy">
+            <span class="vt-chapter">6</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">0:58</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">Ce qui a changé</span>
+            <span class="vt-card__title">Des résultats concrets</span>
+            <span class="vt-card__excerpt">« Aujourd'hui c'est structuré : points d'équipe réguliers, entretiens annuels à date. Sceptiques au départ, les managers en ont compris l'intérêt. »</span>
+          </span>
+        </button>
+
+        <!-- ép. 7 -->
+        <button class="vt-card" type="button"
+          data-video="assets/temoignages/video/ep7.mp4"
+          data-title="Un message aux futurs participants"
+          data-sub="Stéphane Fournier · Président, Groupe Syrah">
+          <span class="vt-card__media">
+            <img src="assets/temoignages/posters/ep7.jpg" alt="Stéphane Fournier — Un message aux futurs participants" loading="lazy">
+            <span class="vt-chapter">7</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-badge">1:01</span>
+          </span>
+          <span class="vt-card__body">
+            <span class="vt-card__q">À qui le recommander&nbsp;?</span>
+            <span class="vt-card__title">Un message aux futurs participants</span>
+            <span class="vt-card__excerpt">« À toutes les TPE-PME où le management est empirique. Derrière, la productivité s'améliore — et surtout, on ne perd pas notre savoir-faire. »</span>
+          </span>
+        </button>
+      </div>
+
+      <p class="vt-note">Témoignage filmé et partagé avec l'accord de Stéphane Fournier (Groupe Syrah).</p>
+    </div>
+
+    <!-- Lightbox vidéo -->
+    <div class="vt-modal" id="vtModal" role="dialog" aria-modal="true" aria-label="Lecture du témoignage vidéo">
+      <div class="vt-modal__inner">
+        <div class="vt-modal__frame">
+          <button class="vt-modal__close" id="vtClose" type="button" aria-label="Fermer la vidéo">&times;</button>
+          <video id="vtVideo" controls playsinline preload="none"></video>
+        </div>
+        <div class="vt-modal__cap">
+          <strong id="vtCapTitle"></strong>
+          <span id="vtCapSub"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section section--alt" style="padding:56px 0;">
+    <div class="container" style="text-align:center;">
+      <h2 class="reveal" style="margin-bottom:12px;">Et si on parlait de votre entreprise ?</h2>
+      <p class="reveal" style="color:var(--neutral-600); max-width:540px; margin:0 auto 28px; font-size:1rem;">Un premier échange de 30 minutes pour comprendre vos enjeux RH, RSE ou formation. Sans engagement, sans pitch commercial, juste un dialogue utile entre professionnels.</p>
+      <a href="contact.html" class="btn btn--accent btn--lg reveal">Prendre rendez-vous</a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo-chip"><img src="assets/img/logo-cartesa.png" alt="CARTESA" width="250" height="86" loading="lazy" decoding="async"></span>
+          <p class="footer-tag">Compétences, Entreprises &amp; Territoires</p>
+          <div class="footer-qualiopi">
+            <img src="assets/img/qualiopi.jpg" alt="Certifié Qualiopi" width="120" height="60" loading="lazy" decoding="async">
+            <span>Certifié Qualiopi au titre des actions de formation</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Vos attentes</h4>
+          <ul>
+            <li><a href="vos-attentes.html#fideliser">Structurer &amp; fidéliser</a></li>
+            <li><a href="vos-attentes.html#dirigeants">Développer vos managers</a></li>
+            <li><a href="vos-attentes.html#former">Former vos équipes</a></li>
+            <li><a href="vos-attentes.html#decarboner">Décarboner</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Nos expertises</h4>
+          <ul>
+            <li><a href="expertises.html">Diagnostic &amp; accompagnements</a></li>
+            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CARTESA</h4>
+          <ul>
+            <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
+            <li><a href="ressources.html">Ressources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+            <li><a href="politique-cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
+            <span>Près de Lyon<br>entre Lyon, Grenoble et Chambéry<br><small>Déplacements France &amp; Europe</small></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="contact.html">Nous contacter</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
+            <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
+        <div class="footer-bottom__social">
+          <a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener" aria-label="LinkedIn CARTESA">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll shadow
+    (function() {
+      var header = document.getElementById('siteHeader');
+      if (!header) return;
+      window.addEventListener('scroll', function() {
+        header.classList.toggle('scrolled', window.scrollY > 10);
+      }, { passive: true });
+    })();
+
+    // Mobile nav + header hide on scroll-down
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      (function() {
+        var lastY = window.scrollY || 0, ticking = false, hidden = false;
+        var hdr = document.querySelector('.site-header');
+        if (!hdr) return;
+        window.addEventListener('scroll', function() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function() {
+            var y = window.scrollY;
+            if (y > 140 && y > lastY + 4 && !hidden) {
+              hdr.classList.add('hidden'); hidden = true;
+            } else if ((y < lastY - 4 || y <= 140) && hidden) {
+              hdr.classList.remove('hidden'); hidden = false;
+            }
+            lastY = y;
+            ticking = false;
+          });
+        }, { passive: true });
+      })();
+
+      var links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          var open = links.classList.toggle('is-open');
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          document.body.style.overflow = open ? 'hidden' : '';
+        });
+        links.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            if (window.matchMedia('(max-width: 880px)').matches && !a.closest('.nav-dropdown a[href="#"]')) {
+              links.classList.remove('is-open');
+              toggle.classList.remove('is-open');
+              toggle.setAttribute('aria-expanded', 'false');
+              document.body.style.overflow = '';
+            }
+          });
+        });
+      }
+
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function(dd) {
+        var trigger = dd.querySelector(':scope > a');
+        if (!trigger) return;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', function(e) {
+          var isMobileNav = window.matchMedia('(max-width: 880px)').matches;
+          if (!isMobileNav) return;
+          e.preventDefault();
+          var open = dd.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+    })();
+
+    // Scroll-reveal animations
+    var revealObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger').forEach(function(el) { revealObs.observe(el); });
+
+    // Scroll progress bar
+    (function() {
+      var bar = document.getElementById('scrollProgress');
+      if (!bar) return;
+      function update() {
+        var scrollTop = window.scrollY;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+
+    /* ----- Témoignage vidéo : lightbox ----- */
+    (function() {
+      var grid = document.getElementById('vtestimGrid');
+      var modal = document.getElementById('vtModal');
+      if (!grid || !modal) return;
+      var video = document.getElementById('vtVideo');
+      var capTitle = document.getElementById('vtCapTitle');
+      var capSub = document.getElementById('vtCapSub');
+      var closeBtn = document.getElementById('vtClose');
+      var lastFocus = null;
+
+      function openModal(card) {
+        var src = card.getAttribute('data-video');
+        if (!src) return;
+        lastFocus = card;
+        video.src = src;
+        capTitle.textContent = card.getAttribute('data-title') || '';
+        capSub.textContent = card.getAttribute('data-sub') || '';
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+        var p = video.play();
+        if (p && p.catch) p.catch(function() {});
+      }
+      function closeModal() {
+        modal.classList.remove('open');
+        video.pause();
+        video.removeAttribute('src');
+        video.load();
+        document.body.style.overflow = '';
+        if (lastFocus) lastFocus.focus();
+      }
+
+      grid.addEventListener('click', function(e) {
+        var card = e.target.closest('.vt-card');
+        if (card) openModal(card);
+      });
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+      });
+    })();
+  </script>
+
+  <script src="assets/motion.js" defer></script>
+  <script src="assets/cookie-banner.js" defer></script>
+</body>
+</html>

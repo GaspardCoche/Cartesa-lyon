@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<!-- TODO B2C: créer page CPF/bilan compétences si offre confirmée -->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CARTESA — Cabinet RH, RSE & Formation Qualiopi | Isère</title>
+  <meta name="description" content="Cabinet RH, RSE et formation Qualiopi près de Lyon, intervention partout en France et en Europe. Diagnostic, RH à temps partagé, approches d'accompagnement sur mesure. Des centaines de missions réalisées depuis 2003.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cartesa-lyon.com/">
+  <!-- Open Graph -->
+  <meta property="og:title" content="CARTESA — Cabinet RH, RSE & Formation Qualiopi | Isère">
+  <meta property="og:description" content="Cabinet RH, RSE et formation Qualiopi près de Lyon, intervention partout en France et en Europe. Diagnostic, RH à temps partagé, approches d'accompagnement sur mesure. Des centaines de missions réalisées depuis 2003.">
+  <meta property="og:url" content="https://cartesa-lyon.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
+  <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
+  <meta property="og:image:alt" content="Logo CARTESA — Cabinet RH, RSE & Formation Qualiopi en Isère">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle Twitter avec le client (placeholder @CartesaRH retiré) -->
+  <!-- GEO -->
+  <meta name="geo.region" content="FR-38">
+  <meta name="geo.placename" content="La Tour-du-Pin">
+  <meta name="geo.position" content="45.5628;5.4437">
+  <meta name="ICBM" content="45.5628, 5.4437">
+  <link rel="preload" as="image" href="assets/img/cartesa-team.jpg" fetchpriority="high">
+  <!-- Self-hosted fonts (RGPD-friendly) -->
+  <link rel="icon" type="image/png" href="assets/img/favicon-cartesa.png">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://cartesa-lyon.com/#organization",
+        "name": "CARTESA",
+        "alternateName": "Cabinet CARTESA",
+        "description": "Cabinet de conseil et organisme de formation RH certifié Qualiopi. Management, droit social, recrutement, RSE.",
+        "url": "https://cartesa-lyon.com",
+        "logo": "https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png",
+        "image": "assets/img/cartesa-team.jpg",
+        "email": "contact@cabinet-cartesa.com",
+        "foundingDate": "2003",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "36 avenue Alsace Lorraine",
+          "addressLocality": "La Tour-du-Pin",
+          "postalCode": "38110",
+          "addressRegion": "Auvergne-Rhône-Alpes",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 45.5628,
+          "longitude": 5.4437
+        },
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Isère" },
+          { "@type": "AdministrativeArea", "name": "Auvergne-Rhône-Alpes" }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Diagnostic, RSE, Transition & Formation",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnostic opérationnel RH & RSE (PCRH, GPEC)" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "RSE & Décarbonation - Diagnostic CO2I" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DRH & Partenaire RSE (transition, temps partage)" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Approches d'accompagnement RH, Management & RSE (Respiration, Impulsion, RH à temps partagé)" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Formations certifiées Qualiopi" } }
+          ]
+        },
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://cartesa-lyon.com",
+        "name": "CARTESA",
+        "publisher": { "@id": "https://cartesa-lyon.com/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Les formations CARTESA sont-elles finançables par OPCO ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, toutes nos formations sont certifiées Qualiopi et sont co-finançables, via votre OPCO ou la Région Auvergne-Rhône-Alpes. Nous vous accompagnons dans le montage du dossier."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Dans quels secteurs CARTESA intervient-il ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CARTESA accompagne tous les secteurs : industrie, BTP, services, commerce, éducation, sécurité. Basés près de Lyon, nous intervenons partout en France et en Europe auprès des PME et ETI."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce que le dispositif PCRH ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La Prestation de Conseil en Ressources Humaines (PCRH) est un dispositif co-finançable (OPCO ou Région Auvergne-Rhône-Alpes) qui permet aux PME de bénéficier d'un accompagnement RH stratégique sur mesure."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/img/logo-cartesa.png" alt="CARTESA — Compétences, Entreprises &amp; Territoires" width="250" height="86"></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="nav-dropdown"><a href="vos-attentes.html" aria-haspopup="true" aria-expanded="false">Vos attentes</a>
+          <ul class="nav-sub">
+            <li><a href="vos-attentes.html#fideliser">Structurer &amp; fid&eacute;liser vos &eacute;quipes</a></li>
+            <li><a href="vos-attentes.html#dirigeants">D&eacute;velopper vos dirigeants &amp; managers</a></li>
+            <li><a href="vos-attentes.html#former">Former vos &eacute;quipes</a></li>
+            <li><a href="vos-attentes.html#decarboner">D&eacute;carboner votre activit&eacute;</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown"><a href="expertises.html" aria-haspopup="true" aria-expanded="false">Nos expertises</a>
+          <ul class="nav-sub">
+            <li><a href="expertises.html">Diagnostic &amp; accompagnements RH</a></li>
+            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="ingenierie.html">Ing&eacute;nierie p&eacute;dagogique</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; D&eacute;carbonation</a></li>
+          </ul>
+        </li>
+        <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <main>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Présentation CARTESA">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <div class="hero-split">
+        <div class="hero-text hero-text-reveal">
+          <p class="hero-eyebrow">Cabinet RH · Formation · Conseil · depuis 2003</p>
+          <h1 class="hero-title-modern">
+            <span class="hero-line-1">On structure votre <strong>RH</strong>.</span>
+            <span class="hero-line-2">Vous reprenez votre <em>souffle</em>.</span>
+          </h1>
+          <p class="hero-sub">Diagnostic, accompagnement, formations Qualiopi pour les dirigeants de PME et ETI. Près de Lyon, partout en France et en Europe — prestations co-finançables (OPCO ou Région).</p>
+          <div class="hero-actions">
+            <a href="#nos-offres" class="btn btn--accent btn--lg">Découvrir nos services</a>
+            <a href="contact.html" class="btn btn--outline btn--lg">Échanger avec un expert</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="assets/img/cartesa-team.jpg" alt="L'équipe CARTESA en situation de conseil" class="hero-img" width="800" height="702" fetchpriority="high" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALITY PROOF BAND -->
+  <section class="proof-band">
+    <div class="container">
+      <div class="proof-band-inner">
+        <div class="proof-item reveal" style="--delay: 0s;">
+          <div>
+            <strong data-count>+1 000</strong>
+            <span>collaborateurs formés</span>
+          </div>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-item reveal" style="--delay: 0.1s;">
+          <div>
+            <strong data-count>+100</strong>
+            <span>entreprises accompagnées</span>
+          </div>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-item reveal" style="--delay: 0.2s;">
+          <div>
+            <strong data-count>+20 ans</strong>
+            <span>d'expérience de terrain</span>
+          </div>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-item reveal" style="--delay: 0.3s;">
+          <img src="assets/img/qualiopi.jpg" alt="Qualiopi" class="proof-logo" width="120" height="60" loading="lazy" decoding="async">
+          <div>
+            <strong>Certifié Qualiopi</strong>
+            <span>co-finançable OPCO / Région</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLETS HORIZONTAUX — Découverte services au scroll -->
+  <div class="volets-wrap" id="nos-offres">
+    <div class="volets-sticky">
+      <div class="volets-track">
+
+        <!-- Volet 1 — Diagnostic -->
+        <div class="volet volet--active">
+          <div class="volet-inner">
+            <div class="volet-text">
+              <span class="volet-label">Diagnostic & expertise RH</span>
+              <h2>Comprendre avant d'agir</h2>
+              <p>Diagnostic opérationnel de vos pratiques RH et RSE sur le terrain. PCRH co-finançable (OPCO ou Région Auvergne-Rhône-Alpes) pour les PME de moins de 250 salariés.</p>
+              <a href="expertises.html" class="btn btn--accent">Découvrir le diagnostic</a>
+            </div>
+            <div class="volet-visual">
+              <div class="volet-feature">
+                <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                <div><h4>Diagnostic terrain</h4><p>Nous venons dans vos locaux, pas de diagnostic depuis un bureau</p></div>
+              </div>
+              <div class="volet-feature">
+                <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <div><h4>Co-finançable</h4><p>Via votre OPCO ou la Région — nous vous aidons au montage du dossier</p></div>
+              </div>
+              <div class="volet-feature">
+                <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <div><h4>Plan d'action concret</h4><p>Livrable opérationnel avec priorités et calendrier</p></div>
+              </div>
+            </div>
+          </div>
+          <span class="volet-number">01</span>
+        </div>
+
+        <!-- Volet 2 — Accompagnements -->
+        <div class="volet">
+          <div class="volet-inner">
+            <div class="volet-text">
+              <span class="volet-label">À vos côtés</span>
+              <h2>Un partenaire RH dans la durée</h2>
+              <p>3 approches d'accompagnement combinant conseil, coaching, formation et codéveloppement. De Respiration à RH à temps partagé.</p>
+              <a href="accompagnements.html" class="btn btn--accent">Découvrir nos approches</a>
+            </div>
+            <div class="volet-visual">
+              <div class="volet-feature">
+                <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <!-- TODO client : préciser le forfait d'heures mensuel de la hotline (X h/mois) -->
+                <div><h4>Respiration</h4><p>Sessions flash et hotline RH (forfait d'heures mensuel)</p></div>
+              </div>
+              <div class="volet-feature">
+                <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                <div><h4>Impulsion</h4><p>Coaching managers, codéveloppement, formation incluse</p></div>
+              </div>
+              <div class="volet-feature">
+                <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                <div><h4>RH à temps partagé</h4><p>Mission ponctuelle pour structurer ou relancer la fonction RH</p></div>
+              </div>
+            </div>
+          </div>
+          <span class="volet-number">02</span>
+        </div>
+
+        <!-- Volet 3 — Formations -->
+        <div class="volet">
+          <div class="volet-inner">
+            <div class="volet-text">
+              <span class="volet-label">Formations certifiées</span>
+              <h2>Des formations qui changent les pratiques</h2>
+              <p>Management, droit social, recrutement, RSE. Certifiées Qualiopi, co-finançables (OPCO ou Région). Formation CléA Management certifiante, éligible au CPF.</p>
+              <a href="formations.html" class="btn btn--accent">Voir le catalogue 2026</a>
+            </div>
+            <div class="volet-visual">
+              <div class="volet-feature">
+                <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                <div><h4>Inter et intra-entreprise</h4><p>Dans vos locaux, partout en France et en Europe</p></div>
+              </div>
+              <div class="volet-feature">
+                <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <div><h4>CléA Management</h4><p>Certifiant, inscrit RNCP, éligible CPF</p></div>
+              </div>
+              <div class="volet-feature">
+                <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <div><h4>Pédagogie terrain</h4><p>Cas pratiques, mises en situation, pas de théorie creuse</p></div>
+              </div>
+            </div>
+          </div>
+          <span class="volet-number">03</span>
+        </div>
+
+        <!-- Volet 4 — RSE & Décarbonation -->
+        <div class="volet">
+          <div class="volet-inner">
+            <div class="volet-text">
+              <span class="volet-label">RSE & Décarbonation</span>
+              <h2>Engager votre transition environnementale</h2>
+              <p>Diagnostic CO2i co-finançable. Accompagnement décarbonation, labellisation RSE (EcoVadis), serious games ACTEE.</p>
+              <a href="rse-decarbonation.html" class="btn btn--accent">Découvrir l'offre RSE</a>
+            </div>
+            <div class="volet-visual">
+              <div class="volet-feature">
+                <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <div><h4>CO2i by OPCO2i</h4><p>CARTESA prestataire partenaire en Isère, Drôme, Ardèche</p></div>
+              </div>
+              <div class="volet-feature">
+                <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                <div><h4>Labellisation RSE</h4><p>Accompagnement vers EcoVadis et les labels reconnus</p></div>
+              </div>
+              <div class="volet-feature">
+                <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                <div><h4>Serious Games ACTEE</h4><p>Apprendre la RSE en s'engageant, sans se prendre la tête</p></div>
+              </div>
+            </div>
+          </div>
+          <span class="volet-number">04</span>
+        </div>
+
+      </div>
+      <div class="volets-progress" aria-label="Navigation services">
+        <button class="volet-dot active" aria-label="Volet 1 : Diagnostic" title="Diagnostic & expertise RH"><span>1</span></button>
+        <button class="volet-dot" aria-label="Volet 2 : Accompagnements" title="À vos côtés"><span>2</span></button>
+        <button class="volet-dot" aria-label="Volet 3 : Formations" title="Formations certifiées"><span>3</span></button>
+        <button class="volet-dot" aria-label="Volet 4 : RSE" title="RSE & Décarbonation"><span>4</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOS ENJEUX — APPROCHE THÉMATIQUE -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Vos enjeux</span>
+        <h2 class="section-title">Vous vous reconnaissez ?</h2>
+        <p class="section-subtitle">Ce sont les thématiques que nos clients rencontrent au quotidien. Chacune a une réponse concrète.</p>
+      </div>
+      <div class="enjeux-list reveal-stagger">
+
+        <a href="expertises.html" class="enjeu-row">
+          <span class="enjeu-num">01</span>
+          <div class="enjeu-body">
+            <h3>Structurer sa fonction RH</h3>
+            <p>Diagnostic opérationnel, alignement des compétences au modèle économique et aux missions attendues, transparence salariale (directive européenne), ancrage dans la stratégie et les opérations.</p>
+          </div>
+          <span class="enjeu-cta">Diagnostic opérationnel &rarr;</span>
+        </a>
+
+        <a href="accompagnements.html" class="enjeu-row">
+          <span class="enjeu-num">02</span>
+          <div class="enjeu-body">
+            <h3>Gouvernance et modèle de développement</h3>
+            <p>Gouvernance d'entreprise, définition et déclinaison du modèle économique, pilotage des projets de transformation.</p>
+          </div>
+          <span class="enjeu-cta">Accompagnements &rarr;</span>
+        </a>
+
+        <a href="accompagnements.html" class="enjeu-row">
+          <span class="enjeu-num">03</span>
+          <div class="enjeu-body">
+            <h3>Mobiliser et engager les équipes</h3>
+            <p>Transversalité et coopération, mobilisation autour du projet de la structure, engagement et fidélisation.</p>
+          </div>
+          <span class="enjeu-cta">Nos approches &rarr;</span>
+        </a>
+
+        <a href="formations.html" class="enjeu-row">
+          <span class="enjeu-num">04</span>
+          <div class="enjeu-body">
+            <h3>Développer les compétences</h3>
+            <p>Formations management, droit social, recrutement. Montée en compétence des managers et équipes. Pédagogie terrain, certifiée Qualiopi.</p>
+          </div>
+          <span class="enjeu-cta">Formations &rarr;</span>
+        </a>
+
+        <a href="rse-decarbonation.html" class="enjeu-row">
+          <span class="enjeu-num">05</span>
+          <div class="enjeu-body">
+            <h3>Pérenniser par la RSE</h3>
+            <p>Responsabilité sociétale et écologique, décarbonation et performance durable, conformité CSRD et enjeux donneurs d'ordres.</p>
+          </div>
+          <span class="enjeu-cta">RSE & Décarbonation &rarr;</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="section section--teal">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Des garanties concrètes de qualité</h2>
+        <p class="section-subtitle">Ces certifications ne sont pas des logos décoratifs. Elles conditionnent l'accès au financement OPCO et attestent du sérieux de nos interventions.</p>
+      </div>
+      <div class="cert-grid reveal-stagger">
+        <div class="cert-card reveal" style="--delay: 0s;">
+          <img src="assets/img/qualiopi.jpg" alt="Certification Qualiopi" width="120" height="60" loading="lazy" decoding="async">
+          <p>La certification qualité nationale qui rend nos formations co-finançables.</p>
+        </div>
+        <div class="cert-card reveal" style="--delay: 0.1s;">
+          <span class="cert-picto"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="var(--gold-400)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></span>
+          <h4>CléA Management</h4>
+          <p>Certification des compétences managériales, inscrite au RNCP.</p>
+        </div>
+        <div class="cert-card reveal" style="--delay: 0.2s;">
+          <span class="cert-picto"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="var(--gold-400)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M9 14l2 2 4-4"/></svg></span>
+          <h4>AFEST</h4>
+          <p>La formation en situation de travail : on forme sur le poste, pas en salle.</p>
+        </div>
+        <div class="cert-card reveal" style="--delay: 0.3s;">
+          <span class="cert-picto"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="var(--gold-400)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 4 13c0-4 3-8 8-10 5 2 8 6 8 10a7 7 0 0 1-7 7z"/><path d="M12 22V10"/></svg></span>
+          <h4>ACTEE</h4>
+          <p>Conseil et formation dédiés à la décarbonation et aux transitions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARTESA EN ACTION — photos d'ambiance -->
+  <section class="section section--white" id="action">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center; margin-bottom:32px;">
+        <span class="section-label" style="justify-content:center;">Cartesa en action</span>
+        <h2 class="section-title" style="margin-left:auto; margin-right:auto;">Du conseil de terrain, pas du PowerPoint</h2>
+        <p class="section-subtitle" style="margin-left:auto; margin-right:auto;">Nos interventions sont concrètes : ateliers participatifs, coaching en situation, formations sur le poste de travail. Voici quelques moments.</p>
+      </div>
+      <div class="action-gallery reveal-stagger">
+        <figure class="action-photo action-photo--tall" style="--delay:0s;">
+          <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=900&q=80&auto=format&fit=crop" alt="Atelier participatif en entreprise" loading="lazy" decoding="async">
+          <figcaption>Ateliers participatifs</figcaption>
+        </figure>
+        <figure class="action-photo" style="--delay:0.08s;">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80&auto=format&fit=crop" alt="Coaching individuel dirigeant" loading="lazy" decoding="async">
+          <figcaption>Coaching individuel</figcaption>
+        </figure>
+        <figure class="action-photo" style="--delay:0.16s;">
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format&fit=crop" alt="Formation manager équipe" loading="lazy" decoding="async">
+          <figcaption>Formations terrain</figcaption>
+        </figure>
+        <figure class="action-photo action-photo--wide" style="--delay:0.24s;">
+          <img src="https://images.unsplash.com/photo-1552581234-26160f608093?w=1200&q=80&auto=format&fit=crop" alt="Réunion stratégique RH" loading="lazy" decoding="async">
+          <figcaption>Diagnostic stratégique</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINANCEMENT CTA BAND -->
+  <section class="section section--alt" style="padding: 48px 0;">
+    <div class="container" style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:18px;">
+      <div style="max-width:640px;">
+        <span class="section-label reveal" style="margin-bottom:8px; justify-content:center;">Financement</span>
+        <h2 class="reveal" style="font-size:clamp(1.3rem, 2.5vw, 1.7rem); margin-bottom:8px;">Co-finançable — on vous accompagne sur le dossier</h2>
+        <p class="reveal" style="color:var(--neutral-600); font-size:0.95rem; margin:0;">PCRH, plan de développement, FNE, CO2I : nous vous orientons vers le bon dispositif (OPCO ou Région Auvergne-Rhône-Alpes) et vous accompagnons dans le montage du dossier.</p>
+      </div>
+      <a href="ingenierie.html#financement" class="btn btn--primary btn--lg reveal">Découvrir les dispositifs &rarr;</a>
+    </div>
+  </section>
+
+
+  <!-- TÉMOIGNAGES CAROUSEL — Immersive scroll -->
+  <section class="section testimonials-immersive" style="padding:80px 0; background:#fff; overflow:hidden;">
+    <div class="container" style="text-align:center; max-width:720px; margin-bottom:40px;">
+      <span class="section-label reveal">Retours d'expérience</span>
+      <h2 class="section-title reveal">Ce que disent les dirigeants accompagnés</h2>
+      <p class="reveal" style="color:var(--neutral-600,#4b5563); font-size:1rem; margin-top:12px;">Stéphane Fournier, Président du Groupe Syrah, raconte son accompagnement en vidéo.</p>
+    </div>
+
+    <div class="container" style="max-width:960px;">
+      <a href="temoignages.html" class="home-vt reveal" aria-label="Voir le témoignage vidéo de Stéphane Fournier, Président du Groupe Syrah">
+        <div class="home-vt__media">
+          <img src="assets/temoignages/posters/ep1.jpg" alt="Stéphane Fournier, Président du Groupe Syrah — témoignage vidéo CARTESA" loading="lazy">
+          <span class="home-vt__play" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+          <span class="home-vt__badge">Témoignage client filmé · série en 7 épisodes</span>
+        </div>
+        <div class="home-vt__body">
+          <span class="t-tag">Retour d'expérience</span>
+          <p class="t-quote">« On s'est choisi ensemble avec CARTESA. Il fallait que l'alchimie prenne — et la confiance a été totale. »</p>
+          <div class="t-meta">
+            <img src="assets/temoignages/posters/stephane-fournier-avatar.jpg" alt="" width="46" height="46" loading="lazy">
+            <div>
+              <strong>Stéphane Fournier</strong>
+              <span>Président · Groupe Syrah</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div style="text-align:center; margin-top:36px;">
+      <a href="temoignages.html" class="btn btn--ghost reveal">Voir tous les témoignages et reportages</a>
+    </div>
+
+    <style>
+      .testimonials-viewport {
+        display: flex;
+        gap: 24px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        padding: 16px max(24px, calc((100vw - 1100px) / 2)) 32px;
+        scroll-padding-left: 16px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .testimonials-viewport::-webkit-scrollbar { display: none; }
+      .t-card {
+        flex: 0 0 min(420px, 92vw);
+        scroll-snap-align: center;
+        background: #fff;
+        border: 1px solid var(--neutral-200);
+        border-radius: 22px;
+        padding: 36px 32px 30px;
+        position: relative;
+        transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), box-shadow 0.5s, border-color 0.3s;
+        display: flex;
+        flex-direction: column;
+        min-height: 320px;
+      }
+      .t-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 2px 8px rgba(9,41,51,0.08);
+        border-color: var(--teal-100);
+      }
+      .t-tag {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--teal-600);
+        background: var(--teal-50);
+        padding: 6px 12px;
+        border-radius: 100px;
+        width: fit-content;
+        margin-bottom: 20px;
+      }
+      .t-quote {
+        font-family: 'Sora', sans-serif;
+        font-size: 1.08rem;
+        line-height: 1.5;
+        color: var(--teal-900);
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        margin: 0 0 24px;
+        flex: 1;
+      }
+      .t-meta { padding-top: 18px; border-top: 1px solid var(--neutral-200); display: flex; flex-direction: column; gap: 3px; }
+      .t-meta strong { font-family: 'Sora', sans-serif; font-size: 0.92rem; color: var(--teal-900); }
+      .t-meta span { font-size: 0.82rem; color: var(--neutral-500); }
+
+      /* Témoignage vidéo réel mis en avant (accueil) */
+      .home-vt {
+        display: grid; grid-template-columns: 1.05fr 1fr; gap: 0;
+        max-width: 960px; margin: 0 auto;
+        background: #fff; border: 1px solid var(--neutral-200); border-radius: 24px;
+        overflow: hidden; text-decoration: none; color: inherit;
+        transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s, border-color 0.3s;
+      }
+      .home-vt:hover { transform: translateY(-4px); box-shadow: 0 2px 8px rgba(9,41,51,0.08); border-color: var(--teal-100); }
+      .home-vt__media { position: relative; min-height: 330px; background: var(--neutral-100); }
+      .home-vt__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .home-vt__play {
+        position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+        width: 66px; height: 66px; border-radius: 50%;
+        background: rgba(255,255,255,0.92); color: var(--teal-700);
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 2px 8px rgba(9,41,51,0.08); transition: transform 0.3s;
+      }
+      .home-vt:hover .home-vt__play { transform: translate(-50%,-50%) scale(1.08); }
+      .home-vt__badge {
+        position: absolute; left: 16px; bottom: 16px;
+        background: rgba(2,86,89,0.92); color: #fff;
+        font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em;
+        padding: 6px 12px; border-radius: 100px;
+      }
+      .home-vt__body { padding: 38px 36px; display: flex; flex-direction: column; justify-content: center; }
+      .home-vt__body .t-quote { margin-bottom: 22px; }
+      .home-vt__body .t-meta { flex-direction: row; align-items: center; gap: 12px; }
+      .home-vt__body .t-meta img { border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+      .home-vt__body .t-meta strong { display: block; }
+      @media (max-width: 760px) {
+        .home-vt { grid-template-columns: 1fr; }
+        .home-vt__media { min-height: 220px; }
+      }
+      .t-controls { display: flex; align-items: center; gap: 18px; max-width: 520px; margin: 0 auto; padding: 0 24px; }
+      .t-btn {
+        width: 44px; height: 44px; border-radius: 50%;
+        border: 1.5px solid var(--neutral-300);
+        background: #fff; color: var(--teal-900);
+        cursor: pointer; display: flex; align-items: center; justify-content: center;
+        transition: all 0.25s ease; flex-shrink: 0;
+      }
+      .t-btn:hover { border-color: var(--teal-600); background: var(--teal-600); color: #fff; transform: translateY(-2px); }
+      .t-progress { flex: 1; height: 2px; background: var(--neutral-200); border-radius: 100px; overflow: hidden; position: relative; }
+      .t-progress-fill { position: absolute; top: 0; left: 0; height: 100%; background: var(--teal-600); width: 16.66%; transition: left 0.4s cubic-bezier(0.22,1,0.36,1); }
+    </style>
+  </section>
+
+  <!-- Schema.org Event + VideoObject pour les webinars -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Event",
+        "name": "Entretiens pro 2026 : éviter la sanction OPCO de 3 000 €",
+        "description": "Catherine Lenoir décrypte la nouvelle réglementation et partage 5 erreurs à éviter avant l'audit. Q&A live.",
+        "startDate": "2026-06-05T11:00:00+02:00",
+        "endDate": "2026-06-05T11:45:00+02:00",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": { "@type": "VirtualLocation", "url": "https://cartesa-lyon.com/contact.html?webinar=entretiens-pro-2026" },
+        "organizer": { "@type": "Organization", "name": "CARTESA", "url": "https://cartesa-lyon.com/" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://cartesa-lyon.com/contact.html?webinar=entretiens-pro-2026", "validFrom": "2026-05-13" },
+        "performer": { "@type": "Person", "name": "Catherine Lenoir" },
+        "inLanguage": "fr-FR",
+        "isAccessibleForFree": true
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Décarbonation industrielle : quels dispositifs de financement",
+        "description": "Étapes du diagnostic CO2I, illustrées par 2 cas réels de PME industrielles en Isère.",
+        "uploadDate": "2026-03-15",
+        "duration": "PT38M",
+        "thumbnailUrl": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800",
+        "contentUrl": "https://cartesa-lyon.com/contact.html?webinar=co2i-decarbonation",
+        "publisher": { "@type": "Organization", "name": "CARTESA", "logo": "https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" },
+        "inLanguage": "fr-FR"
+      },
+      {
+        "@type": "VideoObject",
+        "name": "RH à temps partagé : 5 cas où il faut faire appel à un externe",
+        "description": "Quand basculer ? Combien ça coûte ? Retours d'expérience de 3 dirigeants accompagnés.",
+        "uploadDate": "2026-02-12",
+        "duration": "PT52M",
+        "thumbnailUrl": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800",
+        "contentUrl": "https://cartesa-lyon.com/contact.html?webinar=drh-transition",
+        "publisher": { "@type": "Organization", "name": "CARTESA", "logo": "https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" },
+        "inLanguage": "fr-FR"
+      }
+    ]
+  }
+  </script>
+
+  <!-- WEBINARS & ÉVÉNEMENTS -->
+  <section class="section section--white" id="webinars">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Webinars & événements</span>
+        <h2 class="section-title">Apprenez avec nos experts, à votre rythme</h2>
+        <p class="section-subtitle">Sessions thématiques en visio, replays disponibles à la demande, et rencontres terrain. Gratuit, sur inscription.</p>
+      </div>
+      <div class="webinars-grid reveal-stagger">
+        <article class="webinar-card webinar-card--upcoming">
+          <div class="webinar-thumb">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format&fit=crop" alt="Réunion d'équipe entretien professionnel" loading="lazy" decoding="async">
+            <span class="webinar-thumb-overlay"></span>
+            <span class="webinar-badge webinar-badge--live">À venir</span>
+            <span class="webinar-icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </span>
+          </div>
+          <div class="webinar-body">
+            <div class="webinar-meta">
+              <span class="webinar-date">Jeudi 5 juin 2026 · 11h00</span>
+              <span class="webinar-duration">45 min</span>
+            </div>
+            <h3>Entretiens pro 2026 : éviter la sanction OPCO de 3 000 €</h3>
+            <p>Catherine Lenoir décrypte la nouvelle réglementation et partage 5 erreurs à éviter avant l'audit. Q&amp;A live de 15 minutes.</p>
+            <a href="contact.html?webinar=entretiens-pro-2026" class="btn btn--accent btn--sm">S'inscrire gratuitement</a>
+          </div>
+        </article>
+        <article class="webinar-card">
+          <div class="webinar-thumb">
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80&auto=format&fit=crop" alt="Industrie décarbonation bilan carbone" loading="lazy" decoding="async">
+            <span class="webinar-thumb-overlay"></span>
+            <span class="webinar-badge webinar-badge--replay">Replay</span>
+            <span class="webinar-icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            </span>
+          </div>
+          <div class="webinar-body">
+            <div class="webinar-meta">
+              <span class="webinar-date">Mars 2026</span>
+              <span class="webinar-duration">38 min</span>
+            </div>
+            <h3>Décarbonation industrielle : quels dispositifs de financement</h3>
+            <p>Les étapes concrètes du diagnostic CO2I, illustrées par 2 cas réels de PME industrielles en Isère. Avec partage du dossier-type.</p>
+            <a href="contact.html?webinar=co2i-decarbonation" class="btn btn--outline btn--sm" style="color:var(--teal-700); border-color:var(--teal-700);">Voir le replay &rarr;</a>
+          </div>
+        </article>
+        <article class="webinar-card">
+          <div class="webinar-thumb">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80&auto=format&fit=crop" alt="RH à temps partagé en mission" loading="lazy" decoding="async">
+            <span class="webinar-thumb-overlay"></span>
+            <span class="webinar-badge webinar-badge--replay">Replay</span>
+            <span class="webinar-icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            </span>
+          </div>
+          <div class="webinar-body">
+            <div class="webinar-meta">
+              <span class="webinar-date">Février 2026</span>
+              <span class="webinar-duration">52 min</span>
+            </div>
+            <h3>RH à temps partagé : 5 cas où il faut faire appel à un externe</h3>
+            <p>Quand basculer ? Combien ça coûte ? Comment cadrer la mission ? Retours d'expérience de 3 dirigeants accompagnés.</p>
+            <a href="contact.html?webinar=drh-transition" class="btn btn--outline btn--sm" style="color:var(--teal-700); border-color:var(--teal-700);">Voir le replay &rarr;</a>
+          </div>
+        </article>
+      </div>
+      <div style="text-align:center; margin-top:32px;">
+        <a href="contact.html?webinar=newsletter" class="btn btn--ghost">Être prévenu des prochains webinars &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER LOGOS — OPCO & financeurs -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Nos partenaires & OPCO</h2>
+        <p class="section-subtitle">Ces organismes financent les formations et accompagnements que nous délivrons.</p>
+      </div>
+      <div class="partner-marquee reveal" role="list" aria-label="Partenaires et OPCO de CARTESA">
+        <div class="partner-track">
+          <div class="partner-set">
+            <img class="partner-logo" role="listitem" src="assets/img/partners/opco-ep.png" alt="OPCO EP" height="120" loading="lazy" decoding="async">
+            <img class="partner-logo" role="listitem" src="assets/img/partners/opcommerce.png" alt="L'Opcommerce" height="120" loading="lazy" decoding="async">
+            <img class="partner-logo" role="listitem" src="assets/img/partners/uniformation.png" alt="Uniformation" height="120" loading="lazy" decoding="async">
+            <img class="partner-logo" role="listitem" src="assets/img/partners/opco2i.png" alt="OPCO2i" height="120" loading="lazy" decoding="async">
+            <img class="partner-logo" role="listitem" src="assets/img/partners/akto.png" alt="AKTO" height="120" loading="lazy" decoding="async">
+            <img class="partner-logo" role="listitem" src="assets/img/partners/constructys.png" alt="Constructys" height="120" loading="lazy" decoding="async">
+            <img class="partner-logo" role="listitem" src="assets/img/partners/cci-nord-isere.png" alt="CCI Nord-Isère" height="120" loading="lazy" decoding="async">
+            <span class="partner-badge" role="listitem">Région Auvergne-Rhône-Alpes</span>
+            <img class="partner-logo" role="listitem" src="assets/img/partners/elanova.png" alt="Elanova" height="120" loading="lazy" decoding="async">
+            <img class="partner-logo" role="listitem" src="assets/img/partners/ocapiat.png" alt="Ocapiat" height="120" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-set" aria-hidden="true">
+            <img class="partner-logo" src="assets/img/partners/opco-ep.png" alt="OPCO EP" height="120" loading="lazy" decoding="async">
+            <img class="partner-logo" src="assets/img/partners/opcommerce.png" alt="L'Opcommerce" height="120" loading="lazy" decoding="async">
+            <img class="partner-logo" src="assets/img/partners/uniformation.png" alt="Uniformation" height="120" loading="lazy" decoding="async">
+            <img class="partner-logo" src="assets/img/partners/opco2i.png" alt="OPCO2i" height="120" loading="lazy" decoding="async">
+            <img class="partner-logo" src="assets/img/partners/akto.png" alt="AKTO" height="120" loading="lazy" decoding="async">
+            <img class="partner-logo" src="assets/img/partners/constructys.png" alt="Constructys" height="120" loading="lazy" decoding="async">
+            <img class="partner-logo" src="assets/img/partners/cci-nord-isere.png" alt="CCI Nord-Isère" height="120" loading="lazy" decoding="async">
+            <span class="partner-badge">Région Auvergne-Rhône-Alpes</span>
+            <img class="partner-logo" src="assets/img/partners/elanova.png" alt="Elanova" height="120" loading="lazy" decoding="async">
+            <img class="partner-logo" src="assets/img/partners/ocapiat.png" alt="Ocapiat" height="120" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+
+      <!-- TODO client : insérer ici les logos clients PME/ETI réels (avec autorisation). Bloc "Ils nous ont fait confiance" retiré sur retour client tant qu'il n'y a pas de logos. -->
+    </div>
+  </section>
+
+  <!-- FAQ (SEO) -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Vos questions, nos réponses</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>Les formations CARTESA sont-elles finançables par mon OPCO ?</summary>
+          <p>Oui, toutes nos formations sont certifiées Qualiopi et co-finançables, via votre OPCO ou la Région Auvergne-Rhône-Alpes. Nous vous orientons vers le bon dispositif et vous accompagnons dans le montage du dossier de financement.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Dans quels secteurs et quelles régions intervenez-vous ?</summary>
+          <p>CARTESA intervient dans tous les secteurs d'activité : industrie, BTP, services, commerce, éducation, sécurité, agriculture. Basés près de Lyon (entre Lyon, Grenoble et Chambéry), nous nous déplaçons partout en France et en Europe — Italie, Suisse, Belgique — pour les missions de conseil et les formations.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Qu'est-ce que le dispositif PCRH et comment en bénéficier ?</summary>
+          <p>La Prestation de Conseil en Ressources Humaines (PCRH) est un dispositif co-finançable (OPCO ou Région Auvergne-Rhône-Alpes), destiné aux PME de moins de 250 salariés. Il permet de bénéficier d'un accompagnement RH stratégique sur mesure : diagnostic, structuration de la fonction RH, mise en place d'outils. Nous vous accompagnons dans le montage du dossier.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Quelle est la différence entre vos formations inter et intra-entreprise ?</summary>
+          <p>Les formations inter-entreprises réunissent des participants de différentes structures sur un site dédié ; les formations intra sont dispensées dans vos locaux, adaptées à vos enjeux et votre contexte. Dans tous les cas, nous nous déplaçons — nos interventions se font sur site, jamais dans nos bureaux. Les deux formats sont co-finançables (OPCO ou Région).</p>
+        </details>
+        <details class="faq-item">
+          <summary>Comment se déroule un premier contact avec CARTESA ?</summary>
+          <p>Un premier échange téléphonique ou en visio de 30 minutes, gratuit et sans engagement. Nous écoutons vos enjeux, identifions les dispositifs de financement possibles et vous proposons une première orientation. Pas de commercial, pas de pression — juste un dialogue entre professionnels.</p>
+        </details>
+      </div>
+
+      <!-- Dernier CTA stratégique avant footer -->
+      <div class="container" style="margin-top:36px;">
+        <div class="cta-strip reveal">
+          <p class="cta-strip__text">
+            Une question RH, RSE, financement ou formation ?
+            <small>Un premier échange de 30 minutes, gratuit, pour faire le point.</small>
+          </p>
+          <a href="contact.html" class="btn btn--accent btn--lg">Réserver mon échange</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo-chip"><img src="assets/img/logo-cartesa.png" alt="CARTESA" width="250" height="86" loading="lazy" decoding="async"></span>
+          <p class="footer-tag">Compétences, Entreprises &amp; Territoires</p>
+          <div class="footer-qualiopi">
+            <img src="assets/img/qualiopi.jpg" alt="Certifié Qualiopi" width="120" height="60" loading="lazy" decoding="async">
+            <span>Certifié Qualiopi au titre des actions de formation</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Vos attentes</h4>
+          <ul>
+            <li><a href="vos-attentes.html#fideliser">Structurer &amp; fidéliser</a></li>
+            <li><a href="vos-attentes.html#dirigeants">Développer vos managers</a></li>
+            <li><a href="vos-attentes.html#former">Former vos équipes</a></li>
+            <li><a href="vos-attentes.html#decarboner">Décarboner</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Nos expertises</h4>
+          <ul>
+            <li><a href="expertises.html">Diagnostic &amp; accompagnements</a></li>
+            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CARTESA</h4>
+          <ul>
+            <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
+            <li><a href="ressources.html">Ressources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+            <li><a href="politique-cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
+            <span>Près de Lyon<br>entre Lyon, Grenoble et Chambéry<br><small>Déplacements France &amp; Europe</small></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="contact.html">Nous contacter</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
+            <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
+        <div class="footer-bottom__social">
+          <a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener" aria-label="LinkedIn CARTESA">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll shadow with smooth progress
+    (function() {
+      var header = document.getElementById('siteHeader');
+      var lastScroll = 0;
+      var ticking = false;
+      window.addEventListener('scroll', function() {
+        lastScroll = window.scrollY;
+        if (!ticking) {
+          requestAnimationFrame(function() {
+            header.classList.toggle('scrolled', lastScroll > 10);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+    })();
+
+    // Mobile nav toggle
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      // === Header hide on scroll-down, show on scroll-up ===
+      (function() {
+        var lastY = window.scrollY || 0, ticking = false, hidden = false;
+        var hdr = document.querySelector('.site-header');
+        if (!hdr) return;
+        window.addEventListener('scroll', function() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function() {
+            var y = window.scrollY;
+            if (y > 140 && y > lastY + 4 && !hidden) {
+              hdr.classList.add('hidden'); hidden = true;
+            } else if ((y < lastY - 4 || y <= 140) && hidden) {
+              hdr.classList.remove('hidden'); hidden = false;
+            }
+            lastY = y;
+            ticking = false;
+          });
+        }, { passive: true });
+      })();
+
+      var links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          var open = links.classList.toggle('is-open');
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          document.body.style.overflow = open ? 'hidden' : '';
+        });
+        // Close on link click (mobile)
+        links.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            if (window.matchMedia('(max-width: 880px)').matches && !a.closest('.nav-dropdown a[href="#"]')) {
+              links.classList.remove('is-open');
+              toggle.classList.remove('is-open');
+              toggle.setAttribute('aria-expanded', 'false');
+              document.body.style.overflow = '';
+            }
+          });
+        });
+      }
+
+      // Mobile-only dropdown toggle ("Vos attentes", "On vous aide")
+      // On viewports <= 880px (where .nav-links collapses), tap on the dropdown trigger
+      // opens the submenu inline instead of navigating.
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function(dd) {
+        var trigger = dd.querySelector(':scope > a');
+        if (!trigger) return;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', function(e) {
+          // Only intercept when the mobile menu is in compact mode (toggle visible)
+          var isMobileNav = window.matchMedia('(max-width: 880px)').matches;
+          if (!isMobileNav) return;
+          e.preventDefault();
+          var open = dd.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+    })();
+
+    // Scroll-reveal animations with staggered delays
+    var revealObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function(el) { revealObs.observe(el); });
+    document.querySelectorAll('.reveal-stagger').forEach(function(el) { revealObs.observe(el); });
+
+    // Scroll progress bar
+    (function() {
+      var bar = document.getElementById('scrollProgress');
+      if (!bar) return;
+      function update() {
+        var scrollTop = window.scrollY;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+
+    // Hero parallax
+    (function() {
+      var hero = document.querySelector('.hero');
+      var visual = document.querySelector('.hero-visual');
+      var badge = document.querySelector('.hero-badge');
+      if (!hero || !visual) return;
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+      window.addEventListener('scroll', function() {
+        var y = window.scrollY;
+        var heroH = hero.offsetHeight;
+        if (y > heroH) return;
+        var ratio = y / heroH;
+        visual.style.transform = 'translateY(' + (ratio * 30) + 'px)';
+        if (badge) badge.style.transform = 'translateY(' + (-ratio * 15) + 'px)';
+      }, { passive: true });
+    })();
+
+    // Counter animation with easeOutExpo for smoother feel
+    function animateCounters(container) {
+      var counters = container.querySelectorAll('[data-count]');
+      counters.forEach(function(el) {
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+        var duration = 2200;
+        var startTime = null;
+        function easeOutExpo(t) {
+          return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+        }
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var progress = Math.min((timestamp - startTime) / duration, 1);
+          var eased = easeOutExpo(progress);
+          var current = Math.round(eased * target);
+          el.textContent = current + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }
+
+    // Observe all containers with data-count elements
+    document.querySelectorAll('[data-count]').forEach(function(el) {
+      var container = el.closest('.hero-stats-bar, .page-hero-stats, .stat-row, .values-mosaic');
+      if (!container || container._counterObserved) return;
+      container._counterObserved = true;
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            animateCounters(container);
+            obs.unobserve(container);
+          }
+        });
+      }, { threshold: 0.3 });
+      obs.observe(container);
+    });
+
+    // Enjeux cards now handled by reveal-stagger
+
+    // Index testimonials carousel
+    (function() {
+      var v = document.getElementById('indexCarousel');
+      var p = document.getElementById('indexPrev');
+      var n = document.getElementById('indexNext');
+      var f = document.getElementById('indexFill');
+      if (!v) return;
+      var cards = v.querySelectorAll('.t-card');
+      var total = cards.length;
+      function cardWidth() { return cards.length < 2 ? cards[0].offsetWidth : cards[1].getBoundingClientRect().left - cards[0].getBoundingClientRect().left; }
+      function update() {
+        var max = v.scrollWidth - v.clientWidth;
+        var pct = max > 0 ? v.scrollLeft / max : 0;
+        var step = 100 / total;
+        var idx = Math.round(pct * (total - 1));
+        f.style.width = step + '%';
+        f.style.left = (idx * step) + '%';
+      }
+      p.addEventListener('click', function() { v.scrollBy({ left: -cardWidth(), behavior: 'smooth' }); });
+      n.addEventListener('click', function() { v.scrollBy({ left: cardWidth(), behavior: 'smooth' }); });
+      var raf;
+      v.addEventListener('scroll', function() { cancelAnimationFrame(raf); raf = requestAnimationFrame(update); }, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+
+    // Smooth FAQ accordion with animated height
+    document.querySelectorAll('.faq-item').forEach(function(item) {
+      var summary = item.querySelector('summary');
+      var content = item.querySelector('p');
+      summary.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (item.open) {
+          if (content) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            content.offsetHeight; // force reflow
+            content.style.maxHeight = '0';
+            content.style.opacity = '0';
+            content.style.paddingBottom = '0';
+            setTimeout(function() { item.open = false; content.style.maxHeight = ''; content.style.opacity = ''; content.style.paddingBottom = ''; }, 250);
+          } else {
+            item.open = false;
+          }
+        } else {
+          document.querySelectorAll('.faq-item[open]').forEach(function(other) {
+            if (other !== item) {
+              var otherP = other.querySelector('p');
+              if (otherP) { otherP.style.maxHeight = '0'; otherP.style.opacity = '0'; }
+              setTimeout(function() { other.open = false; if (otherP) { otherP.style.maxHeight = ''; otherP.style.opacity = ''; } }, 200);
+            }
+          });
+          item.open = true;
+          if (content) {
+            content.style.maxHeight = '0';
+            content.style.opacity = '0';
+            content.offsetHeight;
+            content.style.transition = 'max-height 0.35s cubic-bezier(0.22,1,0.36,1), opacity 0.3s ease, padding 0.3s ease';
+            content.style.maxHeight = content.scrollHeight + 'px';
+            content.style.opacity = '1';
+          }
+        }
+      });
+    });
+
+    // ===== VOLETS HORIZONTAUX =====
+    (function() {
+      document.querySelectorAll('.volets-wrap').forEach(function(wrap) {
+        var track = wrap.querySelector('.volets-track');
+        var items = wrap.querySelectorAll('.volet');
+        var dots = wrap.querySelectorAll('.volet-dot');
+        if (!track || !items.length) return;
+
+        var panelCount = items.length;
+        var lastIndex = -1;
+
+        function updateVolets() {
+          var rect = wrap.getBoundingClientRect();
+          var scrolled = -rect.top;
+          var total = wrap.offsetHeight - window.innerHeight;
+          if (scrolled < 0 || total <= 0) return;
+          var progress = Math.max(0, Math.min(1, scrolled / total));
+          var idx = Math.min(panelCount - 1, Math.floor(progress * panelCount));
+
+          if (idx !== lastIndex) {
+            lastIndex = idx;
+            track.style.transform = 'translateX(-' + (idx * (100 / panelCount)) + '%)';
+            items.forEach(function(v, i) {
+              v.classList.toggle('volet--active', i === idx);
+            });
+            dots.forEach(function(d, i) {
+              d.classList.toggle('active', i === idx);
+            });
+          }
+        }
+
+        function goToVolet(targetIdx) {
+          if (targetIdx < 0 || targetIdx >= panelCount) return;
+          var total = wrap.offsetHeight - window.innerHeight;
+          var targetScroll = wrap.getBoundingClientRect().top + window.pageYOffset + (targetIdx / panelCount) * total + 10;
+          window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+        }
+
+        dots.forEach(function(dot, i) {
+          dot.addEventListener('click', function() {
+            goToVolet(i);
+          });
+        });
+
+        window.addEventListener('scroll', function() {
+          requestAnimationFrame(updateVolets);
+        }, { passive: true });
+        updateVolets();
+      });
+    })();
+
+  </script>
+
+  <script src="assets/motion.js" defer></script>
+  <script src="assets/cookie-banner.js" defer></script>
+</body>
+</html>

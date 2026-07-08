@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ressources RH gratuites : guides & outils | CARTESA</title>
+  <meta name="description" content="Téléchargez nos guides RH gratuits : entretien professionnel, management, plan de formation. Ressources pratiques pour dirigeants et RH de PME en Isère.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cartesa-lyon.com/ressources.html">
+  <meta property="og:title" content="Ressources RH gratuites : guides & outils | CARTESA">
+  <meta property="og:description" content="Téléchargez nos guides RH gratuits : entretien professionnel, management, plan de formation. Ressources pratiques pour dirigeants et RH de PME.">
+  <meta property="og:url" content="https://cartesa-lyon.com/ressources.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
+  <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
+  <meta property="og:image:alt" content="Ressources RH gratuites — guides et outils CARTESA">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle Twitter avec le client (placeholder @CartesaRH retiré) -->
+  <meta name="geo.region" content="FR-38">
+  <meta name="geo.placename" content="La Tour-du-Pin">
+  <meta name="geo.position" content="45.5628;5.4437">
+  <meta name="ICBM" content="45.5628, 5.4437">
+  <!-- Self-hosted fonts (RGPD-friendly) -->
+  <link rel="icon" type="image/png" href="assets/img/favicon-cartesa.png">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "name": "Ressources RH gratuites",
+        "description": "Guides pratiques, outils et articles RH téléchargeables pour dirigeants et managers de PME",
+        "url": "https://cartesa-lyon.com/ressources.html",
+        "provider": { "@id": "https://cartesa-lyon.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Ressources", "item": "https://cartesa-lyon.com/ressources.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <!-- Styles locaux page Ressources : chiffres hero, barre d'ancres, bande CTA -->
+  <style>
+    /* Chiffres clés du hero (flat) */
+    .res-progress{
+      display:flex; flex-wrap:wrap; align-items:stretch; justify-content:center;
+      gap:14px; margin-top:34px;
+    }
+    .res-progress__step{
+      flex:1 1 200px; min-width:180px; max-width:280px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(236,208,52,0.28);
+      border-radius:14px; padding:22px 20px;
+      text-align:center;
+      display:flex; flex-direction:column; gap:6px;
+    }
+    .res-progress__num{
+      font-family:'Sora',sans-serif; font-weight:700;
+      font-size:clamp(1.7rem,4vw,2.3rem); line-height:1.05;
+      color:var(--gold-500); letter-spacing:-0.01em;
+    }
+    .res-progress__label{
+      font-family:'DM Sans',sans-serif; font-size:0.92rem;
+      color:rgba(255,255,255,0.9); line-height:1.35;
+    }
+    .res-progress__arrow{
+      display:flex; align-items:center; justify-content:center;
+      color:rgba(236,208,52,0.7); flex:0 0 auto;
+    }
+    @media (max-width:720px){
+      .res-progress{flex-direction:column; align-items:center; gap:10px;}
+      .res-progress__step{width:100%; max-width:360px;}
+      .res-progress__arrow{transform:rotate(90deg);}
+    }
+
+    /* Barre d'ancres — familles de ressources (même esprit que .pole-nav) */
+    .res-nav{
+      background:var(--white);
+      border-bottom:1px solid var(--neutral-200);
+      position:sticky; top:0; z-index:900;
+    }
+    .res-nav .container{
+      display:flex; gap:4px; overflow-x:auto; scrollbar-width:none;
+    }
+    .res-nav .container::-webkit-scrollbar{display:none;}
+    .res-nav a{
+      flex:none; padding:14px 16px 11px;
+      font-size:0.85rem; font-weight:600; color:var(--neutral-600);
+      border-bottom:3px solid transparent; white-space:nowrap;
+      transition:color 0.2s ease, border-color 0.2s ease;
+    }
+    .res-nav a:hover{color:var(--teal-900);}
+    .res-nav a.is-active{color:var(--teal-900); border-bottom-color:var(--gold-500);}
+    #webinars,#guides,#temoignages,#blog{scroll-margin-top:70px;}
+
+    /* Bande CTA finale (flat, teal-900) */
+    .res-cta{background:var(--teal-900); padding:64px 0;}
+    .res-cta h2{color:var(--white); margin-bottom:12px;}
+    .res-cta p{color:rgba(255,255,255,0.88); max-width:540px; margin:0 auto 28px; font-size:1rem;}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/img/logo-cartesa.png" alt="CARTESA — Compétences, Entreprises &amp; Territoires" width="250" height="86"></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="nav-dropdown"><a href="vos-attentes.html" aria-haspopup="true" aria-expanded="false">Vos attentes</a>
+          <ul class="nav-sub">
+            <li><a href="vos-attentes.html#fideliser">Structurer &amp; fid&eacute;liser vos &eacute;quipes</a></li>
+            <li><a href="vos-attentes.html#dirigeants">D&eacute;velopper vos dirigeants &amp; managers</a></li>
+            <li><a href="vos-attentes.html#former">Former vos &eacute;quipes</a></li>
+            <li><a href="vos-attentes.html#decarboner">D&eacute;carboner votre activit&eacute;</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown"><a href="expertises.html" aria-haspopup="true" aria-expanded="false">Nos expertises</a>
+          <ul class="nav-sub">
+            <li><a href="expertises.html">Diagnostic &amp; accompagnements RH</a></li>
+            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="ingenierie.html">Ing&eacute;nierie p&eacute;dagogique</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; D&eacute;carbonation</a></li>
+          </ul>
+        </li>
+        <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero page-hero--enhanced">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current">Ressources</span>
+      </nav>
+      <h1>Toutes nos ressources, réunies au même endroit</h1>
+      <p>Webinars, guides, outils, témoignages et articles : tout ce que nos consultants partagent pour vous aider à structurer votre politique RH. Gratuit, sans contrepartie.</p>
+      <div class="res-progress" aria-label="Notre expérience en chiffres">
+        <div class="res-progress__step reveal" style="--delay:0s;">
+          <span class="res-progress__num">20 ans</span>
+          <span class="res-progress__label">d'accompagnement RH</span>
+        </div>
+        <span class="res-progress__arrow" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+        </span>
+        <div class="res-progress__step reveal" style="--delay:0.1s;">
+          <span class="res-progress__num">Des centaines</span>
+          <span class="res-progress__label">d'entreprises accompagnées</span>
+        </div>
+        <span class="res-progress__arrow" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+        </span>
+        <div class="res-progress__step reveal" style="--delay:0.2s;">
+          <span class="res-progress__num">Des milliers</span>
+          <span class="res-progress__label">de collaborateurs formés</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOUS-MENU RESSOURCES (ancres) -->
+  <nav class="res-nav" aria-label="Familles de ressources">
+    <div class="container">
+      <a href="#webinars" class="is-active">Webinars &amp; replays</a>
+      <a href="#guides">Guides &amp; outils pratiques</a>
+      <a href="#temoignages">Témoignages clients</a>
+      <a href="#blog">Blog</a>
+    </div>
+  </nav>
+
+  <!-- BANNIERE PHOTO -->
+  <figure class="page-photo-band">
+    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1600&q=80&auto=format&fit=crop" alt="Documentation et ressources" loading="lazy" decoding="async">
+    <figcaption>Guides et outils pratiques</figcaption>
+  </figure>
+
+  <!-- WEBINARS & REPLAYS -->
+  <section class="section section--white" id="webinars">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Webinars &amp; replays</span>
+        <h2 class="section-title">Apprenez avec nos experts, à votre rythme</h2>
+        <p class="section-subtitle">Des sessions gratuites en visio, à suivre en direct ou en replay quand vous avez le temps.</p>
+      </div>
+      <div class="webinars-grid reveal-stagger">
+        <article class="webinar-card webinar-card--upcoming">
+          <div class="webinar-thumb">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format&fit=crop" alt="Réunion d'équipe entretien professionnel" loading="lazy" decoding="async">
+            <span class="webinar-thumb-overlay"></span>
+            <span class="webinar-badge webinar-badge--live">À venir</span>
+            <span class="webinar-icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </span>
+          </div>
+          <div class="webinar-body">
+            <div class="webinar-meta">
+              <span class="webinar-date">Jeudi 5 juin 2026 · 11h00</span>
+              <span class="webinar-duration">45 min</span>
+            </div>
+            <h3>Entretiens pro 2026 : éviter la sanction OPCO de 3 000 €</h3>
+            <p>Catherine Lenoir décrypte la nouvelle réglementation et partage 5 erreurs à éviter avant l'audit. Q&amp;A live de 15 minutes.</p>
+            <a href="contact.html?webinar=entretiens-pro-2026" class="btn btn--accent btn--sm">S'inscrire gratuitement</a>
+          </div>
+        </article>
+        <article class="webinar-card">
+          <div class="webinar-thumb">
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80&auto=format&fit=crop" alt="Industrie décarbonation bilan carbone" loading="lazy" decoding="async">
+            <span class="webinar-thumb-overlay"></span>
+            <span class="webinar-badge webinar-badge--replay">Replay</span>
+            <span class="webinar-icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            </span>
+          </div>
+          <div class="webinar-body">
+            <div class="webinar-meta">
+              <span class="webinar-date">Mars 2026</span>
+              <span class="webinar-duration">38 min</span>
+            </div>
+            <h3>Décarbonation industrielle : quels dispositifs de financement</h3>
+            <p>Les étapes concrètes du diagnostic CO2I, illustrées par 2 cas réels de PME industrielles en Isère. Avec partage du dossier-type.</p>
+            <a href="contact.html?webinar=co2i-decarbonation" class="btn btn--outline btn--sm" style="color:var(--teal-700); border-color:var(--teal-700);">Voir le replay &rarr;</a>
+          </div>
+        </article>
+        <article class="webinar-card">
+          <div class="webinar-thumb">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80&auto=format&fit=crop" alt="RH à temps partagé en mission" loading="lazy" decoding="async">
+            <span class="webinar-thumb-overlay"></span>
+            <span class="webinar-badge webinar-badge--replay">Replay</span>
+            <span class="webinar-icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            </span>
+          </div>
+          <div class="webinar-body">
+            <div class="webinar-meta">
+              <span class="webinar-date">Février 2026</span>
+              <span class="webinar-duration">52 min</span>
+            </div>
+            <h3>RH à temps partagé : 5 cas où il faut faire appel à un externe</h3>
+            <p>Quand basculer ? Combien ça coûte ? Comment cadrer la mission ? Retours d'expérience de 3 dirigeants accompagnés.</p>
+            <a href="contact.html?webinar=drh-transition" class="btn btn--outline btn--sm" style="color:var(--teal-700); border-color:var(--teal-700);">Voir le replay &rarr;</a>
+          </div>
+        </article>
+      </div>
+      <div style="text-align:center; margin-top:32px;">
+        <a href="contact.html?webinar=newsletter" class="btn btn--ghost">Être prévenu des prochains webinars &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDES & OUTILS PRATIQUES -->
+  <section class="section section--alt" id="guides">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Guides &amp; outils pratiques</span>
+        <h2 class="section-title">À télécharger, à utiliser dès aujourd'hui</h2>
+        <p class="section-subtitle">Guides, checklists et modèles rédigés par nos consultants — prêts à l'emploi, sans contrepartie.</p>
+      </div>
+      <div class="grid-3">
+
+        <div class="card resource-card reveal" style="--delay: 0s;">
+          <div class="resource-cover" style="background: var(--teal-900);">
+            <div>
+              <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; opacity:0.6; margin-bottom:6px; font-weight:600;">E-book / 25 pages</div>
+              Le guide RH du dirigeant de PME
+            </div>
+          </div>
+          <h3>Le guide RH du dirigeant de PME</h3>
+          <p>L'essentiel de ce que tout dirigeant de PME doit savoir pour gérer ses ressources humaines. Obligations légales, bonnes pratiques, outils concrets.</p>
+          <a href="contact.html?sujet=guide-rh-dirigeant" class="btn btn--primary btn--sm" style="align-self:flex-start;">Recevoir le guide gratuit</a>
+        </div>
+
+        <div class="card resource-card reveal" style="--delay: 0.1s;">
+          <div class="resource-cover" style="background: var(--teal-700);">
+            <div>
+              <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; opacity:0.6; margin-bottom:6px; font-weight:600;">Guide pratique</div>
+              5 dispositifs pour financer la formation
+            </div>
+          </div>
+          <h3>5 dispositifs pour financer la formation</h3>
+          <p>PCRH, Plan de développement, CPF, Pro-A, FNE-Formation : tout comprendre sur les dispositifs de financement accessibles à votre entreprise.</p>
+          <a href="contact.html?sujet=guide-financement" class="btn btn--primary btn--sm" style="align-self:flex-start;">Recevoir le guide gratuit</a>
+        </div>
+
+        <div class="card resource-card reveal" style="--delay: 0.2s;">
+          <div class="resource-cover" style="background: var(--neutral-900);">
+            <div>
+              <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; opacity:0.6; margin-bottom:6px; font-weight:600;">Checklist PDF</div>
+              Checklist auto-diagnostic RH
+            </div>
+          </div>
+          <h3>Checklist auto-diagnostic RH</h3>
+          <p>40 questions pour évaluer la maturité de votre politique RH. Identifiez vos forces et vos axes de progrès en moins de 15 minutes.</p>
+          <a href="contact.html?sujet=checklist-autodiagnostic" class="btn btn--primary btn--sm" style="align-self:flex-start;">Recevoir la checklist gratuite</a>
+        </div>
+
+      </div>
+      <div class="grid-2" style="max-width:760px; margin:36px auto 0;">
+        <div class="card" style="display:flex; gap:16px; align-items:flex-start;">
+          <div class="contact-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div>
+            <h3 style="font-size:1rem; margin-bottom:4px;">Modèle d'entretien professionnel</h3>
+            <p style="font-size:0.85rem; color:var(--neutral-500); margin-bottom:10px;">Un modèle structuré et conforme aux obligations légales pour mener vos entretiens professionnels. Prêt à personnaliser.</p>
+            <a href="contact.html?sujet=template-entretien-pro" style="font-size:0.825rem; font-weight:600;">Recevoir par email &rarr;</a>
+          </div>
+        </div>
+        <div class="card" style="display:flex; gap:16px; align-items:flex-start;">
+          <div class="contact-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div>
+            <h3 style="font-size:1rem; margin-bottom:4px;">Calendrier des obligations sociales 2026</h3>
+            <p style="font-size:0.85rem; color:var(--neutral-500); margin-bottom:10px;">Toutes les échéances sociales et RH de l'année 2026. Ne manquez plus aucune date importante.</p>
+            <a href="contact.html?sujet=calendrier-obligations" style="font-size:0.825rem; font-weight:600;">Recevoir par email &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMOIGNAGES CLIENTS (teaser) -->
+  <section class="section section--white" id="temoignages">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Témoignages clients</span>
+        <h2 class="section-title">Ils racontent leur accompagnement</h2>
+        <p class="section-subtitle">17 capsules vidéo (Groupe Syrah, JEANTET Groupe, Groupe Isactys) et un témoignage écrit (ManiKheir) : celles et ceux qui ont travaillé avec nous racontent.</p>
+      </div>
+      <div class="card reveal" style="max-width:760px; margin:0 auto; display:flex; gap:20px; align-items:center; flex-wrap:wrap;">
+        <div class="contact-icon" style="flex-shrink:0;">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div style="flex:1; min-width:240px;">
+          <h3 style="font-size:1.05rem; margin-bottom:6px;">Le parcours d'un groupe industriel, sans filtre</h3>
+          <p style="font-size:0.9rem; color:var(--neutral-500); margin-bottom:16px;">De la problématique initiale au message qu'il adresse aux autres dirigeants : un témoignage vidéo en plusieurs chapitres, par celui qui l'a vécu.</p>
+          <a href="temoignages.html" class="btn btn--primary btn--sm">Découvrir les témoignages en vidéo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG (teaser) -->
+  <section class="section section--alt" id="blog">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Blog</span>
+        <h2 class="section-title">Nos prochains articles</h2>
+        <p class="section-subtitle">Un aperçu des sujets sur lesquels nos consultants écrivent en ce moment.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card reveal" style="--delay: 0s;">
+          <span class="badge" style="margin-bottom:12px;">Obligations légales</span>
+          <h3 style="font-size:1.05rem; margin-bottom:8px;">Les obligations RH à 11, 20 et 50 salariés : le guide complet 2026</h3>
+          <p style="font-size:0.875rem; color:var(--neutral-500); margin-bottom:14px;">À chaque seuil d'effectif, de nouvelles obligations sociales s'imposent. Passage en revue des échéances et des démarches à mettre en place pour rester en conformité.</p>
+          <span style="font-size:0.85rem; font-weight:600; color:var(--neutral-500);">Bientôt disponible</span><!-- TODO: relier à un article publié post-migration WP -->
+        </div>
+        <div class="card reveal" style="--delay: 0.1s;">
+          <span class="badge" style="margin-bottom:12px;">Financement</span>
+          <h3 style="font-size:1.05rem; margin-bottom:8px;">PCRH : l'accompagnement RH gratuit dont personne ne parle</h3>
+          <p style="font-size:0.875rem; color:var(--neutral-500); margin-bottom:14px;">Le dispositif PCRH, co-finançable (OPCO ou Région Auvergne-Rhône-Alpes), reste méconnu des PME. Conditions d'éligibilité, démarches et retours d'expérience concrets.</p>
+          <span style="font-size:0.85rem; font-weight:600; color:var(--neutral-500);">Bientôt disponible</span><!-- TODO: relier à un article publié post-migration WP -->
+        </div>
+        <div class="card reveal" style="--delay: 0.2s;">
+          <span class="badge" style="margin-bottom:12px;">Entretiens</span>
+          <h3 style="font-size:1.05rem; margin-bottom:8px;">Entretien professionnel vs entretien annuel : ne confondez plus jamais</h3>
+          <p style="font-size:0.875rem; color:var(--neutral-500); margin-bottom:14px;">Deux entretiens aux objectifs bien distincts, souvent confondus par les managers. Obligations légales, contenu et bonnes pratiques pour chacun.</p>
+          <span style="font-size:0.85rem; font-weight:600; color:var(--neutral-500);">Bientôt disponible</span><!-- TODO: relier à un article publié post-migration WP -->
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:32px;">
+        <a href="blog.html" class="btn btn--ghost">Découvrir le blog &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="res-cta">
+    <div class="container" style="text-align:center;">
+      <h2>Ne manquez pas nos prochaines ressources</h2>
+      <p>Nouveaux guides, prochains webinars, articles fraîchement publiés : dites-nous ce qui vous intéresse, on vous tient au courant. Rien de plus, promis.</p>
+      <a href="contact.html" class="btn btn--accent btn--lg">Être prévenu des prochaines ressources</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo-chip"><img src="assets/img/logo-cartesa.png" alt="CARTESA" width="250" height="86" loading="lazy" decoding="async"></span>
+          <p class="footer-tag">Compétences, Entreprises &amp; Territoires</p>
+          <div class="footer-qualiopi">
+            <img src="assets/img/qualiopi.jpg" alt="Certifié Qualiopi" width="120" height="60" loading="lazy" decoding="async">
+            <span>Certifié Qualiopi au titre des actions de formation</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Vos attentes</h4>
+          <ul>
+            <li><a href="vos-attentes.html#fideliser">Structurer &amp; fidéliser</a></li>
+            <li><a href="vos-attentes.html#dirigeants">Développer vos managers</a></li>
+            <li><a href="vos-attentes.html#former">Former vos équipes</a></li>
+            <li><a href="vos-attentes.html#decarboner">Décarboner</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Nos expertises</h4>
+          <ul>
+            <li><a href="expertises.html">Diagnostic &amp; accompagnements</a></li>
+            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CARTESA</h4>
+          <ul>
+            <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
+            <li><a href="ressources.html">Ressources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+            <li><a href="politique-cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
+            <span>Près de Lyon<br>entre Lyon, Grenoble et Chambéry<br><small>Déplacements France &amp; Europe</small></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="contact.html">Nous contacter</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
+            <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
+        <div class="footer-bottom__social">
+          <a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener" aria-label="LinkedIn CARTESA">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll-spy : lien actif dans la barre d'ancres ressources -->
+  <script>
+    (function() {
+      var navLinks = document.querySelectorAll('.res-nav a');
+      if (!navLinks.length) return;
+      var sections = [];
+      navLinks.forEach(function(link) {
+        var target = document.querySelector(link.getAttribute('href'));
+        if (target) sections.push({ link: link, section: target });
+      });
+      function setActive(activeLink) {
+        navLinks.forEach(function(l) { l.classList.toggle('is-active', l === activeLink); });
+      }
+      var spy = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var match = sections.find(function(s) { return s.section === entry.target; });
+            if (match) setActive(match.link);
+          }
+        });
+      }, { rootMargin: '-30% 0px -60% 0px' });
+      sections.forEach(function(s) { spy.observe(s.section); });
+    })();
+  </script>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      // === Header hide on scroll-down, show on scroll-up ===
+      (function() {
+        var lastY = window.scrollY || 0, ticking = false, hidden = false;
+        var hdr = document.querySelector('.site-header');
+        if (!hdr) return;
+        window.addEventListener('scroll', function() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function() {
+            var y = window.scrollY;
+            if (y > 140 && y > lastY + 4 && !hidden) {
+              hdr.classList.add('hidden'); hidden = true;
+            } else if ((y < lastY - 4 || y <= 140) && hidden) {
+              hdr.classList.remove('hidden'); hidden = false;
+            }
+            lastY = y;
+            ticking = false;
+          });
+        }, { passive: true });
+      })();
+
+      var links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          var open = links.classList.toggle('is-open');
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+
+      // Mobile-only dropdown toggle ("Vos attentes", "On vous aide")
+      // On viewports <= 880px (where .nav-links collapses), tap on the dropdown trigger
+      // opens the submenu inline instead of navigating.
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function(dd) {
+        var trigger = dd.querySelector(':scope > a');
+        if (!trigger) return;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', function(e) {
+          // Only intercept when the mobile menu is in compact mode (toggle visible)
+          var isMobileNav = window.matchMedia('(max-width: 880px)').matches;
+          if (!isMobileNav) return;
+          e.preventDefault();
+          var open = dd.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+    })();
+
+    var reveals = document.querySelectorAll('.reveal');
+    if (reveals.length) {
+      var revealObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function(el) { revealObs.observe(el); });
+      document.querySelectorAll('.reveal-stagger').forEach(function(el) { revealObs.observe(el); });
+    }
+  </script>
+
+  <script src="assets/motion.js" defer></script>
+  <script src="assets/cookie-banner.js" defer></script>
+</body>
+</html>

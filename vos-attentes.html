@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vos attentes — Structurer, développer, former, décarboner | CARTESA</title>
+  <meta name="description" content="On part de vos enjeux, pas de notre catalogue. Structurer &amp; fidéliser vos équipes, développer vos dirigeants &amp; managers, former vos équipes, décarboner votre activité. Cabinet RH &amp; RSE Qualiopi près de Lyon, prestations co-finançables.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cartesa-lyon.com/vos-attentes.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vos attentes — Structurer, développer, former, décarboner | CARTESA">
+  <meta property="og:description" content="On part de vos enjeux, pas de notre catalogue. Quatre besoins de dirigeant, une réponse concrète et co-finançable pour chacun.">
+  <meta property="og:url" content="https://cartesa-lyon.com/vos-attentes.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
+  <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
+  <meta property="og:image:alt" content="Vos attentes — les réponses CARTESA par besoin de dirigeant">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- GEO -->
+  <meta name="geo.region" content="FR-38">
+  <meta name="geo.placename" content="La Tour-du-Pin">
+  <meta name="geo.position" content="45.5628;5.4437">
+  <meta name="ICBM" content="45.5628, 5.4437">
+  <!-- Self-hosted fonts (RGPD-friendly) -->
+  <link rel="icon" type="image/png" href="assets/img/favicon-cartesa.png">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ============================================================
+       VOS ATTENTES — identité flat par besoin (page-specific)
+       01 fidéliser  = aplat teal-100  / filet teal-600
+       02 dirigeants = aplat gold-100  / filet gold-500
+       03 former     = aplat teal-50   / filet teal-500
+       04 décarboner = aplat #e8f5e9   / filet green-600
+       100% flat : aucun dégradé, aucune ombre ajoutée.
+       ============================================================ */
+
+    /* --- En-tête d'attente : panneau aplat + filet latéral épais --- */
+    .att-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      padding: 34px 38px 32px;
+      margin-bottom: 36px;
+      border-left: 10px solid transparent;
+      border-radius: 4px;
+    }
+    .att-head--fideliser  { background: var(--teal-100); border-left-color: var(--teal-600); }
+    .att-head--dirigeants { background: var(--gold-100); border-left-color: var(--gold-500); }
+    .att-head--former     { background: var(--teal-50);  border-left-color: var(--teal-600); }
+    .att-head--decarboner { background: #e8f5e9;         border-left-color: var(--green-600); }
+
+    /* Gros numéro + pictogramme simple trait */
+    .att-ident {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      flex: 0 0 auto;
+      padding-top: 4px;
+    }
+    .att-ident svg {
+      width: 54px;
+      height: 54px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .att-num {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 2.4rem;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .att-head--fideliser  .att-ident { color: var(--teal-600); }
+    .att-head--dirigeants .att-ident { color: var(--teal-900); }
+    .att-head--former     .att-ident { color: var(--teal-600); }
+    .att-head--decarboner .att-ident { color: var(--green-600); }
+
+    .att-intro { flex: 1 1 auto; min-width: 0; }
+    .att-intro .section-title { margin-bottom: 12px; }
+
+    /* Voix humaine — intro courte et concrète */
+    .att-voice {
+      font-size: 1.08rem;
+      line-height: 1.65;
+      color: var(--teal-900);
+      max-width: 62ch;
+      margin: 0;
+    }
+
+    /* --- Mots-clés : surlignage flat gold --- */
+    .att-hl {
+      background: var(--gold-500);
+      color: var(--teal-900);
+      padding: 0 0.18em;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+
+    /* --- Mots-clés : soulignement SVG "main levée" --- */
+    .att-wavy {
+      position: relative;
+      display: inline-block;
+    }
+    .att-wavy > svg {
+      position: absolute;
+      left: 0;
+      bottom: -0.14em;
+      width: 100%;
+      height: 0.32em;
+      overflow: visible;
+    }
+
+    /* --- Citation en exergue (fond papier, Sora italique) --- */
+    .att-quote {
+      margin: 30px 0 0;
+      background: var(--paper);
+      padding: 28px 34px 24px;
+      border-left: 6px solid transparent;
+      border-radius: 4px;
+    }
+    .att-quote--fideliser  { border-left-color: var(--teal-600); }
+    .att-quote--dirigeants { border-left-color: var(--gold-500); }
+    .att-quote--former     { border-left-color: var(--teal-500); }
+    .att-quote--decarboner { border-left-color: var(--green-600); }
+    /* Sur les sections à fond papier (--alt), la citation passe en blanc */
+    #dirigeants .att-quote,
+    #decarboner .att-quote { background: var(--white); }
+    .att-quote blockquote {
+      font-family: 'Sora', sans-serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 1.22rem;
+      line-height: 1.55;
+      letter-spacing: -0.01em;
+      color: var(--teal-900);
+      margin: 0 0 14px;
+      border: 0;
+      padding: 0;
+    }
+    .att-quote figcaption {
+      font-size: 0.88rem;
+      font-style: normal;
+      color: var(--neutral-500);
+    }
+
+    /* --- Hub : filet + pastille numéro par attente --- */
+    .att-hub-lead {
+      font-size: 1.08rem;
+      color: var(--teal-900);
+      max-width: 58ch;
+      margin: 0 0 26px;
+    }
+    .att-row { border-left: 6px solid transparent; }
+    .att-row--f  { border-left-color: var(--teal-600); }
+    .att-row--d  { border-left-color: var(--gold-500); }
+    .att-row--fo { border-left-color: var(--teal-500); }
+    .att-row--de { border-left-color: var(--green-600); }
+    .att-row .enjeu-num {
+      padding: 3px 12px;
+      border-radius: 4px;
+    }
+    .att-row--f  .enjeu-num { background: var(--teal-100); color: var(--teal-700); }
+    .att-row--d  .enjeu-num { background: var(--gold-500); color: var(--teal-900); }
+    .att-row--fo .enjeu-num { background: var(--teal-50);  color: var(--teal-600); }
+    .att-row--de .enjeu-num { background: #e8f5e9;         color: var(--green-600); }
+
+    /* --- Mobile --- */
+    @media (max-width: 680px) {
+      .att-head {
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px 22px 24px;
+      }
+      .att-ident {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding-top: 0;
+      }
+      .att-ident svg { width: 42px; height: 42px; }
+      .att-num { font-size: 2rem; }
+      .att-quote { padding: 22px 20px 18px; }
+      .att-quote blockquote { font-size: 1.08rem; }
+    }
+  
+    /* Hub 4 attentes : tuiles pleines couleurs, 2×2 */
+    .enjeux-list { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    @media (max-width: 760px) { .enjeux-list { grid-template-columns: 1fr; } }
+    .enjeux-list .att-row {
+      display: flex; flex-direction: column; gap: 10px;
+      padding: 28px 26px 24px; border: 0; border-radius: 14px;
+      text-decoration: none; background: var(--teal-600); color: #fff;
+      transition: transform 0.22s ease, background-color 0.22s ease;
+    }
+    .enjeux-list .att-row:hover { transform: translate(-2px, -3px); }
+    .enjeux-list .att-row .enjeu-num {
+      font-family: 'Sora', sans-serif; font-size: 2rem; font-weight: 800;
+      line-height: 1; opacity: 0.5; background: none; border: 0; width: auto; height: auto;
+      color: inherit !important;
+    }
+    .enjeux-list .att-row .enjeu-body h3,
+    .enjeux-list .att-row h3 { font-size: 1.2rem; color: inherit !important; margin: 0 0 4px; }
+    .enjeux-list .att-row .enjeu-body p,
+    .enjeux-list .att-row p { font-size: 0.92rem; color: inherit !important; opacity: 0.88; margin: 0; }
+    .enjeux-list .att-row .enjeu-cta {
+      margin-top: auto; padding-top: 12px; font-family: 'Sora', sans-serif;
+      font-weight: 700; font-size: 0.85rem; color: inherit !important;
+    }
+    .enjeux-list .att-row--f  { background: var(--teal-600); color: #fff; }
+    .enjeux-list .att-row--f:hover  { background: var(--teal-700); }
+    .enjeux-list .att-row--d  { background: var(--gold-500); color: var(--teal-900); }
+    .enjeux-list .att-row--d:hover  { background: var(--gold-400); color: var(--teal-900); }
+    .enjeux-list .att-row--fo { background: var(--teal-900); color: #fff; }
+    .enjeux-list .att-row--fo:hover { background: var(--teal-700); }
+    .enjeux-list .att-row--de { background: var(--green-600); color: #fff; }
+    .enjeux-list .att-row--de:hover { background: #256b29; }
+  </style>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Vos attentes",
+        "url": "https://cartesa-lyon.com/vos-attentes.html",
+        "about": { "@type": "LocalBusiness", "@id": "https://cartesa-lyon.com/#organization" },
+        "provider": { "@type": "LocalBusiness", "@id": "https://cartesa-lyon.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Vos attentes", "item": "https://cartesa-lyon.com/vos-attentes.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/img/logo-cartesa.png" alt="CARTESA — Compétences, Entreprises &amp; Territoires" width="250" height="86"></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="nav-dropdown"><a href="vos-attentes.html" class="active" aria-haspopup="true" aria-expanded="false">Vos attentes</a>
+          <ul class="nav-sub">
+            <li><a href="vos-attentes.html#fideliser">Structurer &amp; fid&eacute;liser vos &eacute;quipes</a></li>
+            <li><a href="vos-attentes.html#dirigeants">D&eacute;velopper vos dirigeants &amp; managers</a></li>
+            <li><a href="vos-attentes.html#former">Former vos &eacute;quipes</a></li>
+            <li><a href="vos-attentes.html#decarboner">D&eacute;carboner votre activit&eacute;</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown"><a href="expertises.html" aria-haspopup="true" aria-expanded="false">Nos expertises</a>
+          <ul class="nav-sub">
+            <li><a href="expertises.html">Diagnostic &amp; accompagnements RH</a></li>
+            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="ingenierie.html">Ing&eacute;nierie p&eacute;dagogique</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; D&eacute;carbonation</a></li>
+          </ul>
+        </li>
+        <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero page-hero--enhanced">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current">Vos attentes</span>
+      </nav>
+      <span class="section-label" style="color:rgba(255,255,255,0.9);">Vos attentes</span>
+      <h1>On part de vos enjeux, <span style="color: var(--gold-500);">pas de notre catalogue</span></h1>
+      <p>Quatre besoins que les dirigeants de PME et d'ETI nous confient le plus souvent. Pour chacun, une réponse concrète — en croisant diagnostic, accompagnement, coaching et formation — et co-finançable (OPCO ou Région Auvergne-Rhône-Alpes).</p>
+    </div>
+  </section>
+
+  <!-- HUB — 4 ENTRÉES PAR BESOIN -->
+  <section class="section section--alt" style="padding-top:56px;">
+    <div class="container">
+      <p class="att-hub-lead reveal">Quatre situations, quatre couleurs. Cliquez sur celle qui vous ressemble — on a sûrement déjà croisé la vôtre.</p>
+      <div class="enjeux-list reveal-stagger">
+
+        <a href="#fideliser" class="enjeu-row att-row att-row--f">
+          <span class="enjeu-num">01</span>
+          <div class="enjeu-body">
+            <h3>Structurer &amp; fidéliser vos équipes</h3>
+            <p>Le turnover grignote vos équipes, la RH s'est construite au fil de l'eau. On vous aide à la remettre d'aplomb.</p>
+          </div>
+          <span class="enjeu-cta">Voir la réponse &rarr;</span>
+        </a>
+
+        <a href="#dirigeants" class="enjeu-row att-row att-row--d">
+          <span class="enjeu-num">02</span>
+          <div class="enjeu-body">
+            <h3>Développer vos dirigeants &amp; managers</h3>
+            <p>Promus pour leur expertise, rarement préparés à encadrer. On les fait grandir dans leur posture.</p>
+          </div>
+          <span class="enjeu-cta">Voir la réponse &rarr;</span>
+        </a>
+
+        <a href="#former" class="enjeu-row att-row att-row--fo">
+          <span class="enjeu-num">03</span>
+          <div class="enjeu-body">
+            <h3>Former vos équipes</h3>
+            <p>Des formations Qualiopi qui collent à votre terrain, pas au catalogue. Entretiens pro sécurisés.</p>
+          </div>
+          <span class="enjeu-cta">Voir la réponse &rarr;</span>
+        </a>
+
+        <a href="#decarboner" class="enjeu-row att-row att-row--de">
+          <span class="enjeu-num">04</span>
+          <div class="enjeu-body">
+            <h3>Décarboner votre activité</h3>
+            <p>Vos donneurs d'ordres demandent des comptes ? On transforme la contrainte en trajectoire claire.</p>
+          </div>
+          <span class="enjeu-cta">Voir la réponse &rarr;</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BESOIN 01 — STRUCTURER & FIDÉLISER -->
+  <section class="section section--white" id="fideliser">
+    <div class="container">
+      <div class="att-head att-head--fideliser reveal">
+        <div class="att-ident" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c.6-3 2.8-5 5.5-5s4.9 2 5.5 5"/><circle cx="16.8" cy="9.5" r="2.4"/><path d="M15.2 14.6c2.6.3 4.6 2.1 5.2 4.4"/></svg>
+          <span class="att-num">01</span>
+        </div>
+        <div class="att-intro">
+          <span class="section-label">Besoin 01</span>
+          <h2 class="section-title">Structurer &amp; <mark class="att-hl">fidéliser</mark> vos équipes</h2>
+          <p class="att-voice">Vos meilleurs éléments s'en vont, et chaque départ emporte un savoir-faire. Ce n'est pas une fatalité : c'est une fonction RH qui n'a jamais eu de cadre. On vient la poser avec vous — et on reste.</p>
+        </div>
+      </div>
+      <div class="grid-2" style="gap:24px; align-items:start;">
+        <div class="card expertise-card reveal-left">
+          <h3>Votre situation aujourd'hui</h3>
+          <ul>
+            <li>Le turnover augmente et chaque départ vous coûte du temps et des compétences difficiles à remplacer.</li>
+            <li>Votre fonction RH s'est construite au fil de l'eau, sans cadre ni outils partagés.</li>
+            <li>Vous gérez les urgences RH seul, sans relais ni recul pour anticiper.</li>
+          </ul>
+        </div>
+        <div class="card expertise-card reveal-right">
+          <h3>Ce que CARTESA met en place</h3>
+          <p>On croise le diagnostic et l'accompagnement dans la durée pour poser des fondations solides :</p>
+          <ul>
+            <li>Un diagnostic opérationnel de vos pratiques RH, mené sur le terrain.</li>
+            <li>Un plan d'action priorisé et co-construit avec vos équipes.</li>
+            <li>Un relais dans la durée (Respiration, Impulsion) ou une fonction <strong>RH à temps partagé</strong> pour structurer, puis fidéliser.</li>
+          </ul>
+        </div>
+      </div>
+      <figure class="att-quote att-quote--fideliser reveal">
+        <blockquote>«&nbsp;Aujourd'hui c'est structuré : points d'équipe réguliers, entretiens annuels à date. Sceptiques au départ, les managers en ont compris l'intérêt.&nbsp;»</blockquote>
+        <figcaption>Stéphane Fournier — Président, Groupe Syrah (mécanique de haute précision)</figcaption>
+      </figure>
+      <div class="info-box" style="margin-top:24px;">
+        <p><strong>Comment ça se finance —</strong> l'accompagnement est co-finançable, via votre OPCO ou la Région Auvergne-Rhône-Alpes (dispositif PCRH pour les PME). Nous vous aidons au montage du dossier.</p>
+      </div>
+      <div style="margin-top:26px; display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="expertises.html" class="btn btn--primary btn--lg">Diagnostic &amp; accompagnements RH</a>
+        <a href="contact.html?sujet=fideliser" class="btn btn--ghost btn--lg">Parlons-en</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BESOIN 02 — DÉVELOPPER DIRIGEANTS & MANAGERS -->
+  <section class="section section--alt" id="dirigeants">
+    <div class="container">
+      <div class="att-head att-head--dirigeants reveal">
+        <div class="att-ident" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.7 8.3l-2.3 5.1-5.1 2.3 2.3-5.1z"/></svg>
+          <span class="att-num">02</span>
+        </div>
+        <div class="att-intro">
+          <span class="section-label">Besoin 02</span>
+          <h2 class="section-title">Développer vos <span class="att-wavy">dirigeants<svg viewBox="0 0 120 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 Q 12 2, 22 6 T 42 6 T 62 6 T 82 6 T 102 6 T 118 6" fill="none" stroke="var(--gold-500)" stroke-width="4" stroke-linecap="round"/></svg></span> &amp; managers</h2>
+          <p class="att-voice">Vos managers s'épuisent ? On passe les voir. Ils ont été promus pour leur expertise métier, rarement préparés à encadrer : on les fait grandir dans leur posture — et on vous garde un espace pour souffler, vous aussi.</p>
+        </div>
+      </div>
+      <div class="grid-2" style="gap:24px; align-items:start;">
+        <div class="card expertise-card reveal-left">
+          <h3>Votre situation aujourd'hui</h3>
+          <ul>
+            <li>Vos managers ont été promus pour leur savoir-faire technique, pas accompagnés dans leur rôle d'encadrant.</li>
+            <li>Les tensions d'équipe finissent par remonter jusqu'à vous et grignotent votre énergie.</li>
+            <li>Vous manquez d'un espace pour prendre du recul sur votre propre posture de dirigeant.</li>
+          </ul>
+        </div>
+        <div class="card expertise-card reveal-right">
+          <h3>Ce que CARTESA met en place</h3>
+          <p>On combine coaching et outils de connaissance de soi, dans le respect d'une déontologie professionnelle :</p>
+          <ul>
+            <li>Coaching individuel de dirigeant et de managers, coaching collectif d'équipe.</li>
+            <li>Cercles de co-développement entre pairs, animés ou supervisés.</li>
+            <li>Profils de comportement &amp; motivation (DISC, MBTI, Forces Motrices) avec restitution accompagnée.</li>
+          </ul>
+        </div>
+      </div>
+      <figure class="att-quote att-quote--dirigeants reveal">
+        <blockquote>«&nbsp;Asseoir des chefs d'atelier de plusieurs sociétés autour d'une table et les faire réfléchir ensemble : Catherine a eu la méthode. Un vrai apport de mise en confiance.&nbsp;»</blockquote>
+        <figcaption>Stéphane Fournier — Président, Groupe Syrah, à propos des cercles de co-développement</figcaption>
+      </figure>
+      <div class="info-box" style="margin-top:24px;">
+        <p><strong>Comment ça se finance —</strong> les coachings et bilans sont co-finançables, via votre OPCO ou la Région Auvergne-Rhône-Alpes selon votre situation. Nous identifions le bon dispositif avec vous.</p>
+      </div>
+      <div style="margin-top:26px; display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="coachings.html" class="btn btn--primary btn--lg">Découvrir les coachings</a>
+        <a href="contact.html?sujet=dirigeants" class="btn btn--ghost btn--lg">Parlons-en</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BESOIN 03 — FORMER VOS ÉQUIPES -->
+  <section class="section section--white" id="former">
+    <div class="container">
+      <div class="att-head att-head--former reveal">
+        <div class="att-ident" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 6.5C10.5 5 8 4.5 5 4.5v13c3 0 5.5.5 7 2 1.5-1.5 4-2 7-2v-13c-3 0-5.5.5-7 2z"/><path d="M12 6.5v13"/></svg>
+          <span class="att-num">03</span>
+        </div>
+        <div class="att-intro">
+          <span class="section-label">Besoin 03</span>
+          <h2 class="section-title">Former vos équipes, <mark class="att-hl">pour de vrai</mark></h2>
+          <p class="att-voice">Une formation catalogue qui tombe à côté, tout le monde a connu. Nous, on construit avec vos situations réelles : vos machines, vos clients, vos vraies journées. C'est là que ça reste.</p>
+        </div>
+      </div>
+      <div class="grid-2" style="gap:24px; align-items:start;">
+        <div class="card expertise-card reveal-left">
+          <h3>Votre situation aujourd'hui</h3>
+          <ul>
+            <li>Les compétences de vos équipes ne suivent pas le rythme de vos métiers.</li>
+            <li>Vos entretiens professionnels ne sont pas à jour — avec un risque de non-conformité.</li>
+            <li>Les formations sur catalogue ne collent pas à votre réalité de terrain.</li>
+          </ul>
+        </div>
+        <div class="card expertise-card reveal-right">
+          <h3>Ce que CARTESA met en place</h3>
+          <p>On croise nos formations certifiées Qualiopi et l'ingénierie pédagogique sur mesure :</p>
+          <ul>
+            <li>Des formations participatives ancrées dans vos situations réelles — management, droit social, recrutement, RSE.</li>
+            <li>CléA Management, notre formation certifiante inscrite au RNCP et éligible au CPF.</li>
+            <li>De l'ingénierie pédagogique sur mesure (AFEST) et la mise en conformité de vos entretiens professionnels.</li>
+          </ul>
+        </div>
+      </div>
+      <figure class="att-quote att-quote--former reveal">
+        <blockquote>«&nbsp;Garder des compétences très précises — on travaille la mécanique de précision — et faire en sorte qu'elles se transmettent : c'est l'enjeu majeur de nos entreprises.&nbsp;»</blockquote>
+        <figcaption>Stéphane Fournier — Président, Groupe Syrah (mécanique de haute précision)</figcaption>
+      </figure>
+      <div class="info-box" style="margin-top:24px;">
+        <p><strong>Comment ça se finance —</strong> nos formations sont co-finançables, via votre OPCO ou la Région Auvergne-Rhône-Alpes (plan de développement des compétences, FNE-Formation, CPF pour CléA Management). Nous montons le dossier avec vous.</p>
+      </div>
+      <div style="margin-top:26px; display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="formations.html" class="btn btn--primary btn--lg">Voir les formations</a>
+        <a href="ingenierie.html#ingenierie-pedagogique" class="btn btn--ghost btn--lg">Ingénierie pédagogique</a>
+        <a href="contact.html?sujet=former" class="btn btn--ghost btn--lg">Parlons-en</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BESOIN 04 — DÉCARBONER VOTRE ACTIVITÉ -->
+  <section class="section section--alt" id="decarboner">
+    <div class="container">
+      <div class="att-head att-head--decarboner reveal">
+        <div class="att-ident" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 19C5 9 12 4 20 4c0 8-5 15-15 15z"/><path d="M5 19c3-6 7-9 11-11"/></svg>
+          <span class="att-num">04</span>
+        </div>
+        <div class="att-intro">
+          <span class="section-label">Besoin 04</span>
+          <h2 class="section-title"><span class="att-wavy">Décarboner<svg viewBox="0 0 120 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 Q 12 2, 22 6 T 42 6 T 62 6 T 82 6 T 102 6 T 118 6" fill="none" stroke="var(--gold-500)" stroke-width="4" stroke-linecap="round"/></svg></span> votre activité</h2>
+          <p class="att-voice">Un donneur d'ordres vous réclame votre bilan carbone ? Respirez. On mesure, on priorise, on embarque vos équipes. À votre rythme, sans jargon — et sans y passer vos journées.</p>
+        </div>
+      </div>
+      <div class="grid-2" style="gap:24px; align-items:start;">
+        <div class="card expertise-card reveal-left">
+          <h3>Votre situation aujourd'hui</h3>
+          <ul>
+            <li>Vos donneurs d'ordres réclament un bilan carbone ou une note RSE pour continuer à travailler avec vous.</li>
+            <li>La réglementation (CSRD) se rapproche et vous ne savez pas par où commencer.</li>
+            <li>Vous voulez engager vos équipes dans la transition sans y passer vos journées.</li>
+          </ul>
+        </div>
+        <div class="card expertise-card reveal-right">
+          <h3>Ce que CARTESA met en place</h3>
+          <p>On vous accompagne du diagnostic à l'engagement des équipes :</p>
+          <ul>
+            <li>Un diagnostic CO2i pour mesurer votre empreinte et prioriser les réductions.</li>
+            <li>Un accompagnement vers la labellisation RSE (EcoVadis) et la mise en conformité.</li>
+            <li>Des serious games ACTEE pour embarquer vos équipes concrètement.</li>
+          </ul>
+        </div>
+      </div>
+      <figure class="att-quote att-quote--decarboner reveal">
+        <blockquote>«&nbsp;Une bonne note EcoVadis, ce n'est pas de la paperasse : c'est un ticket d'entrée qui vous garde dans le panel de vos donneurs d'ordres.&nbsp;»</blockquote>
+        <figcaption>L'équipe CARTESA — accompagnement RSE &amp; décarbonation</figcaption>
+      </figure>
+      <div class="info-box" style="margin-top:24px;">
+        <p><strong>Comment ça se finance —</strong> le diagnostic CO2i et l'accompagnement sont co-finançables, via votre OPCO ou la Région Auvergne-Rhône-Alpes. CARTESA est prestataire partenaire du dispositif en Isère, Drôme et Ardèche.</p>
+      </div>
+      <div style="margin-top:26px; display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="rse-decarbonation.html" class="btn btn--primary btn--lg">Découvrir l'offre RSE &amp; Décarbonation</a>
+        <a href="contact.html?sujet=decarboner" class="btn btn--ghost btn--lg">Parlons-en</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="section section--teal" style="padding:48px 0;">
+    <div class="container" style="text-align:center;">
+      <h2 class="reveal" style="margin-bottom:12px;">Votre besoin ne rentre pas dans une case ?</h2>
+      <p class="reveal" style="color:rgba(255,255,255,0.92); max-width:560px; margin:0 auto 28px; font-size:1rem; --delay: 0.1s;">C'est justement notre métier. Un premier échange de 30 minutes, gratuit et sans engagement, pour partir de votre situation réelle.</p>
+      <a href="contact.html" class="btn btn--accent btn--lg reveal" style="--delay: 0.2s;">Réserver mon échange</a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo-chip"><img src="assets/img/logo-cartesa.png" alt="CARTESA" width="250" height="86" loading="lazy" decoding="async"></span>
+          <p class="footer-tag">Compétences, Entreprises &amp; Territoires</p>
+          <div class="footer-qualiopi">
+            <img src="assets/img/qualiopi.jpg" alt="Certifié Qualiopi" width="120" height="60" loading="lazy" decoding="async">
+            <span>Certifié Qualiopi au titre des actions de formation</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Vos attentes</h4>
+          <ul>
+            <li><a href="vos-attentes.html#fideliser">Structurer &amp; fidéliser</a></li>
+            <li><a href="vos-attentes.html#dirigeants">Développer vos managers</a></li>
+            <li><a href="vos-attentes.html#former">Former vos équipes</a></li>
+            <li><a href="vos-attentes.html#decarboner">Décarboner</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Nos expertises</h4>
+          <ul>
+            <li><a href="expertises.html">Diagnostic &amp; accompagnements</a></li>
+            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CARTESA</h4>
+          <ul>
+            <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
+            <li><a href="ressources.html">Ressources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+            <li><a href="politique-cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
+            <span>Près de Lyon<br>entre Lyon, Grenoble et Chambéry<br><small>Déplacements France &amp; Europe</small></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="contact.html">Nous contacter</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
+            <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
+        <div class="footer-bottom__social">
+          <a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener" aria-label="LinkedIn CARTESA">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      // === Header hide on scroll-down, show on scroll-up ===
+      (function() {
+        var lastY = window.scrollY || 0, ticking = false, hidden = false;
+        var hdr = document.querySelector('.site-header');
+        if (!hdr) return;
+        window.addEventListener('scroll', function() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function() {
+            var y = window.scrollY;
+            if (y > 140 && y > lastY + 4 && !hidden) {
+              hdr.classList.add('hidden'); hidden = true;
+            } else if ((y < lastY - 4 || y <= 140) && hidden) {
+              hdr.classList.remove('hidden'); hidden = false;
+            }
+            lastY = y;
+            ticking = false;
+          });
+        }, { passive: true });
+      })();
+
+      var links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          var open = links.classList.toggle('is-open');
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+
+      // Mobile-only dropdown toggle ("Vos attentes", "Nos expertises")
+      // On viewports <= 880px (where .nav-links collapses), tap on the dropdown trigger
+      // opens the submenu inline instead of navigating.
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function(dd) {
+        var trigger = dd.querySelector(':scope > a');
+        if (!trigger) return;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', function(e) {
+          // Only intercept when the mobile menu is in compact mode (toggle visible)
+          var isMobileNav = window.matchMedia('(max-width: 880px)').matches;
+          if (!isMobileNav) return;
+          e.preventDefault();
+          var open = dd.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+    })();
+
+    // Scroll-reveal
+    var reveals = document.querySelectorAll('.reveal');
+    if (reveals.length) {
+      var revealObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function(el) { revealObs.observe(el); });
+      document.querySelectorAll('.reveal-stagger, .reveal-left, .reveal-right, .reveal-scale').forEach(function(el) { revealObs.observe(el); });
+    }
+  </script>
+
+  <script src="assets/motion.js" defer></script>
+  <script src="assets/cookie-banner.js" defer></script>
+</body>
+</html>

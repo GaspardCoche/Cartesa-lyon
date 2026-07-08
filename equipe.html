@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre équipe | Experts RH, RSE & Transition | CARTESA</title>
+  <meta name="description" content="Découvrez l'équipe CARTESA : experts conseil RH, RSE & décarbonation, RH de transition. 5 consultants seniors, plus de 20 ans d'expérience. La Tour-du-Pin, Isère.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cartesa-lyon.com/equipe.html">
+  <meta property="og:title" content="Notre équipe | Experts RH, RSE & Transition | CARTESA">
+  <meta property="og:description" content="5 consultants seniors en conseil RH, RSE & décarbonation, RH de transition. Plus de 20 ans d'expérience à La Tour-du-Pin, Isère, Auvergne-Rhône-Alpes.">
+  <meta property="og:url" content="https://cartesa-lyon.com/equipe.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="CARTESA">
+  <!-- TODO: créer og-image.jpg dédiée 1200x630 (fallback : logo CARTESA) -->
+  <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
+  <meta property="og:image:alt" content="Équipe CARTESA — 5 consultants seniors RH, RSE & Transition">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: vérifier handle X officiel CARTESA (placeholder @CartesaRH) -->
+  <meta name="twitter:site" content="@CartesaRH">
+  <meta name="geo.region" content="FR-38">
+  <meta name="geo.placename" content="La Tour-du-Pin">
+  <link rel="preload" as="image" href="assets/img/cartesa-team.jpg" fetchpriority="high">
+  <!-- Self-hosted fonts (RGPD-friendly) -->
+  <link rel="icon" type="image/png" href="assets/img/favicon-cartesa.png">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .pole-label { display:inline-block; font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; padding:4px 14px; border-radius:20px; margin-bottom:8px; }
+    .pole-label--rh { background:var(--teal-100,#d1ecec); color:var(--teal-700,#0f5e5e); }
+    .pole-label--rse { background:rgba(236,208,52,0.12); color:var(--gold-600,#d4940a); }
+    .pole-label--transition { background:rgba(15,94,94,0.08); color:var(--teal-800,#0a4a4a); }
+    .pole-label--admin { background:var(--neutral-100,#f3f4f6); color:var(--neutral-600,#4b5563); }
+    .team-card-v2 { background:#fff; border-radius:14px; padding:28px; box-shadow:0 2px 16px rgba(0,80,80,0.07); text-align:center; transition:transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease; position:relative; overflow:hidden; }
+    .team-card-v2::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; border-radius:14px 14px 0 0; transition:opacity 0.3s ease; opacity:0; }
+    .team-card-v2:hover { transform:translateY(-6px); box-shadow: 0 2px 8px rgba(9,41,51,0.08); }
+    .team-card-v2:hover::before { opacity:1; }
+    .pole-section--rh .team-card-v2::before { background:var(--teal-500,#21b6c8); }
+    .pole-section--rse .team-card-v2::before { background:var(--gold-500,#ecd034); }
+    .pole-section--transition .team-card-v2::before { background:var(--teal-700,#006aa3); }
+    .pole-section--admin .team-card-v2::before { background:var(--neutral-400,#9ca3af); }
+    .team-card-v2 .team-photo { width:110px; height:110px; border-radius:50%; object-fit:cover; margin:0 auto 16px; display:block; border:3px solid var(--neutral-100,#f3f4f6); transition:border-color 0.3s ease; }
+    .team-card-v2:hover .team-photo { border-color:var(--teal-400,#2cb5b5); }
+    .team-card-v2 .avatar-circle { width:110px; height:110px; border-radius:50%; margin:0 auto 16px; display:flex; align-items:center; justify-content:center; font-family:'Sora',sans-serif; font-weight:700; font-size:1.5rem; border:3px solid transparent; transition:border-color 0.3s ease; }
+    .team-card-v2:hover .avatar-circle { border-color:var(--teal-400,#2cb5b5); }
+    .team-card-v2 .avatar-circle--teal { background:var(--teal-100,#d1ecec); color:var(--teal-700,#0f5e5e); }
+    .team-card-v2 .avatar-circle--gold { background:rgba(236,208,52,0.15); color:var(--gold-600,#d4940a); }
+    .team-card-v2 .avatar-circle--neutral { background:var(--neutral-100,#f3f4f6); color:var(--neutral-500,#6b7280); }
+    .team-card-v2 h3 { font-family:'Sora',sans-serif; font-size:1.05rem; font-weight:700; color:var(--teal-900,#0d3b3b); margin-bottom:4px; }
+    .team-card-v2 .role { font-size:0.82rem; font-weight:600; color:var(--teal-600,#0e7490); margin-bottom:8px; }
+    .team-card-v2 .specialites { font-size:0.78rem; color:var(--neutral-500,#6b7280); margin-bottom:8px; }
+    .team-card-v2 .expertise-tags { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin-bottom:14px; }
+    .team-card-v2 .expertise-tag { display:inline-block; font-size:0.68rem; font-weight:600; padding:3px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:0.04em; }
+    .expertise-tag--teal { background:var(--teal-100,#d1ecec); color:var(--teal-700,#0f5e5e); }
+    .expertise-tag--gold { background:rgba(236,208,52,0.12); color:var(--gold-600,#d4940a); }
+    .expertise-tag--green { background:#e8f5e9; color:#2e7d32; }
+    .expertise-tag--purple { background:#f3e5f5; color:#7b1fa2; }
+    .expertise-tag--blue { background:#eef4ff; color:#3b6fc2; }
+    .team-card-v2 p { font-size:0.88rem; color:var(--neutral-600,#4b5563); line-height:1.55; }
+    .pole-section { margin-bottom:0; padding:56px 0; }
+    .pole-section:last-child { margin-bottom:0; }
+    .pole-section--alt { background:var(--neutral-50,#f9fafb); }
+    .pole-header { display:flex; align-items:center; gap:14px; margin-bottom:24px; flex-wrap:wrap; }
+    .pole-header h2 { font-family:'Sora',sans-serif; font-size:1.3rem; font-weight:700; color:var(--teal-900,#0d3b3b); margin:0; }
+    .pole-header .pole-count { font-size:0.82rem; color:var(--neutral-500,#6b7280); }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "name": "Notre équipe — Experts RH, RSE & Transition",
+        "url": "https://cartesa-lyon.com/equipe.html",
+        "mainEntity": { "@id": "https://cartesa-lyon.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cartesa-lyon.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Équipe", "item": "https://cartesa-lyon.com/equipe.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/img/logo-cartesa.png" alt="CARTESA — Compétences, Entreprises &amp; Territoires" width="250" height="86"></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="nav-dropdown"><a href="vos-attentes.html" aria-haspopup="true" aria-expanded="false">Vos attentes</a>
+          <ul class="nav-sub">
+            <li><a href="vos-attentes.html#fideliser">Structurer &amp; fid&eacute;liser vos &eacute;quipes</a></li>
+            <li><a href="vos-attentes.html#dirigeants">D&eacute;velopper vos dirigeants &amp; managers</a></li>
+            <li><a href="vos-attentes.html#former">Former vos &eacute;quipes</a></li>
+            <li><a href="vos-attentes.html#decarboner">D&eacute;carboner votre activit&eacute;</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown"><a href="expertises.html" aria-haspopup="true" aria-expanded="false">Nos expertises</a>
+          <ul class="nav-sub">
+            <li><a href="expertises.html">Diagnostic &amp; accompagnements RH</a></li>
+            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="ingenierie.html">Ing&eacute;nierie p&eacute;dagogique</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; D&eacute;carbonation</a></li>
+          </ul>
+        </li>
+        <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+  <!-- PAGE HERO — split image dans le hero pour rythmer la page -->
+  <section class="page-hero page-hero--split page-hero--enhanced" style="padding-top:48px; padding-bottom:40px;">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current">L'équipe</span>
+      </nav>
+      <div class="hero-split" style="gap:32px; align-items:center;">
+        <div class="hero-text hero-text-reveal">
+          <span class="section-label" style="color:var(--gold-400,#f0cc3a); margin-bottom:8px;">L'équipe</span>
+          <h1 style="font-size:clamp(1.6rem,3.4vw,2.2rem); font-weight:800; line-height:1.18; margin-bottom:12px; color:#fff;">
+            6 experts. Une même exigence. Plus de 20 ans de terrain.
+          </h1>
+          <p style="font-size:0.96rem; color:rgba(255,255,255,0.92); max-width:520px; margin-bottom:18px;">
+            Diagnostic opérationnel, accompagnement RH, RSE & décarbonation, RH à temps partagé : une équipe de consultants seniors, complémentaires et dédiés à vos enjeux.
+          </p>
+          <div class="hero-actions">
+            <a href="#pole-diagnostic" class="btn btn--accent">Découvrir l'équipe</a>
+            <a href="contact.html" class="btn btn--outline">Échanger avec l'équipe</a>
+          </div>
+        </div>
+        <div class="hero-visual" style="max-width:360px;">
+          <img src="assets/img/cartesa-team.jpg" alt="L'équipe CARTESA en situation de conseil" class="hero-img" width="800" height="702" fetchpriority="high" decoding="async" style="border-radius:14px; max-height:240px; object-fit:cover; width:100%; display:block;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPE — grille uniforme, tous les membres au même niveau -->
+  <div class="pole-section pole-section--rh" id="pole-diagnostic" style="padding-top:56px;">
+    <div class="container">
+      <div class="pole-header reveal-left" style="--delay:0s;">
+        <h2>Les femmes et les hommes de CARTESA</h2>
+        <span class="pole-count">6 membres</span>
+      </div>
+      <!-- CTA RDV direct avec un consultant -->
+      <div class="info-box reveal" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; padding:18px 22px; margin:0 0 32px; background:var(--teal-50,#eaf6fb); border:1px solid var(--teal-200,#bfe5e8);">
+        <div>
+          <strong style="display:block; color:var(--teal-900); font-size:0.95rem;">Échanger directement avec un consultant associé</strong>
+          <span style="font-size:0.85rem; color:var(--neutral-600);">30 min de découverte, sans engagement.</span>
+        </div>
+        <a href="https://calendly.com/cartesa-rh" target="_blank" rel="noopener" class="btn btn--accent btn--sm">Réserver 30 min</a><!-- TODO: URL Calendly à valider client -->
+      </div>
+      <div class="grid-3 reveal-stagger" style="gap:24px;">
+        <div class="team-card-v2">
+          <span class="partner-badge">Catherine Lenoir, consultante associée Cartesa</span>
+          <h3>Catherine Lenoir</h3>
+          <div class="role">Consultante Associée</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--teal">AFEST</span>
+            <span class="expertise-tag expertise-tag--green">Coaching</span>
+            <span class="expertise-tag expertise-tag--blue">Ingénierie</span>
+          </div>
+          <p>Développement des pratiques managériales et RH, formation de formateurs, coaching d'équipe dirigeante. Pilote le volet compétences du diagnostic CO2I et intervient en RH à temps partagé sur les transformations complexes : réorganisations, fusions, création de fonction RH ex nihilo. Experte en ingénierie pédagogique et conception de parcours AFEST. Plus de 20 ans d'expérience.</p>
+        </div>
+        <div class="team-card-v2">
+          <span class="partner-badge">Philippe Lenoir, consultant associé Cartesa</span>
+          <h3>Philippe Lenoir</h3>
+          <div class="role">Consultant Associé</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--teal">Leadership</span>
+            <span class="expertise-tag expertise-tag--purple">Coaching</span>
+            <span class="expertise-tag expertise-tag--green">Changement</span>
+          </div>
+          <p>Coaching de dirigeant, management comportemental, développement commercial. Intervient également comme RH à temps partagé sur les phases de croissance et de transformation, avec une approche orientée leadership et culture managériale.</p>
+        </div>
+        <div class="team-card-v2">
+          <!-- TODO client : fournir photo réelle de Élodie Chapelle (placeholder initiales) -->
+          <div class="avatar-circle avatar-circle--teal">EC</div>
+          <h3>Élodie Chapelle</h3>
+          <div class="role">Consultante Associée</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--blue">Droit social</span>
+            <span class="expertise-tag expertise-tag--teal">CSE</span>
+            <span class="expertise-tag expertise-tag--purple">Conformité</span>
+          </div>
+          <p>Spécialiste du droit social appliqué aux PME. Accompagnement des relations sociales, mise en conformité, négociation d'accords d'entreprise. Intervient en RH à temps partagé sur les crises sociales, contentieux, PSE et restructurations.</p>
+        </div>
+        <div class="team-card-v2">
+          <!-- TODO client : fournir photo réelle de Claire Iffenecker (placeholder initiales) -->
+          <div class="avatar-circle avatar-circle--teal">CI</div>
+          <h3>Claire Iffenecker</h3>
+          <div class="role">Consultante Associée</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--green">Recrutement</span>
+            <span class="expertise-tag expertise-tag--teal">GPEC</span>
+            <span class="expertise-tag expertise-tag--blue">Marque employeur</span>
+          </div>
+          <p>Experte en recrutement, GPEC et gestion des parcours professionnels. Structuration des entretiens professionnels, référentiels de compétences, plans de développement. Intervient en RH à temps partagé pour structurer la fonction RH des PME en croissance. Approche terrain pour PME multi-sites.</p>
+        </div>
+        <div class="team-card-v2">
+          <!-- TODO client : fournir photo réelle de Christine Jalbert (placeholder initiales) -->
+          <div class="avatar-circle avatar-circle--teal">CJ</div>
+          <h3>Christine Jalbert</h3>
+          <div class="role">Consultante — Volet RH & Organisation</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--purple">QVT</span>
+            <span class="expertise-tag expertise-tag--teal">Changement</span>
+          </div>
+          <p>Accompagnement organisationnel lié à la transition écologique. Impact RH de la décarbonation : évolution des postes, nouvelles compétences, dialogue social sur les changements de pratiques.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARTENARIATS -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Partenariats</span>
+        <h2 class="section-title">Des partenariats institutionnels forts</h2>
+        <p class="section-subtitle">CARTESA est partenaire des principaux OPCO et institutions du développement des compétences.</p>
+      </div>
+      <div class="grid-2 reveal-stagger" style="gap:20px;">
+
+        <div class="card" style="display:flex; gap:20px; align-items:flex-start; padding:24px;">
+          <img src="assets/img/partners/opcommerce.png" alt="L'Opcommerce" style="height:40px; width:auto; flex:none;" loading="lazy" decoding="async">
+          <div>
+            <h4 style="font-family:'Sora',sans-serif; font-size:0.95rem; font-weight:700; color:var(--teal-900,#0d3b3b); margin-bottom:6px;">L'Opcommerce</h4>
+            <p style="font-size:0.85rem; color:var(--neutral-600,#4b5563); line-height:1.5;">Partenaire depuis 2012, "Cabinet Partenaire" depuis 2018. Programme Cap Compétences Commerce pour les entreprises de moins de 250 salariés.</p>
+          </div>
+        </div>
+
+        <div class="card" style="display:flex; gap:20px; align-items:flex-start; padding:24px;">
+          <img src="assets/img/partners/opco-ep.png" alt="OPCO EP" style="height:40px; width:auto; flex:none;" loading="lazy" decoding="async">
+          <div>
+            <h4 style="font-family:'Sora',sans-serif; font-size:0.95rem; font-weight:700; color:var(--teal-900,#0d3b3b); margin-bottom:6px;">OPCO EP</h4>
+            <p style="font-size:0.85rem; color:var(--neutral-600,#4b5563); line-height:1.5;">Diagnostic de la fonction RH et accompagnement stratégique. Financement intégral des prestations PCRH pour les entreprises de proximité.</p>
+          </div>
+        </div>
+
+        <div class="card" style="display:flex; gap:20px; align-items:flex-start; padding:24px;">
+          <img src="assets/img/partners/opco2i.png" alt="OPCO2i" style="height:40px; width:auto; flex:none;" loading="lazy" decoding="async">
+          <div>
+            <h4 style="font-family:'Sora',sans-serif; font-size:0.95rem; font-weight:700; color:var(--teal-900,#0d3b3b); margin-bottom:6px;">OPCO2i</h4>
+            <p style="font-size:0.85rem; color:var(--neutral-600,#4b5563); line-height:1.5;">Programme CO2I diagnostic et accompagnement décarbonation. Performance RH (2024-2026). Entreprises industrielles Isère, Drôme, Ardèche.</p>
+          </div>
+        </div>
+
+        <div class="card" style="display:flex; gap:20px; align-items:flex-start; padding:24px;">
+          <img src="assets/img/partners/uniformation.png" alt="Uniformation" style="height:40px; width:auto; flex:none;" loading="lazy" decoding="async">
+          <div>
+            <h4 style="font-family:'Sora',sans-serif; font-size:0.95rem; font-weight:700; color:var(--teal-900,#0d3b3b); margin-bottom:6px;">Uniformation</h4>
+            <p style="font-size:0.85rem; color:var(--neutral-600,#4b5563); line-height:1.5;">Programme ZOOM RH pour entreprises <50 salariés. Secteurs sport, animation, tourisme social. Partenariat actif depuis 2015.</p>
+          </div>
+        </div>
+
+        <div class="card" style="display:flex; gap:20px; align-items:flex-start; padding:24px;">
+          <img src="assets/img/partners/akto.png" alt="AKTO" style="height:40px; width:auto; flex:none;" loading="lazy" decoding="async">
+          <div>
+            <h4 style="font-family:'Sora',sans-serif; font-size:0.95rem; font-weight:700; color:var(--teal-900,#0d3b3b); margin-bottom:6px;">AKTO</h4>
+            <p style="font-size:0.85rem; color:var(--neutral-600,#4b5563); line-height:1.5;">Partenaire depuis 2020. Éducation privée et sécurité. PCRH et diagnostics RH sectoriels. Fidélisation des talents.</p>
+          </div>
+        </div>
+
+        <div class="card" style="display:flex; gap:20px; align-items:flex-start; padding:24px;">
+          <span class="partner-badge">Région AURA</span>
+          <div>
+            <h4 style="font-family:'Sora',sans-serif; font-size:0.95rem; font-weight:700; color:var(--teal-900,#0d3b3b); margin-bottom:6px;">Région Auvergne-Rhône-Alpes</h4>
+            <p style="font-size:0.85rem; color:var(--neutral-600,#4b5563); line-height:1.5;">Programme EXPERTISE RH (2016-2022). 80+ entreprises accompagnées en Drôme et Ardèche.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Nos références</span>
+        <h2 class="section-title">Les secteurs que nous accompagnons</h2>
+        <p class="section-subtitle">Des centaines de missions réalisées dans des secteurs variés depuis 2003, principalement des PME et ETI.</p>
+      </div>
+      <div class="grid-3 reveal-stagger" style="gap:16px;">
+        <div class="card" style="padding:20px; text-align:center;">
+          <h4 style="font-family:'Sora',sans-serif; font-size:0.95rem; font-weight:700; color:var(--teal-900,#0d3b3b); margin-bottom:4px;">Industrie</h4>
+          <p style="font-size:0.82rem; color:var(--neutral-500,#6b7280);">Métallurgie, plasturgie, agroalimentaire</p>
+        </div>
+        <div class="card" style="padding:20px; text-align:center;">
+          <h4 style="font-family:'Sora',sans-serif; font-size:0.95rem; font-weight:700; color:var(--teal-900,#0d3b3b); margin-bottom:4px;">Commerce & Distribution</h4>
+          <p style="font-size:0.82rem; color:var(--neutral-500,#6b7280);">Détail, grande distribution, e-commerce</p>
+        </div>
+        <div class="card" style="padding:20px; text-align:center;">
+          <h4 style="font-family:'Sora',sans-serif; font-size:0.95rem; font-weight:700; color:var(--teal-900,#0d3b3b); margin-bottom:4px;">Services</h4>
+          <p style="font-size:0.82rem; color:var(--neutral-500,#6b7280);">Conseil, informatique, services B2B</p>
+        </div>
+        <div class="card" style="padding:20px; text-align:center;">
+          <h4 style="font-family:'Sora',sans-serif; font-size:0.95rem; font-weight:700; color:var(--teal-900,#0d3b3b); margin-bottom:4px;">BTP & Construction</h4>
+          <p style="font-size:0.82rem; color:var(--neutral-500,#6b7280);">Artisans, PME bâtiment, travaux publics</p>
+        </div>
+        <div class="card" style="padding:20px; text-align:center;">
+          <h4 style="font-family:'Sora',sans-serif; font-size:0.95rem; font-weight:700; color:var(--teal-900,#0d3b3b); margin-bottom:4px;">Santé & Social</h4>
+          <p style="font-size:0.82rem; color:var(--neutral-500,#6b7280);">Établissements de santé, associations</p>
+        </div>
+        <div class="card" style="padding:20px; text-align:center;">
+          <h4 style="font-family:'Sora',sans-serif; font-size:0.95rem; font-weight:700; color:var(--teal-900,#0d3b3b); margin-bottom:4px;">Education & Formation</h4>
+          <p style="font-size:0.82rem; color:var(--neutral-500,#6b7280);">Enseignement privé, CFA, organismes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS-LINKS -->
+  <section class="section section--alt" style="padding:48px 0;">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px;">
+        <a href="accompagnements.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">À vos côtés</h3>
+            <p>Les approches dans lesquelles notre équipe intervient au quotidien.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+        <a href="expertises.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Nos expertises</h3>
+            <p>Les 7 domaines d'intervention de nos consultants.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+        <a href="temoignages.html" class="enjeu-row reveal" style="text-decoration:none;">
+          <div class="enjeu-body">
+            <h3 style="font-size:1.05rem;">Témoignages</h3>
+            <p>Ce que disent les dirigeants que nous avons accompagnés.</p>
+          </div>
+          <span class="enjeu-cta">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--teal" style="padding:56px 0;">
+    <div class="container" style="text-align:center;">
+      <h2 class="reveal" style="margin-bottom:12px;">Envie de travailler avec nous ?</h2>
+      <p class="reveal" style="color:rgba(255,255,255,0.92); max-width:520px; margin:0 auto 28px; font-size:1rem;">Premier échange de 30 minutes pour découvrir votre situation et identifier les solutions adaptées. Gratuit, sans engagement.</p>
+      <a href="contact.html" class="btn btn--accent btn--lg reveal">Prendre rendez-vous</a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo-chip"><img src="assets/img/logo-cartesa.png" alt="CARTESA" width="250" height="86" loading="lazy" decoding="async"></span>
+          <p class="footer-tag">Compétences, Entreprises &amp; Territoires</p>
+          <div class="footer-qualiopi">
+            <img src="assets/img/qualiopi.jpg" alt="Certifié Qualiopi" width="120" height="60" loading="lazy" decoding="async">
+            <span>Certifié Qualiopi au titre des actions de formation</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Vos attentes</h4>
+          <ul>
+            <li><a href="vos-attentes.html#fideliser">Structurer &amp; fidéliser</a></li>
+            <li><a href="vos-attentes.html#dirigeants">Développer vos managers</a></li>
+            <li><a href="vos-attentes.html#former">Former vos équipes</a></li>
+            <li><a href="vos-attentes.html#decarboner">Décarboner</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Nos expertises</h4>
+          <ul>
+            <li><a href="expertises.html">Diagnostic &amp; accompagnements</a></li>
+            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="ingenierie.html">Ingénierie pédagogique</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CARTESA</h4>
+          <ul>
+            <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
+            <li><a href="ressources.html">Ressources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+            <li><a href="politique-cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
+            <span>Près de Lyon<br>entre Lyon, Grenoble et Chambéry<br><small>Déplacements France &amp; Europe</small></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="contact.html">Nous contacter</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
+            <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
+        <div class="footer-bottom__social">
+          <a href="https://www.linkedin.com/company/cartesa" target="_blank" rel="noopener" aria-label="LinkedIn CARTESA">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function() { document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10); });
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      // === Header hide on scroll-down, show on scroll-up ===
+      (function() {
+        var lastY = window.scrollY || 0, ticking = false, hidden = false;
+        var hdr = document.querySelector('.site-header');
+        if (!hdr) return;
+        window.addEventListener('scroll', function() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function() {
+            var y = window.scrollY;
+            if (y > 140 && y > lastY + 4 && !hidden) {
+              hdr.classList.add('hidden'); hidden = true;
+            } else if ((y < lastY - 4 || y <= 140) && hidden) {
+              hdr.classList.remove('hidden'); hidden = false;
+            }
+            lastY = y;
+            ticking = false;
+          });
+        }, { passive: true });
+      })();
+
+      var links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          var open = links.classList.toggle('is-open');
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+
+      // Mobile-only dropdown toggle ("Vos attentes", "On vous aide")
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function(dd) {
+        var trigger = dd.querySelector(':scope > a');
+        if (!trigger) return;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', function(e) {
+          var isMobileNav = window.matchMedia('(max-width: 880px)').matches;
+          if (!isMobileNav) return;
+          e.preventDefault();
+          var open = dd.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+    })();
+    var revealObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) { if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObs.unobserve(entry.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .reveal-stagger, .reveal-left, .reveal-right, .reveal-scale').forEach(function(el) { revealObs.observe(el); });
+  </script>
+
+  <script src="assets/motion.js" defer></script>
+  <script src="assets/cookie-banner.js" defer></script>
+</body>
+</html>

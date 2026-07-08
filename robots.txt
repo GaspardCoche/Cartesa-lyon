@@ -1,0 +1,10 @@
+# robots.txt — cartesa-lyon.com
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cartesa-lyon.com/sitemap.xml
+
+# Pour migration WordPress (à activer post-migration WP)
+# Disallow: /wp-admin/
+# Allow: /wp-admin/admin-ajax.php
