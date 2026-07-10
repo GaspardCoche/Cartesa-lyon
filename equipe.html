@@ -25,7 +25,7 @@
   <!-- Self-hosted fonts (RGPD-friendly) -->
   <link rel="icon" type="image/png" href="assets/img/favicon-cartesa.png">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="styles.css?v58">
+  <link rel="stylesheet" href="styles.css?v59">
   <style>
     .pole-label { display:inline-block; font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; padding:4px 14px; border-radius:20px; margin-bottom:8px; }
     .pole-label--rh { background:var(--teal-100,#d1ecec); color:var(--teal-700,#0f5e5e); }
@@ -66,6 +66,15 @@
     .pole-header .pole-count { font-size:0.82rem; color:var(--neutral-500,#6b7280); }
   
     .avatar-circle--photo { object-fit: cover; object-position: center 20%; padding: 0; }
+  
+    .team-linkedin {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.78rem; font-weight: 700; font-family: 'Sora', sans-serif;
+      color: #fff; background: #0a66c2; padding: 4px 12px; border-radius: 14px;
+      text-decoration: none; margin: 2px 0 10px;
+      transition: background 0.2s ease;
+    }
+    .team-linkedin:hover { background: #084d92; color: #fff; }
   </style>
   <script type="application/ld+json">
   {
@@ -174,6 +183,7 @@
           <img class="avatar-circle avatar-circle--photo" src="assets/img/equipe/catherine-lenoir.png" alt="Catherine Lenoir" width="433" height="239" loading="lazy" decoding="async">
           <h3>Catherine Lenoir</h3>
           <div class="role">Consultante Associée</div>
+          <a class="team-linkedin" href="https://www.linkedin.com/in/catherine-lenoir-6190291b9/" target="_blank" rel="noopener" aria-label="Profil LinkedIn de Catherine Lenoir"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.3 18.3v-7.7H5.9v7.7h2.4zM7.1 9.6a1.4 1.4 0 1 0 0-2.8 1.4 1.4 0 0 0 0 2.8zm11.2 8.7v-4.2c0-2.3-1.2-3.3-2.8-3.3-1.3 0-1.9.7-2.2 1.2v-1h-2.4v7.3h2.4v-4.1c0-1.1.2-2.1 1.5-2.1s1.3 1.2 1.3 2.2v4h2.2z"/></svg> LinkedIn</a>
           <div class="expertise-tags">
             <span class="expertise-tag expertise-tag--teal">AFEST</span>
             <span class="expertise-tag expertise-tag--green">Coaching</span>
@@ -185,6 +195,7 @@
           <span class="partner-badge">Philippe Lenoir, consultant associé Cartesa</span>
           <h3>Philippe Lenoir</h3>
           <div class="role">Consultant Associé</div>
+          <a class="team-linkedin" href="https://www.linkedin.com/in/philippe-lenoir-1b87656a/" target="_blank" rel="noopener" aria-label="Profil LinkedIn de Philippe Lenoir"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.3 18.3v-7.7H5.9v7.7h2.4zM7.1 9.6a1.4 1.4 0 1 0 0-2.8 1.4 1.4 0 0 0 0 2.8zm11.2 8.7v-4.2c0-2.3-1.2-3.3-2.8-3.3-1.3 0-1.9.7-2.2 1.2v-1h-2.4v7.3h2.4v-4.1c0-1.1.2-2.1 1.5-2.1s1.3 1.2 1.3 2.2v4h2.2z"/></svg> LinkedIn</a>
           <div class="expertise-tags">
             <span class="expertise-tag expertise-tag--teal">Leadership</span>
             <span class="expertise-tag expertise-tag--purple">Coaching</span>
@@ -226,6 +237,18 @@
             <span class="expertise-tag expertise-tag--teal">Changement</span>
           </div>
           <p>Accompagnement organisationnel lié à la transition écologique. Impact RH de la décarbonation : évolution des postes, nouvelles compétences, dialogue social sur les changements de pratiques.</p>
+        </div>
+
+        <div class="team-card-v2">
+          <!-- TODO client : nom de famille, photo et LinkedIn d'Angélique -->
+          <div class="avatar-circle avatar-circle--gold">A</div>
+          <h3>Angélique</h3>
+          <div class="role">Assistante administrative et commerciale</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag expertise-tag--gold">Administratif</span>
+            <span class="expertise-tag expertise-tag--teal">Relation client</span>
+          </div>
+          <p>Votre premier contact chez CARTESA : suivi administratif et commercial, coordination des dossiers et de la communication.</p>
         </div>
       </div>
     </div>
