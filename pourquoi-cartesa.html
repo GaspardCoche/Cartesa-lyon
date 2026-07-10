@@ -206,6 +206,23 @@
     .vt-speaker__cta { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.85rem; color: var(--teal-600); margin-left: 10px; white-space: nowrap; }
   
     #equipe .team-card-v2 { flex: 0 1 340px; }
+  
+    /* Passerelles vers tous les témoignages */
+    .vt-more { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-top: 22px; }
+    .vt-more__item {
+      display: flex; align-items: center; gap: 12px; text-decoration: none;
+      background: #fff; border: 1px solid var(--neutral-200); border-radius: 12px; padding: 10px 14px 10px 10px;
+      color: var(--neutral-600); font-size: 0.85rem;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .vt-more__item:hover { border-color: var(--teal-500); transform: translateY(-2px); color: var(--neutral-600); }
+    .vt-more__item img { width: 54px; height: 54px; border-radius: 8px; object-fit: cover; flex: none; }
+    .vt-more__item strong { display: block; font-family: 'Sora', sans-serif; color: var(--teal-900); font-size: 0.92rem; }
+    .vt-more__avatar {
+      width: 54px; height: 54px; border-radius: 8px; flex: none;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--teal-500); color: #fff; font-family: 'Sora', sans-serif; font-weight: 800;
+    }
   </style>
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -461,132 +478,23 @@
         <span class="vt-speaker__cta">Toutes les capsules &rarr;</span>
       </a>
 
-      <div class="vtestim-grid reveal" id="vtestimGrid">
-        <!-- ép. 1 -->
-        <button class="vt-card" type="button"
-          data-video="assets/temoignages/video/ep1.mp4"
-          data-title="Un besoin devenu évident"
-          data-sub="Stéphane Fournier · Président, Groupe Syrah">
-          <span class="vt-card__media">
-            <img src="assets/temoignages/posters/ep1.jpg" alt="Stéphane Fournier — Un besoin devenu évident" loading="lazy">
-            <span class="vt-chapter">1</span>
-            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-            <span class="vt-badge">0:27</span>
-          </span>
-          <span class="vt-card__body">
-            <span class="vt-card__q">Quelle était la problématique&nbsp;?</span>
-            <span class="vt-card__title">Un besoin devenu évident</span>
-            <span class="vt-card__excerpt">« Garder des compétences très précises — on travaille la mécanique de précision — et faire en sorte qu'elles se transmettent : c'est l'enjeu majeur de nos entreprises. »</span>
-          </span>
-        </button>
-
-        <!-- ép. 2 -->
-        <button class="vt-card" type="button"
-          data-video="assets/temoignages/video/ep2.mp4"
-          data-title="Un management à réinventer"
-          data-sub="Stéphane Fournier · Président, Groupe Syrah">
-          <span class="vt-card__media">
-            <img src="assets/temoignages/posters/ep2.jpg" alt="Stéphane Fournier — Un management à réinventer" loading="lazy">
-            <span class="vt-chapter">2</span>
-            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-            <span class="vt-badge">0:23</span>
-          </span>
-          <span class="vt-card__body">
-            <span class="vt-card__q">Le constat de départ</span>
-            <span class="vt-card__title">Un management à réinventer</span>
-            <span class="vt-card__excerpt">« Le management se faisait de façon empirique, comme dans beaucoup d'industries : chacun au feeling — mais plutôt maladroitement. »</span>
-          </span>
-        </button>
-
-        <!-- ép. 3 -->
-        <button class="vt-card" type="button"
-          data-video="assets/temoignages/video/ep3.mp4"
-          data-title="La décision s'impose"
-          data-sub="Stéphane Fournier · Président, Groupe Syrah">
-          <span class="vt-card__media">
-            <img src="assets/temoignages/posters/ep3.jpg" alt="Stéphane Fournier — La décision s'impose" loading="lazy">
-            <span class="vt-chapter">3</span>
-            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-            <span class="vt-badge">0:43</span>
-          </span>
-          <span class="vt-card__body">
-            <span class="vt-card__q">Pourquoi avoir choisi Cartesa&nbsp;?</span>
-            <span class="vt-card__title">La décision s'impose</span>
-            <span class="vt-card__excerpt">« On s'est choisi ensemble, avec Cartesa et Catherine. Une approche sur mesure : mieux encadrer, et transmettre le savoir. »</span>
-          </span>
-        </button>
-
-        <!-- ép. 4 -->
-        <button class="vt-card" type="button"
-          data-video="assets/temoignages/video/ep4.mp4"
-          data-title="Une relation de confiance"
-          data-sub="Stéphane Fournier · Président, Groupe Syrah">
-          <span class="vt-card__media">
-            <img src="assets/temoignages/posters/ep4.jpg" alt="Stéphane Fournier — Une relation de confiance" loading="lazy">
-            <span class="vt-chapter">4</span>
-            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-            <span class="vt-badge">0:55</span>
-          </span>
-          <span class="vt-card__body">
-            <span class="vt-card__q">Ce qui a fait la différence</span>
-            <span class="vt-card__title">Une relation de confiance</span>
-            <span class="vt-card__excerpt">« Il fallait que l'alchimie prenne. J'ai pu lâcher le sujet en totale confiance : ce que je voulais transmettre a été mis en œuvre. La différence, c'est le suivi. »</span>
-          </span>
-        </button>
-
-        <!-- ép. 5 -->
-        <button class="vt-card" type="button"
-          data-video="assets/temoignages/video/ep5.mp4"
-          data-title="Faire dialoguer les équipes"
-          data-sub="Stéphane Fournier · Président, Groupe Syrah">
-          <span class="vt-card__media">
-            <img src="assets/temoignages/posters/ep5.jpg" alt="Stéphane Fournier — Faire dialoguer les équipes" loading="lazy">
-            <span class="vt-chapter">5</span>
-            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-            <span class="vt-badge">0:52</span>
-          </span>
-          <span class="vt-card__body">
-            <span class="vt-card__q">Le déroulement</span>
-            <span class="vt-card__title">Faire dialoguer les équipes</span>
-            <span class="vt-card__excerpt">« Asseoir des chefs d'atelier de plusieurs sociétés autour d'une table et les faire réfléchir ensemble : Catherine a eu la méthode. Un vrai apport de mise en confiance. »</span>
-          </span>
-        </button>
-
-        <!-- ép. 6 -->
-        <button class="vt-card" type="button"
-          data-video="assets/temoignages/video/ep6.mp4"
-          data-title="Des résultats concrets"
-          data-sub="Stéphane Fournier · Président, Groupe Syrah">
-          <span class="vt-card__media">
-            <img src="assets/temoignages/posters/ep6.jpg" alt="Stéphane Fournier — Des résultats concrets" loading="lazy">
-            <span class="vt-chapter">6</span>
-            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-            <span class="vt-badge">0:58</span>
-          </span>
-          <span class="vt-card__body">
-            <span class="vt-card__q">Ce qui a changé</span>
-            <span class="vt-card__title">Des résultats concrets</span>
-            <span class="vt-card__excerpt">« Aujourd'hui c'est structuré : points d'équipe réguliers, entretiens annuels à date. Sceptiques au départ, les managers en ont compris l'intérêt. »</span>
-          </span>
-        </button>
-
-        <!-- ép. 7 -->
-        <button class="vt-card" type="button"
-          data-video="assets/temoignages/video/ep7.mp4"
-          data-title="Un message aux futurs participants"
-          data-sub="Stéphane Fournier · Président, Groupe Syrah">
-          <span class="vt-card__media">
-            <img src="assets/temoignages/posters/ep7.jpg" alt="Stéphane Fournier — Un message aux futurs participants" loading="lazy">
-            <span class="vt-chapter">7</span>
-            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-            <span class="vt-badge">1:01</span>
-          </span>
-          <span class="vt-card__body">
-            <span class="vt-card__q">À qui le recommander&nbsp;?</span>
-            <span class="vt-card__title">Un message aux futurs participants</span>
-            <span class="vt-card__excerpt">« À toutes les TPE-PME où le management est empirique. Derrière, la productivité s'améliore — et surtout, on ne perd pas notre savoir-faire. »</span>
-          </span>
-        </button>
+      <div class="vt-more reveal">
+        <a href="temoignages.html" class="vt-more__item">
+          <img src="assets/temoignages/posters/ep1.jpg" alt="" loading="lazy">
+          <span><strong>Groupe Syrah</strong>7 capsules vidéo &rarr;</span>
+        </a>
+        <a href="temoignages.html" class="vt-more__item">
+          <img src="assets/temoignages/posters/jeantet-ep1.jpg" alt="" loading="lazy">
+          <span><strong>JEANTET Groupe</strong>7 capsules vidéo &rarr;</span>
+        </a>
+        <a href="temoignages.html" class="vt-more__item">
+          <img src="assets/temoignages/posters/isactys-ep1.jpg" alt="" loading="lazy">
+          <span><strong>Groupe Isactys</strong>3 capsules vidéo &rarr;</span>
+        </a>
+        <a href="temoignages.html#temoignage-manikheir" class="vt-more__item vt-more__item--ecrit">
+          <span class="vt-more__avatar">LD</span>
+          <span><strong>ManiKheir</strong>Témoignage écrit &rarr;</span>
+        </a>
       </div>
 
       <p class="vt-note">Témoignage filmé et partagé avec l'accord de Stéphane Fournier (Groupe Syrah).</p>

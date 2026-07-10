@@ -33,6 +33,22 @@
     .continue-band__links { display: flex; flex-wrap: wrap; gap: 10px 36px; }
     .continue-band__links a { font-family: 'Sora', sans-serif; font-weight: 600; color: var(--teal-700, #006aa3); text-decoration: none; }
     .continue-band__links a:hover { text-decoration: underline; }
+  
+    /* Panneaux coaching colorés */
+    .coach-panel { border-radius: 14px; padding: 28px 26px; }
+    .coach-panel--teal { background: var(--teal-100); }
+    .coach-panel--gold { background: var(--gold-100); }
+    .coach-panel__badge {
+      display: inline-block; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.72rem;
+      text-transform: uppercase; letter-spacing: 0.1em; padding: 5px 12px; border-radius: 6px; margin-bottom: 12px;
+    }
+    .coach-panel--teal .coach-panel__badge { background: var(--teal-600); color: #fff; }
+    .coach-panel--gold .coach-panel__badge { background: var(--gold-500); color: var(--teal-900); }
+    .coach-panel h3 { margin: 0 0 10px; font-size: 1.05rem; }
+    .coach-panel ul { list-style: none; margin: 0; padding: 0; }
+    .coach-panel li { padding: 7px 0 7px 20px; position: relative; font-size: 0.93rem; color: var(--neutral-700); }
+    .coach-panel--teal li::before { content: ""; position: absolute; left: 0; top: 15px; width: 11px; height: 2.5px; background: var(--teal-600); }
+    .coach-panel--gold li::before { content: ""; position: absolute; left: 0; top: 15px; width: 11px; height: 2.5px; background: var(--gold-600); }
   </style>
   <script type="application/ld+json">
   {
@@ -134,13 +150,14 @@
           <p style="color:var(--neutral-600); line-height:1.7;">Ces accompagnements sont <strong>co-finançables</strong> (OPCO ou Région Auvergne-Rhône-Alpes). Nous montons le dossier avec vous.</p>
           <a href="contact.html?sujet=coaching-individuel" class="btn btn--ghost btn--sm">Parlons de votre besoin</a>
         </div>
-        <div class="card reveal-right">
-          <h3 style="margin-top:0;">Ce que le coaching individuel permet</h3>
+        <div class="coach-panel coach-panel--teal reveal-right">
+          <span class="coach-panel__badge">Individuel</span>
+          <h3>Ce que ça permet</h3>
           <ul>
-            <li>Réussir une prise de poste ou un changement de rôle</li>
-            <li>Clarifier ses priorités et ses décisions structurantes</li>
-            <li>Travailler sa posture de dirigeant ou de manager</li>
-            <li>Prendre du recul face à une situation complexe</li>
+            <li>Réussir une <strong>prise de poste</strong> ou un changement de rôle</li>
+            <li>Clarifier ses <strong>décisions structurantes</strong></li>
+            <li>Travailler sa <strong>posture</strong> de dirigeant ou de manager</li>
+            <li>Prendre du <strong>recul</strong> sur une situation complexe</li>
           </ul>
         </div>
       </div>
@@ -151,13 +168,14 @@
   <section class="section section--alt" id="collectif">
     <div class="container">
       <div class="grid-2" style="gap:24px; align-items:center;">
-        <div class="card reveal-left">
-          <h3 style="margin-top:0;">Ce que le coaching collectif permet</h3>
+        <div class="coach-panel coach-panel--gold reveal-left">
+          <span class="coach-panel__badge">Collectif</span>
+          <h3>Ce que ça permet</h3>
           <ul>
-            <li>Renforcer la cohésion et la coopération d'une équipe</li>
-            <li>Clarifier les rôles, les objectifs et le cadre commun</li>
-            <li>Traverser une réorganisation ou une phase de croissance</li>
-            <li>Faire émerger l'intelligence collective par le codéveloppement</li>
+            <li>Renforcer la <strong>cohésion</strong> et la coopération</li>
+            <li>Clarifier les <strong>rôles</strong> et le cadre commun</li>
+            <li>Traverser une <strong>réorganisation</strong> ou une croissance</li>
+            <li>Faire émerger l'<strong>intelligence collective</strong></li>
           </ul>
         </div>
         <div class="reveal-right">

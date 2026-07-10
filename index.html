@@ -161,8 +161,8 @@
         <div class="hero-text hero-text-reveal">
           <p class="hero-eyebrow">Cabinet RH · Formation · Conseil · depuis 2003</p>
           <h1 class="hero-title-modern">
-            <span class="hero-line-1">On structure votre <strong>RH</strong>.</span>
-            <span class="hero-line-2">Vous reprenez votre <em>souffle</em>.</span>
+            <span class="hero-line-1">On structure <span class="hero-rotor" id="heroRotor"><strong class="rotor-word is-on">vos&nbsp;RH</strong><strong class="rotor-word">votre&nbsp;RSE</strong><strong class="rotor-word">vos&nbsp;équipes</strong></span>.</span>
+            <span class="hero-line-2">Vous, vous reprenez votre <em>souffle</em>.</span>
           </h1>
           <p class="hero-sub">Diagnostic, accompagnement, formations Qualiopi pour les dirigeants de PME et ETI. Près de Lyon, partout en France et en Europe — prestations co-finançables (OPCO ou Région).</p>
           <div class="hero-actions">
@@ -347,51 +347,50 @@
       </div>
       <div class="enjeux-list reveal-stagger">
 
-        <a href="expertises.html" class="enjeu-row">
+        <a href="expertises.html" class="enjeu-row enjeu-row--e1">
           <span class="enjeu-num">01</span>
           <div class="enjeu-body">
-            <h3>Structurer sa fonction RH</h3>
-            <p>Diagnostic opérationnel, alignement des compétences au modèle économique et aux missions attendues, transparence salariale (directive européenne), ancrage dans la stratégie et les opérations.</p>
+            <h3>Structurer <mark class="hl">vos RH</mark></h3>
+            <p>Diagnostic opérationnel, compétences alignées sur votre modèle, transparence salariale.</p>
           </div>
           <span class="enjeu-cta">Diagnostic opérationnel &rarr;</span>
         </a>
 
-        <a href="accompagnements.html" class="enjeu-row">
+        <a href="accompagnements.html" class="enjeu-row enjeu-row--e2">
           <span class="enjeu-num">02</span>
           <div class="enjeu-body">
-            <h3>Gouvernance et modèle de développement</h3>
-            <p>Gouvernance d'entreprise, définition et déclinaison du modèle économique, pilotage des projets de transformation.</p>
+            <h3>Gouvernance &amp; <mark class="hl">développement</mark></h3>
+            <p>Modèle économique décliné, projets de transformation pilotés.</p>
           </div>
           <span class="enjeu-cta">Accompagnements &rarr;</span>
         </a>
 
-        <a href="accompagnements.html" class="enjeu-row">
+        <a href="accompagnements.html" class="enjeu-row enjeu-row--e3">
           <span class="enjeu-num">03</span>
           <div class="enjeu-body">
-            <h3>Mobiliser et engager les équipes</h3>
-            <p>Transversalité et coopération, mobilisation autour du projet de la structure, engagement et fidélisation.</p>
+            <h3><mark class="hl">Mobiliser</mark> les équipes</h3>
+            <p>Coopération, engagement, fidélisation autour du projet.</p>
           </div>
           <span class="enjeu-cta">Nos approches &rarr;</span>
         </a>
 
-        <a href="formations.html" class="enjeu-row">
+        <a href="formations.html" class="enjeu-row enjeu-row--e4">
           <span class="enjeu-num">04</span>
           <div class="enjeu-body">
-            <h3>Développer les compétences</h3>
-            <p>Formations management, droit social, recrutement. Montée en compétence des managers et équipes. Pédagogie terrain, certifiée Qualiopi.</p>
+            <h3>Développer les <mark class="hl">compétences</mark></h3>
+            <p>Management, droit social, recrutement — pédagogie terrain, Qualiopi.</p>
           </div>
           <span class="enjeu-cta">Formations &rarr;</span>
         </a>
 
-        <a href="rse-decarbonation.html" class="enjeu-row">
+        <a href="rse-decarbonation.html" class="enjeu-row enjeu-row--e5">
           <span class="enjeu-num">05</span>
           <div class="enjeu-body">
-            <h3>Pérenniser par la RSE</h3>
-            <p>Responsabilité sociétale et écologique, décarbonation et performance durable, conformité CSRD et enjeux donneurs d'ordres.</p>
+            <h3>Pérenniser par la <mark class="hl">RSE</mark></h3>
+            <p>Décarbonation, conformité CSRD, exigences donneurs d'ordres.</p>
           </div>
-          <span class="enjeu-cta">RSE & Décarbonation &rarr;</span>
+          <span class="enjeu-cta">RSE &amp; Décarbonation &rarr;</span>
         </a>
-
       </div>
     </div>
   </section>
@@ -1167,6 +1166,23 @@
 
   </script>
 
+  <script>
+    (function() {
+      var rotor = document.getElementById('heroRotor');
+      if (!rotor || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var words = rotor.querySelectorAll('.rotor-word');
+      if (words.length < 2) return;
+      var i = 0;
+      var DUREES = [4200, 2200, 2200]; /* appui sur "vos RH" */
+      function next() {
+        words[i].classList.remove('is-on');
+        i = (i + 1) % words.length;
+        words[i].classList.add('is-on');
+        setTimeout(next, DUREES[i] || 2200);
+      }
+      setTimeout(next, DUREES[0]);
+    })();
+  </script>
   <script src="assets/motion.js" defer></script>
   <script src="assets/cookie-banner.js" defer></script>
 </body>

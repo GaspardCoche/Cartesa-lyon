@@ -4886,3 +4886,29 @@ section.section + section.section--alt {
 /* Touches turquoise (bleu du sigle) — avec parcimonie */
 .card-icon { background: var(--teal-500) !important; }
 .volet-dot.active { background: var(--teal-500); border-color: var(--teal-500); }
+
+
+/* ===== Hero : rotor de mots ===== */
+.hero-rotor { display: inline-grid; vertical-align: bottom; }
+.rotor-word {
+  grid-area: 1 / 1;
+  color: var(--gold-400);
+  opacity: 0;
+  transform: translateY(0.35em);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  white-space: nowrap;
+}
+.rotor-word.is-on { opacity: 1; transform: translateY(0); }
+
+/* ===== Enjeux : lignes colorées, plus vivantes ===== */
+.enjeu-row { border-left: 6px solid transparent; }
+.enjeu-row .enjeu-num { color: #fff; border: 0; }
+.enjeu-row--e1 { border-left-color: var(--teal-600); }  .enjeu-row--e1 .enjeu-num { background: var(--teal-600); }
+.enjeu-row--e2 { border-left-color: var(--gold-500); }  .enjeu-row--e2 .enjeu-num { background: var(--gold-500); color: var(--teal-900); }
+.enjeu-row--e3 { border-left-color: var(--teal-500); }  .enjeu-row--e3 .enjeu-num { background: var(--teal-500); }
+.enjeu-row--e4 { border-left-color: var(--green-600); } .enjeu-row--e4 .enjeu-num { background: var(--green-600); }
+.enjeu-row--e5 { border-left-color: var(--teal-900); }  .enjeu-row--e5 .enjeu-num { background: var(--teal-900); }
+.hl { background: var(--gold-100); color: inherit; padding: 0 5px; border-radius: 4px; }
+
+/* ===== Situations : CTA calés en bas, cartes de même niveau ===== */
+.card-situation__cta { margin-top: auto; padding-top: 10px; }

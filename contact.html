@@ -111,6 +111,56 @@
     }
     .contact-notes p:last-child { margin-bottom: 0; }
     .contact-notes strong { color: var(--teal-900); font-weight: 600; }
+  
+    /* ===== Page contact : identité graphique affirmée ===== */
+    .contact-hero {
+      position: relative; overflow: hidden;
+      background: var(--teal-900); color: #fff;
+      padding: 44px 0 48px;
+    }
+    .contact-hero h1 { color: #fff; font-size: clamp(1.9rem, 3.4vw, 2.7rem); margin: 10px 0 12px; }
+    .contact-hero p { color: rgba(255,255,255,0.85); max-width: 560px; font-size: 1.02rem; }
+    .ch-hl { background: var(--gold-500); color: var(--teal-900); padding: 0 10px; border-radius: 6px; }
+    .ch-squares { position: absolute; right: 6%; top: 50%; transform: translateY(-50%) rotate(-6deg); pointer-events: none; }
+    .ch-squares .sq { display: block; position: absolute; }
+    .sq--blue { width: 74px; height: 74px; background: #15709f; top: -80px; left: 0; }
+    .sq--gold { width: 74px; height: 74px; background: #fab91a; top: -80px; left: 82px; }
+    .sq--teal { width: 74px; height: 88px; background: #20b7c8; top: 2px; left: 0; }
+    @media (max-width: 900px) { .ch-squares { display: none; } }
+    .contact-panel {
+      position: relative; overflow: hidden;
+      background: var(--teal-900); color: #fff;
+      border-radius: 16px; padding: 30px 28px;
+      align-self: start;
+    }
+    .ch-squares--panel { right: -26px; top: auto; bottom: 64px; transform: scale(0.45) rotate(-8deg); opacity: 0.35; }
+    .contact-panel__title { color: #fff; font-size: 1.05rem; margin: 18px 0 12px; }
+    .contact-panel__title:first-of-type { margin-top: 0; }
+    .promise-list { list-style: none; padding: 0; margin: 0 0 16px; }
+    .promise-list li { display: flex; align-items: baseline; gap: 10px; padding: 7px 0; font-size: 0.92rem; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .promise-list strong { color: var(--gold-400); }
+    .promise-dot { width: 10px; height: 10px; border-radius: 2px; flex: none; position: relative; top: 1px; }
+    .promise-dot--gold { background: #fab91a; }
+    .promise-dot--teal { background: #20b7c8; }
+    .promise-dot--blue { background: #4ca3d4; }
+    .contact-panel .aside-title { color: #fff; }
+    .contact-panel .contact-line { color: rgba(255,255,255,0.85); }
+    .contact-panel .contact-line strong { color: #fff; }
+    .contact-panel .contact-line svg { stroke: var(--gold-400); }
+    .contact-panel a { color: var(--teal-400); }
+    .contact-panel .contact-notes, .contact-panel .map-note { color: rgba(255,255,255,0.6); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }
+    .opt { font-weight: 400; color: var(--neutral-500); font-size: 0.8em; }
+    #contactForm select {
+      width: 100%; padding: 11px 12px; border: 1px solid var(--neutral-300); border-radius: 8px;
+      font: inherit; font-size: 0.92rem; color: var(--neutral-700); background: #fff;
+    }
+    #contactForm input:focus, #contactForm textarea:focus, #contactForm select:focus {
+      outline: none; border-color: var(--teal-500); box-shadow: 0 0 0 3px rgba(32, 183, 200, 0.18);
+    }
+    #contactForm button[type="submit"] { background: var(--gold-500); color: var(--teal-900); font-weight: 700; }
+    #contactForm button[type="submit"]:hover { background: var(--gold-400); }
   </style>
   <script type="application/ld+json">
   {
@@ -170,16 +220,16 @@
   <main>
 
   <!-- PAGE HERO -->
-  <section class="page-hero page-hero--enhanced">
+  <section class="contact-hero">
+    <span class="ch-squares" aria-hidden="true"><i class="sq sq--blue"></i><i class="sq sq--gold"></i><i class="sq sq--teal"></i></span>
     <div class="container">
       <nav class="breadcrumb" aria-label="Fil d'Ariane">
         <a href="index.html">Accueil</a>
         <span class="breadcrumb__sep">/</span>
         <span class="breadcrumb__current">Contact</span>
       </nav>
-      <span class="section-label" style="color:rgba(255,255,255,0.9);">Contact</span>
-      <h1>Échangeons sur vos besoins</h1>
-      <p>Un premier échange gratuit et sans engagement pour identifier vos enjeux et les solutions adaptées.</p>
+      <h1>On s'appelle&nbsp;? <mark class="ch-hl">On vous écoute.</mark></h1>
+      <p>30 minutes, gratuites, sans engagement. Vous repartez avec un premier avis — au pire, vous aurez fait le point.</p>
     </div>
   </section>
 
@@ -210,17 +260,55 @@
                 <span id="formationLabel">Inscription formation :</span> <span id="formationName"></span>
               </p>
             </div>
-            <div class="form-group">
-              <label for="nom">Nom *</label>
-              <input type="text" id="nom" name="nom" required autocomplete="name" placeholder="Votre nom">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" autocomplete="given-name" placeholder="Votre prénom">
+              </div>
+              <div class="form-group">
+                <label for="nom">Nom *</label>
+                <input type="text" id="nom" name="nom" required autocomplete="family-name" placeholder="Votre nom">
+              </div>
             </div>
             <div class="form-group">
               <label for="email">Email professionnel *</label>
               <input type="email" id="email" name="email" required autocomplete="email" placeholder="votre.email@entreprise.com">
             </div>
-            <div class="form-group">
-              <label for="telephone">Téléphone <span style="font-weight:400; color:var(--neutral-500);">(optionnel)</span></label>
-              <input type="tel" id="telephone" name="telephone" autocomplete="tel" placeholder="04 XX XX XX XX">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telephone">Téléphone <span class="opt">(optionnel)</span></label>
+                <input type="tel" id="telephone" name="telephone" autocomplete="tel" placeholder="04 XX XX XX XX">
+              </div>
+              <div class="form-group">
+                <label for="entreprise">Entreprise <span class="opt">(optionnel)</span></label>
+                <input type="text" id="entreprise" name="entreprise" autocomplete="organization" placeholder="Nom de votre entreprise">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="taille">Taille de l'entreprise <span class="opt">(optionnel)</span></label>
+                <select id="taille" name="taille">
+                  <option value="">Sélectionnez</option>
+                  <option value="1-10">1 à 10 salariés</option>
+                  <option value="11-50">11 à 50 salariés</option>
+                  <option value="51-250">51 à 250 salariés</option>
+                  <option value="250+">Plus de 250 salariés</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="sujet">Votre sujet <span class="opt">(optionnel)</span></label>
+                <select id="sujet" name="sujet">
+                  <option value="">Sélectionnez</option>
+                  <option value="diagnostic">Diagnostic RH / RSE</option>
+                  <option value="accompagnement">Accompagnement dans la durée</option>
+                  <option value="coaching-individuel">Coaching individuel</option>
+                  <option value="coaching-collectif">Coaching collectif / co-développement</option>
+                  <option value="formation">Formation</option>
+                  <option value="rse">RSE &amp; décarbonation</option>
+                  <option value="entrepreneuriat">Projet entrepreneurial</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
             </div>
             <div class="form-group">
               <label for="message">Message *</label>
@@ -247,17 +335,19 @@
           </div>
         </div>
 
-        <!-- INFOS -->
-        <div class="reveal-right">
-          <h2 class="aside-title">Pourquoi nous contacter ?</h2>
-          <ul class="why-list">
-            <li>Réponse personnalisée sous 24 heures ouvrées</li>
-            <li>Premier échange gratuit et sans engagement</li>
-            <li>Accompagnement dans le montage du dossier OPCO</li>
-            <li>Devis sur mesure adapté à votre contexte</li>
+        <!-- INFOS — panneau de marque -->
+        <div class="reveal-right contact-panel">
+          <span class="ch-squares ch-squares--panel" aria-hidden="true"><i class="sq sq--blue"></i><i class="sq sq--gold"></i><i class="sq sq--teal"></i></span>
+          <h2 class="contact-panel__title">Ce qui vous attend</h2>
+          <ul class="promise-list">
+            <li><span class="promise-dot promise-dot--gold"></span><strong>24 h</strong> — un humain vous répond, pas un robot</li>
+            <li><span class="promise-dot promise-dot--teal"></span><strong>0 €</strong> — premier échange gratuit, sans engagement</li>
+            <li><span class="promise-dot promise-dot--blue"></span><strong>OPCO</strong> — on monte le dossier de financement avec vous</li>
+            <li><span class="promise-dot promise-dot--gold"></span><strong>Sur mesure</strong> — un devis adapté à votre contexte</li>
           </ul>
+          <a href="https://calendly.com/cartesa-rh" target="_blank" rel="noopener" class="btn btn--accent" style="margin: 6px 0 22px;">Réserver 30 minutes</a><!-- TODO: URL Calendly à valider client -->
 
-          <h2 class="aside-title">Nos coordonnées</h2>
+          <h2 class="contact-panel__title">Nos coordonnées</h2>
           <div class="contact-lines">
             <div class="contact-line">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -435,8 +525,8 @@
     })();
 
     // Pre-fill from URL params (?formation=, ?webinar=, ?sujet=)
-    // NB : les champs Sujet/Entreprise/Taille ont été retirés du formulaire —
-    // tout accès DOM est protégé par null-check.
+    // NB : champs optionnels Sujet/Entreprise/Taille réintroduits (2026-07-10) —
+    // tout accès DOM reste protégé par null-check.
     (function() {
       var params = new URLSearchParams(window.location.search);
       var banner = document.getElementById('formationBanner');
@@ -454,6 +544,14 @@
       var formation = params.get('formation');
       var webinar = params.get('webinar');
       var sujetParam = params.get('sujet');
+
+      // Présélection du select Sujet si le paramètre correspond à une option
+      var sujetSel = document.getElementById('sujet');
+      if (sujetSel && sujetParam) {
+        [].some.call(sujetSel.options, function(o) {
+          if (o.value && sujetParam.indexOf(o.value) === 0) { sujetSel.value = o.value; return true; }
+        });
+      }
 
       var ctx = null;
       if (formation) {

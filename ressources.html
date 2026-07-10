@@ -105,6 +105,16 @@
     .res-cta{background:var(--teal-900); padding:64px 0;}
     .res-cta h2{color:var(--white); margin-bottom:12px;}
     .res-cta p{color:rgba(255,255,255,0.88); max-width:540px; margin:0 auto 28px; font-size:1rem;}
+  
+    /* Stats ressources : blocs pleins de couleur */
+    .res-progress { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 880px; margin: 26px auto 0; }
+    @media (max-width: 700px) { .res-progress { grid-template-columns: 1fr; } }
+    .res-stat { border-radius: 12px; padding: 20px 22px; text-align: center; }
+    .res-stat--teal { background: var(--teal-600); color: #fff; }
+    .res-stat--gold { background: var(--gold-500); color: var(--teal-900); }
+    .res-stat--navy { background: var(--teal-900); color: #fff; }
+    .res-stat__num { display: block; font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.45rem; letter-spacing: -0.02em; }
+    .res-stat__label { font-size: 0.85rem; opacity: 0.85; }
   </style>
 </head>
 <body>
@@ -155,23 +165,17 @@
       <h1>Toutes nos ressources, réunies au même endroit</h1>
       <p>Webinars, guides, outils, témoignages et articles : tout ce que nos consultants partagent pour vous aider à structurer votre politique RH. Gratuit, sans contrepartie.</p>
       <div class="res-progress" aria-label="Notre expérience en chiffres">
-        <div class="res-progress__step reveal" style="--delay:0s;">
-          <span class="res-progress__num">20 ans</span>
-          <span class="res-progress__label">d'accompagnement RH</span>
+        <div class="res-stat res-stat--teal reveal" style="--delay:0s;">
+          <span class="res-stat__num">20 ans</span>
+          <span class="res-stat__label">d'accompagnement RH</span>
         </div>
-        <span class="res-progress__arrow" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
-        </span>
-        <div class="res-progress__step reveal" style="--delay:0.1s;">
-          <span class="res-progress__num">Des centaines</span>
-          <span class="res-progress__label">d'entreprises accompagnées</span>
+        <div class="res-stat res-stat--gold reveal" style="--delay:0.1s;">
+          <span class="res-stat__num">Des centaines</span>
+          <span class="res-stat__label">d'entreprises accompagnées</span>
         </div>
-        <span class="res-progress__arrow" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
-        </span>
-        <div class="res-progress__step reveal" style="--delay:0.2s;">
-          <span class="res-progress__num">Des milliers</span>
-          <span class="res-progress__label">de collaborateurs formés</span>
+        <div class="res-stat res-stat--navy reveal" style="--delay:0.2s;">
+          <span class="res-stat__num">Des milliers</span>
+          <span class="res-stat__label">de collaborateurs formés</span>
         </div>
       </div>
     </div>
@@ -188,10 +192,6 @@
   </nav>
 
   <!-- BANNIERE PHOTO -->
-  <figure class="page-photo-band">
-    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1600&q=80&auto=format&fit=crop" alt="Documentation et ressources" loading="lazy" decoding="async">
-    <figcaption>Guides et outils pratiques</figcaption>
-  </figure>
 
   <!-- WEBINARS & REPLAYS -->
   <section class="section section--white" id="webinars">
