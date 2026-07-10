@@ -875,11 +875,11 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .cert-card img {
-  height: 48px;
+  height: 46px;
   width: auto;
   max-width: 110px;
   object-fit: contain;
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   background: #fff;
   padding: 6px 8px;
   border-radius: 6px;
