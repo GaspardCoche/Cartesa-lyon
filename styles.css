@@ -3445,7 +3445,7 @@ img { max-width: 100%; height: auto; display: block; }
 .card-feature:hover::after  { opacity: 1; }
 .card-feature[data-accent="teal"]   { --accent: var(--teal-600); }
 .card-feature[data-accent="gold"]   { --accent: var(--gold-600); }
-.card-feature[data-accent="violet"] { --accent: #7c3aed; }
+.card-feature[data-accent="violet"] { --accent: #2e7d32; }
 
 .card-feature__badge {
   display: inline-flex;
@@ -4961,7 +4961,13 @@ section.section + section.section--alt {
   max-width: 100%;
   margin: 0 auto;
   object-fit: contain;
-  background: var(--teal-50);
-  padding: 14px;
+  background: none;
+  padding: 0;
 }
-.split-media__img:has(img.illu) { background: var(--teal-50); border-radius: 14px; text-align: center; }
+.split-media__img:has(img.illu) {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+  text-align: center;
+}
