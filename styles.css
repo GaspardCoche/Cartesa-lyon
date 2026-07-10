@@ -3445,7 +3445,7 @@ img { max-width: 100%; height: auto; display: block; }
 .card-feature:hover::after  { opacity: 1; }
 .card-feature[data-accent="teal"]   { --accent: var(--teal-600); }
 .card-feature[data-accent="gold"]   { --accent: var(--gold-600); }
-.card-feature[data-accent="violet"] { --accent: #2e7d32; }
+.card-feature[data-accent="vert"] { --accent: #2e7d32; }
 
 .card-feature__badge {
   display: inline-flex;
@@ -4963,9 +4963,11 @@ section.section + section.section--alt {
   object-fit: contain;
   background: none;
   padding: 0;
+  mix-blend-mode: multiply; /* le blanc du dessin disparaît dans le fond */
 }
 .split-media__img:has(img.illu) {
   background: none;
+  border: 0;
   border-radius: 0;
   box-shadow: none;
   overflow: visible;
