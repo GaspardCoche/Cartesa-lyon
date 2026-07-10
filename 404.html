@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page introuvable — 404 | CARTESA</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/png" href="assets/img/favicon-cartesa.png">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html, body { height: 100%; overflow: hidden; }
+    .nf-screen {
+      height: calc(100vh - 64px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+    .nf-left {
+      position: relative; overflow: hidden;
+      background: var(--teal-600);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nf-code {
+      font-family: 'Sora', sans-serif; font-weight: 800;
+      font-size: clamp(7rem, 16vw, 13rem); line-height: 1;
+      color: #fff; letter-spacing: -0.04em;
+      position: relative; z-index: 1;
+    }
+    .nf-code em { font-style: normal; color: var(--gold-400); }
+    .nf-squares { position: absolute; width: 220px; height: 240px; pointer-events: none; transform: rotate(-7deg); }
+    .nf-squares--tl { top: -70px; left: -60px; }
+    .nf-squares--br { bottom: -76px; right: -64px; transform: rotate(9deg); }
+    .nf-squares i { display: block; position: absolute; }
+    .nf-sq-blue { width: 104px; height: 104px; background: #15709f; top: 0; left: 0; }
+    .nf-sq-gold { width: 104px; height: 104px; background: #fab91a; top: 0; left: 116px; }
+    .nf-sq-teal { width: 104px; height: 124px; background: #20b7c8; top: 116px; left: 0; }
+    .nf-right {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 40px clamp(28px, 6vw, 80px);
+      background: var(--white);
+    }
+    .nf-right h1 { font-size: clamp(1.6rem, 2.6vw, 2.3rem); margin-bottom: 10px; }
+    .nf-right .hl-gold { background: var(--gold-100); padding: 0 6px; border-radius: 4px; }
+    .nf-right p { color: var(--neutral-600); margin-bottom: 22px; max-width: 420px; }
+    .nf-links { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 26px; }
+    .nf-suggest { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--neutral-200); max-width: 420px; }
+    .nf-suggest li { border-bottom: 1px solid var(--neutral-200); }
+    .nf-suggest a {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 2px; font-weight: 600; color: var(--teal-900); text-decoration: none;
+    }
+    .nf-suggest a:hover { color: var(--teal-600); }
+    .nf-suggest span { color: var(--teal-500); }
+    @media (max-width: 860px) {
+      html, body { overflow: auto; }
+      .nf-screen { grid-template-columns: 1fr; height: auto; }
+      .nf-left { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/img/logo-cartesa.png" alt="CARTESA — Compétences, Entreprises &amp; Territoires" width="250" height="86"></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="vos-attentes.html">Vos attentes</a></li>
+        <li><a href="expertises.html">Nos expertises</a></li>
+        <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="nf-screen">
+    <div class="nf-left">
+      <span class="nf-squares nf-squares--tl" aria-hidden="true"><i class="nf-sq-blue"></i><i class="nf-sq-gold"></i><i class="nf-sq-teal"></i></span>
+      <span class="nf-code">4<em>0</em>4</span>
+      <span class="nf-squares nf-squares--br" aria-hidden="true"><i class="nf-sq-blue"></i><i class="nf-sq-gold"></i><i class="nf-sq-teal"></i></span>
+    </div>
+    <div class="nf-right">
+      <h1>Cette page a pris son <mark class="hl-gold">souffle</mark>.</h1>
+      <p>Elle n'existe pas, ou plus. Pas de panique : tout ce qui compte est à portée de clic.</p>
+      <div class="nf-links">
+        <a href="index.html" class="btn btn--accent">Retour à l'accueil</a>
+        <a href="contact.html" class="btn btn--outline" style="color:var(--teal-900); box-shadow:inset 0 0 0 2px var(--neutral-300);">Nous écrire</a>
+      </div>
+      <ul class="nf-suggest">
+        <li><a href="expertises.html">Nos expertises <span>&rarr;</span></a></li>
+        <li><a href="formations.html">Nos formations <span>&rarr;</span></a></li>
+        <li><a href="temoignages.html">Les témoignages clients <span>&rarr;</span></a></li>
+      </ul>
+    </div>
+  </main>
+
+</body>
+</html>

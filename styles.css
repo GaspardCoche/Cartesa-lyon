@@ -3520,9 +3520,9 @@ img { max-width: 100%; height: auto; display: block; }
 /* === CARD-SITUATION — narratif "problème → réponse" === */
 .situations-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 .card-situation {
@@ -4946,3 +4946,8 @@ section.section + section.section--alt {
 .enjeu-tile--cyan  { background: var(--teal-500); }
 .enjeu-tile--green { background: var(--green-600); }
 .enjeu-tile--navy  { background: var(--teal-900); }
+
+
+/* Situations : 4 en rangée, responsive */
+@media (max-width: 1080px) { .situations-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .situations-grid { grid-template-columns: 1fr; } }
