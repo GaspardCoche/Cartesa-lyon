@@ -161,6 +161,56 @@
     }
     #contactForm button[type="submit"] { background: var(--gold-500); color: var(--teal-900); font-weight: 700; }
     #contactForm button[type="submit"]:hover { background: var(--gold-400); }
+  
+    /* ===== Contact : page plein écran, sans scroll ===== */
+    html, body { overflow: hidden; height: 100%; }
+    .site-footer { display: none; }
+    .contact-screen {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      height: calc(100vh - 64px);
+      overflow: hidden;
+    }
+    .cs-panel {
+      position: relative; overflow: hidden;
+      background: var(--gold-500); color: var(--teal-900);
+      display: flex; flex-direction: column; justify-content: space-between;
+      padding: 34px 40px 18px;
+    }
+    .cs-panel .breadcrumb a, .cs-panel .breadcrumb__current, .cs-panel .breadcrumb__sep { color: rgba(9,41,51,0.7); }
+    .cs-panel h1 { color: var(--teal-900); font-size: clamp(1.8rem, 2.6vw, 2.5rem); line-height: 1.12; margin: 14px 0 10px; }
+    .cs-hl { background: var(--teal-900); color: var(--gold-400); padding: 0 12px; border-radius: 8px; }
+    .cs-lead { font-size: 1rem; color: rgba(9,41,51,0.85); max-width: 380px; }
+    .cs-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 18px; }
+    .cs-chip {
+      background: rgba(255,255,255,0.55); color: var(--teal-900);
+      font-weight: 600; font-size: 0.83rem; padding: 7px 13px; border-radius: 20px;
+    }
+    .cs-cta { background: var(--teal-900); color: var(--gold-400); font-weight: 700; align-self: flex-start; }
+    .cs-cta:hover { background: var(--teal-700); color: #fff; transform: translateY(-2px); }
+    .cs-coords { margin-top: 18px; font-size: 0.86rem; color: rgba(9,41,51,0.85); }
+    .cs-coords p { margin-bottom: 5px; }
+    .cs-coords a { color: var(--teal-900); text-decoration: underline; }
+    .cs-a11y { font-size: 0.78rem; color: rgba(9,41,51,0.65); font-style: italic; }
+    .cs-microfooter { font-size: 0.72rem; color: rgba(9,41,51,0.55); margin-top: 12px; }
+    .cs-microfooter a { color: rgba(9,41,51,0.7); }
+    .cs-panel .ch-squares { right: -30px; bottom: 110px; top: auto; transform: scale(0.7) rotate(-8deg); opacity: 0.5; }
+    .cs-form { overflow-y: auto; background: var(--white); }
+    .cs-form__inner { max-width: 560px; margin: 0 auto; padding: 20px 32px 14px; }
+    .cs-form h2 { font-size: 1.2rem; margin-bottom: 2px; }
+    .cs-form__hint { color: var(--neutral-500); font-size: 0.85rem; margin-bottom: 10px; }
+    .cs-form .form-group { margin-bottom: 8px; }
+    .cs-form label { font-size: 0.82rem; margin-bottom: 3px; }
+    .cs-form input, .cs-form select, .cs-form textarea { padding: 9px 11px !important; font-size: 0.9rem !important; }
+    .rgpd-line { font-size: 0.7rem; color: var(--neutral-500); margin: 0 0 12px; }
+    .cs-form .form-note { margin-top: 8px; font-size: 0.78rem; }
+    @media (max-width: 940px), (max-height: 620px) {
+      body { overflow: auto; }
+      .contact-screen { grid-template-columns: 1fr; height: auto; overflow: visible; }
+      .cs-panel { padding: 28px 22px 14px; }
+    }
+  
+    .cs-dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 7px; vertical-align: 0; }
   </style>
   <script type="application/ld+json">
   {
@@ -217,37 +267,39 @@
       </ul>
     </nav>
   </header>
-  <main>
+  <main class="contact-screen">
 
-  <!-- PAGE HERO -->
-  <section class="contact-hero">
-    <span class="ch-squares" aria-hidden="true"><i class="sq sq--blue"></i><i class="sq sq--gold"></i><i class="sq sq--teal"></i></span>
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Fil d'Ariane">
-        <a href="index.html">Accueil</a>
-        <span class="breadcrumb__sep">/</span>
-        <span class="breadcrumb__current">Contact</span>
-      </nav>
-      <h1>On s'appelle&nbsp;? <mark class="ch-hl">On vous écoute.</mark></h1>
-      <p>30 minutes, gratuites, sans engagement. Vous repartez avec un premier avis — au pire, vous aurez fait le point.</p>
-    </div>
-  </section>
+    <!-- PANNEAU DE GAUCHE — identité, joyeux -->
+    <aside class="cs-panel">
+      <span class="ch-squares" aria-hidden="true"><i class="sq sq--blue"></i><i class="sq sq--gold"></i><i class="sq sq--teal"></i></span>
+      <div class="cs-panel__body">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a>
+          <span class="breadcrumb__sep">/</span>
+          <span class="breadcrumb__current">Contact</span>
+        </nav>
+        <h1>On s'appelle&nbsp;?<br><mark class="cs-hl">On vous écoute.</mark></h1>
+        <p class="cs-lead">30 minutes, gratuites, sans engagement. Au pire, vous aurez fait le point.</p>
+        <div class="cs-chips">
+          <span class="cs-chip"><i class="cs-dot" style="background:#15709f;"></i>Réponse sous 24 h</span>
+          <span class="cs-chip"><i class="cs-dot" style="background:#20b7c8;"></i>1er échange gratuit</span>
+          <span class="cs-chip"><i class="cs-dot" style="background:var(--teal-900);"></i>Dossier OPCO monté avec vous</span>
+        </div>
+        <a href="https://calendly.com/cartesa-rh" target="_blank" rel="noopener" class="btn cs-cta">Réserver 30 minutes &rarr;</a><!-- TODO: URL Calendly à valider client -->
+        <div class="cs-coords">
+          <p><strong>36 avenue Alsace Lorraine, 38110 La Tour-du-Pin</strong> — à 50 min de Lyon</p>
+          <p><a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a> · Tél. à venir</p>
+          <p class="cs-a11y">Formations accessibles aux personnes en situation de handicap — parlez-nous-en.</p>
+        </div>
+      </div>
+      <p class="cs-microfooter">© 2026 CARTESA · <a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a></p>
+    </aside>
 
-  <!-- CONTACT SECTION -->
-  <section class="section section--white">
-    <div class="container">
-      <div class="contact-grid">
-
-        <!-- FORM -->
-        <div class="reveal-left">
-          <!-- Raccourci Calendly — une ligne discrète -->
-          <p class="calendly-line">
-            Envie d'aller droit au but ? <a href="https://calendly.com/cartesa-rh" target="_blank" rel="noopener">Réservez directement 30 minutes d'échange gratuit &rarr;</a><!-- TODO: URL Calendly à valider client -->
-          </p>
-
-          <h2 style="font-size:1.25rem; margin-bottom:6px;">Écrivez-nous</h2>
-          <p style="color:var(--neutral-500); font-size:0.9rem; margin-bottom:22px;">Quelques lignes suffisent — nous reviendrons vers vous pour la suite.</p>
-
+    <!-- FORMULAIRE -->
+    <section class="cs-form" aria-label="Formulaire de contact">
+      <div class="cs-form__inner">
+        <h2>Écrivez-nous</h2>
+        <p class="cs-form__hint">Quelques lignes suffisent — on revient vers vous pour la suite.</p>
           <form id="contactForm" action="https://formspree.io/f/xpwagzrj" method="POST"><!-- TODO: Form ID Formspree à valider/créer côté client -->
             <!-- Honeypot anti-spam (champ caché — doit rester vide) -->
             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" aria-hidden="true">
@@ -312,20 +364,18 @@
             </div>
             <div class="form-group">
               <label for="message">Message *</label>
-              <textarea id="message" name="message" required rows="5" placeholder="Parlez-nous de votre besoin, de votre entreprise et de vos disponibilités pour un premier échange..."></textarea>
+              <textarea id="message" name="message" required rows="2" placeholder="Parlez-nous de votre besoin, de votre entreprise et de vos disponibilités pour un premier échange..."></textarea>
             </div>
-            <div style="display:flex; align-items:flex-start; gap:10px; margin-bottom:14px;">
+            <div style="display:flex; align-items:flex-start; gap:10px; margin-bottom:8px;">
               <input type="checkbox" id="_consent" name="_consent" required style="margin-top:3px; flex-shrink:0;">
               <label for="_consent" style="font-size:0.78rem; color:var(--neutral-500); font-weight:400; cursor:pointer;">J'accepte que mes données soient utilisées pour traiter ma demande. Elles ne seront jamais partagées avec des tiers.</label>
             </div>
-            <p style="font-size:0.72rem; color:var(--neutral-500); margin:0 0 18px 0; line-height:1.45;">
-              <small>Vos données sont transmises et stockées par Formspree (sous-traitant) le temps du traitement de votre demande, puis archivées dans notre CRM. Elles ne sont transmises à aucun tiers commercial. Vous pouvez exercer vos droits d'accès, rectification et suppression en écrivant à <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>.</small>
-            </p>
+            <p class="rgpd-line">Données traitées par Formspree puis notre CRM, jamais transmises à des tiers. <a href="politique-confidentialite.html">Vos droits</a>.</p>
             <button type="submit" id="submitBtn" class="btn btn--primary btn--lg" style="width:100%; justify-content:center;">
               <span id="submitText">Envoyer le message</span>
               <span id="submitLoader" style="display:none;">Envoi en cours...</span>
             </button>
-            <p class="form-note">On vous répond sous 24 h ouvrées — un humain, pas un robot.<br>Premier échange gratuit et sans engagement.</p>
+            <p class="form-note">Réponse sous 24 h ouvrées — un humain, pas un robot.</p>
             <div id="formError" role="alert" style="display:none; margin-top:14px; padding:12px 14px; background:#fdecec; border:1px solid #f2c1bd; border-radius:8px; color:#991b1b; font-size:0.85rem;"></div>
           </form>
           <div id="formSuccess" style="display:none; text-align:center; padding:32px 20px;">
@@ -333,70 +383,9 @@
             <h3 style="margin-top:16px; font-size:1.15rem;">Message envoyé</h3>
             <p style="color:var(--neutral-500); font-size:0.9rem;">Nous vous répondrons sous 24 heures ouvrées.</p>
           </div>
-        </div>
-
-        <!-- INFOS — panneau de marque -->
-        <div class="reveal-right contact-panel">
-          <span class="ch-squares ch-squares--panel" aria-hidden="true"><i class="sq sq--blue"></i><i class="sq sq--gold"></i><i class="sq sq--teal"></i></span>
-          <h2 class="contact-panel__title">Ce qui vous attend</h2>
-          <ul class="promise-list">
-            <li><span class="promise-dot promise-dot--gold"></span><strong>24 h</strong> — un humain vous répond, pas un robot</li>
-            <li><span class="promise-dot promise-dot--teal"></span><strong>0 €</strong> — premier échange gratuit, sans engagement</li>
-            <li><span class="promise-dot promise-dot--blue"></span><strong>OPCO</strong> — on monte le dossier de financement avec vous</li>
-            <li><span class="promise-dot promise-dot--gold"></span><strong>Sur mesure</strong> — un devis adapté à votre contexte</li>
-          </ul>
-          <a href="https://calendly.com/cartesa-rh" target="_blank" rel="noopener" class="btn btn--accent" style="margin: 6px 0 22px;">Réserver 30 minutes</a><!-- TODO: URL Calendly à valider client -->
-
-          <h2 class="contact-panel__title">Nos coordonnées</h2>
-          <div class="contact-lines">
-            <div class="contact-line">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <div>
-                <strong>Adresse</strong>
-                36 avenue Alsace Lorraine, 38110 La Tour-du-Pin<br>Nord-Isère, à 50 min de Lyon<!-- TODO: adresse exacte à valider client -->
-              </div>
-            </div>
-            <div class="contact-line">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <div>
-                <strong>Téléphone</strong>
-                <!-- TODO: numéro de téléphone à compléter par le client -->
-                <span style="color:var(--neutral-400); font-style:italic;">À communiquer prochainement</span>
-              </div>
-            </div>
-            <div class="contact-line">
-              <svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M2 4l7 5.5L16 4"/></svg>
-              <div>
-                <strong>Email</strong>
-                <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
+    </section>
 
-      <!-- Notes sobres : entrepreneuriat + accessibilité -->
-      <div class="contact-notes reveal">
-        <p><strong>Découverte gratuite — Entrepreneuriat.</strong> Vous avez un projet de création ou de reprise d'entreprise ? Bénéficiez d'un rendez-vous découverte gratuit de 30 minutes pour échanger sur votre projet et identifier les accompagnements adaptés — précisez-le simplement dans votre message.</p>
-        <p><strong>Accessibilité.</strong> Nos formations sont accessibles aux personnes en situation de handicap visible et invisible. Nous évaluons individuellement les besoins d'aménagement pour garantir des conditions d'apprentissage adaptées. N'hésitez pas à nous en faire part lors de votre prise de contact.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CERTIFICATIONS BAND -->
-  <section class="section section--alt" style="padding:40px 0;">
-    <div class="container">
-      <div class="partner-grid reveal">
-        <img src="assets/img/qualiopi.jpg" alt="Qualiopi" style="height:36px;" width="120" height="60" loading="lazy" decoding="async">
-        <span class="partner-badge">CléA Management</span>
-        <span class="partner-badge">AFEST</span>
-        <span class="partner-badge">ACTEE</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   </main>
 
   <footer class="site-footer">

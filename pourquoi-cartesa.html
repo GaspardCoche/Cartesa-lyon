@@ -223,6 +223,24 @@
       display: inline-flex; align-items: center; justify-content: center;
       background: var(--teal-500); color: #fff; font-family: 'Sora', sans-serif; font-weight: 800;
     }
+  
+    /* Témoignages : 4 cartes strictement identiques */
+    .vt-uni { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; max-width: 1020px; margin: 26px auto 0; }
+    .vt-uni__card {
+      display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px;
+      background: #fff; border: 1px solid var(--neutral-200); border-radius: 14px;
+      padding: 26px 18px 20px; text-decoration: none; color: var(--neutral-600);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .vt-uni__card:hover { border-color: var(--teal-500); transform: translateY(-3px); color: var(--neutral-600); }
+    .vt-uni__tile {
+      width: 64px; height: 64px; border-radius: 12px; margin-bottom: 8px;
+      display: inline-flex; align-items: center; justify-content: center;
+      color: #fff; font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.3rem;
+    }
+    .vt-uni__card strong { font-family: 'Sora', sans-serif; color: var(--teal-900); font-size: 1.02rem; }
+    .vt-uni__who { font-size: 0.82rem; }
+    .vt-uni__what { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.85rem; color: var(--teal-600); margin-top: 8px; }
   </style>
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -464,40 +482,38 @@
     <div class="container">
       <div class="vtestim__head reveal">
         <span class="vtestim__eyebrow">Témoignage vidéo</span>
-        <h2 id="vtestimTitle">Un dirigeant raconte, en 7 chapitres</h2>
-        <p>De la problématique initiale au message qu'il adresse aux autres dirigeants&nbsp;: le parcours d'accompagnement d'un groupe industriel, sans filtre, par celui qui l'a vécu.</p>
+        <h2 id="vtestimTitle">Ils l'ont vécu, ils le racontent</h2>
+        <p>Trois séries de capsules vidéo et un témoignage écrit — des dirigeants et des managers, sans filtre.</p>
       </div>
 
-      <a class="vt-speaker vt-speaker--link reveal" href="ressources.html#temoignages" aria-label="Voir toutes les capsules vidéo dans les ressources">
-        <img src="assets/temoignages/posters/stephane-fournier-avatar.jpg" alt="Portrait de Stéphane Fournier" width="60" height="60" loading="lazy">
-        <div>
-          <div class="vt-speaker__name">Stéphane Fournier</div>
-          <div class="vt-speaker__role">Président · Groupe Syrah</div>
-          <div class="vt-speaker__sector">Mécanique de haute précision · Plusieurs sociétés</div>
-        </div>
-        <span class="vt-speaker__cta">Toutes les capsules &rarr;</span>
-      </a>
-
-      <div class="vt-more reveal">
-        <a href="temoignages.html" class="vt-more__item">
-          <img src="assets/temoignages/posters/ep1.jpg" alt="" loading="lazy">
-          <span><strong>Groupe Syrah</strong>7 capsules vidéo &rarr;</span>
+      <div class="vt-uni reveal-stagger">
+        <a href="temoignages.html" class="vt-uni__card">
+          <span class="vt-uni__tile" style="background:var(--teal-600);">GS</span>
+          <strong>Groupe Syrah</strong>
+          <span class="vt-uni__who">Stéphane Fournier · Président</span>
+          <span class="vt-uni__what">7 capsules vidéo &rarr;</span>
         </a>
-        <a href="temoignages.html" class="vt-more__item">
-          <img src="assets/temoignages/posters/jeantet-ep1.jpg" alt="" loading="lazy">
-          <span><strong>JEANTET Groupe</strong>7 capsules vidéo &rarr;</span>
+        <a href="temoignages.html" class="vt-uni__card">
+          <span class="vt-uni__tile" style="background:var(--gold-500); color:var(--teal-900);">JG</span>
+          <strong>JEANTET Groupe</strong>
+          <span class="vt-uni__who">Alexandre Ruiz &amp; Vincent Decrette</span>
+          <span class="vt-uni__what">7 capsules vidéo &rarr;</span>
         </a>
-        <a href="temoignages.html" class="vt-more__item">
-          <img src="assets/temoignages/posters/isactys-ep1.jpg" alt="" loading="lazy">
-          <span><strong>Groupe Isactys</strong>3 capsules vidéo &rarr;</span>
+        <a href="temoignages.html" class="vt-uni__card">
+          <span class="vt-uni__tile" style="background:var(--teal-900);">GI</span>
+          <strong>Groupe Isactys</strong>
+          <span class="vt-uni__who">Laurent Pinet · Dirigeant</span>
+          <span class="vt-uni__what">3 capsules vidéo &rarr;</span>
         </a>
-        <a href="temoignages.html#temoignage-manikheir" class="vt-more__item vt-more__item--ecrit">
-          <span class="vt-more__avatar">LD</span>
-          <span><strong>ManiKheir</strong>Témoignage écrit &rarr;</span>
+        <a href="temoignages.html#temoignage-manikheir" class="vt-uni__card">
+          <span class="vt-uni__tile" style="background:var(--teal-500);">LD</span>
+          <strong>ManiKheir</strong>
+          <span class="vt-uni__who">Lucie Deshayes · Manager</span>
+          <span class="vt-uni__what">Témoignage écrit &rarr;</span>
         </a>
       </div>
 
-      <p class="vt-note">Témoignage filmé et partagé avec l'accord de Stéphane Fournier (Groupe Syrah).</p>
+      <p class="vt-note">Témoignages recueillis et partagés avec l'accord de leurs auteurs.</p>
     </div>
 
     <!-- Lightbox vidéo -->
