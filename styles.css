@@ -2882,7 +2882,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .cat-badge--droit { background: #fef3e0; color: #b87d20; }
 .cat-badge--paie { background: #eef4ff; color: #3b6fc2; }
-.cat-badge--social { background: #f3e5f5; color: #7b1fa2; }
+.cat-badge--social { background: #f3e5f5; color: #2e7d32; }
 .cat-badge--entretien { background: #e8f5e9; color: #2e7d32; }
 .cat-badge--rh { background: #fbe9e7; color: #e65100; }
 
@@ -2962,7 +2962,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .map-legend-dot.l-droit { background: #b87d20; }
 .map-legend-dot.l-paie { background: #3b6fc2; }
-.map-legend-dot.l-social { background: #7b1fa2; }
+.map-legend-dot.l-social { background: #2e7d32; }
 .map-legend-dot.l-entretien { background: #2e7d32; }
 .map-legend-dot.l-rh { background: #e65100; }
 
@@ -4955,7 +4955,13 @@ section.section + section.section--alt {
 
 /* Illustrations dessinées dans les split-media : pas de recadrage, fond doux */
 .split-media__img img.illu {
+  height: auto;
+  max-height: 440px;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
   object-fit: contain;
   background: var(--teal-50);
   padding: 14px;
 }
+.split-media__img:has(img.illu) { background: var(--teal-50); border-radius: 14px; text-align: center; }
