@@ -123,9 +123,9 @@
     .ch-hl { background: var(--gold-500); color: var(--teal-900); padding: 0 10px; border-radius: 6px; }
     .ch-squares { position: absolute; right: 6%; top: 50%; transform: translateY(-50%) rotate(-6deg); pointer-events: none; }
     .ch-squares .sq { display: block; position: absolute; }
-    .sq--blue { width: 74px; height: 74px; background: #15709f; top: -80px; left: 0; }
-    .sq--gold { width: 74px; height: 74px; background: #fab91a; top: -80px; left: 82px; }
-    .sq--teal { width: 74px; height: 88px; background: #20b7c8; top: 2px; left: 0; }
+    .sq--blue { width: 104px; height: 104px; background: #15709f; top: 0; left: 0; }
+    .sq--gold { width: 104px; height: 104px; background: #fab91a; top: 0; left: 116px; }
+    .sq--teal { width: 104px; height: 124px; background: #20b7c8; top: 116px; left: 0; }
     @media (max-width: 900px) { .ch-squares { display: none; } }
     .contact-panel {
       position: relative; overflow: hidden;
@@ -167,12 +167,12 @@
     .site-footer { display: none; }
     .contact-screen {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 0.9fr 1.1fr;
       height: calc(100vh - 64px);
       overflow: hidden;
     }
-    .cs-form { order: 1; }
-    .cs-panel { order: 2; }
+    .cs-panel { order: 1; }
+    .cs-form { order: 2; }
     .cs-panel {
       position: relative; overflow: hidden;
       background: var(--teal-600); color: #fff;
@@ -196,7 +196,7 @@
     .cs-a11y { font-size: 0.76rem; color: rgba(255,255,255,0.62); font-style: italic; }
     .cs-microfooter { font-size: 0.72rem; color: rgba(255,255,255,0.55); margin-top: 8px; }
     .cs-microfooter a { color: rgba(255,255,255,0.75); }
-    .cs-panel .ch-squares { right: 34px; top: 12px; transform: rotate(-6deg); opacity: 1; }
+    .cs-panel .ch-squares { width: 220px; height: 240px; right: -58px; bottom: -52px; top: auto; transform: rotate(-7deg); opacity: 1; }
     .cs-form { overflow-y: auto; background: var(--white); }
     .cs-form__inner { max-width: 560px; margin: 0 auto; padding: 20px 32px 14px; }
     .cs-form h2 { font-size: 1.2rem; margin-bottom: 2px; }
@@ -216,7 +216,7 @@
   
     .cs-human {
       background: #fff; border-radius: 14px; padding: 8px;
-      width: min(190px, 48%); margin: 10px 0 0;
+      width: min(230px, 58%); margin: 14px 0 0;
       transform: rotate(2deg);
     }
     .cs-human img { width: 100%; height: auto; border-radius: 9px; display: block; }
@@ -288,20 +288,16 @@
           <span class="breadcrumb__current">Contact</span>
         </nav>
         <h1>On s'appelle&nbsp;?<br><mark class="cs-hl">On vous écoute.</mark></h1>
-        <p class="cs-lead">30 minutes, gratuites, sans engagement. Au pire, vous aurez fait le point.</p>
         <div class="cs-chips">
           <span class="cs-chip"><i class="cs-dot" style="background:#15709f;"></i>Réponse sous 24 h</span>
           <span class="cs-chip"><i class="cs-dot" style="background:#20b7c8;"></i>1er échange gratuit</span>
-          <span class="cs-chip"><i class="cs-dot" style="background:var(--teal-900);"></i>Dossier OPCO monté avec vous</span>
         </div>
         <a href="https://calendly.com/cartesa-rh" target="_blank" rel="noopener" class="btn cs-cta">Réserver 30 minutes &rarr;</a><!-- TODO: URL Calendly à valider client -->
         <figure class="cs-human">
           <img src="assets/img/cartesa-team.jpg" alt="L'équipe CARTESA" width="800" height="702" loading="lazy" decoding="async">
         </figure>
         <div class="cs-coords">
-          <p><strong>36 avenue Alsace Lorraine, 38110 La Tour-du-Pin</strong> — à 50 min de Lyon</p>
-          <p><a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a> · Tél. à venir</p>
-          <p class="cs-a11y">Formations accessibles aux personnes en situation de handicap — parlez-nous-en.</p>
+          <p><strong>La Tour-du-Pin</strong> · à 50 min de Lyon · <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a></p>
         </div>
       </div>
       <p class="cs-microfooter">© 2026 CARTESA · <a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a></p>
