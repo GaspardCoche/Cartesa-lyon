@@ -21,11 +21,17 @@
       background: var(--teal-600);
       display: flex; align-items: center; justify-content: center;
     }
+    .nf-code-wrap { position: relative; z-index: 1; text-align: center; }
+    .nf-label {
+      display: block;
+      font-family: 'Sora', sans-serif; font-weight: 700;
+      font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.35em;
+      color: rgba(255, 255, 255, 0.75); margin-bottom: 6px;
+    }
     .nf-code {
       font-family: 'Sora', sans-serif; font-weight: 800;
       font-size: clamp(7rem, 16vw, 13rem); line-height: 1;
       color: #fff; letter-spacing: -0.04em;
-      position: relative; z-index: 1;
     }
     .nf-code em { font-style: normal; color: var(--gold-400); }
     .nf-squares { position: absolute; width: 220px; height: 240px; pointer-events: none; transform: rotate(-7deg); }
@@ -78,12 +84,15 @@
   <main class="nf-screen">
     <div class="nf-left">
       <span class="nf-squares nf-squares--tl" aria-hidden="true"><i class="nf-sq-blue"></i><i class="nf-sq-gold"></i><i class="nf-sq-teal"></i></span>
-      <span class="nf-code">4<em>0</em>4</span>
+      <div class="nf-code-wrap">
+        <span class="nf-label">Erreur</span>
+        <span class="nf-code">4<em>0</em>4</span>
+      </div>
       <span class="nf-squares nf-squares--br" aria-hidden="true"><i class="nf-sq-blue"></i><i class="nf-sq-gold"></i><i class="nf-sq-teal"></i></span>
     </div>
     <div class="nf-right">
-      <h1>Cette page a pris son <mark class="hl-gold">souffle</mark>.</h1>
-      <p>Elle n'existe pas, ou plus. Pas de panique : tout ce qui compte est à portée de clic.</p>
+      <h1>Cette page n'est plus <mark class="hl-gold">en poste</mark>.</h1>
+      <p>Partie sans préavis, sans même un entretien de départ. Tout le reste de l'équipe est bien là.</p>
       <div class="nf-links">
         <a href="index.html" class="btn btn--accent">Retour à l'accueil</a>
         <a href="contact.html" class="btn btn--outline" style="color:var(--teal-900); box-shadow:inset 0 0 0 2px var(--neutral-300);">Nous écrire</a>
