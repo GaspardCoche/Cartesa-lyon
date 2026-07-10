@@ -167,34 +167,36 @@
     .site-footer { display: none; }
     .contact-screen {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       height: calc(100vh - 64px);
       overflow: hidden;
     }
+    .cs-form { order: 1; }
+    .cs-panel { order: 2; }
     .cs-panel {
       position: relative; overflow: hidden;
-      background: var(--gold-500); color: var(--teal-900);
+      background: var(--teal-600); color: #fff;
       display: flex; flex-direction: column; justify-content: space-between;
       padding: 34px 40px 18px;
     }
-    .cs-panel .breadcrumb a, .cs-panel .breadcrumb__current, .cs-panel .breadcrumb__sep { color: rgba(9,41,51,0.7); }
-    .cs-panel h1 { color: var(--teal-900); font-size: clamp(1.8rem, 2.6vw, 2.5rem); line-height: 1.12; margin: 14px 0 10px; }
-    .cs-hl { background: var(--teal-900); color: var(--gold-400); padding: 0 12px; border-radius: 8px; }
-    .cs-lead { font-size: 1rem; color: rgba(9,41,51,0.85); max-width: 380px; }
-    .cs-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 18px; }
+    .cs-panel .breadcrumb a, .cs-panel .breadcrumb__current, .cs-panel .breadcrumb__sep { color: rgba(255,255,255,0.75); }
+    .cs-panel h1 { color: #fff; font-size: clamp(1.6rem, 2.2vw, 2.1rem); line-height: 1.12; margin: 10px 0 8px; }
+    .cs-hl { background: var(--gold-500); color: var(--teal-900); padding: 0 12px; border-radius: 8px; }
+    .cs-lead { font-size: 0.98rem; color: rgba(255,255,255,0.88); max-width: 380px; }
+    .cs-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 12px; }
     .cs-chip {
-      background: rgba(255,255,255,0.55); color: var(--teal-900);
+      background: rgba(255,255,255,0.16); color: #fff;
       font-weight: 600; font-size: 0.83rem; padding: 7px 13px; border-radius: 20px;
     }
-    .cs-cta { background: var(--teal-900); color: var(--gold-400); font-weight: 700; align-self: flex-start; }
-    .cs-cta:hover { background: var(--teal-700); color: #fff; transform: translateY(-2px); }
-    .cs-coords { margin-top: 18px; font-size: 0.86rem; color: rgba(9,41,51,0.85); }
+    .cs-cta { background: var(--gold-500); color: var(--teal-900); font-weight: 700; align-self: flex-start; }
+    .cs-cta:hover { background: var(--gold-400); color: var(--teal-900); transform: translateY(-2px); }
+    .cs-coords { margin-top: 10px; font-size: 0.83rem; color: rgba(255,255,255,0.88); }
     .cs-coords p { margin-bottom: 5px; }
-    .cs-coords a { color: var(--teal-900); text-decoration: underline; }
-    .cs-a11y { font-size: 0.78rem; color: rgba(9,41,51,0.65); font-style: italic; }
-    .cs-microfooter { font-size: 0.72rem; color: rgba(9,41,51,0.55); margin-top: 12px; }
-    .cs-microfooter a { color: rgba(9,41,51,0.7); }
-    .cs-panel .ch-squares { right: -30px; bottom: 110px; top: auto; transform: scale(0.7) rotate(-8deg); opacity: 0.5; }
+    .cs-coords a { color: var(--gold-400); text-decoration: underline; }
+    .cs-a11y { font-size: 0.76rem; color: rgba(255,255,255,0.62); font-style: italic; }
+    .cs-microfooter { font-size: 0.72rem; color: rgba(255,255,255,0.55); margin-top: 8px; }
+    .cs-microfooter a { color: rgba(255,255,255,0.75); }
+    .cs-panel .ch-squares { right: 34px; top: 12px; transform: rotate(-6deg); opacity: 1; }
     .cs-form { overflow-y: auto; background: var(--white); }
     .cs-form__inner { max-width: 560px; margin: 0 auto; padding: 20px 32px 14px; }
     .cs-form h2 { font-size: 1.2rem; margin-bottom: 2px; }
@@ -211,6 +213,13 @@
     }
   
     .cs-dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 7px; vertical-align: 0; }
+  
+    .cs-human {
+      background: #fff; border-radius: 14px; padding: 8px;
+      width: min(190px, 48%); margin: 10px 0 0;
+      transform: rotate(2deg);
+    }
+    .cs-human img { width: 100%; height: auto; border-radius: 9px; display: block; }
   </style>
   <script type="application/ld+json">
   {
@@ -286,6 +295,9 @@
           <span class="cs-chip"><i class="cs-dot" style="background:var(--teal-900);"></i>Dossier OPCO monté avec vous</span>
         </div>
         <a href="https://calendly.com/cartesa-rh" target="_blank" rel="noopener" class="btn cs-cta">Réserver 30 minutes &rarr;</a><!-- TODO: URL Calendly à valider client -->
+        <figure class="cs-human">
+          <img src="assets/img/cartesa-team.jpg" alt="L'équipe CARTESA" width="800" height="702" loading="lazy" decoding="async">
+        </figure>
         <div class="cs-coords">
           <p><strong>36 avenue Alsace Lorraine, 38110 La Tour-du-Pin</strong> — à 50 min de Lyon</p>
           <p><a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a> · Tél. à venir</p>

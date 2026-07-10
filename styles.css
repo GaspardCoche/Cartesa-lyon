@@ -4912,3 +4912,37 @@ section.section + section.section--alt {
 
 /* ===== Situations : CTA calés en bas, cartes de même niveau ===== */
 .card-situation__cta { margin-top: auto; padding-top: 10px; }
+
+
+/* ===== Enjeux accueil : mosaïque de tuiles pleines couleurs ===== */
+.enjeux-tiles {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+.enjeu-tile {
+  display: flex; flex-direction: column; gap: 6px;
+  border-radius: 14px; padding: 24px 22px 20px;
+  text-decoration: none; color: #fff;
+  transition: transform 0.22s ease, filter 0.22s ease;
+}
+.enjeu-tile:hover { transform: translate(-2px, -3px); filter: brightness(1.06); color: #fff; }
+.enjeu-tile--span2 { grid-column: span 2; }
+.enjeu-tile--span3 { grid-column: span 3; }
+@media (max-width: 900px) { .enjeu-tile--span2, .enjeu-tile--span3 { grid-column: span 6; } }
+.enjeu-tile__num {
+  font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.9rem;
+  line-height: 1; opacity: 0.45; margin-bottom: 4px;
+}
+.enjeu-tile h3 { color: inherit; font-size: 1.12rem; margin: 0; }
+.enjeu-tile p { font-size: 0.88rem; opacity: 0.88; margin: 0; }
+.enjeu-tile__cta {
+  margin-top: auto; padding-top: 14px;
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.85rem;
+}
+.enjeu-tile--teal  { background: var(--teal-600); }
+.enjeu-tile--gold  { background: var(--gold-500); color: var(--teal-900); }
+.enjeu-tile--gold:hover { color: var(--teal-900); }
+.enjeu-tile--cyan  { background: var(--teal-500); }
+.enjeu-tile--green { background: var(--green-600); }
+.enjeu-tile--navy  { background: var(--teal-900); }

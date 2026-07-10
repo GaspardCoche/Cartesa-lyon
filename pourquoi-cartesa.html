@@ -241,6 +241,23 @@
     .vt-uni__card strong { font-family: 'Sora', sans-serif; color: var(--teal-900); font-size: 1.02rem; }
     .vt-uni__who { font-size: 0.82rem; }
     .vt-uni__what { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.85rem; color: var(--teal-600); margin-top: 8px; }
+  
+    /* Témoignages : bandeaux horizontaux identiques */
+    .vt-bands { display: flex; flex-direction: column; gap: 14px; max-width: 860px; margin: 26px auto 0; }
+    .vt-band {
+      display: flex; align-items: center; gap: 16px;
+      background: #fff; border: 1px solid var(--neutral-200); border-radius: 14px;
+      padding: 16px 22px; text-decoration: none; color: inherit;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .vt-band:hover { border-color: var(--teal-500); transform: translateY(-2px); }
+    .vt-band img, .vt-band__tile { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; flex: none; }
+    .vt-band__tile {
+      display: inline-flex; align-items: center; justify-content: center;
+      color: #fff; font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.15rem;
+    }
+    .vt-band__cta { margin-left: auto; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--teal-600); white-space: nowrap; }
+    @media (max-width: 620px) { .vt-band { flex-wrap: wrap; } .vt-band__cta { margin-left: 76px; } }
   </style>
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -486,30 +503,42 @@
         <p>Trois séries de capsules vidéo et un témoignage écrit — des dirigeants et des managers, sans filtre.</p>
       </div>
 
-      <div class="vt-uni reveal-stagger">
-        <a href="temoignages.html" class="vt-uni__card">
-          <span class="vt-uni__tile" style="background:var(--teal-600);">GS</span>
-          <strong>Groupe Syrah</strong>
-          <span class="vt-uni__who">Stéphane Fournier · Président</span>
-          <span class="vt-uni__what">7 capsules vidéo &rarr;</span>
+      <div class="vt-bands reveal-stagger">
+        <a href="temoignages.html" class="vt-band">
+          <img src="assets/temoignages/posters/stephane-fournier-avatar.jpg" alt="" width="60" height="60" loading="lazy">
+          <div>
+            <div class="vt-speaker__name">Stéphane Fournier</div>
+            <div class="vt-speaker__role">Président · Groupe Syrah</div>
+            <div class="vt-speaker__sector">Mécanique de haute précision · Plusieurs sociétés</div>
+          </div>
+          <span class="vt-band__cta">7 capsules &rarr;</span>
         </a>
-        <a href="temoignages.html" class="vt-uni__card">
-          <span class="vt-uni__tile" style="background:var(--gold-500); color:var(--teal-900);">JG</span>
-          <strong>JEANTET Groupe</strong>
-          <span class="vt-uni__who">Alexandre Ruiz &amp; Vincent Decrette</span>
-          <span class="vt-uni__what">7 capsules vidéo &rarr;</span>
+        <a href="temoignages.html" class="vt-band">
+          <span class="vt-band__tile" style="background:var(--gold-500); color:var(--teal-900);">JG</span>
+          <div>
+            <div class="vt-speaker__name">Alexandre Ruiz &amp; Vincent Decrette</div>
+            <div class="vt-speaker__role">Manager &amp; Direction · JEANTET Groupe</div>
+            <div class="vt-speaker__sector">Parcours CQP Management</div>
+          </div>
+          <span class="vt-band__cta">7 capsules &rarr;</span>
         </a>
-        <a href="temoignages.html" class="vt-uni__card">
-          <span class="vt-uni__tile" style="background:var(--teal-900);">GI</span>
-          <strong>Groupe Isactys</strong>
-          <span class="vt-uni__who">Laurent Pinet · Dirigeant</span>
-          <span class="vt-uni__what">3 capsules vidéo &rarr;</span>
+        <a href="temoignages.html" class="vt-band">
+          <span class="vt-band__tile" style="background:var(--teal-900);">GI</span>
+          <div>
+            <div class="vt-speaker__name">Laurent Pinet</div>
+            <div class="vt-speaker__role">Dirigeant · Groupe Isactys</div>
+            <div class="vt-speaker__sector">Dispositif PCRH via Uniformation</div>
+          </div>
+          <span class="vt-band__cta">3 capsules &rarr;</span>
         </a>
-        <a href="temoignages.html#temoignage-manikheir" class="vt-uni__card">
-          <span class="vt-uni__tile" style="background:var(--teal-500);">LD</span>
-          <strong>ManiKheir</strong>
-          <span class="vt-uni__who">Lucie Deshayes · Manager</span>
-          <span class="vt-uni__what">Témoignage écrit &rarr;</span>
+        <a href="temoignages.html#temoignage-manikheir" class="vt-band">
+          <span class="vt-band__tile" style="background:var(--teal-500);">LD</span>
+          <div>
+            <div class="vt-speaker__name">Lucie Deshayes</div>
+            <div class="vt-speaker__role">Manager · ManiKheir</div>
+            <div class="vt-speaker__sector">Parcours CléA Management</div>
+          </div>
+          <span class="vt-band__cta">Témoignage écrit &rarr;</span>
         </a>
       </div>
 
