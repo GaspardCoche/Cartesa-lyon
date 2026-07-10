@@ -4951,3 +4951,11 @@ section.section + section.section--alt {
 /* Situations : 4 en rangée, responsive */
 @media (max-width: 1080px) { .situations-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .situations-grid { grid-template-columns: 1fr; } }
+
+
+/* Illustrations dessinées dans les split-media : pas de recadrage, fond doux */
+.split-media__img img.illu {
+  object-fit: contain;
+  background: var(--teal-50);
+  padding: 14px;
+}
