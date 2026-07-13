@@ -4959,6 +4959,7 @@ section.section + section.section--alt {
 .enjeu-tile--gold:hover { color: var(--teal-900); }
 .enjeu-tile--cyan  { background: var(--teal-500); }
 .enjeu-tile--green { background: var(--green-600); }
+.enjeu-tile--blue  { background: #16719f; }
 .enjeu-tile--navy  { background: var(--teal-900); }
 
 
