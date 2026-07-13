@@ -22,7 +22,7 @@
   <!-- Self-hosted fonts (RGPD-friendly) -->
   <link rel="icon" type="image/png" href="assets/img/favicon-cartesa.png">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="styles.css?v63">
+  <link rel="stylesheet" href="styles.css?v65">
   <style>
     /* ============================================================
        TÉMOIGNAGES — Immersive scroll experience
@@ -839,6 +839,9 @@
   </script>
 </head>
 <body>
+
+  <div class="page-loader" id="pageLoader" aria-hidden="true"><div class="pl-inner"><div class="pl-walk"><span class="pl-sq pl-sq--blue"></span><span class="pl-sq pl-sq--gold"></span><span class="pl-sq pl-sq--cyan"></span></div><div class="pl-word">Cartesa</div></div></div>
+  <script>(function(){var f=function(){var p=document.getElementById('pageLoader');if(!p)return;var s=p.querySelectorAll('.pl-sq'),i,t;for(i=0;i<s.length;i++){t=getComputedStyle(s[i]).transform;s[i].style.animation='none';s[i].style.transform=t}void p.offsetWidth;p.classList.add('is-assembling');for(i=0;i<s.length;i++){s[i].style.transform=''}setTimeout(function(){p.classList.add('is-done')},1750);setTimeout(function(){p.remove()},2600)};if(location.search.indexOf('loaderdemo')>-1){setTimeout(f,6000)}else if(document.readyState==='complete'){f()}else{window.addEventListener('load',f)}})();</script>
 
   <!-- HEADER -->
   <header class="site-header" id="siteHeader">
