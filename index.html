@@ -29,7 +29,7 @@
   <!-- Self-hosted fonts (RGPD-friendly) -->
   <link rel="icon" type="image/png" href="assets/img/favicon-cartesa.png">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="styles.css?v60">
+  <link rel="stylesheet" href="styles.css?v61">
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -929,7 +929,8 @@
         // Close on link click (mobile)
         links.querySelectorAll('a').forEach(function(a) {
           a.addEventListener('click', function() {
-            if (window.matchMedia('(max-width: 880px)').matches && !a.closest('.nav-dropdown a[href="#"]')) {
+            // Ne pas fermer le menu quand on tape un TITRE de dropdown (il déplie son sous-menu)
+            if (window.matchMedia('(max-width: 880px)').matches && !a.matches('.nav-dropdown > a')) {
               links.classList.remove('is-open');
               toggle.classList.remove('is-open');
               toggle.setAttribute('aria-expanded', 'false');

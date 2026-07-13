@@ -3,6 +3,12 @@
 /* Reset & Base */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Clip horizontal : les éléments .reveal-left/right pré-animation (translateX ±40px)
+   débordent et créent un scroll horizontal sur mobile. `clip` sur <main> (et non
+   `hidden` sur html/body) : ne crée pas de scroll container, donc ne casse ni le
+   header sticky (hors de main) ni .volets-sticky (le sticky reste fonctionnel). */
+main { overflow-x: clip; }
+
 :root {
   --teal-900: #092933;
   --teal-800: #04547d;
@@ -4369,6 +4375,10 @@ section.section--alt + section.section--white {
     display: block;
     width: 100%;
     height: 2px;
+    /* margin:0 + flex-shrink:0 obligatoires : le margin 5px de la règle de base
+       fait déborder le flex column 44px et écrase les barres à 0px de haut. */
+    margin: 0;
+    flex-shrink: 0;
     background: var(--neutral-900);
     border-radius: 2px;
     transition: transform 0.3s ease, opacity 0.3s ease;
