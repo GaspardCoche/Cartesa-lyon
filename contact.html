@@ -26,7 +26,7 @@
   <!-- Self-hosted fonts (RGPD-friendly) -->
   <link rel="icon" type="image/png" href="assets/img/favicon-cartesa.png">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="styles.css?v61">
+  <link rel="stylesheet" href="styles.css?v62">
   <style>
     /* ===== Contact — styles locaux (page simplifiée, design flat) ===== */
     .calendly-line {
@@ -159,8 +159,8 @@
     #contactForm input:focus, #contactForm textarea:focus, #contactForm select:focus {
       outline: none; border-color: var(--teal-500); box-shadow: 0 0 0 3px rgba(32, 183, 200, 0.18);
     }
-    #contactForm button[type="submit"] { background: var(--gold-500); color: var(--teal-900); font-weight: 700; }
-    #contactForm button[type="submit"]:hover { background: var(--gold-400); }
+    #contactForm button[type="submit"] { background: #fab91a; color: var(--teal-900); font-weight: 700; }
+    #contactForm button[type="submit"]:hover { background: #fbc843; }
   
     /* ===== Contact : page plein écran, sans scroll ===== */
     html, body { overflow: hidden; height: 100%; }
@@ -223,6 +223,7 @@
       max-width: 580px;
       width: 100%;
       margin: auto;
+      margin-left: clamp(20px, 4vw, 56px);
       padding: 26px 34px 18px;
       background: var(--white);
       border-radius: 18px;
@@ -242,18 +243,19 @@
       body { overflow: auto; }
       .contact-screen { grid-template-columns: 1fr; height: auto; overflow: visible; }
       .cs-panel { padding: 28px 22px 14px; }
+      .cs-form__inner { margin: 24px auto; }
     }
   
     .cs-dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 7px; vertical-align: 0; }
   
     .cs-human {
       background: #fff; border-radius: 14px; padding: 8px;
-      width: min(250px, 62%); margin: 18px 0 0;
+      width: min(320px, 72%); margin: 22px 0 0;
       transform: rotate(2deg);
     }
     .cs-human img { width: 100%; height: auto; border-radius: 9px; display: block; }
-  
-    .cs-human img { max-height: min(340px, 38vh); object-fit: cover; object-position: top; }
+
+    .cs-human img { max-height: min(480px, 52vh); object-fit: cover; object-position: top; }
   </style>
   <script type="application/ld+json">
   {
