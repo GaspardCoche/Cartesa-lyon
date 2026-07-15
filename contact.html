@@ -303,7 +303,8 @@
         <li class="nav-dropdown"><a href="expertises.html" aria-haspopup="true" aria-expanded="false">Nos expertises</a>
           <ul class="nav-sub">
             <li><a href="expertises.html">Diagnostic &amp; accompagnements RH</a></li>
-            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="coaching.html">Coaching</a></li>
+            <li><a href="codeveloppement.html">Co-développement</a></li>
             <li><a href="formations.html">Formations</a></li>
             <li><a href="ingenierie.html">Ing&eacute;nierie p&eacute;dagogique</a></li>
             <li><a href="rse-decarbonation.html">RSE &amp; D&eacute;carbonation</a></li>
@@ -397,12 +398,41 @@
                   <option value="accompagnement">Accompagnement dans la durée</option>
                   <option value="coaching-individuel">Coaching individuel</option>
                   <option value="coaching-collectif">Coaching collectif / co-développement</option>
+                  <option value="coaching-flash">Coaching flash (séance payante)</option>
                   <option value="formation">Formation</option>
                   <option value="rse">RSE &amp; décarbonation</option>
                   <option value="entrepreneuriat">Projet entrepreneurial</option>
                   <option value="autre">Autre</option>
                 </select>
               </div>
+            </div>
+            <div id="flashBooking" style="display:none; background:var(--teal-50,#eef7f7); border:1px solid var(--neutral-200); border-radius:12px; padding:18px 18px 6px; margin-bottom:18px;">
+              <p style="margin:0 0 14px; font-size:0.85rem; color:var(--teal-900); font-weight:600;">Réservez votre séance flash de 30 minutes</p>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="creneau_date">Date souhaitée *</label>
+                  <select id="creneau_date" name="creneau_date">
+                    <option value="">Choisissez une date</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="creneau_heure">Créneau *</label>
+                  <select id="creneau_heure" name="creneau_heure">
+                    <option value="">Choisissez un créneau</option>
+                    <optgroup label="Midi">
+                      <option value="13h00-13h30">13h00 – 13h30</option>
+                      <option value="13h30-14h00">13h30 – 14h00</option>
+                    </optgroup>
+                    <optgroup label="Fin de journée">
+                      <option value="17h00-17h30">17h00 – 17h30</option>
+                      <option value="17h30-18h00">17h30 – 18h00</option>
+                      <option value="18h00-18h30">18h00 – 18h30</option>
+                      <option value="18h30-19h00">18h30 – 19h00</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+              <p style="margin:0 0 12px; font-size:0.76rem; color:var(--neutral-500); line-height:1.5;">Séance payante, facturée à l'unité. Nous confirmons votre créneau par email sous 24&nbsp;h ouvrées — le règlement se fait à la confirmation (paiement en ligne bientôt disponible).</p>
             </div>
             <div class="form-group">
               <label for="message">Message *</label>
@@ -454,7 +484,8 @@
           <h4>Nos expertises</h4>
           <ul>
             <li><a href="expertises.html">Diagnostic &amp; accompagnements</a></li>
-            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="coaching.html">Coaching</a></li>
+            <li><a href="codeveloppement.html">Co-développement</a></li>
             <li><a href="formations.html">Formations</a></li>
             <li><a href="ingenierie.html">Ingénierie pédagogique</a></li>
             <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
@@ -584,8 +615,45 @@
         });
       }
 
+      // --- Coaching flash : réservation de créneau (un jour sur deux, hors week-end) ---
+      var flashBlock = document.getElementById('flashBooking');
+      var flashDate = document.getElementById('creneau_date');
+      var flashHeure = document.getElementById('creneau_heure');
+      if (flashDate) {
+        var fmt = new Intl.DateTimeFormat('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+        var d = new Date(); d.setHours(12, 0, 0, 0);
+        var added = 0;
+        while (added < 8) {
+          d.setDate(d.getDate() + 1);
+          var dayNum = Math.floor(d.getTime() / 86400000);
+          var wd = d.getDay();
+          if (dayNum % 2 === 0 && wd !== 0 && wd !== 6) {
+            var o = document.createElement('option');
+            o.value = d.toISOString().slice(0, 10);
+            o.textContent = fmt.format(d);
+            flashDate.appendChild(o);
+            added++;
+          }
+        }
+      }
+      function updateFlashBooking() {
+        var on = sujetSel && sujetSel.value === 'coaching-flash';
+        if (flashBlock) flashBlock.style.display = on ? 'block' : 'none';
+        if (flashDate) flashDate.required = on;
+        if (flashHeure) flashHeure.required = on;
+      }
+      if (sujetSel) sujetSel.addEventListener('change', updateFlashBooking);
+      updateFlashBooking();
+
       var ctx = null;
-      if (formation) {
+      if (sujetParam === 'coaching-flash') {
+        ctx = {
+          label: 'Réservation :',
+          name: 'Coaching flash (séance de 30 min)',
+          message: 'Je souhaite réserver un coaching flash de 30 minutes sur le créneau sélectionné ci-dessus. Sujet à aborder : ',
+          subject: 'Réservation coaching flash'
+        };
+      } else if (formation) {
         ctx = {
           label: 'Inscription formation :',
           name: formation,

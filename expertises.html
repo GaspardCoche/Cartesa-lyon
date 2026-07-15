@@ -107,41 +107,41 @@
     .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 1100px; margin: 0 auto; align-items: stretch; }
     .plan { padding: 44px 32px 36px; display: flex; flex-direction: column; position: relative; overflow: hidden; transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s cubic-bezier(0.22,1,0.36,1); }
     .plan:hover { transform: translateY(-3px); }
-    .plan--respiration { background: var(--white); border: 1px solid rgba(9,41,51,0.06); border-radius: 20px 0 0 20px; box-shadow: var(--shadow-sm); }
+    .plan--respiration { background: #f7b71a; border-radius: 20px 0 0 20px; box-shadow: var(--shadow-sm); }
     .plan--respiration:hover { box-shadow: var(--shadow-md); }
-    .plan--impulsion { background: var(--teal-600); color: var(--white); z-index: 2; box-shadow: var(--shadow-md); border-radius: 20px; margin: -12px -2px; padding: 56px 36px 44px; }
+    .plan--impulsion { background: #21b8c8; color: var(--white); z-index: 2; box-shadow: var(--shadow-md); border-radius: 20px; margin: -12px -2px; padding: 56px 36px 44px; }
     .plan--impulsion:hover { box-shadow: var(--shadow-lg); transform: translateY(-5px); }
-    .plan--drh { background: var(--teal-900); color: #fff; border-radius: 0 20px 20px 0; box-shadow: var(--shadow-sm); }
+    .plan--drh { background: #16719f; color: #fff; border-radius: 0 20px 20px 0; box-shadow: var(--shadow-sm); }
     .plan--drh:hover { box-shadow: var(--shadow-md); }
     .plan-level { display: inline-block; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 12px; }
-    .plan--respiration .plan-level { color: var(--teal-500); }
+    .plan--respiration .plan-level { color: rgba(9,41,51,0.65); }
     .plan--impulsion .plan-level { color: var(--gold-400); }
-    .plan--drh .plan-level { color: var(--gold-500); opacity: 0.7; }
+    .plan--drh .plan-level { color: var(--gold-400); opacity: 0.9; }
     .plan-name { font-family: 'Sora', sans-serif; font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 2px; }
-    .plan--respiration .plan-name { color: var(--teal-900); }
+    .plan--respiration .plan-name { color: #092933; }
     .plan--impulsion .plan-name, .plan--drh .plan-name { color: var(--white); }
     .plan-subtitle { font-size: 0.82rem; margin-bottom: 24px; }
-    .plan--respiration .plan-subtitle { color: var(--neutral-500); }
+    .plan--respiration .plan-subtitle { color: rgba(9,41,51,0.75); }
     .plan--impulsion .plan-subtitle, .plan--drh .plan-subtitle { color: rgba(255,255,255,0.9); }
     .plan-tagline { font-size: 0.78rem; font-style: italic; margin-bottom: 24px; line-height: 1.5; }
-    .plan--respiration .plan-tagline { color: var(--neutral-400); }
+    .plan--respiration .plan-tagline { color: rgba(9,41,51,0.68); }
     .plan--impulsion .plan-tagline, .plan--drh .plan-tagline { color: rgba(255,255,255,0.9); }
     .plan-format { font-size: 0.72rem; padding: 10px 16px; border-radius: 10px; margin-bottom: 24px; font-weight: 500; letter-spacing: 0.02em; }
-    .plan--respiration .plan-format { background: var(--teal-50); color: var(--teal-700); }
+    .plan--respiration .plan-format { background: rgba(255,255,255,0.4); color: #092933; }
     .plan--impulsion .plan-format { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9); }
-    .plan--drh .plan-format { background: rgba(236,208,52,0.06); color: var(--gold-400); opacity: 0.8; }
+    .plan--drh .plan-format { background: rgba(255,255,255,0.14); color: rgba(255,255,255,0.92); }
     .plan-features { list-style: none; padding: 0; margin: 0 0 32px; flex: 1; }
     .plan-features li { position: relative; padding: 9px 0 9px 18px; font-size: 0.86rem; line-height: 1.5; }
     .plan-features li::before { content: ''; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; border-radius: 50%; }
-    .plan--respiration .plan-features li::before { background: var(--teal-500); }
-    .plan--respiration .plan-features li { border-bottom: 1px solid var(--neutral-100); color: var(--neutral-700); }
+    .plan--respiration .plan-features li::before { background: #092933; }
+    .plan--respiration .plan-features li { border-bottom: 1px solid rgba(9,41,51,0.14); color: rgba(9,41,51,0.88); }
     .plan--impulsion .plan-features li::before { background: var(--gold-400); }
     .plan--impulsion .plan-features li { border-bottom: 1px solid rgba(255,255,255,0.07); }
-    .plan--drh .plan-features li::before { background: var(--gold-500); opacity: 0.7; }
+    .plan--drh .plan-features li::before { background: var(--gold-400); }
     .plan--drh .plan-features li { border-bottom: 1px solid rgba(255,255,255,0.07); }
     .plan-cta { display: inline-block; padding: 14px 28px; border-radius: 100px; font-weight: 600; font-size: 0.88rem; text-align: center; width: 100%; transition: all 0.3s; text-decoration: none; }
-    .plan--respiration .plan-cta { background: var(--teal-600); color: var(--white); }
-    .plan--respiration .plan-cta:hover { background: var(--teal-700); }
+    .plan--respiration .plan-cta { background: #092933; color: var(--white); }
+    .plan--respiration .plan-cta:hover { background: #0e3a47; }
     .plan--impulsion .plan-cta { background: var(--gold-500); color: var(--teal-900); }
     .plan--impulsion .plan-cta:hover { background: var(--gold-400); }
     .plan--drh .plan-cta { background: var(--gold-500); color: var(--teal-900); border: 0; }
@@ -277,7 +277,8 @@
         <li class="nav-dropdown"><a href="expertises.html" aria-haspopup="true" aria-expanded="false">Nos expertises</a>
           <ul class="nav-sub">
             <li><a href="expertises.html">Diagnostic &amp; accompagnements RH</a></li>
-            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="coaching.html">Coaching</a></li>
+            <li><a href="codeveloppement.html">Co-développement</a></li>
             <li><a href="formations.html">Formations</a></li>
             <li><a href="ingenierie.html">Ing&eacute;nierie p&eacute;dagogique</a></li>
             <li><a href="rse-decarbonation.html">RSE &amp; D&eacute;carbonation</a></li>
@@ -314,7 +315,8 @@
   <nav class="pole-nav" aria-label="Pages du pôle expertises">
     <div class="container">
       <a href="expertises.html" aria-current="page">Diagnostic &amp; accompagnements</a>
-      <a href="coachings.html">Coachings</a>
+      <a href="coaching.html">Coaching</a>
+      <a href="codeveloppement.html">Co-développement</a>
       <a href="formations.html">Formations</a>
       <a href="ingenierie.html">Ingénierie pédagogique</a>
       <a href="rse-decarbonation.html">RSE &amp; Décarbonation</a>
@@ -347,7 +349,7 @@
           </span>
         </a>
 
-        <a href="coachings.html" id="coaching" class="map-tile map-tile--gold">
+        <a href="coaching.html" id="coaching" class="map-tile map-tile--gold">
           <span class="map-tile__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
           <span class="map-tile__foot">
             <span class="map-tile__name">Coaching individuel &amp; collectif<span class="map-tile__hint">Prendre du recul et débloquer ses leviers de progression</span></span>
@@ -355,7 +357,7 @@
           </span>
         </a>
 
-        <a href="coachings.html" id="coachings-flashs" class="map-tile map-tile--light">
+        <a href="coaching.html" id="coachings-flashs" class="map-tile map-tile--light">
           <span class="map-tile__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>
           <span class="map-tile__foot">
             <span class="map-tile__name">Coachings flashs<span class="map-tile__hint">Une séance courte et ciblée, sans engagement</span></span>
@@ -363,7 +365,7 @@
           </span>
         </a>
 
-        <a href="coachings.html" id="codev-animation" class="map-tile map-tile--paper">
+        <a href="coaching.html" id="codev-animation" class="map-tile map-tile--paper">
           <span class="map-tile__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
           <span class="map-tile__foot">
             <span class="map-tile__name">Co-développement : animation<span class="map-tile__hint">Des cercles où vos managers apprennent les uns des autres</span></span>
@@ -371,7 +373,7 @@
           </span>
         </a>
 
-        <a href="coachings.html" id="codev-supervision" class="map-tile map-tile--teal">
+        <a href="coaching.html" id="codev-supervision" class="map-tile map-tile--teal">
           <span class="map-tile__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
           <span class="map-tile__foot">
             <span class="map-tile__name">Co-développement : supervision<span class="map-tile__hint">On fait monter en compétence vos animateurs internes</span></span>
@@ -738,7 +740,8 @@
           <h4>Nos expertises</h4>
           <ul>
             <li><a href="expertises.html">Diagnostic &amp; accompagnements</a></li>
-            <li><a href="coachings.html">Coachings</a></li>
+            <li><a href="coaching.html">Coaching</a></li>
+            <li><a href="codeveloppement.html">Co-développement</a></li>
             <li><a href="formations.html">Formations</a></li>
             <li><a href="ingenierie.html">Ingénierie pédagogique</a></li>
             <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
