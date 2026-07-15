@@ -107,45 +107,46 @@
     .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 1100px; margin: 0 auto; align-items: stretch; }
     .plan { padding: 44px 32px 36px; display: flex; flex-direction: column; position: relative; overflow: hidden; transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s cubic-bezier(0.22,1,0.36,1); }
     .plan:hover { transform: translateY(-3px); }
-    .plan--respiration { background: #f7b71a; border-radius: 20px 0 0 20px; box-shadow: var(--shadow-sm); }
+    .plan--respiration { background: #fdf1d3; border-radius: 20px 0 0 20px; box-shadow: var(--shadow-sm); }
     .plan--respiration:hover { box-shadow: var(--shadow-md); }
-    .plan--impulsion { background: #21b8c8; color: var(--white); z-index: 2; box-shadow: var(--shadow-md); border-radius: 20px; margin: -12px -2px; padding: 56px 36px 44px; }
+    .plan--impulsion { background: #d9f3f6; color: var(--neutral-700); z-index: 2; box-shadow: var(--shadow-md); border-radius: 20px; margin: -12px -2px; padding: 56px 36px 44px; }
     .plan--impulsion:hover { box-shadow: var(--shadow-lg); transform: translateY(-5px); }
-    .plan--drh { background: #16719f; color: #fff; border-radius: 0 20px 20px 0; box-shadow: var(--shadow-sm); }
+    .plan--drh { background: #ddecf5; color: var(--neutral-700); border-radius: 0 20px 20px 0; box-shadow: var(--shadow-sm); }
     .plan--drh:hover { box-shadow: var(--shadow-md); }
     .plan-level { display: inline-block; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 12px; }
-    .plan--respiration .plan-level { color: rgba(9,41,51,0.65); }
-    .plan--impulsion .plan-level { color: var(--gold-400); }
-    .plan--drh .plan-level { color: var(--gold-400); opacity: 0.9; }
+    .plan--respiration .plan-level { color: rgba(9,41,51,0.55); }
+    .plan--impulsion .plan-level { color: rgba(9,41,51,0.55); }
+    .plan--drh .plan-level { color: rgba(9,41,51,0.55); }
     .plan-name { font-family: 'Sora', sans-serif; font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 2px; }
-    .plan--respiration .plan-name { color: #092933; }
-    .plan--impulsion .plan-name, .plan--drh .plan-name { color: var(--white); }
+    .plan--respiration .plan-name { color: #f7b71a; }
+    .plan--impulsion .plan-name { color: #21b8c8; }
+    .plan--drh .plan-name { color: #16719f; }
     .plan-subtitle { font-size: 0.82rem; margin-bottom: 24px; }
-    .plan--respiration .plan-subtitle { color: rgba(9,41,51,0.75); }
-    .plan--impulsion .plan-subtitle, .plan--drh .plan-subtitle { color: rgba(255,255,255,0.9); }
+    .plan--respiration .plan-subtitle { color: var(--neutral-600); }
+    .plan--impulsion .plan-subtitle, .plan--drh .plan-subtitle { color: var(--neutral-600); }
     .plan-tagline { font-size: 0.78rem; font-style: italic; margin-bottom: 24px; line-height: 1.5; }
-    .plan--respiration .plan-tagline { color: rgba(9,41,51,0.68); }
-    .plan--impulsion .plan-tagline, .plan--drh .plan-tagline { color: rgba(255,255,255,0.9); }
+    .plan--respiration .plan-tagline { color: var(--neutral-500); }
+    .plan--impulsion .plan-tagline, .plan--drh .plan-tagline { color: var(--neutral-500); }
     .plan-format { font-size: 0.72rem; padding: 10px 16px; border-radius: 10px; margin-bottom: 24px; font-weight: 500; letter-spacing: 0.02em; }
-    .plan--respiration .plan-format { background: rgba(255,255,255,0.4); color: #092933; }
-    .plan--impulsion .plan-format { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9); }
-    .plan--drh .plan-format { background: rgba(255,255,255,0.14); color: rgba(255,255,255,0.92); }
+    .plan--respiration .plan-format { background: rgba(247,183,26,0.16); color: #8a6206; }
+    .plan--impulsion .plan-format { background: rgba(33,184,200,0.14); color: #0e7280; }
+    .plan--drh .plan-format { background: rgba(22,113,159,0.12); color: #125e85; }
     .plan-features { list-style: none; padding: 0; margin: 0 0 32px; flex: 1; }
     .plan-features li { position: relative; padding: 9px 0 9px 18px; font-size: 0.86rem; line-height: 1.5; }
     .plan-features li::before { content: ''; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; border-radius: 50%; }
-    .plan--respiration .plan-features li::before { background: #092933; }
-    .plan--respiration .plan-features li { border-bottom: 1px solid rgba(9,41,51,0.14); color: rgba(9,41,51,0.88); }
-    .plan--impulsion .plan-features li::before { background: var(--gold-400); }
-    .plan--impulsion .plan-features li { border-bottom: 1px solid rgba(255,255,255,0.07); }
-    .plan--drh .plan-features li::before { background: var(--gold-400); }
-    .plan--drh .plan-features li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .plan--respiration .plan-features li::before { background: #f7b71a; }
+    .plan--respiration .plan-features li { border-bottom: 1px solid rgba(9,41,51,0.08); color: var(--neutral-700); }
+    .plan--impulsion .plan-features li::before { background: #21b8c8; }
+    .plan--impulsion .plan-features li { border-bottom: 1px solid rgba(9,41,51,0.08); color: var(--neutral-700); }
+    .plan--drh .plan-features li::before { background: #16719f; }
+    .plan--drh .plan-features li { border-bottom: 1px solid rgba(9,41,51,0.08); color: var(--neutral-700); }
     .plan-cta { display: inline-block; padding: 14px 28px; border-radius: 100px; font-weight: 600; font-size: 0.88rem; text-align: center; width: 100%; transition: all 0.3s; text-decoration: none; }
-    .plan--respiration .plan-cta { background: #092933; color: var(--white); }
-    .plan--respiration .plan-cta:hover { background: #0e3a47; }
-    .plan--impulsion .plan-cta { background: var(--gold-500); color: var(--teal-900); }
-    .plan--impulsion .plan-cta:hover { background: var(--gold-400); }
-    .plan--drh .plan-cta { background: var(--gold-500); color: var(--teal-900); border: 0; }
-    .plan--drh .plan-cta:hover { background: var(--gold-400); }
+    .plan--respiration .plan-cta { background: #f7b71a; color: #092933; }
+    .plan--respiration .plan-cta:hover { background: #e5a915; }
+    .plan--impulsion .plan-cta { background: #21b8c8; color: var(--white); }
+    .plan--impulsion .plan-cta:hover { background: #1ba4b2; }
+    .plan--drh .plan-cta { background: #16719f; color: var(--white); border: 0; }
+    .plan--drh .plan-cta:hover { background: #125e85; }
     @media (max-width: 900px) {
       .pricing-grid { grid-template-columns: 1fr; gap: 20px; }
       .plan { border-radius: 20px !important; margin: 0 !important; }
@@ -285,7 +286,14 @@
           </ul>
         </li>
         <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
-        <li><a href="ressources.html">Ressources</a></li>
+        <li class="nav-dropdown"><a href="ressources.html" aria-haspopup="true" aria-expanded="false">Ressources</a>
+          <ul class="nav-sub">
+            <li><a href="ressources.html#webinars">Webinars &amp; replays</a></li>
+            <li><a href="ressources.html#guides">Guides &amp; outils pratiques</a></li>
+            <li><a href="temoignages.html">T&eacute;moignages clients</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
@@ -704,6 +712,16 @@
     </div>
   </section>
 
+  <!-- CITATION CLIENT -->
+  <section class="section section--white" style="padding:34px 0 10px;">
+    <div class="container" style="max-width:760px;">
+      <figure class="reveal" style="margin:0; background:var(--white); border:1px solid var(--neutral-200); border-left:4px solid var(--gold-500); border-radius:14px; padding:24px 28px;">
+        <blockquote style="margin:0 0 10px; font-style:italic; color:var(--teal-900); line-height:1.65; font-size:1rem;">«&nbsp;Ces réflexions nous ont conduits à faire évoluer notre organisation afin de renforcer notre efficacité et de mieux structurer notre démarche RH pour les années à venir.&nbsp;»</blockquote>
+        <figcaption style="font-size:0.82rem; color:var(--neutral-500);">Emilien Bach — Dirigeant associé, Les Fromages Bach · <a href="temoignages.html" style="color:var(--teal-600);">tous les témoignages &rarr;</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!-- CTA BAND -->
   <section class="section section--teal" style="padding:48px 0;">
     <div class="container" style="text-align:center;">
@@ -751,7 +769,14 @@
           <h4>CARTESA</h4>
           <ul>
             <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
-            <li><a href="ressources.html">Ressources</a></li>
+            <li class="nav-dropdown"><a href="ressources.html" aria-haspopup="true" aria-expanded="false">Ressources</a>
+          <ul class="nav-sub">
+            <li><a href="ressources.html#webinars">Webinars &amp; replays</a></li>
+            <li><a href="ressources.html#guides">Guides &amp; outils pratiques</a></li>
+            <li><a href="temoignages.html">T&eacute;moignages clients</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="mentions-legales.html">Mentions légales</a></li>
             <li><a href="politique-confidentialite.html">Confidentialité</a></li>

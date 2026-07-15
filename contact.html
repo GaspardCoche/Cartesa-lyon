@@ -256,6 +256,25 @@
     .cs-human img { width: 100%; height: auto; border-radius: 9px; display: block; }
 
     .cs-human img { max-height: min(480px, 52vh); object-fit: cover; object-position: top; }
+    /* --- Réservation flash : calendrier + créneaux --- */
+    .cal { background: #fff; border: 1px solid var(--neutral-200); border-radius: 12px; padding: 12px 14px 14px; }
+    .cal__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+    .cal__head button { border: 0; background: var(--teal-50, #eef7f7); color: var(--teal-700); width: 30px; height: 30px; border-radius: 8px; cursor: pointer; font-size: 1rem; }
+    .cal__head button:disabled { opacity: 0.3; cursor: default; }
+    .cal__title { font-weight: 700; color: var(--teal-900); font-size: 0.92rem; text-transform: capitalize; }
+    .cal__grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+    .cal__dow { text-align: center; font-size: 0.68rem; font-weight: 700; color: var(--neutral-400); text-transform: uppercase; padding: 2px 0; }
+    .cal__day { border: 0; background: transparent; aspect-ratio: 1; border-radius: 9px; font-size: 0.85rem; color: var(--neutral-300); cursor: default; }
+    .cal__day--open { background: rgba(33,184,200,0.12); color: var(--teal-800, #0e5a66); font-weight: 700; cursor: pointer; transition: background 0.15s; }
+    .cal__day--open:hover { background: rgba(33,184,200,0.28); }
+    .cal__day--sel { background: var(--gold-500, #f7b71a) !important; color: #092933 !important; }
+    .slot-chips { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; }
+    .slot-chips .slot-label { flex-basis: 100%; font-size: 0.72rem; font-weight: 700; color: var(--neutral-400); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
+    .slot-chip { border: 1px solid var(--neutral-200); background: #fff; border-radius: 100px; padding: 7px 13px; font-size: 0.82rem; color: var(--teal-900); cursor: pointer; transition: all 0.15s; }
+    .slot-chip:hover { border-color: var(--teal-500); }
+    .slot-chip.is-sel { background: var(--gold-500, #f7b71a); border-color: var(--gold-500, #f7b71a); color: #092933; font-weight: 700; }
+    .flash-picked { font-size: 0.8rem; color: var(--teal-700); font-weight: 600; margin: 10px 0 0; min-height: 1.2em; }
+    .flash-err { font-size: 0.8rem; color: #c0392b; font-weight: 600; margin: 6px 0 0; display: none; }
   </style>
   <script type="application/ld+json">
   {
@@ -311,7 +330,14 @@
           </ul>
         </li>
         <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
-        <li><a href="ressources.html">Ressources</a></li>
+        <li class="nav-dropdown"><a href="ressources.html" aria-haspopup="true" aria-expanded="false">Ressources</a>
+          <ul class="nav-sub">
+            <li><a href="ressources.html#webinars">Webinars &amp; replays</a></li>
+            <li><a href="ressources.html#guides">Guides &amp; outils pratiques</a></li>
+            <li><a href="temoignages.html">T&eacute;moignages clients</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
@@ -406,33 +432,39 @@
                 </select>
               </div>
             </div>
-            <div id="flashBooking" style="display:none; background:var(--teal-50,#eef7f7); border:1px solid var(--neutral-200); border-radius:12px; padding:18px 18px 6px; margin-bottom:18px;">
-              <p style="margin:0 0 14px; font-size:0.85rem; color:var(--teal-900); font-weight:600;">Réservez votre séance flash de 30 minutes</p>
-              <div class="form-row">
+            <div id="flashBooking" style="display:none; background:var(--teal-50,#eef7f7); border:1px solid var(--neutral-200); border-radius:12px; padding:18px 18px 14px; margin-bottom:18px;">
+              <p style="margin:0 0 12px; font-size:0.85rem; color:var(--teal-900); font-weight:600;">Réservez votre séance flash de 30 minutes <span style="font-weight:400; color:var(--neutral-500);">— créneaux un jour sur deux, hors week-end</span></p>
+              <div class="form-row" style="align-items:flex-start;">
                 <div class="form-group">
-                  <label for="creneau_date">Date souhaitée *</label>
-                  <select id="creneau_date" name="creneau_date">
-                    <option value="">Choisissez une date</option>
-                  </select>
+                  <label>Date souhaitée *</label>
+                  <div class="cal" id="flashCal">
+                    <div class="cal__head">
+                      <button type="button" id="calPrev" aria-label="Mois précédent">&larr;</button>
+                      <span class="cal__title" id="calTitle"></span>
+                      <button type="button" id="calNext" aria-label="Mois suivant">&rarr;</button>
+                    </div>
+                    <div class="cal__grid" id="calGrid" role="listbox" aria-label="Dates disponibles"></div>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="creneau_heure">Créneau *</label>
-                  <select id="creneau_heure" name="creneau_heure">
-                    <option value="">Choisissez un créneau</option>
-                    <optgroup label="Midi">
-                      <option value="13h00-13h30">13h00 – 13h30</option>
-                      <option value="13h30-14h00">13h30 – 14h00</option>
-                    </optgroup>
-                    <optgroup label="Fin de journée">
-                      <option value="17h00-17h30">17h00 – 17h30</option>
-                      <option value="17h30-18h00">17h30 – 18h00</option>
-                      <option value="18h00-18h30">18h00 – 18h30</option>
-                      <option value="18h30-19h00">18h30 – 19h00</option>
-                    </optgroup>
-                  </select>
+                  <label>Créneau *</label>
+                  <div class="slot-chips" id="slotChips">
+                    <span class="slot-label">Midi</span>
+                    <button type="button" class="slot-chip" data-slot="13h00-13h30">13h00 – 13h30</button>
+                    <button type="button" class="slot-chip" data-slot="13h30-14h00">13h30 – 14h00</button>
+                    <span class="slot-label">Fin de journée</span>
+                    <button type="button" class="slot-chip" data-slot="17h00-17h30">17h00 – 17h30</button>
+                    <button type="button" class="slot-chip" data-slot="17h30-18h00">17h30 – 18h00</button>
+                    <button type="button" class="slot-chip" data-slot="18h00-18h30">18h00 – 18h30</button>
+                    <button type="button" class="slot-chip" data-slot="18h30-19h00">18h30 – 19h00</button>
+                  </div>
+                  <p class="flash-picked" id="flashPicked"></p>
+                  <p class="flash-err" id="flashErr">Choisissez une date et un créneau pour votre séance flash.</p>
                 </div>
               </div>
-              <p style="margin:0 0 12px; font-size:0.76rem; color:var(--neutral-500); line-height:1.5;">Séance payante, facturée à l'unité. Nous confirmons votre créneau par email sous 24&nbsp;h ouvrées — le règlement se fait à la confirmation (paiement en ligne bientôt disponible).</p>
+              <input type="hidden" id="creneau_date" name="creneau_date" value="">
+              <input type="hidden" id="creneau_heure" name="creneau_heure" value="">
+              <p style="margin:6px 0 4px; font-size:0.76rem; color:var(--neutral-500); line-height:1.5;">Séance payante, facturée à l'unité. Nous confirmons votre créneau par email sous 24&nbsp;h ouvrées — le règlement se fait à la confirmation (paiement en ligne bientôt disponible).</p>
             </div>
             <div class="form-group">
               <label for="message">Message *</label>
@@ -495,7 +527,14 @@
           <h4>CARTESA</h4>
           <ul>
             <li><a href="pourquoi-cartesa.html">Pourquoi CARTESA</a></li>
-            <li><a href="ressources.html">Ressources</a></li>
+            <li class="nav-dropdown"><a href="ressources.html" aria-haspopup="true" aria-expanded="false">Ressources</a>
+          <ul class="nav-sub">
+            <li><a href="ressources.html#webinars">Webinars &amp; replays</a></li>
+            <li><a href="ressources.html#guides">Guides &amp; outils pratiques</a></li>
+            <li><a href="temoignages.html">T&eacute;moignages clients</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="mentions-legales.html">Mentions légales</a></li>
             <li><a href="politique-confidentialite.html">Confidentialité</a></li>
@@ -615,32 +654,84 @@
         });
       }
 
-      // --- Coaching flash : réservation de créneau (un jour sur deux, hors week-end) ---
+      // --- Coaching flash : calendrier de réservation (un jour sur deux, hors week-end) ---
       var flashBlock = document.getElementById('flashBooking');
       var flashDate = document.getElementById('creneau_date');
       var flashHeure = document.getElementById('creneau_heure');
-      if (flashDate) {
-        var fmt = new Intl.DateTimeFormat('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
-        var d = new Date(); d.setHours(12, 0, 0, 0);
-        var added = 0;
-        while (added < 8) {
-          d.setDate(d.getDate() + 1);
-          var dayNum = Math.floor(d.getTime() / 86400000);
-          var wd = d.getDay();
-          if (dayNum % 2 === 0 && wd !== 0 && wd !== 6) {
-            var o = document.createElement('option');
-            o.value = d.toISOString().slice(0, 10);
-            o.textContent = fmt.format(d);
-            flashDate.appendChild(o);
-            added++;
-          }
+      var calGrid = document.getElementById('calGrid');
+      var calTitle = document.getElementById('calTitle');
+      var flashPicked = document.getElementById('flashPicked');
+      var DOWS = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+      var monthFmt = new Intl.DateTimeFormat('fr-FR', { month: 'long', year: 'numeric' });
+      var dayFmt = new Intl.DateTimeFormat('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+      var today = new Date(); today.setHours(12, 0, 0, 0);
+      var view = new Date(today.getFullYear(), today.getMonth(), 1, 12);
+      var maxView = new Date(today.getFullYear(), today.getMonth() + 2, 1, 12);
+
+      function isOpen(d) {
+        if (d <= today) return false;
+        var wd = d.getDay();
+        if (wd === 0 || wd === 6) return false;
+        return Math.floor(d.getTime() / 86400000) % 2 === 0;
+      }
+      function updatePicked() {
+        if (flashPicked) {
+          var parts = [];
+          if (flashDate.value) parts.push(dayFmt.format(new Date(flashDate.value + 'T12:00:00')));
+          if (flashHeure.value) parts.push(flashHeure.value.replace('-', ' – '));
+          flashPicked.textContent = parts.length ? '✓ ' + parts.join(' · ') : '';
         }
       }
+      function renderCal() {
+        if (!calGrid) return;
+        calTitle.textContent = monthFmt.format(view);
+        calGrid.innerHTML = '';
+        DOWS.forEach(function(d) {
+          var e = document.createElement('span'); e.className = 'cal__dow'; e.textContent = d; calGrid.appendChild(e);
+        });
+        var first = new Date(view.getFullYear(), view.getMonth(), 1, 12);
+        var offset = (first.getDay() + 6) % 7;
+        for (var i = 0; i < offset; i++) calGrid.appendChild(document.createElement('span'));
+        var last = new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate();
+        for (var day = 1; day <= last; day++) {
+          var d = new Date(view.getFullYear(), view.getMonth(), day, 12);
+          var b = document.createElement('button');
+          b.type = 'button'; b.className = 'cal__day'; b.textContent = day;
+          var iso = d.toISOString().slice(0, 10);
+          if (isOpen(d)) {
+            b.classList.add('cal__day--open');
+            if (flashDate.value === iso) b.classList.add('cal__day--sel');
+            b.setAttribute('data-iso', iso);
+            b.addEventListener('click', function() {
+              flashDate.value = this.getAttribute('data-iso');
+              calGrid.querySelectorAll('.cal__day--sel').forEach(function(x) { x.classList.remove('cal__day--sel'); });
+              this.classList.add('cal__day--sel');
+              updatePicked();
+            });
+          } else {
+            b.disabled = true;
+          }
+          calGrid.appendChild(b);
+        }
+        document.getElementById('calPrev').disabled = view <= new Date(today.getFullYear(), today.getMonth(), 1);
+        document.getElementById('calNext').disabled = view >= maxView;
+      }
+      if (calGrid) {
+        document.getElementById('calPrev').addEventListener('click', function() { view = new Date(view.getFullYear(), view.getMonth() - 1, 1, 12); renderCal(); });
+        document.getElementById('calNext').addEventListener('click', function() { view = new Date(view.getFullYear(), view.getMonth() + 1, 1, 12); renderCal(); });
+        renderCal();
+      }
+      document.querySelectorAll('.slot-chip').forEach(function(c) {
+        c.addEventListener('click', function() {
+          document.querySelectorAll('.slot-chip.is-sel').forEach(function(x) { x.classList.remove('is-sel'); });
+          this.classList.add('is-sel');
+          flashHeure.value = this.getAttribute('data-slot');
+          updatePicked();
+        });
+      });
       function updateFlashBooking() {
         var on = sujetSel && sujetSel.value === 'coaching-flash';
         if (flashBlock) flashBlock.style.display = on ? 'block' : 'none';
-        if (flashDate) flashDate.required = on;
-        if (flashHeure) flashHeure.required = on;
       }
       if (sujetSel) sujetSel.addEventListener('change', updateFlashBooking);
       updateFlashBooking();
@@ -703,6 +794,20 @@
         var errorBox = document.getElementById('formError');
         var emailField = document.getElementById('email');
         var replyToField = document.getElementById('_replyto');
+
+        // Réservation flash : date + créneau obligatoires si le bloc est affiché
+        var fb = document.getElementById('flashBooking');
+        if (fb && fb.style.display !== 'none') {
+          var fd = document.getElementById('creneau_date');
+          var fh = document.getElementById('creneau_heure');
+          var fe = document.getElementById('flashErr');
+          if (!fd.value || !fh.value) {
+            if (fe) fe.style.display = 'block';
+            fb.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+          }
+          if (fe) fe.style.display = 'none';
+        }
 
         // Honeypot : si rempli, on simule un succès silencieux (et on n'envoie rien)
         var gotcha = form.querySelector('input[name="_gotcha"]');
