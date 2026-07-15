@@ -25,7 +25,7 @@
   <!-- Self-hosted fonts (RGPD-friendly) -->
   <link rel="icon" type="image/png" href="assets/img/favicon-cartesa.png">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="styles.css?v67">
+  <link rel="stylesheet" href="styles.css?v68">
   <style>
     /* Bloc "Continuer la visite" — fin de page, design flat */
     .continue-band { background: var(--teal-50, #f0f8fb); padding: 44px 0; }
@@ -56,12 +56,35 @@
     .faq-item[open] summary::after { transform: rotate(45deg); }
     .faq-item p { margin: 0; padding: 0 20px 18px; color: var(--neutral-600); line-height: 1.65; font-size: 0.93rem; }
     .faq-item p a { color: var(--teal-600); }
-    /* --- Co-développement : étapes colorées --- */
-    .codev-steps .card { border-top: 4px solid var(--c, #21b8c8); position: relative; padding-top: 20px; }
-    .codev-steps .card:nth-child(3n+1) { --c: #f7b71a; }
-    .codev-steps .card:nth-child(3n+2) { --c: #21b8c8; }
-    .codev-steps .card:nth-child(3n+3) { --c: #16719f; }
-    .codev-steps .card h3 { color: var(--c) !important; }
+    /* --- Co-développement : frise du déroulement --- */
+    .codev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 44px; }
+    .codev-step {
+      position: relative; background: #fff; border-radius: 20px; border: 1px solid var(--neutral-200);
+      padding: 34px 28px 28px; transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1); overflow: hidden;
+    }
+    .codev-step:hover { transform: translateY(-4px); box-shadow: 0 2px 10px rgba(9,41,51,0.08); }
+    .codev-step .step-num {
+      position: absolute; top: -14px; right: 10px; font-family: 'Sora', sans-serif;
+      font-size: 4.6rem; font-weight: 800; line-height: 1; opacity: 0.14; color: var(--sc, #21b8c8);
+    }
+    .codev-step .step-kicker {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--sc, #21b8c8); margin-bottom: 10px;
+    }
+    .codev-step h3 { font-family: 'Sora', sans-serif; font-size: 1.12rem; color: var(--teal-900); margin: 0 0 8px; }
+    .codev-step p { font-size: 0.92rem; color: var(--neutral-600); line-height: 1.6; margin: 0; }
+    .codev-step:nth-child(3n+1) { --sc: #f7b71a; }
+    .codev-step:nth-child(3n+2) { --sc: #21b8c8; }
+    .codev-step:nth-child(3n+3) { --sc: #16719f; }
+    .codev-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .codev-chips span {
+      font-family: 'Sora', sans-serif; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.04em;
+      padding: 7px 14px; border-radius: 100px; background: var(--teal-100, #d1ecec); color: var(--teal-700);
+    }
+    .coach-panel--blue { background: #ddecf5; }
+    .coach-panel--blue .coach-panel__badge { background: #16719f; color: #fff; }
+    .coach-panel--blue li::before { content: ""; position: absolute; left: 0; top: 15px; width: 11px; height: 2.5px; background: #16719f; }
+    @media (max-width: 900px) { .codev-grid { grid-template-columns: 1fr; } }
   </style>
   <script type="application/ld+json">
   {
@@ -164,19 +187,23 @@
     </div>
   </nav>
 
-  <!-- QU'EST-CE QUE LE CODEV -->
+
+  <!-- LA MÉTHODE -->
   <section class="section section--white" id="methode">
     <div class="container">
-      <div class="grid-2" style="gap:40px; align-items:center;">
-        <figure class="reveal-left" style="margin:0; text-align:center;">
-          <img src="assets/img/illustrations/codev-dessin.png" alt="Illustration : visages en dialogue dans un cercle de co-développement" loading="lazy" decoding="async" class="illu" style="max-height:420px; width:auto; max-width:100%;">
-        </figure>
-        <div class="reveal-right">
+      <div class="split-media reveal">
+        <div>
           <span class="section-label">La méthode</span>
           <h2 class="section-title">Apprendre entre pairs, dans un cadre structuré</h2>
-          <p style="color:var(--neutral-600); line-height:1.7;">Le co-développement professionnel (méthode Payette &amp; Champagne) réunit un petit groupe de pairs — sans lien hiérarchique — qui se retrouvent régulièrement. À chaque séance, l'un d'eux devient le «&nbsp;client&nbsp;»&nbsp;: il expose une situation réelle qui le préoccupe. Les autres deviennent ses «&nbsp;consultants&nbsp;».</p>
+          <p style="color:var(--neutral-600); line-height:1.7;">Le co-développement professionnel (méthode Payette &amp; Champagne) réunit un petit groupe de pairs — sans lien hiérarchique — qui se retrouvent régulièrement. À chaque séance, l'un devient le «&nbsp;client&nbsp;»&nbsp;: il expose une situation réelle qui le préoccupe. Les autres deviennent ses «&nbsp;consultants&nbsp;».</p>
           <p style="color:var(--neutral-600); line-height:1.7;">Ce n'est ni une réunion, ni une formation descendante&nbsp;: le cadre est précis, l'animateur le fait respecter, et chacun repart avec un plan d'action — le client comme les consultants.</p>
+          <div class="codev-chips">
+            <span>Dirigeants</span><span>Managers</span><span>Fonctions RH</span><span>Chefs d'atelier</span>
+          </div>
         </div>
+        <figure class="split-media__img">
+          <img src="assets/img/illustrations/codev-dessin.png" alt="Illustration : visages en dialogue dans un cercle de co-développement" loading="lazy" decoding="async" class="illu" style="max-height:440px; width:auto; max-width:100%;">
+        </figure>
       </div>
     </div>
   </section>
@@ -187,14 +214,15 @@
       <div class="section-header reveal">
         <span class="section-label">Une séance</span>
         <h2 class="section-title">6 étapes, 2 heures, un plan d'action</h2>
+        <p class="section-subtitle">Le cadre fait la valeur de la séance&nbsp;: chacun sait quand écouter, quand questionner, quand proposer.</p>
       </div>
-      <div class="grid-3 reveal codev-steps" style="gap:18px;">
-        <div class="card"><h3 style="font-size:1rem; margin-top:0;">1 · Exposé</h3><p style="font-size:0.92rem; color:var(--neutral-600); line-height:1.6; margin:0;">Le client présente sa situation, son enjeu, sa question.</p></div>
-        <div class="card"><h3 style="font-size:1rem; margin-top:0;">2 · Clarification</h3><p style="font-size:0.92rem; color:var(--neutral-600); line-height:1.6; margin:0;">Les consultants posent des questions factuelles — sans conseiller, pas encore.</p></div>
-        <div class="card"><h3 style="font-size:1rem; margin-top:0;">3 · Contrat</h3><p style="font-size:0.92rem; color:var(--neutral-600); line-height:1.6; margin:0;">Le client formule ce qu'il attend précisément du groupe.</p></div>
-        <div class="card"><h3 style="font-size:1rem; margin-top:0;">4 · Consultation</h3><p style="font-size:0.92rem; color:var(--neutral-600); line-height:1.6; margin:0;">Impressions, idées, expériences vécues&nbsp;: le client écoute et note.</p></div>
-        <div class="card"><h3 style="font-size:1rem; margin-top:0;">5 · Plan d'action</h3><p style="font-size:0.92rem; color:var(--neutral-600); line-height:1.6; margin:0;">Le client synthétise ce qu'il retient et ce qu'il va faire.</p></div>
-        <div class="card"><h3 style="font-size:1rem; margin-top:0;">6 · Apprentissages</h3><p style="font-size:0.92rem; color:var(--neutral-600); line-height:1.6; margin:0;">Chacun partage ce que la séance lui a appris — pour sa propre pratique.</p></div>
+      <div class="codev-grid reveal-stagger">
+        <div class="codev-step reveal"><span class="step-num">1</span><div class="step-kicker">Étape 01</div><h3>Exposé</h3><p>Le client présente sa situation, son enjeu, sa question — sans être interrompu.</p></div>
+        <div class="codev-step reveal"><span class="step-num">2</span><div class="step-kicker">Étape 02</div><h3>Clarification</h3><p>Les consultants posent des questions factuelles. Pas de conseil — pas encore.</p></div>
+        <div class="codev-step reveal"><span class="step-num">3</span><div class="step-kicker">Étape 03</div><h3>Contrat</h3><p>Le client formule précisément ce qu'il attend du groupe pour cette séance.</p></div>
+        <div class="codev-step reveal"><span class="step-num">4</span><div class="step-kicker">Étape 04</div><h3>Consultation</h3><p>Impressions, idées, expériences vécues&nbsp;: le client écoute et note, sans se justifier.</p></div>
+        <div class="codev-step reveal"><span class="step-num">5</span><div class="step-kicker">Étape 05</div><h3>Plan d'action</h3><p>Le client synthétise ce qu'il retient et s'engage sur ce qu'il va faire.</p></div>
+        <div class="codev-step reveal"><span class="step-num">6</span><div class="step-kicker">Étape 06</div><h3>Apprentissages</h3><p>Chacun partage ce que la séance lui a appris — pour sa propre pratique.</p></div>
       </div>
     </div>
   </section>
@@ -206,23 +234,33 @@
         <span class="section-label">Nos formats</span>
         <h2 class="section-title">Trois façons de s'appuyer sur nous</h2>
       </div>
-      <div class="grid-2 reveal" style="gap:36px; align-items:center;">
-        <figure style="margin:0; text-align:center;">
-          <img src="assets/img/illustrations/enrichir-6.jpeg" alt="Illustration : une personne s'élève sur une passerelle" loading="lazy" decoding="async" class="illu" style="max-height:360px; width:auto; max-width:100%;">
-        </figure>
-        <div style="display:flex; flex-direction:column; gap:14px;">
-        <div class="card">
-          <h3 style="font-size:1.05rem; margin-top:0;">Cercles internes</h3>
-          <p style="font-size:0.95rem; color:var(--neutral-600); line-height:1.6;">Entre managers de votre entreprise. Nous animons les premières séances, puis nous vous transférons la méthodologie pour que la démarche vive sans nous.</p>
+      <div class="grid-3 reveal-stagger" style="gap:22px;">
+        <div class="coach-panel coach-panel--teal reveal">
+          <span class="coach-panel__badge">Cercles internes</span>
+          <h3>Entre managers de votre entreprise</h3>
+          <ul>
+            <li>Nous animons les premières séances</li>
+            <li>Transfert progressif de la méthodologie</li>
+            <li>La démarche vit ensuite sans nous</li>
+          </ul>
         </div>
-        <div class="card">
-          <h3 style="font-size:1.05rem; margin-top:0;">Cercles inter-entreprises</h3>
-          <p style="font-size:0.95rem; color:var(--neutral-600); line-height:1.6;">Des dirigeants de structures différentes autour d'une table&nbsp;: croiser les regards, sortir de l'isolement, sans enjeu de concurrence interne.</p>
+        <div class="coach-panel coach-panel--gold reveal">
+          <span class="coach-panel__badge">Inter-entreprises</span>
+          <h3>Entre dirigeants de structures différentes</h3>
+          <ul>
+            <li>Croiser les regards, sortir de l'isolement</li>
+            <li>Aucun enjeu de concurrence interne</li>
+            <li>Un réseau de pairs qui dure</li>
+          </ul>
         </div>
-        <div class="card">
-          <h3 style="font-size:1.05rem; margin-top:0;">Supervision d'animateurs</h3>
-          <p style="font-size:0.95rem; color:var(--neutral-600); line-height:1.6;">Vous avez déjà des animateurs internes&nbsp;? Nous supervisons leur pratique pour fiabiliser le cadre et la qualité des séances.</p>
-        </div>
+        <div class="coach-panel coach-panel--blue reveal">
+          <span class="coach-panel__badge">Supervision</span>
+          <h3>Vos animateurs internes, fiabilisés</h3>
+          <ul>
+            <li>Supervision de la pratique d'animation</li>
+            <li>Cadre et qualité des séances garantis</li>
+            <li>Montée en compétence de vos relais</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -230,15 +268,21 @@
 
   <!-- TÉMOIGNAGE -->
   <section class="section section--alt">
-    <div class="container" style="max-width:900px;">
-      <div class="grid-2" style="gap:32px; align-items:center;">
+    <div class="container">
+      <div class="grid-2" style="gap:40px; align-items:center;">
         <figure class="reveal-left" style="margin:0; text-align:center;">
-          <img src="assets/img/illustrations/coaching-dessin.jpg" alt="Illustration : deux personnes en échange" loading="lazy" decoding="async" class="illu" style="max-height:300px; width:auto; max-width:100%;">
+          <img src="assets/img/illustrations/enrichir-6.jpeg" alt="Illustration : une personne s'élève sur une passerelle" loading="lazy" decoding="async" class="illu" style="max-height:340px; width:auto; max-width:100%;">
         </figure>
-        <figure class="reveal-right" style="margin:0;">
-          <blockquote style="border-left:3px solid var(--gold-500); margin:0 0 14px; padding:6px 0 6px 18px; font-style:italic; color:var(--teal-900); font-size:1.05rem; line-height:1.6;">«&nbsp;Asseoir des chefs d'atelier de plusieurs sociétés autour d'une table et les faire réfléchir ensemble&nbsp;: Catherine a eu la méthode. Un vrai apport de mise en confiance.&nbsp;»</blockquote>
-          <figcaption style="font-size:0.85rem; color:var(--neutral-500);">Stéphane Fournier — Président, Groupe Syrah · <a href="temoignages.html" style="color:var(--teal-600);">voir le témoignage &rarr;</a></figcaption>
-        </figure>
+        <div class="reveal-right">
+          <figure class="client-quote reveal">
+            <blockquote>«&nbsp;Asseoir des chefs d'atelier de plusieurs sociétés autour d'une table et les faire réfléchir ensemble&nbsp;: Catherine a eu la méthode. Un vrai apport de mise en confiance.&nbsp;»</blockquote>
+            <figcaption>
+              <span class="client-quote__avatar" style="--cq:#21b8c8;">SF</span>
+              <span class="client-quote__who"><strong>Stéphane Fournier</strong><em>Président · Groupe Syrah, à propos des cercles inter-entreprises</em></span>
+              <a href="temoignages.html">voir le témoignage &rarr;</a>
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </section>
@@ -259,6 +303,7 @@
       <div class="continue-band__links">
         <a href="coaching.html">Coaching &rarr;</a>
         <a href="formations.html">Formations &rarr;</a>
+        <a href="expertises.html#formules">Nos 3 formules d’accompagnement &rarr;</a>
       </div>
     </div>
   </section>

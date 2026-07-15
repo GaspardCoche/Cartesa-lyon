@@ -5073,3 +5073,58 @@ section.section + section.section--alt {
   .pl-sq, .pl-word, .pl-inner { animation: none; }
   .pl-inner { opacity: 1; }
 }
+
+/* ===== Citation client — carte signature ===== */
+.client-quote {
+  position: relative;
+  margin: 0;
+  background: #f2f8fb;
+  border-radius: 18px;
+  padding: 44px 42px 28px;
+  box-shadow: 0 4px 18px rgba(9, 41, 51, 0.06);
+  overflow: hidden;
+}
+.client-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: -30px;
+  left: 16px;
+  font-family: 'Sora', sans-serif;
+  font-size: 10rem;
+  font-weight: 800;
+  color: rgba(247, 183, 26, 0.28);
+  line-height: 1;
+  pointer-events: none;
+}
+.client-quote blockquote {
+  position: relative;
+  margin: 0 0 20px;
+  font-size: 1.08rem;
+  line-height: 1.68;
+  font-weight: 500;
+  color: var(--teal-900);
+}
+.client-quote figcaption { display: flex; align-items: center; gap: 12px; position: relative; }
+.client-quote__avatar {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--cq, #21b8c8); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.82rem;
+  flex: none;
+}
+.client-quote__avatar--gold { background: #f7b71a; color: #092933; }
+.client-quote__who { display: flex; flex-direction: column; gap: 1px; }
+.client-quote__who strong {
+  font-family: 'Sora', sans-serif; font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal-900);
+}
+.client-quote__who em { font-style: normal; font-size: 0.78rem; color: var(--neutral-500); }
+.client-quote figcaption > a {
+  margin-left: auto; font-size: 0.78rem; font-weight: 600;
+  color: var(--teal-600); text-decoration: none; white-space: nowrap;
+}
+.client-quote figcaption > a:hover { text-decoration: underline; }
+@media (max-width: 640px) {
+  .client-quote { padding: 36px 24px 24px; }
+  .client-quote figcaption > a { display: none; }
+}
