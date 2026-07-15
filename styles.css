@@ -211,7 +211,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+.nav-toggle.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* Dropdown nav */
@@ -4362,22 +4362,27 @@ section.section--alt + section.section--white {
 /* RESPONSIVE MENU — burger plus large + dropdown plein écran sur mobile */
 @media (max-width: 880px) {
   .nav-toggle {
+    /* Centrage flex + gap fixe : géométrie déterministe quel que soit le
+       min-width/min-height 44px hérité de la règle de base. */
     display: flex !important;
     flex-direction: column;
-    justify-content: space-around;
-    width: 36px;
-    height: 36px;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
     background: transparent;
     border: 1px solid var(--neutral-300);
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    padding: 8px;
+    padding: 0;
     position: relative;
     z-index: 1001;
+    transition: border-color 0.25s ease, background 0.25s ease;
   }
   .nav-toggle span {
     display: block;
-    width: 100%;
+    width: 22px;
     height: 2px;
     /* margin:0 + flex-shrink:0 obligatoires : le margin 5px de la règle de base
        fait déborder le flex column 44px et écrase les barres à 0px de haut. */
@@ -4385,14 +4390,24 @@ section.section--alt + section.section--white {
     flex-shrink: 0;
     background: var(--neutral-900);
     border-radius: 2px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, background 0.2s ease;
+  }
+  /* Croix : barres espacées de 8px (gap 6 + 2 d'épaisseur) de part et d'autre
+     du centre → translateY(±8px) donne un X parfaitement symétrique. */
+  .nav-toggle[aria-expanded="true"] {
+    border-color: var(--teal-600);
+    background: rgba(0, 124, 186, 0.06);
+  }
+  .nav-toggle[aria-expanded="true"] span {
+    background: var(--teal-700);
   }
   .nav-toggle[aria-expanded="true"] span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
   }
-  .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
   .nav-toggle[aria-expanded="true"] span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
   }
   .nav-links {
     display: none;
@@ -5087,12 +5102,14 @@ section.section + section.section--alt {
 .client-quote::before {
   content: '\201C';
   position: absolute;
-  top: -30px;
-  left: 16px;
+  /* Entièrement visible dans la carte (overflow:hidden) : le glyphe Sora occupe
+     le haut de son em-box, un offset négatif le fait rogner par le cadre. */
+  top: 8px;
+  left: 20px;
   font-family: 'Sora', sans-serif;
-  font-size: 10rem;
+  font-size: 5.4rem;
   font-weight: 800;
-  color: rgba(247, 183, 26, 0.28);
+  color: rgba(247, 183, 26, 0.4);
   line-height: 1;
   pointer-events: none;
 }
