@@ -504,6 +504,8 @@
     .map-filter[data-filter="social"]::before { background: var(--th-social); }
     .map-filter[data-filter="entretien"]::before { background: var(--th-entretien); }
     .map-filter[data-filter="rh"]::before { background: var(--th-rh); }
+    .formation-card[data-theme="surmesure"] { border-top-color: var(--gold-500, #ecd034); }
+    .formation-card[data-theme="surmesure"] .card-icon { background: var(--gold-600, #d4940a) !important; }
   </style>
   <script type="application/ld+json">
   {
@@ -682,7 +684,7 @@
       <p>Management, droit social, QVCT, recrutement, RSE — des formations ancrées dans vos situations réelles, certifiées Qualiopi et (co)finançables par votre OPCO. CARTESA se déplace partout en France. Et au-delà.</p>
       <div class="page-hero-stats">
         <div class="page-hero-stat"><strong>Qualiopi</strong><span>certifié</span></div>
-        <div class="page-hero-stat"><strong>7</strong><span>thématiques</span></div>
+        <div class="page-hero-stat"><strong>7+</strong><span>thématiques, sur mesure inclus</span></div>
         <div class="page-hero-stat"><strong>Co-finançable</strong><span>par votre OPCO</span></div>
       </div>
     </div>
@@ -975,6 +977,19 @@
             <span class="badge">Financement OPCO</span>
           </div>
           <a href="contact.html" class="btn btn--primary btn--sm">Découvrir cette formation</a>
+        </div>
+        <div class="card formation-card" data-theme="surmesure">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+          </div>
+          <h3>Formations sur mesure</h3>
+          <p>Un besoin qui ne rentre pas dans les cases ? Management, recrutement, RSE, cohésion d'équipe… Chaque module est co-construit avec vous, en fonction de vos équipes et de vos enjeux terrain.</p>
+          <div class="card-meta">
+            <span class="badge">Durée adaptée</span>
+            <span class="badge">Présentiel / Distanciel</span>
+            <span class="badge">Financement OPCO</span>
+          </div>
+          <a href="contact.html?formation=Formation%20sur%20mesure" class="btn btn--primary btn--sm">Construisons votre formation</a>
         </div>
 
       </div>
@@ -1321,6 +1336,8 @@
           if (counter) counter.textContent = visible + ' session' + (visible > 1 ? 's' : '');
         }
 
+        renderPreview();
+
         markers.forEach(function(m) {
           var key = m.getAttribute('data-city');
           var city = cities[key];
@@ -1374,8 +1391,8 @@
         });
       }
 
-      // Preview panel — show upcoming sessions across all cities
-      (function buildPreview() {
+      // Preview panel — sessions à venir toutes villes, re-rendu à chaque changement de filtre
+      function renderPreview() {
         var previewEl = document.getElementById('previewPanel');
         if (!previewEl) return;
         var all = [];
@@ -1385,11 +1402,12 @@
             all.push({ date: s.date, label: s.label, cat: s.cat, cityKey: key, cityName: city.name.split(' –')[0].split(' /')[0] });
           });
         });
-        all.sort(function(a, b) { return parseDate(a.date) - parseDate(b.date); });
-        var upcoming = all.slice(0, 8);
+        var visible = all.filter(isSessionVisible);
+        visible.sort(function(a, b) { return parseDate(a.date) - parseDate(b.date); });
+        var upcoming = visible.slice(0, 8);
         var html = '<div class="city-panel-header">';
         html += '<h3>Prochaines sessions</h3>';
-        html += '<span class="city-count">' + all.length + ' au total</span>';
+        html += '<span class="city-count">' + visible.length + ' au total</span>';
         html += '</div>';
         upcoming.forEach(function(s, i) {
           var subject = encodeURIComponent(s.label + ' – ' + s.cityName + ' (' + s.date + ')');
@@ -1403,9 +1421,14 @@
           html += '<span class="session-action">S\'inscrire &rarr;</span>';
           html += '</a>';
         });
-        html += '<p class="preview-hint">Cliquez sur une ville pour voir toutes ses sessions</p>';
+        if (upcoming.length) {
+          html += '<p class="preview-hint">Cliquez sur une ville pour voir toutes ses sessions</p>';
+        } else {
+          html += '<p class="preview-hint">Aucune session ne correspond à ces filtres — <a href="contact.html?formation=Formation%20sur%20mesure">parlons d\'une session sur mesure</a>.</p>';
+        }
         previewEl.innerHTML = html;
-      })();
+      }
+      renderPreview();
     })();
   </script>
 
