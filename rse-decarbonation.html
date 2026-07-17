@@ -36,6 +36,10 @@
     .continue-band__links a:hover { text-decoration: underline; }
     /* Marqueur d'expertise RSE & Décarbonation — même pastille que les étiquettes des profils équipe */
     .tag-rse { display:inline-block; font-size:0.68rem; font-weight:600; padding:3px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:0.04em; background:#e8f5e9; color:#2e7d32; }
+    /* Cross-links de bas de page : les 4 cartes alignées sur une seule rangée */
+    .crosslinks-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; }
+    @media (max-width: 1000px) { .crosslinks-grid { grid-template-columns:repeat(2, 1fr); } }
+    @media (max-width: 560px) { .crosslinks-grid { grid-template-columns:1fr; } }
   </style>
   <script type="application/ld+json">
   {
@@ -413,7 +417,7 @@
   <!-- CROSS-LINKS -->
   <section class="section section--alt" style="padding:48px 0;">
     <div class="container">
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px;">
+      <div class="crosslinks-grid">
         <a href="vos-attentes.html#decarboner" class="enjeu-row reveal" style="text-decoration:none;">
           <div class="enjeu-body">
             <h3 style="font-size:1.05rem;">Décarboner votre activité</h3>

@@ -204,12 +204,19 @@
     .cs-microfooter a { color: rgba(255,255,255,0.75); }
     .cs-panel .ch-squares { width: 220px; height: 240px; left: -66px; top: -58px; right: auto; bottom: auto; transform: rotate(-7deg); opacity: 1; }
     .cs-form {
-      overflow-y: auto;
+      overflow-y: auto; /* filet de sécurité sur petits écrans uniquement — le formulaire est dimensionné pour tenir sans scroll */
       background: transparent;
       display: flex;
       align-items: center;
       position: relative;
     }
+    /* Formulaire compact : tient dans l'écran sans scroll interne */
+    .cs-form__inner .form-group { margin-bottom: 11px; }
+    .cs-form__inner label { margin-bottom: 3px; font-size: 0.82rem; }
+    .cs-form__inner input, .cs-form__inner select { padding: 9px 12px; }
+    .cs-form__inner textarea { padding: 9px 12px; }
+    .cs-form__inner h2 { margin-bottom: 4px; }
+    .cs-form__hint { margin-bottom: 12px; }
     .cs-form::before {
       content: "";
       position: absolute;
@@ -391,21 +398,21 @@
                 <input type="text" id="nom" name="nom" required autocomplete="family-name" placeholder="Votre nom">
               </div>
             </div>
-            <div class="form-group">
-              <label for="email">Email professionnel *</label>
-              <input type="email" id="email" name="email" required autocomplete="email" placeholder="votre.email@entreprise.com">
-            </div>
             <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email professionnel *</label>
+                <input type="email" id="email" name="email" required autocomplete="email" placeholder="votre.email@entreprise.com">
+              </div>
               <div class="form-group">
                 <label for="telephone">Téléphone <span class="opt">(optionnel)</span></label>
                 <input type="tel" id="telephone" name="telephone" autocomplete="tel" placeholder="04 XX XX XX XX">
               </div>
-              <div class="form-group">
-                <label for="entreprise">Entreprise <span class="opt">(optionnel)</span></label>
-                <input type="text" id="entreprise" name="entreprise" autocomplete="organization" placeholder="Nom de votre entreprise">
-              </div>
             </div>
             <div class="form-row">
+              <div class="form-group">
+                <label for="entreprise">Entreprise *</label>
+                <input type="text" id="entreprise" name="entreprise" required autocomplete="organization" placeholder="Nom de votre entreprise">
+              </div>
               <div class="form-group">
                 <label for="taille">Taille de l'entreprise <span class="opt">(optionnel)</span></label>
                 <select id="taille" name="taille">
@@ -416,7 +423,9 @@
                   <option value="250+">Plus de 250 salariés</option>
                 </select>
               </div>
-              <div class="form-group">
+            </div>
+            <div class="form-row" id="sujetRow" style="grid-template-columns:1fr;">
+              <div class="form-group" id="sujetGroup">
                 <label for="sujet">Votre sujet <span class="opt">(optionnel)</span></label>
                 <select id="sujet" name="sujet">
                   <option value="">Sélectionnez</option>
@@ -813,6 +822,16 @@
         if (nameEl) nameEl.textContent = ctx.name;
         if (message && !message.value) message.value = ctx.message;
         if (subjectField) subjectField.value = 'Nouveau contact Cartesa — ' + ctx.subject;
+        // Sujet déduit du CTA d'origine : on le renseigne puis on masque le champ,
+        // la bannière ci-dessus l'affiche déjà — inutile de le redemander
+        if (sujetSel) {
+          if (!sujetSel.value) {
+            sujetSel.value = formation ? 'formation' : 'autre';
+          }
+          var sujetRow = document.getElementById('sujetRow');
+          if (sujetRow) sujetRow.style.display = 'none';
+          updateFlashBooking();
+        }
       } else if (sujetParam && subjectField) {
         // Liens hérités type ?sujet=coaching-individuel : on garde l'info dans le sujet du mail
         subjectField.value = 'Nouveau contact Cartesa — ' + sujetParam.replace(/-/g, ' ');
