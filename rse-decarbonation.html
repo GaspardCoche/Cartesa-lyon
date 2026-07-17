@@ -34,8 +34,9 @@
     .continue-band__links { display: flex; flex-wrap: wrap; gap: 10px 36px; }
     .continue-band__links a { font-family: 'Sora', sans-serif; font-weight: 600; color: var(--teal-700, #006aa3); text-decoration: none; }
     .continue-band__links a:hover { text-decoration: underline; }
-    /* Identité verte de l'expertise RSE & Décarbonation — rappels discrets (labels de section) */
-    main .section-label { color: #2e7d32; }
+    /* Identité verte de l'expertise RSE & Décarbonation — liserés discrets sur les cartes clés,
+       même motif que les liserés des cartes formation (charte flat) */
+    .liseret-rse { border-top: 4px solid #2e7d32 !important; }
   </style>
   <script type="application/ld+json">
   {
@@ -133,7 +134,7 @@
         <div class="page-hero-stat"><strong>6</strong><span>experts dédiés</span></div>
       </div>
       <div style="margin-top:28px;">
-        <a href="contact.html" class="btn btn--accent btn--lg">Vérifier mon éligibilité</a>
+        <a href="contact.html?sujet=echange-30&theme=RSE%20%26%20D%C3%A9carbonation" class="btn btn--accent btn--lg">Vérifier mon éligibilité</a>
         <a href="#programme" class="btn btn--outline btn--lg">Découvrir le programme</a>
       </div>
     </div>
@@ -160,7 +161,7 @@
         <div>
         <span class="section-label">Le constat</span>
         <h2 class="section-title">La décarbonation n'est plus une option pour l'industrie</h2>
-        <p class="section-subtitle">CSRD, taxonomie européenne, exigences des donneurs d'ordres : les PME industrielles doivent agir. Par où commencer quand on n'a ni le temps, ni les ressources ? C'est l'un de <a href="vos-attentes.html#decarboner" class="cta-inline" style="color:#2e7d32;">vos besoins que nous adressons</a>.</p>
+        <p class="section-subtitle">CSRD, taxonomie européenne, exigences des donneurs d'ordres : les PME industrielles doivent agir. Par où commencer quand on n'a ni le temps, ni les ressources ? C'est l'un de <a href="vos-attentes.html#decarboner" class="cta-inline">vos besoins que nous adressons</a>.</p>
       </div>
         <figure class="split-media__img">
           <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1000&q=80&auto=format&fit=crop" alt="Transition énergétique industrielle" loading="lazy" decoding="async">
@@ -181,7 +182,7 @@
         </div>
       </div>
       <p class="reveal" style="text-align:center; margin:28px 0 0;">
-        <a href="contact.html" class="cta-inline">Parlons de votre besoin &rarr;</a>
+        <a href="contact.html?sujet=rse" class="cta-inline">Parlons de votre besoin &rarr;</a>
       </p>
     </div>
   </section>
@@ -228,7 +229,7 @@
         <h2 class="section-title">Des livrables concrets, pas un rapport qui dort dans un tiroir</h2>
       </div>
       <div class="grid-2 reveal-stagger" style="gap:24px;">
-        <div class="card" style="padding:28px;">
+        <div class="card liseret-rse" style="padding:28px;">
           <h3 style="margin-bottom:12px;">Décarbonation</h3>
           <p>Première cartographie des flux des émissions de gaz à effet de serre de l'entreprise (Scopes 1, 2 et 3), benchmark sectoriel. Incontournable pour vos donneurs d'ordres et appels d'offres.</p>
         </div>
@@ -261,7 +262,7 @@
           <h3 style="color:var(--white); margin-bottom:12px;">Ressources Humaines</h3>
           <p style="color:rgba(255,255,255,0.92);">Cartographie des métiers impactés, plans de formation, conduite du changement, accompagnement des managers et des équipes, ingénierie pédagogique.</p>
         </div>
-        <div class="card" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); padding:28px;">
+        <div class="card liseret-rse" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); padding:28px;">
           <h3 style="color:var(--white); margin-bottom:12px;">RSE et Décarbonation</h3>
           <p style="color:rgba(255,255,255,0.92);">Stratégie et structuration RSE, Bilan Carbone&reg;, engagement et développement des collaborateurs, réglementations, évaluation EcoVadis, labellisations…</p>
         </div>
@@ -284,24 +285,24 @@
           <h3 style="margin-bottom:16px; color:var(--teal-600);">Vous êtes éligible si :</h3>
           <ul style="list-style:none; padding:0;">
             <li style="padding:10px 0; border-bottom:1px solid var(--neutral-200); display:flex; align-items:flex-start; gap:12px;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2.5" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
               <span>Votre entreprise relève d'un <strong>secteur industriel</strong> (métallurgie, plasturgie, chimie, agroalimentaire, textile...)</span>
             </li>
             <li style="padding:10px 0; border-bottom:1px solid var(--neutral-200); display:flex; align-items:flex-start; gap:12px;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2.5" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
               <span>Vous êtes <strong>adhérent OPCO2i</strong> (vérifié automatiquement lors de la demande)</span>
             </li>
             <li style="padding:10px 0; border-bottom:1px solid var(--neutral-200); display:flex; align-items:flex-start; gap:12px;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2.5" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
               <span>Vous avez <strong>moins de 250 salariés</strong> (dispositif co-finançable)</span>
             </li>
             <li style="padding:10px 0; display:flex; align-items:flex-start; gap:12px;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2.5" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
               <span>Vous êtes situé en <strong>Isère, Drôme ou Ardèche</strong> (départements sur lesquels CARTESA est référencé)</span>
             </li>
           </ul>
         </div>
-        <div class="card" style="padding:28px; background:var(--teal-50); border:1px solid var(--teal-100);">
+        <div class="card liseret-rse" style="padding:28px; background:var(--teal-50); border:1px solid var(--teal-100);">
           <h3 style="margin-bottom:16px;">Le CO2I en bref</h3>
           <table style="width:100%; font-size:0.9rem; border-collapse:collapse;">
             <tbody>
@@ -403,7 +404,7 @@
         </details>
         <details class="faq-item">
           <summary>Est-ce cumulable avec d'autres dispositifs ?</summary>
-          <p>Oui, le CO2I est cumulable avec d'autres dispositifs. Il est aussi compatible avec les aides régionales Auvergne-Rhône-Alpes et les dispositifs ADEME. <a href="contact.html">Contactez-nous</a> pour plus d'informations.</p>
+          <p>Oui, le CO2I est cumulable avec d'autres dispositifs. Il est aussi compatible avec les aides régionales Auvergne-Rhône-Alpes et les dispositifs ADEME. <a href="contact.html?sujet=rse">Contactez-nous</a> pour plus d'informations.</p>
         </details>
       </div>
     </div>
@@ -451,8 +452,8 @@
   <section class="section section--teal" style="padding:56px 0;">
     <div class="container" style="text-align:center;">
       <h2 class="reveal" style="margin-bottom:12px;">Prêt à lancer votre diagnostic CO2I ?</h2>
-      <p class="reveal" style="color:rgba(255,255,255,0.92); max-width:520px; margin:0 auto 28px; font-size:1rem;">Premier échange de 20 minutes, sans engagement. On vérifie votre éligibilité OPCO2i et on vous explique le parcours.</p>
-      <a href="contact.html" class="btn btn--accent btn--lg reveal">Vérifier mon éligibilité</a>
+      <p class="reveal" style="color:rgba(255,255,255,0.92); max-width:520px; margin:0 auto 28px; font-size:1rem;">Choisissez directement votre créneau de 30 minutes, sans engagement. On vérifie votre éligibilité OPCO2i et on vous explique le parcours.</p>
+      <a href="contact.html?sujet=echange-30&theme=RSE%20%26%20D%C3%A9carbonation" class="btn btn--accent btn--lg reveal">Vérifier mon éligibilité</a>
     </div>
   </section>
 

@@ -52,11 +52,12 @@
     .team-card-v2 .specialites { font-size:0.78rem; color:var(--neutral-500,#6b7280); margin-bottom:8px; }
     .team-card-v2 .expertise-tags { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin-bottom:14px; }
     .team-card-v2 .expertise-tag { display:inline-block; font-size:0.68rem; font-weight:600; padding:3px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:0.04em; }
-    .expertise-tag--teal { background:var(--teal-100,#d1ecec); color:var(--teal-700,#0f5e5e); }
-    .expertise-tag--gold { background:rgba(236,208,52,0.12); color:var(--gold-600,#d4940a); }
-    .expertise-tag--green { background:#e8f5e9; color:#2e7d32; }
-    .expertise-tag--purple { background:#e8f5e9; color:#2e7d32; }
-    .expertise-tag--blue { background:#eef4ff; color:#3b6fc2; }
+    /* Étiquettes par domaine d'expertise — une couleur = un domaine (cf. légende) */
+    .expertise-tag--rh { background:#eef4ff; color:#3b6fc2; }
+    .expertise-tag--coaching { background:var(--teal-100,#d1ecec); color:var(--teal-700,#0f5e5e); }
+    .expertise-tag--formation { background:rgba(236,208,52,0.18); color:#a67c00; }
+    .expertise-tag--rse { background:#e8f5e9; color:#2e7d32; }
+    .expertise-tag--support { background:var(--neutral-100,#f3f4f6); color:var(--neutral-500,#6b7280); }
     .team-card-v2 p { font-size:0.88rem; color:var(--neutral-600,#4b5563); line-height:1.55; }
     .pole-section { margin-bottom:0; padding:56px 0; }
     .pole-section:last-child { margin-bottom:0; }
@@ -196,9 +197,9 @@
           <div class="role">Consultante Associée</div>
           <a class="team-linkedin" href="https://www.linkedin.com/in/catherine-lenoir-6190291b9/" target="_blank" rel="noopener" aria-label="Profil LinkedIn de Catherine Lenoir"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.3 18.3v-7.7H5.9v7.7h2.4zM7.1 9.6a1.4 1.4 0 1 0 0-2.8 1.4 1.4 0 0 0 0 2.8zm11.2 8.7v-4.2c0-2.3-1.2-3.3-2.8-3.3-1.3 0-1.9.7-2.2 1.2v-1h-2.4v7.3h2.4v-4.1c0-1.1.2-2.1 1.5-2.1s1.3 1.2 1.3 2.2v4h2.2z"/></svg> LinkedIn</a>
           <div class="expertise-tags">
-            <span class="expertise-tag expertise-tag--teal">AFEST</span>
-            <span class="expertise-tag expertise-tag--green">Coaching</span>
-            <span class="expertise-tag expertise-tag--blue">Ingénierie</span>
+            <span class="expertise-tag expertise-tag--formation">AFEST</span>
+            <span class="expertise-tag expertise-tag--coaching">Coaching</span>
+            <span class="expertise-tag expertise-tag--formation">Ingénierie</span>
           </div>
           <p>Développement des pratiques managériales et RH, formation de formateurs, coaching d'équipe dirigeante. Pilote le volet compétences du diagnostic CO2I et intervient en RH à temps partagé sur les transformations complexes : réorganisations, fusions, création de fonction RH ex nihilo. Experte en ingénierie pédagogique et conception de parcours AFEST. Plus de 20 ans d'expérience.</p>
         </div>
@@ -208,9 +209,9 @@
           <div class="role">Consultant Associé</div>
           <a class="team-linkedin" href="https://www.linkedin.com/in/philippe-lenoir-1b87656a/" target="_blank" rel="noopener" aria-label="Profil LinkedIn de Philippe Lenoir"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.3 18.3v-7.7H5.9v7.7h2.4zM7.1 9.6a1.4 1.4 0 1 0 0-2.8 1.4 1.4 0 0 0 0 2.8zm11.2 8.7v-4.2c0-2.3-1.2-3.3-2.8-3.3-1.3 0-1.9.7-2.2 1.2v-1h-2.4v7.3h2.4v-4.1c0-1.1.2-2.1 1.5-2.1s1.3 1.2 1.3 2.2v4h2.2z"/></svg> LinkedIn</a>
           <div class="expertise-tags">
-            <span class="expertise-tag expertise-tag--teal">Leadership</span>
-            <span class="expertise-tag expertise-tag--purple">Coaching</span>
-            <span class="expertise-tag expertise-tag--green">Changement</span>
+            <span class="expertise-tag expertise-tag--rh">Leadership</span>
+            <span class="expertise-tag expertise-tag--coaching">Coaching</span>
+            <span class="expertise-tag expertise-tag--rh">Changement</span>
           </div>
           <p>Coaching de dirigeant, management comportemental, développement commercial. Intervient également comme RH à temps partagé sur les phases de croissance et de transformation, avec une approche orientée leadership et culture managériale.</p>
         </div>
@@ -220,9 +221,9 @@
           <h3>Anaïs Beaucourt</h3>
           <div class="role">Consultante Associée</div>
           <div class="expertise-tags">
-            <span class="expertise-tag expertise-tag--blue">Transformations RH</span>
-            <span class="expertise-tag expertise-tag--teal">Dialogue social</span>
-            <span class="expertise-tag expertise-tag--purple">RH à temps partagé</span>
+            <span class="expertise-tag expertise-tag--rh">Transformations RH</span>
+            <span class="expertise-tag expertise-tag--rh">Dialogue social</span>
+            <span class="expertise-tag expertise-tag--rh">RH à temps partagé</span>
           </div>
           <p>Structure et pilote les transformations RH dans des environnements exigeants. Accompagne les entreprises pour clarifier, structurer ou sécuriser leur gouvernance sociale (dialogue social, politique de rémunération). Intervient comme RH à temps partagé.</p>
         </div>
@@ -231,9 +232,9 @@
           <h3>Claire Iffenecker</h3>
           <div class="role">Experte RSE &amp; Accompagnement des transitions</div>
           <div class="expertise-tags">
-            <span class="expertise-tag expertise-tag--green">Stratégie RSE</span>
-            <span class="expertise-tag expertise-tag--teal">Robustesse</span>
-            <span class="expertise-tag expertise-tag--blue">Développement des équipes</span>
+            <span class="expertise-tag expertise-tag--rse">Stratégie RSE</span>
+            <span class="expertise-tag expertise-tag--rse">Robustesse</span>
+            <span class="expertise-tag expertise-tag--rh">Développement des équipes</span>
           </div>
           <p>Forte de plus de 15 ans d'expérience terrain, elle accompagne les organisations et leurs équipes pour faire de la transition écologique un levier de performance durable — avec l'humain au cœur de la démarche. Elle intervient sur deux axes complémentaires : le conseil en stratégie RSE (enjeux sectoriels, structuration de la démarche, robustesse face aux défis à venir) et le développement des équipes — ateliers CODIR sur la robustesse, achats responsables, engagement des collaborateurs. Sa conviction : une transformation réussie repose sur des processus solides et des femmes et des hommes à leur plein potentiel.</p>
         </div>
@@ -242,9 +243,9 @@
           <h3>Christine Jalbert</h3>
           <div class="role">Consultante RSE sénior</div>
           <div class="expertise-tags">
-            <span class="expertise-tag expertise-tag--green">RSE</span>
-            <span class="expertise-tag expertise-tag--teal">Bilan Carbone®</span>
-            <span class="expertise-tag expertise-tag--blue">CSRD & VS</span>
+            <span class="expertise-tag expertise-tag--rse">RSE</span>
+            <span class="expertise-tag expertise-tag--rse">Bilan Carbone®</span>
+            <span class="expertise-tag expertise-tag--rse">CSRD & VS</span>
           </div>
           <p>Après 10 ans au sein de la Direction RSE d'une grande compagnie aérienne, elle crée l'Agence RSE Performances pour accompagner les entreprises dans leur démarche RSE, du diagnostic à la labellisation : structuration, élaboration et mise en œuvre des plans d'action, formation, Bilans Carbone®, communication, CSRD et VS. Elle croit en une RSE positive, enthousiaste, engageante, pratique, concrète et basée sur le résultat — un outil formidable pour assurer la résilience et la performance dans un monde qui bouge plus vite que nos modèles d'affaires. Adaptation, résilience et performance sont les trois axes de ses accompagnements, avec la RSE comme solution.</p>
         </div>
@@ -255,8 +256,8 @@
           <div class="role">Assistante administrative et commerciale</div>
           <a class="team-linkedin" href="https://www.linkedin.com/in/ang%C3%A9lique-duchamp-%E2%96%AA-assistante-freelance-/" target="_blank" rel="noopener" aria-label="Profil LinkedIn d'Angélique Duchamp"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.3 18.3v-7.7H5.9v7.7h2.4zM7.1 9.6a1.4 1.4 0 1 0 0-2.8 1.4 1.4 0 0 0 0 2.8zm11.2 8.7v-4.2c0-2.3-1.2-3.3-2.8-3.3-1.3 0-1.9.7-2.2 1.2v-1h-2.4v7.3h2.4v-4.1c0-1.1.2-2.1 1.5-2.1s1.3 1.2 1.3 2.2v4h2.2z"/></svg> LinkedIn</a>
           <div class="expertise-tags">
-            <span class="expertise-tag expertise-tag--gold">Administratif</span>
-            <span class="expertise-tag expertise-tag--teal">Relation client</span>
+            <span class="expertise-tag expertise-tag--support">Administratif</span>
+            <span class="expertise-tag expertise-tag--support">Relation client</span>
           </div>
           <p>Votre premier contact chez CARTESA : suivi administratif et commercial, coordination des dossiers et de la communication.</p>
         </div>

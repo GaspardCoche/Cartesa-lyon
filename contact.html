@@ -420,6 +420,7 @@
                 <label for="sujet">Votre sujet <span class="opt">(optionnel)</span></label>
                 <select id="sujet" name="sujet">
                   <option value="">Sélectionnez</option>
+                  <option value="echange-30">Échanger 30 minutes (gratuit, créneau au choix)</option>
                   <option value="diagnostic">Diagnostic RH / RSE</option>
                   <option value="accompagnement">Accompagnement dans la durée</option>
                   <option value="coaching-individuel">Coaching individuel</option>
@@ -433,7 +434,7 @@
               </div>
             </div>
             <div id="flashBooking" style="display:none; background:var(--teal-50,#eef7f7); border:1px solid var(--neutral-200); border-radius:12px; padding:18px 18px 14px; margin-bottom:18px;">
-              <p style="margin:0 0 12px; font-size:0.85rem; color:var(--teal-900); font-weight:600;">Réservez votre séance flash de 30 minutes <span style="font-weight:400; color:var(--neutral-500);">— créneaux un jour sur deux, hors week-end</span></p>
+              <p style="margin:0 0 12px; font-size:0.85rem; color:var(--teal-900); font-weight:600;"><span id="bookingTitle">Réservez votre séance flash de 30 minutes</span> <span style="font-weight:400; color:var(--neutral-500);">— créneaux un jour sur deux, hors week-end</span></p>
               <div class="form-row" style="align-items:flex-start;">
                 <div class="form-group">
                   <label>Date souhaitée *</label>
@@ -459,12 +460,12 @@
                     <button type="button" class="slot-chip" data-slot="18h30-19h00">18h30 – 19h00</button>
                   </div>
                   <p class="flash-picked" id="flashPicked"></p>
-                  <p class="flash-err" id="flashErr">Choisissez une date et un créneau pour votre séance flash.</p>
+                  <p class="flash-err" id="flashErr">Choisissez une date et un créneau pour votre rendez-vous.</p>
                 </div>
               </div>
               <input type="hidden" id="creneau_date" name="creneau_date" value="">
               <input type="hidden" id="creneau_heure" name="creneau_heure" value="">
-              <p style="margin:6px 0 4px; font-size:0.76rem; color:var(--neutral-500); line-height:1.5;">Séance payante, facturée à l'unité. Nous confirmons votre créneau par email sous 24&nbsp;h ouvrées — le règlement se fait à la confirmation (paiement en ligne bientôt disponible).</p>
+              <p id="bookingNotice" style="margin:6px 0 4px; font-size:0.76rem; color:var(--neutral-500); line-height:1.5;">Séance payante, facturée à l'unité. Nous confirmons votre créneau par email sous 24&nbsp;h ouvrées — le règlement se fait à la confirmation (paiement en ligne bientôt disponible).</p>
             </div>
             <div class="form-group">
               <label for="message">Message *</label>
@@ -730,11 +731,36 @@
         });
       });
       function updateFlashBooking() {
-        var on = sujetSel && sujetSel.value === 'coaching-flash';
+        var v = sujetSel ? sujetSel.value : '';
+        var on = v === 'coaching-flash' || v === 'echange-30';
         if (flashBlock) flashBlock.style.display = on ? 'block' : 'none';
+        var titleEl = document.getElementById('bookingTitle');
+        var noticeEl = document.getElementById('bookingNotice');
+        if (titleEl && noticeEl) {
+          if (v === 'echange-30') {
+            titleEl.textContent = 'Choisissez le créneau de votre échange de 30 minutes';
+            noticeEl.textContent = 'Échange gratuit et sans engagement. Nous confirmons votre créneau par email sous 24 h ouvrées.';
+          } else {
+            titleEl.textContent = 'Réservez votre séance flash de 30 minutes';
+            noticeEl.textContent = 'Séance payante, facturée à l\'unité. Nous confirmons votre créneau par email sous 24 h ouvrées — le règlement se fait à la confirmation (paiement en ligne bientôt disponible).';
+          }
+        }
       }
       if (sujetSel) sujetSel.addEventListener('change', updateFlashBooking);
       updateFlashBooking();
+
+      // Contextes de pré-remplissage par sujet — la bannière dit clairement de quelle expertise on parle
+      var theme = params.get('theme');
+      var SUJET_CONTEXTS = {
+        'echange-30': { label: 'Réservation :', name: 'Échange de 30 minutes (gratuit)', message: 'Je souhaite échanger 30 minutes avec un expert CARTESA sur le créneau sélectionné ci-dessus. Mon besoin : ', subject: 'Échange 30 min' },
+        'diagnostic': { label: 'Votre demande :', name: 'Diagnostic RH / RSE', message: 'Je souhaite échanger sur un diagnostic RH / RSE pour mon entreprise. ', subject: 'Diagnostic RH / RSE' },
+        'accompagnement': { label: 'Votre demande :', name: 'Accompagnement dans la durée', message: 'Je souhaite échanger sur un accompagnement dans la durée. ', subject: 'Accompagnement' },
+        'coaching-individuel': { label: 'Votre demande :', name: 'Coaching individuel', message: 'Je souhaite échanger sur un coaching individuel. ', subject: 'Coaching individuel' },
+        'coaching-collectif': { label: 'Votre demande :', name: 'Coaching collectif / co-développement', message: 'Je souhaite échanger sur un coaching collectif ou un co-développement. ', subject: 'Coaching collectif' },
+        'formation': { label: 'Votre demande :', name: 'Formation', message: 'Je souhaite des informations sur vos formations. ', subject: 'Formation' },
+        'rse': { label: 'Votre demande :', name: 'RSE & Décarbonation — diagnostic CO2I', message: 'Je souhaite en savoir plus sur votre accompagnement RSE & décarbonation et vérifier mon éligibilité au diagnostic CO2I. ', subject: 'RSE & Décarbonation' },
+        'entrepreneuriat': { label: 'Votre demande :', name: 'Projet entrepreneurial', message: 'Je souhaite échanger sur mon projet entrepreneurial. ', subject: 'Projet entrepreneurial' }
+      };
 
       var ctx = null;
       if (sujetParam === 'coaching-flash') {
@@ -745,11 +771,15 @@
           subject: 'Réservation coaching flash'
         };
       } else if (formation) {
+        // Session datée « Formation – Ville (JJ/MM) » = inscription ; nom seul = demande d'infos
+        var isSession = /\(.+\)/.test(formation);
         ctx = {
-          label: 'Inscription formation :',
+          label: isSession ? 'Inscription formation :' : 'Formation :',
           name: formation,
-          message: 'Je souhaite m\'inscrire à la formation : ' + formation,
-          subject: 'Inscription formation — ' + formation
+          message: isSession
+            ? 'Je souhaite m\'inscrire à la formation : ' + formation
+            : 'Je souhaite des informations sur la formation « ' + formation + ' » (dates, programme, financement). ',
+          subject: (isSession ? 'Inscription formation — ' : 'Formation — ') + formation
         };
       } else if (webinar === 'newsletter') {
         ctx = {
@@ -766,6 +796,15 @@
           message: 'Je souhaite m\'inscrire au webinaire : ' + wLabel,
           subject: 'Webinaire — ' + wLabel
         };
+      } else if (sujetParam && SUJET_CONTEXTS[sujetParam]) {
+        ctx = SUJET_CONTEXTS[sujetParam];
+      } else if (theme) {
+        ctx = { label: 'Votre demande :', name: theme, message: 'Je souhaite échanger sur : ' + theme + '. ', subject: theme };
+      }
+
+      // Le paramètre ?theme= précise l'expertise concernée (ex : échange 30 min — Coaching individuel)
+      if (ctx && theme && ctx.name !== theme) {
+        ctx = { label: ctx.label, name: ctx.name + ' — ' + theme, message: ctx.message, subject: ctx.subject + ' — ' + theme };
       }
 
       if (ctx) {
